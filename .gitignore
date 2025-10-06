@@ -1,6 +1,40 @@
-site/
-venv/
 __pycache__/
 .DS_Store
 .mypy_cache/
 node_modules/
+
+# MkDocs build output
+/site/
+
+# Python virtual environments
+venv/
+.env/
+.venv/
+
+# Python cache and temp files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE / editor configs
+.idea/
+.vscode/
+*.kate-swp
+*.kateconfig
+*.kateproject
+
+# Backup files
+*.bak
+*.swp
+*.tmp
+
+# Log files
+*.log
+
+# Node / front-end (if used for custom themes)
+node_modules/
+
