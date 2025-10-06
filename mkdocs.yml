@@ -1,0 +1,119 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: mindonchain
+site_url: https://sitename.example
+
+theme:
+  name: material
+  font: false
+  logo: assets/favicon-96x96.png
+  favicon: assets/favicon.svg
+
+  palette:
+    - scheme: default
+      primary: brown
+      accent: brown
+      background: "#FAF9F6"
+      text: "#000000"
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: brown
+      accent: brown
+      background: "#1c1f1d"
+      text: "#FAF9F6"
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+  features:
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+    - content.footnotes
+    - content.tooltips
+    - header.autohide
+    - content.metadata
+    - content.feedback
+
+extra:
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/heart
+          name: This page was helpful
+          data: 1
+          note: >-
+            🫂Thanks for your feedback!
+        - icon: material/heart-broken
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mmanuelubah
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/Mind_On_Chain
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/chinaza-ubanatu-05a983184/
+  tags:
+    # Optional: this enables a global tag index page
+    enabled: true
+    title: Tags
+    description: "Explore posts by topic"
+
+copyright: Copyright &copy; 2025 Emmanuel Ubah
+
+extra_css:
+  - assets/hack.css
+
+plugins:
+  - search
+  - blog:
+      blog_dir: blog
+      post_url_format: "{slug}"
+      categories_allowed: []
+  - tags
+hooks:
+  - hooks/socialmedia.py
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home🏠: index.md
+  - Posts: blog/index.md
+  - Bookshelf📚: Books/index.md
+  - Sandbox🐸: Sandbox/index.md
+  - Resources🆘:
+      - Tags: Resources/tags.md
