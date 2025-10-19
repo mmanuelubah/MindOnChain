@@ -1,0 +1,167 @@
+{{ define "main" }}
+<main class="main">
+
+  <!-- ✅ Hero Section -->
+  <section class="intro" style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; text-align:left; gap:20px; margin-top:40px;">
+
+    <!-- Avatar -->
+    <img src="{{ .Site.Params.avatar | absURL }}" alt="Avatar"
+         style="width:140px; height:140px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+
+    <!-- Title & Subtitle -->
+    <div style="max-width:500px;">
+      <h1 id="animated-title" style="font-weight:700; font-size:2rem; margin:0;">
+        {{ .Site.Title }}
+      </h1>
+      <p style="font-size:1rem; opacity:0.9; margin-top:8px;">
+        {{ .Site.Params.homeSubtitle }}
+      </p>
+    </div>
+  </section>
+
+  <!-- ✅ Recent Posts Section -->
+  <section class="recent-posts" style="margin-top:50px;">
+    <h2 style="font-size:1.2rem; margin-bottom:15px;">📰 Recent Posts</h2>
+    <ul style="list-style:none; padding:0;">
+      {{ range first 3 (where .Site.RegularPages "Type" "posts") }}
+      <li style="margin-bottom:1.2rem;">
+        <a href="{{ .RelPermalink }}" style="font-size:1rem; font-weight:600; text-decoration:none;">
+          {{ .Title }}
+        </a><br>
+        <small style="font-size:0.85rem; color:gray;">
+          {{ .Date.Format "Jan 2, 2006" }} • {{ .ReadingTime }} min read
+        </small>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+</main>
+
+<!-- ✅ Text Scramble Animation -->
+<style>
+  :root {
+    --text-dark: #111;
+    --text-light: #f8f8f8;
+    --glow-dark: rgba(0, 255, 204, 0.6);
+    --glow-light: rgba(0, 140, 255, 0.6);
+  }
+
+  /* Auto-adapt for light/dark mode */
+  html[data-theme="light"] #animated-title {
+    color: var(--text-dark);
+    text-shadow: 0 0 8px var(--glow-light);
+  }
+
+  html[data-theme="dark"] #animated-title {
+    color: var(--text-light);
+    text-shadow: 0 0 8px var(--glow-dark);
+  }
+
+  #animated-title {
+    display: inline-block;
+    font-family: "Fira Code", monospace;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+    animation: flicker 3s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      opacity: 1;
+    }
+    20%, 24%, 55% {
+      opacity: 0.4;
+    }
+  }
+
+  .dud {
+    opacity: 0.4;
+  }
+</style>
+
+<script>
+  // Hacker-style text scramble effect
+  class TextScramble {
+    constructor(el) {
+      this.el = el;
+      this.chars = "!<>-_\\/[]{}—=+*^?#________";
+      this.update = this.update.bind(this);
+    }
+
+    setText(newText) {
+      const oldText = this.el.innerText;
+      const length = Math.max(oldText.length, newText.length);
+      const promise = new Promise((resolve) => (this.resolve = resolve));
+      this.queue = [];
+
+      for (let i = 0; i < length; i++) {
+        const from = oldText[i] || "";
+        const to = newText[i] || "";
+        const start = Math.floor(Math.random() * 40);
+        const end = start + Math.floor(Math.random() * 40);
+        this.queue.push({ from, to, start, end });
+      }
+
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+
+    update() {
+      let output = "";
+      let complete = 0;
+      for (let i = 0, n = this.queue.length; i < n; i++) {
+        let { from, to, start, end, char } = this.queue[i];
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.randomChar();
+            this.queue[i].char = char;
+          }
+          output += `<span class="dud">${char}</span>`;
+        } else {
+          output += from;
+        }
+      }
+      this.el.innerHTML = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+
+    randomChar() {
+      return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const el = document.getElementById("animated-title");
+    const fx = new TextScramble(el);
+
+    const phrases = [
+      "MindOnChain",
+      "m1nD0NCh41n",
+      "EMM4NU3L U84H",
+      "MindOnChain"
+    ];
+
+    let counter = 0;
+    const next = () => {
+      fx.setText(phrases[counter]).then(() => {
+        setTimeout(next, 3000);
+      });
+      counter = (counter + 1) % phrases.length;
+    };
+
+    next();
+  });
+</script>
+
+{{ end }}

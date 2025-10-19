@@ -1,0 +1,72 @@
+baseURL = "https://your-site-name.netlify.app/"
+title = "MindOnChain"
+languageCode = "en-us"
+theme = "hello-friend-ng"
+pagination.pagerSize = 10
+
+# Theme Parameters
+[params]
+  title = "MindOnChain"
+  description = "MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel."
+  avatar = "images/Avatar.png"                  # Path: /static/images/Avatar.png
+  enableSharingButtons = true
+  enableGlobalLanguageMenu = true
+  enableThemeToggle = true
+  defaultTheme = "dark"
+  showPostsOnHomePage = true
+  numberOfPostsOnHomePage = 3
+
+[build]
+  writeStats = true
+
+# Logo
+[params.logo]
+  logoHomeLink = "/"
+  logoImage = "images/favicon-logo-96x96.png"   # Path: /static/images/favicon-logo-96x96.png
+
+# Favicon
+[params.assets]
+  favicon = "images/favicon.ico"                # Path: /static/images/favicon.ico
+
+# Footer Section
+[params.footer]
+  copyright = "© 2025 Emmanuel — MindOnChain"
+
+# Social Links
+[params.social]
+  github = "https://github.com/YOUR_GITHUB_USERNAME"
+  linkedin = "https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+  twitter = "https://twitter.com/YOUR_TWITTER_USERNAME"
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# Menu Navigation
+[menu]
+
+  [[menu.main]]
+  identifier = "posts"
+  name = "📰 Posts"
+  url = "/posts/"
+  weight = 1
+
+  [[menu.main]]
+  identifier = "categories"
+  name = "📂 Categories"
+  url = "/categories/"
+  weight = 2
+
+  [[menu.main]]
+  identifier = "tags"
+  name = "🏷️ Tags"
+  url = "/tags/"
+  weight = 3
+
+  [[menu.main]]
+  identifier = "Books"
+  name = "🙋‍♂️ BookShelf"
+  url = "/Books/"
+  weight = 4
