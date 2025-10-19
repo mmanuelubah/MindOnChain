@@ -34,9 +34,9 @@ pagination.pagerSize = 10
 
 # Social Links
 [params.social]
-  github = "https://github.com/YOUR_GITHUB_USERNAME"
-  linkedin = "https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
-  twitter = "https://twitter.com/YOUR_TWITTER_USERNAME"
+  github = "https://github.com/mmanuelubah"
+  linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
+  twitter = "https://x.com/Mind_On_Chain"
 
 # Taxonomies
 [taxonomies]
@@ -55,7 +55,7 @@ pagination.pagerSize = 10
 
   [[menu.main]]
   identifier = "categories"
-  name = "📂 Categories"
+  name = "📂Categories"
   url = "/categories/"
   weight = 2
 
@@ -67,6 +67,6 @@ pagination.pagerSize = 10
 
   [[menu.main]]
   identifier = "Books"
-  name = "🙋‍♂️ BookShelf"
+  name = "📚BookShelf"
   url = "/Books/"
   weight = 4
