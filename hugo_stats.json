@@ -3,6 +3,7 @@
     "tags": [
       "a",
       "article",
+      "aside",
       "blockquote",
       "body",
       "br",
@@ -16,6 +17,7 @@
       "hr",
       "html",
       "img",
+      "input",
       "li",
       "line",
       "link",
@@ -72,9 +74,7 @@
       "header__inner",
       "header__right",
       "img-404",
-      "intro",
       "logo",
-      "main",
       "menu",
       "menu-trigger",
       "menu__inner",
@@ -121,6 +121,8 @@
     "ids": [
       "-weekly-roundup",
       "animated-title",
+      "postList",
+      "searchInput",
       "spotlight"
     ]
   }
