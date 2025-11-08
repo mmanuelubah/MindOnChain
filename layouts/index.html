@@ -1,76 +1,55 @@
 {{ define "main" }}
-<main style="padding:1.5rem 2rem;">
+<main style="padding:1.5rem 2rem; max-width:1200px; margin:0 auto;">
 
-  <!-- ================= TOP BAR: AUTHOR & SEARCH ================= -->
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
-    <!-- Author -->
-    <div style="display:flex; flex-direction:column; align-items:flex-start;">
-      <img src="{{ .Site.Params.avatar | absURL }}" alt="Avatar"
-           style="width:70px; height:70px; border-radius:50%; object-fit:cover; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-      <h1 id="animated-title"
-          style="font-family:'Fira Code', monospace; font-size:1rem; margin-top:8px; font-weight:700;">
-        {{ .Site.Title }}
-      </h1>
-    </div>
-
-    <!-- Search -->
-    <div style="position:relative; width:260px;">
-      <input id="searchInput" type="text" placeholder="Search (Ctrl + K)"
-             style="padding:0.6rem 1rem; border-radius:8px; border:none; outline:none; width:100%; background-color:rgba(255,255,255,0.08); color:#fff;">
+  <!-- ================= CENTERED AUTHOR + SEARCH ================= -->
+  <div class="top-section">
+    <img src="{{ .Site.Params.avatar | absURL }}" alt="Avatar" class="author-avatar">
+    <h1 id="animated-title" class="site-title">{{ .Site.Title }}</h1>
+    <div class="search-container">
+      <input id="searchInput" type="text" placeholder="Search (Ctrl + K)" class="search-input">
     </div>
   </div>
 
   <!-- ================= MIDDLE GRID ================= -->
-  <div style="display:grid; grid-template-columns:1fr 2fr 1fr; gap:2rem; align-items:start;">
+  <div class="main-grid">
 
     <!-- Categories -->
-    <aside>
-      <h2 style="font-size:0.95rem; font-weight:600; margin-bottom:0.8rem; opacity:0.8;">Categories</h2>
-      <ul style="list-style:none; padding:0; margin:0;">
+    <aside class="sidebar">
+      <h2 class="section-title">Categories</h2>
+      <ul class="link-list">
         {{ with .Site.Taxonomies.categories }}
           {{ range first 10 (sort . "Count" "desc") }}
-          <li style="margin-bottom:0.5rem;">
-            <a href="{{ .Page.Permalink }}"
-               style="color:#ccc; text-decoration:none; font-size:0.9rem;">• {{ .Page.Title }}</a>
-          </li>
+          <li><a href="{{ .Page.Permalink }}">• {{ .Page.Title }}</a></li>
           {{ end }}
         {{ else }}
-          <li style="color:gray; font-size:0.85rem;">No categories yet.</li>
+          <li class="empty-text">No categories yet.</li>
         {{ end }}
       </ul>
     </aside>
 
     <!-- Recent Posts -->
-    <section class="recent-posts" style="text-align:left;">
-      <h2 style="font-size:0.95rem; font-weight:600; margin-bottom:1rem; opacity:0.8;">Recent Posts</h2>
-      <ul id="postList" style="list-style:none; padding:0;">
+    <section class="recent-posts">
+      <h2 class="section-title">Recent Posts</h2>
+      <ul id="postList" class="link-list">
         {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
-        <li style="margin-bottom:1rem;">
-          <a href="{{ .RelPermalink }}"
-             style="font-size:1rem; font-weight:600; text-decoration:none; color:#fff;">
-            {{ .Title }}
-          </a><br>
-          <small style="font-size:0.85rem; color:gray;">
-            {{ .Date.Format "Jan 2, 2006" }} • {{ .ReadingTime }} min read
-          </small>
+        <li class="post-item">
+          <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a><br>
+          <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .ReadingTime }} min read</small>
         </li>
         {{ end }}
       </ul>
     </section>
 
     <!-- Trending Tags -->
-    <aside>
-      <h2 style="font-size:0.95rem; font-weight:600; margin-bottom:0.8rem; opacity:0.8;">Trending Tags</h2>
-      <ul style="list-style:none; padding-left:0; margin:0;">
+    <aside class="sidebar">
+      <h2 class="section-title">Trending Tags</h2>
+      <ul class="link-list">
         {{ with .Site.Taxonomies.tags }}
           {{ range first 10 (sort . "Count" "desc") }}
-          <li style="margin-bottom:0.5rem;">
-            <a href="{{ .Page.Permalink }}"
-               style="color:#ccc; text-decoration:none; font-size:0.9rem;">#{{ .Page.Title }}</a>
-          </li>
+          <li><a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a></li>
           {{ end }}
         {{ else }}
-          <li style="color:gray; font-size:0.85rem;">No tags yet.</li>
+          <li class="empty-text">No tags yet.</li>
         {{ end }}
       </ul>
     </aside>
@@ -87,6 +66,96 @@
     --glow-light: rgba(0, 140, 255, 0.6);
   }
 
+  /* === General Layout === */
+  main {
+    color: var(--text-light);
+  }
+
+  .top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+
+  .site-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 700;
+  }
+
+  .search-container {
+    position: relative;
+    width: 300px;
+    margin-top: 1rem;
+  }
+
+  .search-input {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: rgba(255,255,255,0.08);
+    color: #fff;
+    text-align: center;
+  }
+
+  /* === Grid Layout === */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .section-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .link-list a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .post-link {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .post-meta {
+    font-size: 0.85rem;
+    color: gray;
+  }
+
+  .empty-text {
+    color: gray;
+    font-size: 0.85rem;
+  }
+
+  /* === Title Animation === */
   html[data-theme="light"] #animated-title {
     color: var(--text-dark);
     text-shadow: 0 0 8px var(--glow-light);
@@ -98,8 +167,8 @@
   }
 
   #animated-title {
-    display:inline-block;
-    letter-spacing:1px;
+    display: inline-block;
+    letter-spacing: 1px;
     transition: color 0.3s, text-shadow 0.3s;
     animation: flicker 3s infinite;
   }
@@ -111,13 +180,46 @@
 
   .dud { opacity:0.4; }
 
-  @media (max-width:900px) {
-    main {
-      display:block;
-      padding:1rem;
+  /* === Responsive Design === */
+  @media (max-width: 1024px) {
+    .main-grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 1.5rem;
     }
-    .recent-posts, aside {
-      margin-top:1.5rem;
+    .search-container {
+      width: 250px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
+    .sidebar, .recent-posts {
+      text-align: center;
+    }
+    .link-list li {
+      margin-bottom: 0.8rem;
+    }
+    .search-container {
+      width: 90%;
+    }
+    .post-link {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .author-avatar {
+      width: 70px;
+      height: 70px;
+    }
+    .site-title {
+      font-size: 1rem;
+    }
+    .search-input {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 </style>
