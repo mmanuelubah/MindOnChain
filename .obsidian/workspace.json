@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templates/weekly-roundup-template.md.md",
+                "file": "content/posts/Week49.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "weekly-roundup-template.md"
+              "title": "Week49"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Templates/weekly-roundup-template.md.md",
+                "file": "content/posts/Week49.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for weekly-roundup-template.md"
+              "title": "Backlinks for Week49"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Templates/weekly-roundup-template.md.md",
+                "file": "content/posts/Week49.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from weekly-roundup-template.md"
+              "title": "Outgoing links from Week49"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Templates/weekly-roundup-template.md.md",
+                "file": "content/posts/Week49.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of weekly-roundup-template.md"
+              "title": "Outline of Week49"
             }
           }
         ]
@@ -185,9 +185,15 @@
   },
   "active": "8c28b09c2c7797e8",
   "lastOpenFiles": [
+    "public/posts/week49/index.html",
+    "public/posts/week49",
+    "public/books/ikigai/index.html",
+    "public/books/ikigai",
+    "Templates/weekly-roundup-template.md",
+    "content/posts/Week49.md",
     "Templates/book-template.md.md",
     "Templates/post-template.md.md",
-    "content/posts/December (02-06)- 2025.md",
+    "content/Books/Ikigai.md",
     "content/Books/A Beautiful Life.md",
     "content/Books/the-psychology-of-money.md",
     "public/images/posts/recap.png",
@@ -207,11 +213,7 @@
     "layouts/_default/single.html",
     "layouts/_default",
     "public/posts/december-02-06--2025/index.html",
-    "public/posts/december-02-06--2025",
-    "public/books/a-beautiful-life/index.html",
-    "public/books/a-beautiful-life",
     "content/posts/Starting Out-Week 1.md",
-    "Templates/weekly-roundup-template.md.md",
     "content/posts/Web3.md",
     "Untitled.md",
     "archetypes/default.md"

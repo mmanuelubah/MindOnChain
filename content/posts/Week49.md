@@ -1,5 +1,5 @@
 ---
-title: Week-2025-W49
+title: Week-2025-49
 date: 2025-12-06
 draft: false
 tags:
@@ -7,6 +7,7 @@ tags:
 type: posts
 cover: /images/covers/cover-week49.jpeg
 ---
+
 ## Articles 
 
 - The Unexpected poetry of PhD acknowledgements

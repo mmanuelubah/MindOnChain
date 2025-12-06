@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>#Weekly-Roundup</title>
-      <link>http://localhost:1313/tags/%23weekly-roundup/</link>
+      <title>Weekly-Roundup</title>
+      <link>http://localhost:1313/tags/weekly-roundup/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%23weekly-roundup/</guid>
+      <guid>http://localhost:1313/tags/weekly-roundup/</guid>
       <description></description>
     </item>
   </channel>
