@@ -1,8 +1,9 @@
 ---
-title: "Week-{{date:gggg-[W]ww}}" 
-date: {{date}}
+title: Week-{{date:gggg-[W]ww}}
+date:
+  "{ date }":
 draft: false
 tags:
-  - "#weekly-roundup"
+  - weekly-roundup
 type: posts
 ---

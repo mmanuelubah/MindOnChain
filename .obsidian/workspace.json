@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/December (02-06)- 2025.md",
+                "file": "Templates/weekly-roundup-template.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "December (02-06)- 2025"
+              "title": "weekly-roundup-template.md"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/December (02-06)- 2025.md",
+                "file": "Templates/weekly-roundup-template.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for December (02-06)- 2025"
+              "title": "Backlinks for weekly-roundup-template.md"
             }
           },
           {
@@ -114,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/December (02-06)- 2025.md",
+                "file": "Templates/weekly-roundup-template.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from December (02-06)- 2025"
+              "title": "Outgoing links from weekly-roundup-template.md"
             }
           },
           {
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/December (02-06)- 2025.md",
+                "file": "Templates/weekly-roundup-template.md.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of December (02-06)- 2025"
+              "title": "Outline of weekly-roundup-template.md"
             }
           }
         ]
@@ -186,6 +185,11 @@
   },
   "active": "8c28b09c2c7797e8",
   "lastOpenFiles": [
+    "Templates/book-template.md.md",
+    "Templates/post-template.md.md",
+    "content/posts/December (02-06)- 2025.md",
+    "content/Books/A Beautiful Life.md",
+    "content/Books/the-psychology-of-money.md",
     "public/images/posts/recap.png",
     "public/images/posts/JACKIE-BROWN.png",
     "static/images/posts/recap.png",
@@ -196,7 +200,6 @@
     "static/images/covers/JACKIE-BROWN.png",
     "public/images/covers/cover-week49.jpeg",
     "static/images/covers/cover-week49.jpeg",
-    "public/images/covers/IMG_3914.png",
     "public/images/posts",
     "public/images/covers",
     "static/images/posts",
@@ -208,12 +211,7 @@
     "public/books/a-beautiful-life/index.html",
     "public/books/a-beautiful-life",
     "content/posts/Starting Out-Week 1.md",
-    "content/posts/December (02-06)- 2025.md",
     "Templates/weekly-roundup-template.md.md",
-    "Templates/post-template.md.md",
-    "Templates/book-template.md.md",
-    "content/Books/A Beautiful Life.md",
-    "content/Books/the-psychology-of-money.md",
     "content/posts/Web3.md",
     "Untitled.md",
     "archetypes/default.md"
