@@ -1,1 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://mmanuelubah.netlify.app/books/a-beautiful-life/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/books/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/books/ikigai/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/posts/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/tags/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/posts/week49/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/tags/weekly-roundup/</loc><lastmod>2025-12-06T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</loc><lastmod>2025-10-16T00:00:00+00:00</lastmod></url><url><loc>https://mmanuelubah.netlify.app/categories/</loc></url><url><loc>https://mmanuelubah.netlify.app/series/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/books/a-beautiful-life/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/books/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/books/ikigai/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/week49/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/weekly-roundup/</loc>
+    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/books/the-psychology-of-money/</loc>
+    <lastmod>2025-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+  </url>
+</urlset>
