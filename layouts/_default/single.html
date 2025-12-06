@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
-    <title>The Psychology of Money</title>
+    <title>{{ .Title }}</title>
 </head>
 <body>
     <article>
-        <h1>The Psychology of Money</h1>
+        <h1>{{ .Title }}</h1>
 
-        
+        {{ with .Params.cover }}
+            <img src="{{ . }}" alt="Cover image for {{ $.Title }}">
+        {{ end }}
 
         <div>
-            
+            {{ .Content }}
         </div>
     </article>
 </body>

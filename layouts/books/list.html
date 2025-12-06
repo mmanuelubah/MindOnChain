@@ -1,28 +1,23 @@
 {{ define "main" }}
 <section class="bookshelf">
-  <h1>Books</h1>
-  <p>Tracking what I’ve read, am reading, or plan to read.</p>
+  <h1>Bookshelf</h1>
 
-  <div class="book-list">
+  <div class="bookshelf-list">
     {{ range (where .Pages "Type" "books") }}
-      <div class="book-card">
-        <h2>
-          <a href="{{ .Params.link }}" target="_blank">{{ .Title }}</a>
-        </h2>
-        <p class="book-meta">
-          📅 {{ .Date.Format "Jan 2, 2006" }}  
-          •  
+      <div class="book-row">
+        <a class="book-title" href="{{ .Params.link }}" target="_blank">
+          {{ .Title }} →
+        </a>
+
+        <p class="book-status">
           {{ if eq .Params.status "Read" }}
-            ✅ <strong>{{ .Params.status }}</strong>
+            Read • {{ .Date.Format "2006" }}
           {{ else if eq .Params.status "Reading" }}
-            📖 <strong>{{ .Params.status }}</strong>
+            Reading • {{ .Date.Format "2006" }}
           {{ else }}
-            ⏳ <strong>{{ .Params.status }}</strong>
+            Unread
           {{ end }}
         </p>
-        {{ if .Params.description }}
-          <p class="book-desc">{{ .Params.description }}</p>
-        {{ end }}
       </div>
     {{ end }}
   </div>
@@ -30,32 +25,36 @@
 
 <style>
 .bookshelf {
-  max-width: 800px;
+  max-width: 650px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
-.book-list {
+
+.bookshelf-list {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
-.book-card {
-  background: var(--color-bg-secondary);
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+/* Single book row */
+.book-row {
+  border-bottom: 1px solid rgba(150,150,150,0.2);
+  padding-bottom: 1rem;
 }
-.book-card a {
-  color: var(--color-accent);
+
+/* Title + arrow */
+.book-title {
+  font-size: 1.1rem;
+  font-weight: 600;
   text-decoration: none;
+  color: var(--color-text);
 }
-.book-meta {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-.book-desc {
-  font-size: 0.95rem;
+
+/* Status line below title */
+.book-status {
   margin-top: 0.3rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 </style>
 {{ end }}
