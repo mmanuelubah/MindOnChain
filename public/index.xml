@@ -1,40 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>MindOnChain</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on MindOnChain</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>A Beautiful Life</title>
-      <link>http://localhost:1313/books/a-beautiful-life/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/a-beautiful-life/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ikigai</title>
-      <link>http://localhost:1313/books/ikigai/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/ikigai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Week-2025-49</title>
-      <link>http://localhost:1313/posts/week49/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/week49/</guid>
-      <description>&lt;h2 id=&#34;articles&#34;&gt;Articles&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The long march of electrification&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;Daemon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;music&#34;&gt;Music&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;You&amp;rsquo;ll have got to listen to how delicate Ego can ruin a lot for you!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/posts/JACKIE-BROWN.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Psychology of Money</title>
-      <link>http://localhost:1313/books/the-psychology-of-money/</link>
-      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/the-psychology-of-money/</guid>
-      <description></description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MindOnChain</title><link>https://mmanuelubah.netlify.app/</link><description>Recent content on MindOnChain</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://mmanuelubah.netlify.app/index.xml" rel="self" type="application/rss+xml"/><item><title>A Beautiful Life</title><link>https://mmanuelubah.netlify.app/books/a-beautiful-life/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>https://mmanuelubah.netlify.app/books/a-beautiful-life/</guid><description/></item><item><title>Ikigai</title><link>https://mmanuelubah.netlify.app/books/ikigai/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>https://mmanuelubah.netlify.app/books/ikigai/</guid><description/></item><item><title>Week-2025-49</title><link>https://mmanuelubah.netlify.app/posts/week49/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>https://mmanuelubah.netlify.app/posts/week49/</guid><description>&lt;h2 id="articles"&gt;Articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;The long march of electrification&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="books"&gt;Books&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Dark Matter&lt;/li&gt;
+&lt;li&gt;Daemon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="music"&gt;Music&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;You&amp;rsquo;ll have got to listen to how delicate Ego can ruin a lot for you!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src="https://mmanuelubah.netlify.app/images/posts/JACKIE-BROWN.png" alt=""&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;&lt;/p&gt;</description></item><item><title>The Psychology of Money</title><link>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</guid><description/></item></channel></rss>
