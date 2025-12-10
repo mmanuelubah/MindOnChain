@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mes on MindOnChain</title>
+    <link>http://localhost:1313/me/</link>
+    <description>Recent content in Mes on MindOnChain</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Me</title>
+      <link>http://localhost:1313/me/index.md/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/me/index.md/</guid>
+      <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[!summary]- Click to expand Table of Contents&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#who-i-am&#34;&gt;Who I Am&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#what-i-do&#34;&gt;What I Do&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#my-background&#34;&gt;My Background&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#values--philosophy&#34;&gt;Values &amp;amp; Philosophy&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#fun-facts&#34;&gt;Fun Facts&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;who-i-am&#34;&gt;Who I Am&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m Emmanuel Ubah — a product-focused builder passionate about technology, real estate, and creating solutions built in Africa that can scale globally.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-i-do&#34;&gt;What I Do&lt;/h2&gt;&#xA;&lt;p&gt;I work as a project manager, building and documenting features for real estate digital products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;my-background&#34;&gt;My Background&lt;/h2&gt;&#xA;&lt;p&gt;I’m originally from Anambra State, Nigeria, and currently live in Lagos.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

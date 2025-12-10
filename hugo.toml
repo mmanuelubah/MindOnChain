@@ -70,3 +70,9 @@ pagination.pagerSize = 10
   name = "📚BookShelf"
   url = "/Books/"
   weight = 4
+
+  [[menu.main]]
+  identifier = "about"
+  name = "🔍About"
+  url = "/about/"
+  weight = 5
