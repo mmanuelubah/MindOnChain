@@ -22,11 +22,11 @@ pagination.pagerSize = 10
 # Logo
 [params.logo]
   logoHomeLink = "/"
-  logoImage = "images/favicon-logo-96x96.png"   # Path: /static/images/favicon-logo-96x96.png
+  logoImage = "images/Avatar.png"   # Path: /static/images/favicon-logo-96x96.png
 
 # Favicon
 [params.assets]
-  favicon = "images/favicon.ico"                # Path: /static/images/favicon.ico
+  favicon = "images/Avatar.png"                # Path: /static/images/favicon.ico
 
 # Footer Section
 [params.footer]
@@ -49,30 +49,30 @@ pagination.pagerSize = 10
 
   [[menu.main]]
   identifier = "posts"
-  name = "📰 Posts"
+  name = "Posts"
   url = "/posts/"
   weight = 1
 
   [[menu.main]]
   identifier = "categories"
-  name = "📂Categories"
+  name = "Categories"
   url = "/categories/"
   weight = 2
 
   [[menu.main]]
   identifier = "tags"
-  name = "🏷️ Tags"
+  name = "Tags"
   url = "/tags/"
   weight = 3
 
   [[menu.main]]
   identifier = "Books"
-  name = "📚BookShelf"
+  name = "BookShelf"
   url = "/Books/"
   weight = 4
 
   [[menu.main]]
   identifier = "about"
-  name = "🔍About"
+  name = "About"
   url = "/about/"
   weight = 5
