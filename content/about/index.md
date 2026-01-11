@@ -1,6 +1,8 @@
 ---
 title: "About me"
 draft: false
+type: "about"
+layout: "single"
 ---
 
 I’m Emmanuel.
