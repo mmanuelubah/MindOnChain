@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about/index.md",
+                "file": "content/posts/What Can We Remove?.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "What Can We Remove?"
             }
           }
         ]
@@ -185,20 +185,25 @@
   },
   "active": "8c28b09c2c7797e8",
   "lastOpenFiles": [
+    "public/images/covers/Peace1.jpeg",
+    "static/images/covers/Peace1.jpeg",
+    "public/images/covers/jpeg",
+    "static/images/covers/jpeg",
+    "public/tags/advice/index.xml",
+    "public/categories/fireside/index.xml",
+    "public/posts/what-can-we-remove/index.html",
+    "public/posts/what-can-we-remove",
     "content/posts/Week49.md",
-    "layouts/page/about.html",
+    "content/posts/What Can We Remove?.md",
+    "public/categories/fireside/page/1/index.html",
+    "public/categories/fireside/page/1",
+    "public/categories/fireside/page",
+    "public/categories/fireside/index.html",
+    "public/images/covers/peace.jpeg",
+    "static/images/covers/peace.jpeg",
     "content/about/index.md",
-    "content/about",
-    "layouts/page/About.html",
-    "public/about/index.html",
-    "public/about",
-    "layouts/page",
     "content/Me/index.md.md",
     "content/About/index.md",
-    "public/me/page/1/index.html",
-    "public/me/page/1",
-    "public/me/page",
-    "public/me/index.md/index.html",
     "public/me/index.md",
     "content/Me/_index.md",
     "Templates/weekly-roundup-template.md",
@@ -214,9 +219,6 @@
     "public/images/covers/recap.png",
     "static/images/covers/recap.png",
     "public/images/covers/JACKIE-BROWN.png",
-    "static/images/covers/JACKIE-BROWN.png",
-    "public/images/covers/cover-week49.jpeg",
-    "static/images/covers/cover-week49.jpeg",
     "content/posts/Starting Out-Week 1.md",
     "content/posts/Web3.md",
     "Untitled.md",
