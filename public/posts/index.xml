@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on MindOnChain</title>
+        <title>Posts on mmanuelubah</title>
         <link>http://localhost:1313/posts/</link>
-        <description>Recent content in Posts on MindOnChain</description>
+        <description>Recent content in Posts on mmanuelubah</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate>
@@ -62,53 +62,42 @@ Sometimes the most sacred work is sweeping the sand so others can walk barefoot 
             <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
             
             <guid>http://localhost:1313/posts/week49/</guid>
-            <description>&lt;h2 id=&#34;articles&#34;&gt;Articles&lt;/h2&gt;
+            <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;The long march of electrification&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
+&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Dark Matter&lt;/li&gt;
 &lt;li&gt;Daemon&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;music&#34;&gt;Music&lt;/h2&gt;
+&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;You&amp;rsquo;ll have got to listen to how ego can ruin a lot for you!&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/posts/JACKIE-BROWN.png&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<h2 id="articles">Articles</h2>
+&lt;li&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/li&gt;
+&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;
+&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;
+Here &amp;gt; &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+            <content type="html"><![CDATA[<h3 id="articles">Articles</h3>
 <ul>
 <li>The Unexpected poetry of PhD acknowledgements</li>
 <li>&ldquo;while still making seem like i wrote it&rdquo;</li>
 <li>The long march of electrification</li>
 </ul>
-<h2 id="books">Books</h2>
+<h3 id="books">Books</h3>
 <ul>
 <li>Dark Matter</li>
 <li>Daemon</li>
 </ul>
-<h2 id="music">Music</h2>
+<h3 id="music">Music</h3>
 <ul>
-<li>
-<p>Brent Faiyaz ft Trey Amanie : Price Of Fame</p>
-<blockquote>
-<p><em>You&rsquo;ll have got to listen to how ego can ruin a lot for you!</em></p>
-</blockquote>
-</li>
-<li>
-<p>Brent Faiyaz : JACKIE BROWN - <img src="/images/posts/JACKIE-BROWN.png" alt="">
-<strong>Note</strong>: <em>While i don&rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&rsquo;m becoming and i like it, 😂</em></p>
-</li>
+<li>Brent Faiyaz ft Trey Amanie : Price Of Fame</li>
+<li>Brent Faiyaz : JACKIE BROWN - <img src="/images/covers/W49.jpeg" alt="">
+<strong>Note</strong>: <em>While i don&rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&rsquo;m becoming and i like it, 😂</em>
+Here &gt; <img src="/images/covers/W49.jpeg" alt=""></li>
 </ul>
-<p>Here &gt; <img src="/images/posts/recap.png" alt=""></p>
 ]]></content>
         </item>
         

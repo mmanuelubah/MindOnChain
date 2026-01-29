@@ -5,26 +5,19 @@ draft: false
 tags:
   - weekly-roundup
 type: posts
-cover: /images/covers/cover-week49.jpeg
+cover: /images/covers/W49.jpeg
 ---
-## Articles 
-
+### Articles 
 - The Unexpected poetry of PhD acknowledgements
 - "while still making seem like i wrote it"
 - The long march of electrification
-## Books
-
+### Books
 - Dark Matter
 - Daemon
-## Music
-
-- Brent Faiyaz ft Trey Amanie : Price Of Fame
-
-  > *You'll have got to listen to how ego can ruin a lot for you!*
-  
-- Brent Faiyaz : JACKIE BROWN - ![](/images/posts/JACKIE-BROWN.png)
+### Music
+- Brent Faiyaz ft Trey Amanie : Price Of Fame 
+- Brent Faiyaz : JACKIE BROWN - ![](/images/covers/W49.jpeg)
 **Note**: _While i don't like the idea of youtube and spotify recap, it did give me a sense of who i'm becoming and i like it, 😂_
-
-Here > ![](/images/posts/recap.png)
+Here > ![](/images/covers/W49.jpeg)
 
 

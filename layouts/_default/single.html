@@ -1,29 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ .Title }}</title>
+{{ define "main" }}
 
-</head>
-<body>
-    <article>
-        <h1>{{ .Title }}</h1>
+<article class="post-container">
 
-        {{ with .Params.cover }}
-            <img src="{{ . }}" alt="Cover image for {{ $.Title }}">
-        {{ end }}
+  <h1>{{ .Title }}</h1>
 
-        <div>
-            {{ .Content }}
-        </div>
-    </article>
-</body>
-</html>
+  {{ with .Params.cover }}
+  <div class="image-wrapper">
+    <img src="{{ . }}" alt="Cover image for {{ $.Title }}">
+  </div>
+  {{ end }}
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+</article>
 
 <style>
-.post-cover {
-  width: 100%;
-  border-radius: 12px;
+.post-container {
+  max-width: 760px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.post-container h1 {
   margin-bottom: 1.5rem;
 }
+
+/* General image container */
+.image-wrapper,
+.post-content img {
+  width: 100%; /* fit post width */
+  max-width: 100%;
+  height: auto; /* maintain aspect ratio */
+  border-radius: 10px;
+  overflow: hidden; /* contain inside rectangle */
+  display: block;
+  margin: 1.5rem auto; /* centered with spacing */
+  object-fit: cover; /* crop if necessary to fit rectangle */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border: 1px solid #ccc; /* optional rectangle border */
+}
+
+/* Post content spacing */
+.post-content {
+  line-height: 1.7;
+}
+
+/* Optional: limit very tall images */
+.post-content img {
+  max-height: 500px; /* prevents huge images */
+}
 </style>
+
+{{ end }}

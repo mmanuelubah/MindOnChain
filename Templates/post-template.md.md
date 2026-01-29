@@ -4,4 +4,5 @@ date: {{date:YYYY-MM-DD}}
 tags: []
 categories: []
 draft: false
+featured: true
 ---

@@ -1,314 +1,323 @@
 {{ define "main" }}
-<main style="padding:1.5rem 2rem; max-width:1200px; margin:0 auto;">
+<main class="home">
 
-  <!-- ================= CENTERED AUTHOR + SEARCH ================= -->
+  <!-- ================= TOP SECTION ================= -->
   <div class="top-section">
-    <img src="{{ .Site.Params.avatar | absURL }}" alt="Avatar" class="author-avatar">
+    <img src="{{ .Site.Params.avatar | absURL }}" alt="Avatar of {{ .Site.Title }}" class="author-avatar">
     <h1 id="animated-title" class="site-title">{{ .Site.Title }}</h1>
-    <div class="search-container">
-      <input id="searchInput" type="text" placeholder="Search (Ctrl + K)" class="search-input">
-    </div>
   </div>
 
-  <!-- ================= MIDDLE GRID ================= -->
-  <div class="main-grid">
+  <!-- ================= CARDS SECTION ================= -->
+  <div class="cards-container">
+    <!-- Posts Card -->
+    <a href="/posts/" class="card-link">
+      <div class="card">
+        <div class="card-emoji">📝</div>
+        <div class="card-title">Posts</div>
+      </div>
+    </a>
 
-    <!-- Categories -->
-    <aside class="sidebar">
-      <h2 class="section-title">Categories</h2>
-      <ul class="link-list">
-        {{ with .Site.Taxonomies.categories }}
-          {{ range first 10 (sort . "Count" "desc") }}
-          <li><a href="{{ .Page.Permalink }}">• {{ .Page.Title }}</a></li>
-          {{ end }}
-        {{ else }}
-          <li class="empty-text">No categories yet.</li>
-        {{ end }}
-      </ul>
-    </aside>
+    <!-- Bookshelf Card -->
+    <a href="/books/" class="card-link">
+      <div class="card">
+        <div class="card-emoji">📚</div>
+        <div class="card-title">Bookshelf</div>
+      </div>
+    </a>
 
-    <!-- Recent Posts -->
-    <section class="recent-posts">
-      <h2 class="section-title">Recent Posts</h2>
-      <ul id="postList" class="link-list">
-        {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
-        <li class="post-item">
-          <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a><br>
-          <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .ReadingTime }} min read</small>
-        </li>
-        {{ end }}
-      </ul>
-    </section>
-
-    <!-- Trending Tags -->
-    <aside class="sidebar">
-      <h2 class="section-title">Trending Tags</h2>
-      <ul class="link-list">
-        {{ with .Site.Taxonomies.tags }}
-          {{ range first 10 (sort . "Count" "desc") }}
-          <li><a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a></li>
-          {{ end }}
-        {{ else }}
-          <li class="empty-text">No tags yet.</li>
-        {{ end }}
-      </ul>
-    </aside>
-
+    <!-- About Card -->
+    <a href="/about/" class="card-link">
+      <div class="card">
+        <div class="card-emoji">👤</div>
+        <div class="card-title">About</div>
+      </div>
+    </a>
   </div>
+
+  <hr class="section-separator">
+
+  <!-- ================= CURRENTLY READING ================= -->
+  <section class="reading-box">
+    <p class="reading-label">Currently reading:</p>
+    <ul>
+      {{ $reading := where .Site.RegularPages "Params.tags" "intersect" (slice "reading") }}
+      {{ range first 5 $reading }}
+      <li>
+        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
+      </li>
+      {{ end }}
+      {{ if eq (len $reading) 0 }}
+      <li class="empty-text">No books are currently being read.</li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ================= FEATURED WRITING ================= -->
+  <section>
+    <h2 class="section-title">Featured Writing</h2>
+    <ul id="postList" class="link-list small-font">
+      {{ $featured := where (where .Site.RegularPages "Type" "posts") "Params.featured" true }}
+      {{ $featured := where $featured "Params.tags" "not in" (slice "weekly-roundup") }}
+      {{ range first 5 $featured }}
+      <li class="post-item">
+        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a><br>
+        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
+      </li>
+      {{ end }}
+      {{ if eq (len $featured) 0 }}
+      <li class="empty-text">No featured posts available.</li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ================= LATEST ROUNDUP ================= -->
+  <section>
+    <h2 class="section-title">Latest Roundup</h2>
+    <ul class="link-list small-font">
+      {{ $roundup := where .Site.RegularPages "Params.tags" "intersect" (slice "weekly-roundup") }}
+      {{ range first 5 $roundup }}
+      <li class="post-item">
+        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
+      </li>
+      {{ end }}
+      {{ if eq (len $roundup) 0 }}
+      <li class="empty-text">No weekly roundup posts available.</li>
+      {{ end }}
+    </ul>
+  </section>
+
 </main>
 
 <!-- ================= STYLE ================= -->
 <style>
-  :root {
-    --text-dark: #111;
-    --text-light: #f8f8f8;
-    --glow-dark: rgba(0, 255, 204, 0.6);
-    --glow-light: rgba(0, 140, 255, 0.6);
-  }
+:root {
+  --text-dark: #111;
+  --text-light: #f8f8f8;
+  --glow-dark: rgba(0, 255, 204, 0.6);
+  --glow-light: rgba(0, 140, 255, 0.6);
+}
 
-  /* === General Layout === */
-  main {
-    color: var(--text-light);
-  }
+.home {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: var(--text-light);
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-  .top-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
+/* Top section */
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-  .author-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  }
+.author-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
 
-  .site-title {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    font-weight: 700;
-  }
+.site-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
 
-  .search-container {
-    position: relative;
-    width: 300px;
-    margin-top: 1rem;
-  }
+/* ================= CARDS STYLES ================= */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
 
-  .search-input {
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    width: 100%;
-    background-color: rgba(255,255,255,0.08);
-    color: #fff;
-    text-align: center;
-  }
+.card-link {
+  text-decoration: none;
+}
 
-  /* === Grid Layout === */
-  .main-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
+.card {
+  background-color: rgba(255,255,255,0.05);
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+}
 
-  .section-title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    opacity: 0.8;
-  }
+.card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255,255,255,0.1);
+}
 
-  .link-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.card-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
 
-  .link-list a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
 
-  .post-link {
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #fff;
-  }
+.card-count {
+  font-size: 0.85rem;
+  color: gray;
+}
 
-  .post-meta {
-    font-size: 0.85rem;
-    color: gray;
-  }
+/* ================= LINKS & LISTS ================= */
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+  margin-top: 1.5rem;
+}
 
-  .empty-text {
-    color: gray;
-    font-size: 0.85rem;
-  }
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  /* === Title Animation === */
-  html[data-theme="light"] #animated-title {
-    color: var(--text-dark);
-    text-shadow: 0 0 8px var(--glow-light);
-  }
+.small-font .post-link {
+  font-size: 0.95rem;
+}
 
-  html[data-theme="dark"] #animated-title {
-    color: var(--text-light);
-    text-shadow: 0 0 8px var(--glow-dark);
-  }
+.small-font .post-meta {
+  font-size: 0.8rem;
+}
 
-  #animated-title {
-    display: inline-block;
-    letter-spacing: 1px;
-    transition: color 0.3s, text-shadow 0.3s;
-    animation: flicker 3s infinite;
-  }
+.post-link {
+  font-weight: 600;
+  color: #ccc;
+  text-decoration: none;
+}
 
-  @keyframes flicker {
-    0%,18%,22%,25%,53%,57%,100% { opacity:1; }
-    20%,24%,55% { opacity:0.4; }
-  }
+.post-meta {
+  color: gray;
+  opacity: 0.7;
+}
 
-  .dud { opacity:0.4; }
+.reading-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
 
-  /* === Responsive Design === */
-  @media (max-width: 1024px) {
-    .main-grid {
-      grid-template-columns: 1fr 1.5fr;
-      gap: 1.5rem;
-    }
-    .search-container {
-      width: 250px;
-    }
-  }
+/* ================= SEPARATORS ================= */
+.section-separator {
+  border: none;
+  border-top: 1px solid #555;
+  margin: 1.5rem 0;
+}
 
-  @media (max-width: 768px) {
-    .main-grid {
-      grid-template-columns: 1fr;
-    }
-    .sidebar, .recent-posts {
-      text-align: center;
-    }
-    .link-list li {
-      margin-bottom: 0.8rem;
-    }
-    .search-container {
-      width: 90%;
-    }
-    .post-link {
-      font-size: 1rem;
-    }
-  }
+/* ================= ANIMATED TITLE ================= */
+html[data-theme="light"] #animated-title {
+  color: var(--text-dark);
+  text-shadow: 0 0 8px var(--glow-light);
+}
 
-  @media (max-width: 480px) {
-    .author-avatar {
-      width: 70px;
-      height: 70px;
-    }
-    .site-title {
-      font-size: 1rem;
-    }
-    .search-input {
-      font-size: 0.9rem;
-      padding: 0.5rem 0.8rem;
-    }
-  }
+html[data-theme="dark"] #animated-title {
+  color: var(--text-light);
+  text-shadow: 0 0 8px var(--glow-dark);
+}
+
+#animated-title {
+  display: inline-block;
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0%,18%,22%,25%,53%,57%,100% { opacity:1; }
+  20%,24%,55% { opacity:0.4; }
+}
+
+.dud { opacity:0.4; }
+
+@media (max-width: 768px) {
+  .home { font-size: 15px; }
+  .site-title { font-size: 1.5rem; }
+  .cards-container { gap: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .home { font-size: 14.5px; }
+  .site-title { font-size: 1.3rem; }
+  .author-avatar { width: 70px; height: 70px; }
+  .card { width: 160px; padding: 1.2rem; }
+}
 </style>
 
-<!-- ================= SCRIPTS ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
-  /* === Text Scramble Animation === */
-  class TextScramble {
-    constructor(el) {
-      this.el = el;
-      this.chars = "!<>-_\\/[]{}—=+*^?#________";
-      this.update = this.update.bind(this);
-    }
-    setText(newText) {
-      const oldText = this.el.innerText;
-      const length = Math.max(oldText.length, newText.length);
-      const promise = new Promise((resolve) => (this.resolve = resolve));
-      this.queue = [];
-      for (let i = 0; i < length; i++) {
-        const from = oldText[i] || "";
-        const to = newText[i] || "";
-        const start = Math.floor(Math.random() * 40);
-        const end = start + Math.floor(Math.random() * 40);
-        this.queue.push({ from, to, start, end });
-      }
-      cancelAnimationFrame(this.frameRequest);
-      this.frame = 0;
-      this.update();
-      return promise;
-    }
-    update() {
-      let output = "";
-      let complete = 0;
-      for (let i = 0, n = this.queue.length; i < n; i++) {
-        let { from, to, start, end, char } = this.queue[i];
-        if (this.frame >= end) {
-          complete++;
-          output += to;
-        } else if (this.frame >= start) {
-          if (!char || Math.random() < 0.28) {
-            char = this.randomChar();
-            this.queue[i].char = char;
-          }
-          output += `<span class='dud'>${char}</span>`;
-        } else {
-          output += from;
-        }
-      }
-      this.el.innerHTML = output;
-      if (complete === this.queue.length) {
-        this.resolve();
-      } else {
-        this.frameRequest = requestAnimationFrame(this.update);
-        this.frame++;
-      }
-    }
-    randomChar() {
-      return this.chars[Math.floor(Math.random() * this.chars.length)];
-    }
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = "!<>-_\\/[]{}—=+*^?#________";
+    this.update = this.update.bind(this);
   }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const el = document.getElementById("animated-title");
-    const fx = new TextScramble(el);
-    const phrases = ["MindOnChain", "m1nD0NCh41n", "EMM4NU3L U84H", "MindOnChain"];
-    let counter = 0;
-    const next = () => {
-      fx.setText(phrases[counter]).then(() => setTimeout(next, 3000));
-      counter = (counter + 1) % phrases.length;
-    };
-    next();
-  });
-
-  /* === Search Bar === */
-  const searchInput = document.getElementById("searchInput");
-  const posts = document.querySelectorAll("#postList li");
-  searchInput.addEventListener("keyup", () => {
-    const q = searchInput.value.toLowerCase();
-    posts.forEach(p => {
-      p.style.display = p.textContent.toLowerCase().includes(q) ? "" : "none";
-    });
-  });
-
-  // Ctrl + K shortcut
-  document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.key.toLowerCase() === "k") {
-      e.preventDefault();
-      searchInput.focus();
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise(resolve => this.resolve = resolve);
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
     }
-  });
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+  update() {
+    let output = "";
+    let complete = 0;
+    for (let i = 0; i < this.queue.length; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        char = this.chars[Math.floor(Math.random() * this.chars.length)];
+        output += `<span class='dud'>${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+    this.el.innerHTML = output;
+    complete === this.queue.length
+      ? this.resolve()
+      : requestAnimationFrame(() => { this.frame++; this.update(); });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fx = new TextScramble(document.getElementById("animated-title"));
+  const phrases = ["MindOnChain", "m1nD0NCh41n", "EMM4NU3L U84H", "MindOnChain"];
+  let i = 0;
+  const next = () => fx.setText(phrases[i++ % phrases.length]).then(() => setTimeout(next, 3000));
+  next();
+});
 </script>
 {{ end }}

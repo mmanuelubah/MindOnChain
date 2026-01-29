@@ -1,0 +1,167 @@
+{{ define "main" }}
+<main class="posts-page">
+
+  <!-- ================= SEARCH BAR ================= -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search posts..." class="search-input">
+  </div>
+
+  <!-- ================= TAGS & CATEGORIES ================= -->
+  <div class="filters-container">
+
+    <!-- Tags -->
+    <div class="tags-section">
+      <h3>Tags</h3>
+      <div class="tags-list">
+        {{ $allTags := .Site.Taxonomies.tags }}
+        {{ range $tag, $pages := $allTags }}
+        <span class="tag">#{{ $tag }}</span>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories-section">
+      <h3>Categories</h3>
+      <div class="categories-list">
+        {{ $allCategories := .Site.Taxonomies.categories }}
+        {{ range $cat, $pages := $allCategories }}
+        <span class="category">#{{ $cat }}</span>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= POSTS LIST BY YEAR ================= -->
+  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ $currentYear := 0 }}
+  <ul class="posts-list">
+    {{ range $pages }}
+      {{ $yr := .Date.Year }}
+      {{ if ne $yr $currentYear }}
+        {{ if ne $currentYear 0 }}</ul>{{ end }}
+        <h2 class="year-heading">{{ $yr }}</h2>
+        <ul class="posts-list">
+        {{ $currentYear = $yr }}
+      {{ end }}
+      <li class="post-item">
+        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+
+</main>
+
+<!-- ================= STYLE ================= -->
+<style>
+.posts-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 1.5rem;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.search-container {
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.filters-container {
+  margin-bottom: 2rem;
+}
+
+.filters-container h3 {
+  margin-bottom: 0.5rem;
+}
+
+.tags-list, .categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag, .category {
+  background-color: rgba(255,255,255,0.08);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: background 0.2s;
+}
+
+.tag:hover, .category:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Year headings */
+.year-heading {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.3rem;
+  color: #fff;
+}
+
+/* Posts list */
+.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.post-item {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.3rem;
+}
+
+.post-link {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.post-link .highlight {
+  background-color: yellow;
+  color: black;
+}
+</style>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const searchInput = document.getElementById("searchInput");
+  const posts = document.querySelectorAll(".post-link");
+
+  function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query.split('').join('|')})`, 'gi');
+    return text.replace(regex, '<span class="highlight">$1</span>');
+  }
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.toLowerCase();
+
+    posts.forEach(post => {
+      const originalText = post.getAttribute("data-original") || post.textContent;
+      if (!post.getAttribute("data-original")) post.setAttribute("data-original", originalText);
+
+      post.innerHTML = highlightText(originalText, q);
+    });
+  });
+
+});
+</script>
+{{ end }}

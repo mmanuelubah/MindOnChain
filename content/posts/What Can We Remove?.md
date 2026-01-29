@@ -6,7 +6,7 @@ tags:
 categories:
   - Fireside
 draft: false
-cover: /images/covers/Peace1.jpeg
+cover: /images/covers/cover-week49.jpeg
 ---
 
 In 2021, the noise got too loud. My screen was filled with other people's highlights, and i felt behind.  

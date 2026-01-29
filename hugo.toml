@@ -1,12 +1,12 @@
 baseURL = "https://mmanuelubah.netlify.app/"
-title = "MindOnChain"
+title = "mmanuelubah"
 languageCode = "en-us"
 theme = "hello-friend-ng"
 pagination.pagerSize = 10
 
 # Theme Parameters
 [params]
-  title = "MindOnChain"
+  title = "mmanuelubah"
   description = "MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel."
   avatar = "images/Avatar.png"                  # Path: /static/images/Avatar.png
   enableSharingButtons = true
@@ -22,7 +22,7 @@ pagination.pagerSize = 10
 # Logo
 [params.logo]
   logoHomeLink = "/"
-  logoImage = "images/Avatar.png"   # Path: /static/images/favicon-logo-96x96.png
+  logoImage = "images/IMG_4493.jpeg"   # Path: /static/images/favicon-logo-96x96.png
 
 # Favicon
 [params.assets]
@@ -30,13 +30,13 @@ pagination.pagerSize = 10
 
 # Footer Section
 [params.footer]
-  copyright = "© 2025 Emmanuel — MindOnChain"
+  copyright = "© 2025 Emmanuel"
 
 # Social Links
 [params.social]
   github = "https://github.com/mmanuelubah"
   linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
-  twitter = "https://x.com/Mind_On_Chain"
+  twitter = "https://x.com/mmanuelubah"
 
 # Taxonomies
 [taxonomies]
@@ -47,32 +47,3 @@ pagination.pagerSize = 10
 # Menu Navigation
 [menu]
 
-  [[menu.main]]
-  identifier = "posts"
-  name = "Posts"
-  url = "/posts/"
-  weight = 1
-
-  [[menu.main]]
-  identifier = "categories"
-  name = "Categories"
-  url = "/categories/"
-  weight = 2
-
-  [[menu.main]]
-  identifier = "tags"
-  name = "Tags"
-  url = "/tags/"
-  weight = 3
-
-  [[menu.main]]
-  identifier = "Books"
-  name = "BookShelf"
-  url = "/Books/"
-  weight = 4
-
-  [[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about/"
-  weight = 5
