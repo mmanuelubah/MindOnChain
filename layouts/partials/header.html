@@ -1,16 +1,16 @@
 <header class="header">
   <span class="header__inner">
 
-    <!-- ✅ Custom Logo Section -->
+    <!-- Logo / Home Button -->
     <a href="{{ .Site.Params.logo.logoHomeLink | absURL }}" class="logo">
       {{ if .Site.Params.logo.logoImage }}
-        <img src="{{ .Site.Params.logo.logoImage | absURL }}" alt="{{ .Site.Title }}" style="height:32px; vertical-align:middle;">
+        <img src="{{ .Site.Params.logo.logoImage | absURL }}" alt="{{ .Site.Title }}" class="logo-img">
       {{ else }}
-        <span style="font-weight:600; font-size:1.2rem;">{{ .Site.Title }}</span>
+        <span class="logo-text">{{ .Site.Title }}</span>
       {{ end }}
     </a>
 
-    <!-- ✅ Right Section: Menu + Theme Toggle -->
+    <!-- Right Side -->
     <span class="header__right">
       {{- if len .Site.Menus }}
         {{ partial "menu.html" . }}
@@ -28,5 +28,45 @@
         </span>
       {{- end }}
     </span>
+
   </span>
 </header>
+
+<style>
+/* Header alignment */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo text fallback */
+.logo-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Logo image styling */
+.logo-img {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.25s ease;
+}
+
+/* Subtle glow + hover lift */
+.logo-img:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.35),
+              0 0 18px rgba(0, 255, 204, 0.15);
+}
+
+/* Mobile size adjustment */
+@media (max-width: 600px) {
+  .logo-img {
+    height: 40px;
+    width: 40px;
+  }
+}
+</style>

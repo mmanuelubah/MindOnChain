@@ -1,323 +1,297 @@
 {{ define "main" }}
 <main class="home">
 
-  <!-- ================= TOP SECTION ================= -->
-  <div class="top-section">
-    <img src="{{ .Site.Params.avatar | absURL }}" alt="Avatar of {{ .Site.Title }}" class="author-avatar">
-    <h1 id="animated-title" class="site-title">{{ .Site.Title }}</h1>
+<!-- Pixel Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<!-- ================= TOP SECTION ================= -->
+<div class="top-section">
+
+  <div class="avatar-container" id="avatarBox">
+    <img src="{{ .Site.Params.avatar | absURL }}"
+         alt="{{ .Site.Title }}"
+         class="author-avatar">
   </div>
 
-  <!-- ================= CARDS SECTION ================= -->
-  <div class="cards-container">
-    <!-- Posts Card -->
-    <a href="/posts/" class="card-link">
-      <div class="card">
-        <div class="card-emoji">📝</div>
-        <div class="card-title">Posts</div>
-      </div>
-    </a>
+  <h1 id="animated-title" class="site-title">
+    {{ .Site.Title }}
+  </h1>
 
-    <!-- Bookshelf Card -->
-    <a href="/books/" class="card-link">
-      <div class="card">
-        <div class="card-emoji">📚</div>
-        <div class="card-title">Bookshelf</div>
-      </div>
-    </a>
+</div>
 
-    <!-- About Card -->
-    <a href="/about/" class="card-link">
-      <div class="card">
-        <div class="card-emoji">👤</div>
-        <div class="card-title">About</div>
-      </div>
-    </a>
-  </div>
+<!-- ================= NAV CARDS ================= -->
+<div class="cards-container">
+  <a href="/posts/" class="card-link">
+    <div class="card">
+      <div class="card-emoji">📝</div>
+      <div class="card-title">Posts</div>
+    </div>
+  </a>
 
-  <hr class="section-separator">
+  <a href="/books/" class="card-link">
+    <div class="card">
+      <div class="card-emoji">📚</div>
+      <div class="card-title">Bookshelf</div>
+    </div>
+  </a>
 
-  <!-- ================= CURRENTLY READING ================= -->
-  <section class="reading-box">
-    <p class="reading-label">Currently reading:</p>
-    <ul>
-      {{ $reading := where .Site.RegularPages "Params.tags" "intersect" (slice "reading") }}
-      {{ range first 5 $reading }}
-      <li>
-        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
-        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
-      </li>
-      {{ end }}
-      {{ if eq (len $reading) 0 }}
-      <li class="empty-text">No books are currently being read.</li>
-      {{ end }}
-    </ul>
-  </section>
+  <a href="/about/" class="card-link">
+    <div class="card">
+      <div class="card-emoji">👤</div>
+      <div class="card-title">About</div>
+    </div>
+  </a>
+</div>
 
-  <hr class="section-separator">
+<hr class="section-separator">
 
-  <!-- ================= FEATURED WRITING ================= -->
-  <section>
-    <h2 class="section-title">Featured Writing</h2>
-    <ul id="postList" class="link-list small-font">
-      {{ $featured := where (where .Site.RegularPages "Type" "posts") "Params.featured" true }}
-      {{ $featured := where $featured "Params.tags" "not in" (slice "weekly-roundup") }}
-      {{ range first 5 $featured }}
-      <li class="post-item">
-        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a><br>
-        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
-      </li>
-      {{ end }}
-      {{ if eq (len $featured) 0 }}
-      <li class="empty-text">No featured posts available.</li>
-      {{ end }}
-    </ul>
-  </section>
+<!-- ================= CURRENTLY READING ================= -->
+<section>
+<h2 class="section-title">Currently reading:</h2>
 
-  <hr class="section-separator">
+<div class="highlight-box">
+<ul class="reading-list">
+{{/* Get all pages with status "reading" (case-insensitive) */}}
+{{ $reading := slice }}
+{{ range .Site.RegularPages }}
+  {{ if in (lower .Params.status) "reading" }}
+    {{ $reading = $reading | append . }}
+  {{ end }}
+{{ end }}
 
-  <!-- ================= LATEST ROUNDUP ================= -->
-  <section>
-    <h2 class="section-title">Latest Roundup</h2>
-    <ul class="link-list small-font">
-      {{ $roundup := where .Site.RegularPages "Params.tags" "intersect" (slice "weekly-roundup") }}
-      {{ range first 5 $roundup }}
-      <li class="post-item">
-        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
-        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
-      </li>
-      {{ end }}
-      {{ if eq (len $roundup) 0 }}
-      <li class="empty-text">No weekly roundup posts available.</li>
-      {{ end }}
-    </ul>
-  </section>
+{{/* Sort by date descending (newest first) */}}
+{{ $reading = sort $reading "Date" "desc" }}
+
+{{/* Show first 5 books */}}
+{{ range first 5 $reading }}
+<li>
+  <a href="{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .RelPermalink }}{{ end }}" class="reading-link" target="_blank">
+    {{ .Title }}
+  </a>
+</li>
+{{ end }}
+</ul>
+</div>
+</section>
+
+<hr class="section-separator">
+
+<!-- ================= FEATURED WRITING ================= -->
+<section>
+<h2 class="section-title">Featured Writing</h2>
+
+<ul class="writing-list">
+{{ $featured := where .Site.RegularPages "Params.featured" true }}
+{{ range first 5 $featured }}
+<li>
+<a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+<small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
+</li>
+{{ end }}
+</ul>
+</section>
+
+<hr class="section-separator">
+
+<!-- ================= LATEST ROUNDUP ================= -->
+<section>
+<h2 class="section-title">Latest Roundup</h2>
+
+<div class="highlight-box">
+{{ $roundup := where .Site.RegularPages "Params.tags" "intersect" (slice "weekly-roundup") }}
+{{ range first 1 (sort $roundup "Date" "desc") }}
+<a href="{{ .RelPermalink }}" class="roundup-link">{{ .Title }}</a>
+{{ end }}
+</div>
+</section>
 
 </main>
 
-<!-- ================= STYLE ================= -->
+<!-- ================= AVATAR OVERLAY ================= -->
+<div id="avatarOverlay" class="avatar-overlay">
+  <img id="overlayImg" src="" alt="">
+</div>
+
+<!-- ================= STYLES ================= -->
 <style>
-:root {
-  --text-dark: #111;
-  --text-light: #f8f8f8;
-  --glow-dark: rgba(0, 255, 204, 0.6);
-  --glow-light: rgba(0, 140, 255, 0.6);
-}
-
 .home {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: 0.2px;
-  color: var(--text-light);
-  padding: 1.5rem 2rem;
-  max-width: 700px;
-  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+  font-size:14.5px;
+  max-width:720px;
+  margin:auto;
+  padding:2rem 1.5rem 3rem;
 }
 
-/* Top section */
+/* Top spacing */
 .top-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align:center;
+  margin-bottom:3rem;
 }
 
-.author-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+/* Pixel headers */
+.site-title,
+.section-title,
+.card-title {
+  font-family:'Press Start 2P', monospace;
 }
 
 .site-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-top: 10px;
+  font-size:.9rem;
+  margin-top:14px;
+  animation:flicker 4s infinite;
 }
 
-/* ================= CARDS STYLES ================= */
+.section-title {
+  font-size:.7rem;
+  margin-bottom:1.2rem;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%,18%,22%,25%,53%,57%,100% {opacity:1;}
+  20%,24%,55% {opacity:.4;}
+}
+
+/* Avatar container */
+.avatar-container {
+  width:160px;
+  height:100px;
+  overflow:hidden;
+  border-radius:10px;
+  cursor:pointer;
+  margin:auto;
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+}
+
+.author-avatar {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Overlay viewer */
+.avatar-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:9999;
+}
+
+.avatar-overlay.active {
+  opacity:1;
+  pointer-events:auto;
+}
+
+.avatar-overlay img {
+  max-width:90%;
+  max-height:85%;
+  border-radius:12px;
+  animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform:scale(.9); opacity:0; }
+  to { transform:scale(1); opacity:1; }
+}
+
+/* Cards spacing */
 .cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.card-link {
-  text-decoration: none;
+  display:flex;
+  justify-content:center;
+  gap:1.2rem;
+  flex-wrap:wrap;
+  margin-bottom:3rem;
 }
 
 .card {
-  background-color: rgba(255,255,255,0.05);
-  padding: 1.5rem 1rem;
-  border-radius: 10px;
-  width: 180px;
-  text-align: center;
-  transition: transform 0.2s, background 0.2s;
+  background:rgba(255,255,255,.06);
+  padding:1.5rem;
+  border-radius:10px;
+  width:170px;
+  text-align:center;
+  transition:.2s;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  background-color: rgba(255,255,255,0.1);
+  transform:translateY(-4px);
+  box-shadow:0 0 12px rgba(0,255,204,.25);
 }
 
-.card-emoji {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+/* Lists */
+.writing-list,
+.reading-list {
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-.card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
+.writing-list li,
+.reading-list li {
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:.9rem 0;
 }
 
-.card-count {
-  font-size: 0.85rem;
-  color: gray;
-}
-
-/* ================= LINKS & LISTS ================= */
-.section-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  opacity: 0.85;
-  margin-top: 1.5rem;
-}
-
-.link-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.small-font .post-link {
-  font-size: 0.95rem;
-}
-
-.small-font .post-meta {
-  font-size: 0.8rem;
-}
-
-.post-link {
-  font-weight: 600;
-  color: #ccc;
-  text-decoration: none;
+.post-link,
+.reading-link,
+.roundup-link {
+  color:#ccc;
+  text-decoration:none;
 }
 
 .post-meta {
-  color: gray;
-  opacity: 0.7;
+  display:block;
+  font-size:.8rem;
+  opacity:.7;
 }
 
-.reading-label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #ccc;
+/* Highlight boxes */
+.highlight-box {
+  background:rgba(255,255,255,.06);
+  padding:1.2rem;
+  border-radius:10px;
 }
 
-/* ================= SEPARATORS ================= */
+/* Section spacing */
+section {
+  margin-bottom:3rem;
+}
+
 .section-separator {
-  border: none;
-  border-top: 1px solid #555;
-  margin: 1.5rem 0;
+  border:none;
+  border-top:1px solid #555;
+  margin:2.5rem 0;
 }
 
-/* ================= ANIMATED TITLE ================= */
-html[data-theme="light"] #animated-title {
-  color: var(--text-dark);
-  text-shadow: 0 0 8px var(--glow-light);
-}
-
-html[data-theme="dark"] #animated-title {
-  color: var(--text-light);
-  text-shadow: 0 0 8px var(--glow-dark);
-}
-
-#animated-title {
-  display: inline-block;
-  animation: flicker 3s infinite;
-}
-
-@keyframes flicker {
-  0%,18%,22%,25%,53%,57%,100% { opacity:1; }
-  20%,24%,55% { opacity:0.4; }
-}
-
-.dud { opacity:0.4; }
-
-@media (max-width: 768px) {
-  .home { font-size: 15px; }
-  .site-title { font-size: 1.5rem; }
-  .cards-container { gap: 0.8rem; }
-}
-
-@media (max-width: 480px) {
-  .home { font-size: 14.5px; }
-  .site-title { font-size: 1.3rem; }
-  .author-avatar { width: 70px; height: 70px; }
-  .card { width: 160px; padding: 1.2rem; }
+/* Mobile */
+@media(max-width:600px){
+  .card { width:150px; }
 }
 </style>
 
 <!-- ================= SCRIPT ================= -->
 <script>
-class TextScramble {
-  constructor(el) {
-    this.el = el;
-    this.chars = "!<>-_\\/[]{}—=+*^?#________";
-    this.update = this.update.bind(this);
-  }
-  setText(newText) {
-    const oldText = this.el.innerText;
-    const length = Math.max(oldText.length, newText.length);
-    const promise = new Promise(resolve => this.resolve = resolve);
-    this.queue = [];
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || "";
-      const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
-      this.queue.push({ from, to, start, end });
-    }
-    cancelAnimationFrame(this.frameRequest);
-    this.frame = 0;
-    this.update();
-    return promise;
-  }
-  update() {
-    let output = "";
-    let complete = 0;
-    for (let i = 0; i < this.queue.length; i++) {
-      let { from, to, start, end, char } = this.queue[i];
-      if (this.frame >= end) {
-        complete++;
-        output += to;
-      } else if (this.frame >= start) {
-        char = this.chars[Math.floor(Math.random() * this.chars.length)];
-        output += `<span class='dud'>${char}</span>`;
-      } else {
-        output += from;
-      }
-    }
-    this.el.innerHTML = output;
-    complete === this.queue.length
-      ? this.resolve()
-      : requestAnimationFrame(() => { this.frame++; this.update(); });
-  }
-}
+const avatar = document.getElementById("avatarBox");
+const overlay = document.getElementById("avatarOverlay");
+const overlayImg = document.getElementById("overlayImg");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const fx = new TextScramble(document.getElementById("animated-title"));
-  const phrases = ["MindOnChain", "m1nD0NCh41n", "EMM4NU3L U84H", "MindOnChain"];
-  let i = 0;
-  const next = () => fx.setText(phrases[i++ % phrases.length]).then(() => setTimeout(next, 3000));
-  next();
+avatar.onclick = () => {
+  overlay.classList.add("active");
+  overlayImg.src = avatar.querySelector("img").src;
+};
+
+overlay.onclick = () => overlay.classList.remove("active");
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape")
+    overlay.classList.remove("active");
 });
 </script>
+
 {{ end }}

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/What Can We Remove?.md",
+                "file": "content/posts/Weekly RoundUp.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What Can We Remove?"
+              "title": "Weekly RoundUp"
             }
           }
         ],
@@ -195,17 +195,23 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "9f2a64304b41ad62",
   "lastOpenFiles": [
+    "content/posts/What Can We Remove?.md",
+    "content/posts/Weekly RoundUp.md",
+    "public/posts/weekly-roundup/index.html",
+    "public/posts/weekly-roundup",
+    "Templates/post-template.md",
+    "Templates/book-template.md",
+    "Templates/weekly-roundup-template.md",
     "layouts/posts/list.html",
     "layouts/posts",
     "public/images/IMG_4493.jpeg",
     "static/images/IMG_4493.jpeg",
-    "content/posts/Week49.md",
-    "content/posts/What Can We Remove?.md",
     "public/images/covers/Peace1.jpeg",
     "static/images/covers/Peace1.jpeg",
     "public/images/covers/jpeg",
@@ -214,9 +220,6 @@
     "public/categories/fireside/index.xml",
     "public/posts/what-can-we-remove/index.html",
     "public/posts/what-can-we-remove",
-    "public/categories/fireside/page/1/index.html",
-    "public/categories/fireside/page/1",
-    "public/categories/fireside/page",
     "public/images/covers/peace.jpeg",
     "static/images/covers/peace.jpeg",
     "content/about/index.md",
@@ -224,9 +227,6 @@
     "content/About/index.md",
     "public/me/index.md",
     "content/Me/_index.md",
-    "Templates/weekly-roundup-template.md",
-    "Templates/book-template.md.md",
-    "Templates/post-template.md.md",
     "content/Books/Ikigai.md",
     "content/Books/A Beautiful Life.md",
     "content/Books/the-psychology-of-money.md",

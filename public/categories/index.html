@@ -88,7 +88,7 @@
     
     <a href="http://localhost:1313/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" style="height:32px; vertical-align:middle;">
+        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -102,8 +102,48 @@
  </svg>
         </span>
     </span>
+
   </span>
 </header>
+
+<style>
+ 
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ 
+.logo-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+ 
+.logo-img {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.25s ease;
+}
+
+ 
+.logo-img:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.35),
+              0 0 18px rgba(0, 255, 204, 0.15);
+}
+
+ 
+@media (max-width: 600px) {
+  .logo-img {
+    height: 40px;
+    width: 40px;
+  }
+}
+</style>
 
 
             <div class="content">

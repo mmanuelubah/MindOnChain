@@ -41,8 +41,8 @@
 
   <meta itemprop="name" content="Posts">
   <meta itemprop="description" content="MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel.">
-  <meta itemprop="datePublished" content="2026-01-12T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-01-12T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-01-30T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-01-30T00:00:00+00:00">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Posts">
@@ -88,7 +88,7 @@
     
     <a href="http://localhost:1313/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" style="height:32px; vertical-align:middle;">
+        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -102,8 +102,48 @@
  </svg>
         </span>
     </span>
+
   </span>
 </header>
+
+<style>
+ 
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ 
+.logo-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+ 
+.logo-img {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.25s ease;
+}
+
+ 
+.logo-img:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.35),
+              0 0 18px rgba(0, 255, 204, 0.15);
+}
+
+ 
+@media (max-width: 600px) {
+  .logo-img {
+    height: 40px;
+    width: 40px;
+  }
+}
+</style>
 
 
             <div class="content">
@@ -112,36 +152,24 @@
 
   
   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search posts..." class="search-input">
+    <input type="text" id="searchInput" placeholder="Search by title" class="search-input">
   </div>
 
   
   <div class="filters-container">
+    
+    
+      <span class="filter-item" data-filter="advice" data-type="tag">#advice</span>
+    
+      <span class="filter-item" data-filter="weekly-roundup" data-type="tag">#weekly-roundup</span>
+    
 
     
-    <div class="tags-section">
-      <h3>Tags</h3>
-      <div class="tags-list">
-        
-        
-        <span class="tag">#advice</span>
-        
-        <span class="tag">#weekly-roundup</span>
-        
-      </div>
-    </div>
-
     
-    <div class="categories-section">
-      <h3>Categories</h3>
-      <div class="categories-list">
-        
-        
-        <span class="category">#fireside</span>
-        
-      </div>
-    </div>
+      <span class="filter-item" data-filter="fireside" data-type="category">#fireside</span>
+    
 
+    <button id="clearFilters" class="clear-filters">Clear Filters</button>
   </div>
 
   
@@ -156,19 +184,51 @@
         <ul class="posts-list">
         
       
-      <li class="post-item">
-        <a href="/posts/what-can-we-remove/" class="post-link">What Can We Remove?</a>
+
+      <li class="post-item"
+          data-tags="Advice"
+          data-categories="Fireside">
+
+        
+        
+          <a href="/posts/what-can-we-remove/" class="post-link">What Can We Remove?</a>
+        
+
+        
+        <div class="post-meta">
+          Jan 30 2026 •
+          
+            
+              <span class="meta-tag">#Advice</span>
+            
+          
+        </div>
       </li>
     
       
       
-        </ul>
-        <h2 class="year-heading">2025</h2>
-        <ul class="posts-list">
+
+      <li class="post-item"
+          data-tags="weekly-roundup"
+          data-categories="">
+
         
-      
-      <li class="post-item">
-        <a href="/posts/week49/" class="post-link">Week-2025-49</a>
+        
+          
+          <a href="/posts/weekly-roundup/" class="post-link">
+            Week 4 • January 2026
+          </a>
+        
+
+        
+        <div class="post-meta">
+          Jan 30 2026 •
+          
+            
+              <span class="meta-tag">#weekly-roundup</span>
+            
+          
+        </div>
       </li>
     
   </ul>
@@ -178,58 +238,100 @@
 
 <style>
 .posts-page {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  padding: 1.5rem;
-  font-family: "Ubuntu Mono", monospace;
+  padding: 2rem 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  color: #ccc;
 }
 
+ 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.post-link {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+ 
+.post-meta {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  color: #a8ffa8;
+}
+
+.meta-tag {
+  background-color: rgba(255,255,255,0.08);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  color: #ccc;
+}
+
+ 
 .search-container {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background-color: #1b1b1b;
+  color: #fff;
   outline: none;
 }
 
+ 
 .filters-container {
-  margin-bottom: 2rem;
-}
-
-.filters-container h3 {
-  margin-bottom: 0.5rem;
-}
-
-.tags-list, .categories-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 
-.tag, .category {
+.filter-item {
+  cursor: pointer;
   background-color: rgba(255,255,255,0.08);
+  color: #ccc;
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  color: #ccc;
-  transition: background 0.2s;
+  font-size: 0.75rem;
+  transition: all 0.2s;
 }
 
-.tag:hover, .category:hover {
-  background-color: rgba(255,255,255,0.2);
+.filter-item:hover {
+  background-color: rgba(0,255,0,0.15);
+  color: #0f0;
+}
+
+.filter-item.active {
+  background-color: rgba(0,255,0,0.3);
+  color: #0f0;
+}
+
+ 
+.clear-filters {
+  margin-left: 1rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  background-color: rgba(255,0,0,0.2);
+  border: none;
+  color: #fff;
 }
 
  
 .year-heading {
   margin-top: 2rem;
   font-size: 1.2rem;
-  font-weight: 600;
   border-bottom: 1px solid #555;
   padding-bottom: 0.3rem;
   color: #fff;
@@ -243,47 +345,57 @@
 }
 
 .post-item {
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid #444;
-  padding-bottom: 0.3rem;
-}
-
-.post-link {
-  text-decoration: none;
-  color: #ccc;
-}
-
-.post-link .highlight {
-  background-color: yellow;
-  color: black;
 }
 </style>
 
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const searchInput = document.getElementById("searchInput");
-  const posts = document.querySelectorAll(".post-link");
+  const posts = document.querySelectorAll(".post-item");
+  const filters = document.querySelectorAll(".filter-item");
+  const clearBtn = document.getElementById("clearFilters");
 
-  function highlightText(text, query) {
-    if (!query) return text;
-    const regex = new RegExp(`(${query.split('').join('|')})`, 'gi');
-    return text.replace(regex, '<span class="highlight">$1</span>');
+  let activeFilters = new Set();
+
+  function updatePosts() {
+    const query = searchInput.value.toLowerCase();
+    posts.forEach(post => {
+      const title = post.querySelector(".post-link").textContent.toLowerCase();
+      const postTags = post.dataset.tags ? post.dataset.tags.split(" ") : [];
+      const postCategories = post.dataset.categories ? post.dataset.categories.split(" ") : [];
+      const hasFilter = activeFilters.size === 0 || [...activeFilters].some(f => postTags.includes(f) || postCategories.includes(f));
+      post.style.display = (title.includes(query) && hasFilter) ? "" : "none";
+    });
   }
 
-  searchInput.addEventListener("input", () => {
-    const q = searchInput.value.toLowerCase();
+  
+  searchInput.addEventListener("input", updatePosts);
 
-    posts.forEach(post => {
-      const originalText = post.getAttribute("data-original") || post.textContent;
-      if (!post.getAttribute("data-original")) post.setAttribute("data-original", originalText);
-
-      post.innerHTML = highlightText(originalText, q);
+  
+  filters.forEach(filter => {
+    filter.addEventListener("click", () => {
+      const name = filter.dataset.filter;
+      if (filter.classList.contains("active")) {
+        filter.classList.remove("active");
+        activeFilters.delete(name);
+      } else {
+        filter.classList.add("active");
+        activeFilters.add(name);
+      }
+      updatePosts();
     });
   });
 
+  
+  clearBtn.addEventListener("click", () => {
+    activeFilters.clear();
+    filters.forEach(f => f.classList.remove("active"));
+    updatePosts();
+  });
 });
 </script>
 

@@ -3,34 +3,22 @@
 
   <!-- ================= SEARCH BAR ================= -->
   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search posts..." class="search-input">
+    <input type="text" id="searchInput" placeholder="Search by title" class="search-input">
   </div>
 
-  <!-- ================= TAGS & CATEGORIES ================= -->
+  <!-- ================= TAG/CATEGORY FILTERS ================= -->
   <div class="filters-container">
+    {{ $allTags := .Site.Taxonomies.tags }}
+    {{ range $tag, $pages := $allTags }}
+      <span class="filter-item" data-filter="{{ $tag }}" data-type="tag">#{{ $tag }}</span>
+    {{ end }}
 
-    <!-- Tags -->
-    <div class="tags-section">
-      <h3>Tags</h3>
-      <div class="tags-list">
-        {{ $allTags := .Site.Taxonomies.tags }}
-        {{ range $tag, $pages := $allTags }}
-        <span class="tag">#{{ $tag }}</span>
-        {{ end }}
-      </div>
-    </div>
+    {{ $allCategories := .Site.Taxonomies.categories }}
+    {{ range $cat, $pages := $allCategories }}
+      <span class="filter-item" data-filter="{{ $cat }}" data-type="category">#{{ $cat }}</span>
+    {{ end }}
 
-    <!-- Categories -->
-    <div class="categories-section">
-      <h3>Categories</h3>
-      <div class="categories-list">
-        {{ $allCategories := .Site.Taxonomies.categories }}
-        {{ range $cat, $pages := $allCategories }}
-        <span class="category">#{{ $cat }}</span>
-        {{ end }}
-      </div>
-    </div>
-
+    <button id="clearFilters" class="clear-filters">Clear Filters</button>
   </div>
 
   <!-- ================= POSTS LIST BY YEAR ================= -->
@@ -45,8 +33,30 @@
         <ul class="posts-list">
         {{ $currentYear = $yr }}
       {{ end }}
-      <li class="post-item">
-        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+
+      <li class="post-item"
+          data-tags="{{ if .Params.tags }}{{ delimit .Params.tags " " }}{{ end }}"
+          data-categories="{{ if .Params.categories }}{{ delimit .Params.categories " " }}{{ end }}">
+
+        {{/* POST TITLE FORMATTING */}}
+        {{ if in .Params.tags "weekly-roundup" }}
+          {{ $week := .Params.week }}
+          <a href="{{ .RelPermalink }}" class="post-link">
+            Week {{ $week }} • {{ .Date.Format "January 2006" }}
+          </a>
+        {{ else }}
+          <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+        {{ end }}
+
+        {{/* METADATA */}}
+        <div class="post-meta">
+          {{ .Date.Format "Jan 2 2006" }} •
+          {{ if .Params.tags }}
+            {{ range .Params.tags }}
+              <span class="meta-tag">#{{ . }}</span>
+            {{ end }}
+          {{ end }}
+        </div>
       </li>
     {{ end }}
   </ul>
@@ -56,58 +66,100 @@
 <!-- ================= STYLE ================= -->
 <style>
 .posts-page {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  padding: 1.5rem;
-  font-family: "Ubuntu Mono", monospace;
+  padding: 2rem 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  color: #ccc;
 }
 
+/* Pixel font for titles */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.post-link {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Post metadata */
+.post-meta {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  color: #a8ffa8;
+}
+
+.meta-tag {
+  background-color: rgba(255,255,255,0.08);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  color: #ccc;
+}
+
+/* Search bar */
 .search-container {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background-color: #1b1b1b;
+  color: #fff;
   outline: none;
 }
 
+/* Filter items */
 .filters-container {
-  margin-bottom: 2rem;
-}
-
-.filters-container h3 {
-  margin-bottom: 0.5rem;
-}
-
-.tags-list, .categories-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 
-.tag, .category {
+.filter-item {
+  cursor: pointer;
   background-color: rgba(255,255,255,0.08);
+  color: #ccc;
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  color: #ccc;
-  transition: background 0.2s;
+  font-size: 0.75rem;
+  transition: all 0.2s;
 }
 
-.tag:hover, .category:hover {
-  background-color: rgba(255,255,255,0.2);
+.filter-item:hover {
+  background-color: rgba(0,255,0,0.15);
+  color: #0f0;
+}
+
+.filter-item.active {
+  background-color: rgba(0,255,0,0.3);
+  color: #0f0;
+}
+
+/* Clear filters button */
+.clear-filters {
+  margin-left: 1rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  background-color: rgba(255,0,0,0.2);
+  border: none;
+  color: #fff;
 }
 
 /* Year headings */
 .year-heading {
   margin-top: 2rem;
   font-size: 1.2rem;
-  font-weight: 600;
   border-bottom: 1px solid #555;
   padding-bottom: 0.3rem;
   color: #fff;
@@ -121,47 +173,57 @@
 }
 
 .post-item {
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid #444;
-  padding-bottom: 0.3rem;
-}
-
-.post-link {
-  text-decoration: none;
-  color: #ccc;
-}
-
-.post-link .highlight {
-  background-color: yellow;
-  color: black;
 }
 </style>
 
 <!-- ================= SCRIPT ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const searchInput = document.getElementById("searchInput");
-  const posts = document.querySelectorAll(".post-link");
+  const posts = document.querySelectorAll(".post-item");
+  const filters = document.querySelectorAll(".filter-item");
+  const clearBtn = document.getElementById("clearFilters");
 
-  function highlightText(text, query) {
-    if (!query) return text;
-    const regex = new RegExp(`(${query.split('').join('|')})`, 'gi');
-    return text.replace(regex, '<span class="highlight">$1</span>');
+  let activeFilters = new Set();
+
+  function updatePosts() {
+    const query = searchInput.value.toLowerCase();
+    posts.forEach(post => {
+      const title = post.querySelector(".post-link").textContent.toLowerCase();
+      const postTags = post.dataset.tags ? post.dataset.tags.split(" ") : [];
+      const postCategories = post.dataset.categories ? post.dataset.categories.split(" ") : [];
+      const hasFilter = activeFilters.size === 0 || [...activeFilters].some(f => postTags.includes(f) || postCategories.includes(f));
+      post.style.display = (title.includes(query) && hasFilter) ? "" : "none";
+    });
   }
 
-  searchInput.addEventListener("input", () => {
-    const q = searchInput.value.toLowerCase();
+  // Search input
+  searchInput.addEventListener("input", updatePosts);
 
-    posts.forEach(post => {
-      const originalText = post.getAttribute("data-original") || post.textContent;
-      if (!post.getAttribute("data-original")) post.setAttribute("data-original", originalText);
-
-      post.innerHTML = highlightText(originalText, q);
+  // Filters click
+  filters.forEach(filter => {
+    filter.addEventListener("click", () => {
+      const name = filter.dataset.filter;
+      if (filter.classList.contains("active")) {
+        filter.classList.remove("active");
+        activeFilters.delete(name);
+      } else {
+        filter.classList.add("active");
+        activeFilters.add(name);
+      }
+      updatePosts();
     });
   });
 
+  // Clear filters button
+  clearBtn.addEventListener("click", () => {
+    activeFilters.clear();
+    filters.forEach(f => f.classList.remove("active"));
+    updatePosts();
+  });
 });
 </script>
 {{ end }}

@@ -1,13 +1,14 @@
 ---
 title: What Can We Remove?
-date: 2026-01-12
+date: 2026-01-30
 tags:
   - Advice
 categories:
   - Fireside
 draft: false
-cover: /images/covers/cover-week49.jpeg
+featured: true
 ---
+
 
 In 2021, the noise got too loud. My screen was filled with other people's highlights, and i felt behind.  
 I was tired, anxious, and scrolling through a life that wasn't mine.  

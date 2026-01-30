@@ -1,12 +1,13 @@
 ---
-title: Week-2025-49
-date: 2025-12-06
+title: Week 4 • January 2026
+date: 2026-01-30
 draft: false
 tags:
   - weekly-roundup
 type: posts
-cover: /images/covers/W49.jpeg
+week: 4
 ---
+
 ### Articles 
 - The Unexpected poetry of PhD acknowledgements
 - "while still making seem like i wrote it"

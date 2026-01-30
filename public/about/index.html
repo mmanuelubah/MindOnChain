@@ -18,7 +18,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
 
     <title>
         
-            About me :: mmanuelubah 
+            About :: mmanuelubah 
         
     </title>
 
@@ -42,7 +42,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
 
 
 
-  <meta itemprop="name" content="About me">
+  <meta itemprop="name" content="About">
   <meta itemprop="description" content="I’m Emmanuel.
 I write, think, and build things.
 This page is intentionally simple — like a post, but permanent.
@@ -50,7 +50,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
   <meta itemprop="wordCount" content="33">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About me">
+  <meta name="twitter:title" content="About">
   <meta name="twitter:description" content="I’m Emmanuel.
 I write, think, and build things.
 This page is intentionally simple — like a post, but permanent.
@@ -61,7 +61,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
 
     <meta property="og:url" content="http://localhost:1313/about/">
   <meta property="og:site_name" content="mmanuelubah">
-  <meta property="og:title" content="About me">
+  <meta property="og:title" content="About">
   <meta property="og:description" content="I’m Emmanuel.
 I write, think, and build things.
 This page is intentionally simple — like a post, but permanent.
@@ -98,7 +98,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
     
     <a href="http://localhost:1313/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" style="height:32px; vertical-align:middle;">
+        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -112,8 +112,48 @@ What I care about Writing clearly Building useful things Long-term thinking Else
  </svg>
         </span>
     </span>
+
   </span>
 </header>
+
+<style>
+ 
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ 
+.logo-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+ 
+.logo-img {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.25s ease;
+}
+
+ 
+.logo-img:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.35),
+              0 0 18px rgba(0, 255, 204, 0.15);
+}
+
+ 
+@media (max-width: 600px) {
+  .logo-img {
+    height: 40px;
+    width: 40px;
+  }
+}
+</style>
 
 
             <div class="content">
@@ -123,7 +163,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
   <article class="post">
 
     <header class="post-header">
-      <h1 class="post-title">About me</h1>
+      <h1 class="post-title">About</h1>
     </header>
 
     <div class="post-content">
