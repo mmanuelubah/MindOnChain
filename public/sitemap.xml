@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/advice/</loc>
+    <loc>https://mmanuelubah.netlify.app/tags/advice/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://mmanuelubah.netlify.app/categories/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/fireside/</loc>
+    <loc>https://mmanuelubah.netlify.app/categories/fireside/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://mmanuelubah.netlify.app/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://mmanuelubah.netlify.app/posts/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://mmanuelubah.netlify.app/tags/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/weekly-roundup/</loc>
+    <loc>https://mmanuelubah.netlify.app/posts/weekly-roundup/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/weekly-roundup/</loc>
+    <loc>https://mmanuelubah.netlify.app/tags/weekly-roundup/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/what-can-we-remove/</loc>
+    <loc>https://mmanuelubah.netlify.app/posts/what-can-we-remove/</loc>
     <lastmod>2026-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/books/a-beautiful-life/</loc>
+    <loc>https://mmanuelubah.netlify.app/books/a-beautiful-life/</loc>
     <lastmod>2025-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/books/</loc>
+    <loc>https://mmanuelubah.netlify.app/books/</loc>
     <lastmod>2025-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/books/ikigai/</loc>
+    <loc>https://mmanuelubah.netlify.app/books/ikigai/</loc>
     <lastmod>2025-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/books/the-psychology-of-money/</loc>
+    <loc>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://mmanuelubah.netlify.app/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://mmanuelubah.netlify.app/series/</loc>
   </url>
 </urlset>

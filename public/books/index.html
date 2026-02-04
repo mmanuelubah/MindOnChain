@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<meta name="author"
+    content="">
+<meta name="description"
+    content="" />
+<meta name="keywords"
+    content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="http://localhost:1313/books/" />
+<link rel="canonical" href="https://mmanuelubah.netlify.app/books/" />
 
 
-    <title>
-        
-            Books :: mmanuelubah 
-        
-    </title>
-
-
+<title>
+    
+    Books :: mmanuelubah 
+    
+</title>
 
 
 
-  <link rel="stylesheet" href="/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+         
+        --bg-color: #232426;
+         
+        --card-bg: rgba(255, 255, 255, 0.06);
+        --text-color: #d1d5db;
+         
+        --text-color-secondary: #9ca3af;
+        --accent-color: #fff;
+        --border-color: rgba(255, 255, 255, 0.1);
+
+        --pixel-font: 'VT323', monospace;
+        --pixel-font-size-base: 1.3rem;
+         
+        --line-height-base: 1.6;
+    }
+
+    [data-theme="light"] {
+         
+        --bg-color: #f9fafb;
+        --card-bg: rgba(0, 0, 0, 0.05);
+        --text-color: #111827;
+         
+        --text-color-secondary: #4b5563;
+        --accent-color: #000;
+        --border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: var(--bg-color) !important;
+        color: var(--text-color) !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+     
+    a,
+    li,
+    p {
+        color: inherit;
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
 
 
 
@@ -51,7 +101,7 @@
 
 
 
-    <meta property="og:url" content="http://localhost:1313/books/">
+<meta property="og:url" content="https://mmanuelubah.netlify.app/books/">
   <meta property="og:site_name" content="mmanuelubah">
   <meta property="og:title" content="Books">
   <meta property="og:description" content="MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel.">
@@ -65,8 +115,10 @@
 
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/books/index.xml" title="mmanuelubah" />
 
+
+
+<link rel="alternate" type="application/rss+xml" href="https://mmanuelubah.netlify.app/books/index.xml" title="mmanuelubah" />
 
 
 
@@ -86,9 +138,9 @@
   <span class="header__inner">
 
     
-    <a href="http://localhost:1313/" class="logo">
+    <a href="https://mmanuelubah.netlify.app/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
+        <img src="https://mmanuelubah.netlify.app/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -149,82 +201,133 @@
             <div class="content">
                 
 <section class="bookshelf">
+  <a href="javascript:void(0);" onclick="goBack()" class="back-btn">← Back</a>
+
+<script>
+    function goBack() {
+        
+        if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+            history.back();
+        } else {
+            window.location.href = '/';
+        }
+    }
+</script>
+
+<style>
+    .back-btn {
+        font-family: var(--pixel-font);
+        font-size: var(--pixel-font-size-base);
+        color: var(--text-color-secondary);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+</style>
   <h1>Bookshelf</h1>
 
   <div class="bookshelf-list">
     
-      <div class="book-row">
-        <a class="book-title" href="" target="_blank">
-          A Beautiful Life →
-        </a>
+    <div class="book-row">
+      <a class="book-title" href="" target="_blank">
+        A Beautiful Life →
+      </a>
 
-        <p class="book-status">
-          
-            Reading • 2025
-          
-        </p>
-      </div>
+      <p class="book-status">
+        
+        Reading • 2025
+        
+      </p>
+    </div>
     
-      <div class="book-row">
-        <a class="book-title" href="" target="_blank">
-          Ikigai →
-        </a>
+    <div class="book-row">
+      <a class="book-title" href="" target="_blank">
+        Ikigai →
+      </a>
 
-        <p class="book-status">
-          
-            Unread
-          
-        </p>
-      </div>
+      <p class="book-status">
+        
+        Unread
+        
+      </p>
+    </div>
     
-      <div class="book-row">
-        <a class="book-title" href="https://www.goodreads.com/book/show/41881472-the-psychology-of-money" target="_blank">
-          The Psychology of Money →
-        </a>
+    <div class="book-row">
+      <a class="book-title" href="https://www.goodreads.com/book/show/41881472-the-psychology-of-money" target="_blank">
+        The Psychology of Money →
+      </a>
 
-        <p class="book-status">
-          
-            Reading • 2025
-          
-        </p>
-      </div>
+      <p class="book-status">
+        
+        Reading • 2025
+        
+      </p>
+    </div>
     
   </div>
 </section>
 
 <style>
-.bookshelf {
-  max-width: 650px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+  .bookshelf {
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
 
-.bookshelf-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+  .bookshelf h1 {
+    font-family: var(--pixel-font);
+    font-size: 1.8rem;
+     
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
 
- 
-.book-row {
-  border-bottom: 1px solid rgba(150,150,150,0.2);
-  padding-bottom: 1rem;
-}
+  .bookshelf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
- 
-.book-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--color-text);
-}
+   
+  .book-row {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+  }
 
- 
-.book-status {
-  margin-top: 0.3rem;
-  font-size: 0.85rem;
-  opacity: 0.7;
-}
+   
+  .book-title {
+    font-family: var(--pixel-font);
+    font-size: 1.3rem;
+     
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-title:hover {
+    color: var(--accent-color);
+  }
+
+   
+  .book-status {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    color: var(--text-color-secondary);
+  }
 </style>
 
             </div>
@@ -237,7 +340,7 @@
       <br>
       <a href="https://www.linkedin.com/in/chinaza-ubanatu-05a983184/" target="_blank" rel="noopener" style="margin:0 8px;">LinkedIn</a> |
       <a href="https://github.com/mmanuelubah" target="_blank" rel="noopener" style="margin:0 8px;">GitHub</a> |
-      <a href="https://x.com/Mind_On_Chain" target="_blank" rel="noopener" style="margin:0 8px;">Twitter</a>
+      <a href="https://x.com/mmanuelubah" target="_blank" rel="noopener" style="margin:0 8px;">Twitter</a>
       <br>
       <span style="font-size:0.85rem;">Lagos, Nigeria 🇳🇬. Internet</span>
     </div>

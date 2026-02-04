@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mmanuelubah</title>
-    <link>http://localhost:1313/</link>
+    <link>https://mmanuelubah.netlify.app/</link>
     <description>Recent content on mmanuelubah</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mmanuelubah.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Week 4 • January 2026</title>
-      <link>http://localhost:1313/posts/weekly-roundup/</link>
+      <link>https://mmanuelubah.netlify.app/posts/weekly-roundup/</link>
       <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly-roundup/</guid>
-      <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The long march of electrification&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;Daemon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/li&gt;&#xA;&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&#xA;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;&#xA;Here &amp;gt; &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <guid>https://mmanuelubah.netlify.app/posts/weekly-roundup/</guid>
+      <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The long march of electrification&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;Daemon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/li&gt;&#xA;&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&#xA;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;&#xA;Here &amp;gt; &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>What Can We Remove?</title>
-      <link>http://localhost:1313/posts/what-can-we-remove/</link>
+      <link>https://mmanuelubah.netlify.app/posts/what-can-we-remove/</link>
       <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-can-we-remove/</guid>
+      <guid>https://mmanuelubah.netlify.app/posts/what-can-we-remove/</guid>
       <description>&lt;p&gt;In 2021, the noise got too loud. My screen was filled with other people&amp;rsquo;s highlights, and i felt behind.&lt;br&gt;&#xA;I was tired, anxious, and scrolling through a life that wasn&amp;rsquo;t mine.&lt;/p&gt;&#xA;&lt;p&gt;So I started to quietly unfollow.&#xA;I kept only what built me up.&#xA;The noise faded. My mind cleared.&#xA;I could breathe again.&lt;/p&gt;&#xA;&lt;p&gt;We often treat our lives and our businesses like our social feeds.&lt;/p&gt;&#xA;&lt;p&gt;We add and add. More features. More steps. More rules.&#xA;Interdependencies proliferate, and gradually strangle us.&#xA;We think more means better.&#xA;But really, more often means more clutter.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Beautiful Life</title>
-      <link>http://localhost:1313/books/a-beautiful-life/</link>
+      <link>https://mmanuelubah.netlify.app/books/a-beautiful-life/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/a-beautiful-life/</guid>
+      <guid>https://mmanuelubah.netlify.app/books/a-beautiful-life/</guid>
       <description></description>
     </item>
     <item>
       <title>Ikigai</title>
-      <link>http://localhost:1313/books/ikigai/</link>
+      <link>https://mmanuelubah.netlify.app/books/ikigai/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/ikigai/</guid>
+      <guid>https://mmanuelubah.netlify.app/books/ikigai/</guid>
       <description></description>
     </item>
     <item>
       <title>The Psychology of Money</title>
-      <link>http://localhost:1313/books/the-psychology-of-money/</link>
+      <link>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/the-psychology-of-money/</guid>
+      <guid>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</guid>
       <description></description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://mmanuelubah.netlify.app/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://mmanuelubah.netlify.app/about/</guid>
       <description>&lt;p&gt;I’m Emmanuel.&lt;/p&gt;&#xA;&lt;p&gt;I write, think, and build things.&lt;/p&gt;&#xA;&lt;p&gt;This page is intentionally simple — like a post, but permanent.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-i-care-about&#34;&gt;What I care about&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Writing clearly&lt;/li&gt;&#xA;&lt;li&gt;Building useful things&lt;/li&gt;&#xA;&lt;li&gt;Long-term thinking&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;elsewhere&#34;&gt;Elsewhere&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Twitter&lt;/li&gt;&#xA;&lt;li&gt;GitHub&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

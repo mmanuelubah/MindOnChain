@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<meta name="author"
+    content="">
+<meta name="description"
+    content="" />
+<meta name="keywords"
+    content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="http://localhost:1313/posts/" />
+<link rel="canonical" href="https://mmanuelubah.netlify.app/posts/" />
 
 
-    <title>
-        
-            Posts :: mmanuelubah 
-        
-    </title>
-
-
+<title>
+    
+    Posts :: mmanuelubah 
+    
+</title>
 
 
 
-  <link rel="stylesheet" href="/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+         
+        --bg-color: #232426;
+         
+        --card-bg: rgba(255, 255, 255, 0.06);
+        --text-color: #d1d5db;
+         
+        --text-color-secondary: #9ca3af;
+        --accent-color: #fff;
+        --border-color: rgba(255, 255, 255, 0.1);
+
+        --pixel-font: 'VT323', monospace;
+        --pixel-font-size-base: 1.3rem;
+         
+        --line-height-base: 1.6;
+    }
+
+    [data-theme="light"] {
+         
+        --bg-color: #f9fafb;
+        --card-bg: rgba(0, 0, 0, 0.05);
+        --text-color: #111827;
+         
+        --text-color-secondary: #4b5563;
+        --accent-color: #000;
+        --border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: var(--bg-color) !important;
+        color: var(--text-color) !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+     
+    a,
+    li,
+    p {
+        color: inherit;
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
 
 
 
@@ -51,7 +101,7 @@
 
 
 
-    <meta property="og:url" content="http://localhost:1313/posts/">
+<meta property="og:url" content="https://mmanuelubah.netlify.app/posts/">
   <meta property="og:site_name" content="mmanuelubah">
   <meta property="og:title" content="Posts">
   <meta property="og:description" content="MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel.">
@@ -65,8 +115,10 @@
 
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="mmanuelubah" />
 
+
+
+<link rel="alternate" type="application/rss+xml" href="https://mmanuelubah.netlify.app/posts/index.xml" title="mmanuelubah" />
 
 
 
@@ -86,9 +138,9 @@
   <span class="header__inner">
 
     
-    <a href="http://localhost:1313/" class="logo">
+    <a href="https://mmanuelubah.netlify.app/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
+        <img src="https://mmanuelubah.netlify.app/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -150,6 +202,37 @@
                 
 <main class="posts-page">
 
+  <a href="javascript:void(0);" onclick="goBack()" class="back-btn">← Back</a>
+
+<script>
+    function goBack() {
+        
+        if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+            history.back();
+        } else {
+            window.location.href = '/';
+        }
+    }
+</script>
+
+<style>
+    .back-btn {
+        font-family: var(--pixel-font);
+        font-size: var(--pixel-font-size-base);
+        color: var(--text-color-secondary);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+</style>
+
   
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search by title" class="search-input">
@@ -159,14 +242,14 @@
   <div class="filters-container">
     
     
-      <span class="filter-item" data-filter="advice" data-type="tag">#advice</span>
+    <span class="filter-item" data-filter="advice" data-type="tag">#advice</span>
     
-      <span class="filter-item" data-filter="weekly-roundup" data-type="tag">#weekly-roundup</span>
+    <span class="filter-item" data-filter="weekly-roundup" data-type="tag">#weekly-roundup</span>
     
 
     
     
-      <span class="filter-item" data-filter="fireside" data-type="category">#fireside</span>
+    <span class="filter-item" data-filter="fireside" data-type="category">#fireside</span>
     
 
     <button id="clearFilters" class="clear-filters">Clear Filters</button>
@@ -177,226 +260,260 @@
   
   <ul class="posts-list">
     
-      
-      
-        
-        <h2 class="year-heading">2026</h2>
-        <ul class="posts-list">
-        
-      
-
-      <li class="post-item"
-          data-tags="Advice"
-          data-categories="Fireside">
-
-        
-        
-          <a href="/posts/what-can-we-remove/" class="post-link">What Can We Remove?</a>
-        
-
-        
-        <div class="post-meta">
-          Jan 30 2026 •
-          
-            
-              <span class="meta-tag">#Advice</span>
-            
-          
-        </div>
-      </li>
     
+    
+    
+  <h2 class="year-heading">2026</h2>
+  <ul class="posts-list">
+    
+    
+
+    <li class="post-item" data-tags="Advice"
+      data-categories="Fireside">
+
       
       
+      <a href="/posts/what-can-we-remove/" class="post-link">What Can We Remove?</a>
+      
 
-      <li class="post-item"
-          data-tags="weekly-roundup"
-          data-categories="">
+      
+      <div class="post-meta">
+        Jan 30 2026 •
+        
+        
+        <span class="meta-tag">#Advice</span>
+        
+        
+      </div>
+    </li>
+    
+    
+    
 
-        
-        
-          
-          <a href="/posts/weekly-roundup/" class="post-link">
-            Week 4 • January 2026
-          </a>
-        
+    <li class="post-item" data-tags="weekly-roundup"
+      data-categories="">
 
+      
+      
+      
+      <a href="/posts/weekly-roundup/" class="post-link">
+        Week 4 • January 2026
+      </a>
+      
+
+      
+      <div class="post-meta">
+        Jan 30 2026 •
         
-        <div class="post-meta">
-          Jan 30 2026 •
-          
-            
-              <span class="meta-tag">#weekly-roundup</span>
-            
-          
-        </div>
-      </li>
+        
+        <span class="meta-tag">#weekly-roundup</span>
+        
+        
+      </div>
+    </li>
     
   </ul>
 
 </main>
 
 
+
 <style>
-.posts-page {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem 1.5rem;
-  font-family: "Ubuntu", sans-serif;
-  color: #ccc;
-}
+  .posts-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+    font-family: "Ubuntu", sans-serif;
+    color: var(--text-color);
+  }
 
- 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-.post-link {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #fff;
-}
+  .post-link {
+    font-family: var(--pixel-font);
+    font-size: 1.3rem;
+     
+    line-height: 1.6;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+     
+    margin-bottom: 0.4rem;
+  }
 
- 
-.post-meta {
-  font-family: sans-serif;
-  font-size: 0.75rem;
-  margin-top: 0.3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  color: #a8ffa8;
-}
+  .post-link:hover {
+    color: var(--accent-color);
+  }
 
-.meta-tag {
-  background-color: rgba(255,255,255,0.08);
-  padding: 0.1rem 0.3rem;
-  border-radius: 4px;
-  color: #ccc;
-}
+   
+  .post-meta {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color-secondary);
+  }
 
- 
-.search-container {
-  margin-bottom: 1.5rem;
-}
+  .meta-tag {
+    background-color: var(--card-bg);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: var(--text-color-secondary);
+    font-size: 0.7rem;
+    border: 1px solid var(--border-color);
+  }
 
-.search-input {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  border-radius: 12px;
-  border: 1px solid #444;
-  background-color: #1b1b1b;
-  color: #fff;
-  outline: none;
-}
+   
+  .search-container {
+    margin-bottom: 1.5rem;
+  }
 
- 
-.filters-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  align-items: center;
-}
+  .search-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+     
+    font-family: var(--pixel-font);
+     
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    outline: none;
+  }
 
-.filter-item {
-  cursor: pointer;
-  background-color: rgba(255,255,255,0.08);
-  color: #ccc;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  transition: all 0.2s;
-}
+   
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
 
-.filter-item:hover {
-  background-color: rgba(0,255,0,0.15);
-  color: #0f0;
-}
+  .filter-item {
+    cursor: pointer;
+    background-color: var(--card-bg);
+    color: var(--text-color-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+    border: 1px solid var(--border-color);
+  }
 
-.filter-item.active {
-  background-color: rgba(0,255,0,0.3);
-  color: #0f0;
-}
+  .filter-item:hover {
+    background-color: rgba(0, 255, 0, 0.15);
+    color: #0d0;
+     
+    border-color: rgba(0, 255, 0, 0.3);
+  }
 
- 
-.clear-filters {
-  margin-left: 1rem;
-  cursor: pointer;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  background-color: rgba(255,0,0,0.2);
-  border: none;
-  color: #fff;
-}
+  .filter-item.active {
+    background-color: rgba(0, 255, 0, 0.3);
+    color: #0d0;
+    border-color: #0d0;
+  }
 
- 
-.year-heading {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #555;
-  padding-bottom: 0.3rem;
-  color: #fff;
-}
+   
+  .clear-filters {
+    margin-left: auto;
+     
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    background-color: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ffcccb;
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    transition: 0.2s;
+  }
 
- 
-.posts-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 1.5rem;
-}
+  .clear-filters:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: #fff;
+  }
 
-.post-item {
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #444;
-}
+   
+  .year-heading {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+     
+    font-family: var(--pixel-font);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
+  }
+
+   
+  .posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border-color);
+  }
 </style>
 
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
-  const posts = document.querySelectorAll(".post-item");
-  const filters = document.querySelectorAll(".filter-item");
-  const clearBtn = document.getElementById("clearFilters");
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const posts = document.querySelectorAll(".post-item");
+    const filters = document.querySelectorAll(".filter-item");
+    const clearBtn = document.getElementById("clearFilters");
 
-  let activeFilters = new Set();
+    let activeFilters = new Set();
 
-  function updatePosts() {
-    const query = searchInput.value.toLowerCase();
-    posts.forEach(post => {
-      const title = post.querySelector(".post-link").textContent.toLowerCase();
-      const postTags = post.dataset.tags ? post.dataset.tags.split(" ") : [];
-      const postCategories = post.dataset.categories ? post.dataset.categories.split(" ") : [];
-      const hasFilter = activeFilters.size === 0 || [...activeFilters].some(f => postTags.includes(f) || postCategories.includes(f));
-      post.style.display = (title.includes(query) && hasFilter) ? "" : "none";
+    function updatePosts() {
+      const query = searchInput.value.toLowerCase();
+      posts.forEach(post => {
+        const title = post.querySelector(".post-link").textContent.toLowerCase();
+        
+        const postTags = post.dataset.tags ? post.dataset.tags.toLowerCase().split(" ") : [];
+        const postCategories = post.dataset.categories ? post.dataset.categories.toLowerCase().split(" ") : [];
+
+        const hasFilter = activeFilters.size === 0 || [...activeFilters].some(f => postTags.includes(f) || postCategories.includes(f));
+
+        post.style.display = (title.includes(query) && hasFilter) ? "" : "none";
+      });
+    }
+
+    
+    searchInput.addEventListener("input", updatePosts);
+
+    
+    filters.forEach(filter => {
+      filter.addEventListener("click", () => {
+        
+        const name = filter.dataset.filter.toLowerCase();
+        if (filter.classList.contains("active")) {
+          filter.classList.remove("active");
+          activeFilters.delete(name);
+        } else {
+          filter.classList.add("active");
+          activeFilters.add(name);
+        }
+        updatePosts();
+      });
     });
-  }
 
-  
-  searchInput.addEventListener("input", updatePosts);
-
-  
-  filters.forEach(filter => {
-    filter.addEventListener("click", () => {
-      const name = filter.dataset.filter;
-      if (filter.classList.contains("active")) {
-        filter.classList.remove("active");
-        activeFilters.delete(name);
-      } else {
-        filter.classList.add("active");
-        activeFilters.add(name);
-      }
+    
+    clearBtn.addEventListener("click", () => {
+      activeFilters.clear();
+      filters.forEach(f => f.classList.remove("active"));
+      searchInput.value = ""; 
       updatePosts();
     });
   });
-
-  
-  clearBtn.addEventListener("click", () => {
-    activeFilters.clear();
-    filters.forEach(f => f.classList.remove("active"));
-    updatePosts();
-  });
-});
 </script>
 
             </div>

@@ -1,32 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
-<meta name="description" content="I’m Emmanuel.
+<meta name="author"
+    content="">
+<meta name="description"
+    content="I’m Emmanuel.
 I write, think, and build things.
 This page is intentionally simple — like a post, but permanent.
 What I care about Writing clearly Building useful things Long-term thinking Elsewhere Twitter GitHub " />
-<meta name="keywords" content="" />
+<meta name="keywords"
+    content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="http://localhost:1313/about/" />
+<link rel="canonical" href="https://mmanuelubah.netlify.app/about/" />
 
 
-    <title>
-        
-            About :: mmanuelubah 
-        
-    </title>
-
-
+<title>
+    
+    About :: mmanuelubah 
+    
+</title>
 
 
 
-  <link rel="stylesheet" href="/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+         
+        --bg-color: #232426;
+         
+        --card-bg: rgba(255, 255, 255, 0.06);
+        --text-color: #d1d5db;
+         
+        --text-color-secondary: #9ca3af;
+        --accent-color: #fff;
+        --border-color: rgba(255, 255, 255, 0.1);
+
+        --pixel-font: 'VT323', monospace;
+        --pixel-font-size-base: 1.3rem;
+         
+        --line-height-base: 1.6;
+    }
+
+    [data-theme="light"] {
+         
+        --bg-color: #f9fafb;
+        --card-bg: rgba(0, 0, 0, 0.05);
+        --text-color: #111827;
+         
+        --text-color-secondary: #4b5563;
+        --accent-color: #000;
+        --border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: var(--bg-color) !important;
+        color: var(--text-color) !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+     
+    a,
+    li,
+    p {
+        color: inherit;
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
 
 
 
@@ -59,7 +109,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
 
 
 
-    <meta property="og:url" content="http://localhost:1313/about/">
+<meta property="og:url" content="https://mmanuelubah.netlify.app/about/">
   <meta property="og:site_name" content="mmanuelubah">
   <meta property="og:title" content="About">
   <meta property="og:description" content="I’m Emmanuel.
@@ -68,6 +118,7 @@ This page is intentionally simple — like a post, but permanent.
 What I care about Writing clearly Building useful things Long-term thinking Elsewhere Twitter GitHub">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
+
 
 
 
@@ -96,9 +147,9 @@ What I care about Writing clearly Building useful things Long-term thinking Else
   <span class="header__inner">
 
     
-    <a href="http://localhost:1313/" class="logo">
+    <a href="https://mmanuelubah.netlify.app/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
+        <img src="https://mmanuelubah.netlify.app/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -158,16 +209,45 @@ What I care about Writing clearly Building useful things Long-term thinking Else
 
             <div class="content">
                 
+<article class="post-container">
 
-<div class="container">
-  <article class="post">
+    <a href="javascript:void(0);" onclick="goBack()" class="back-btn">← Back</a>
 
-    <header class="post-header">
-      <h1 class="post-title">About</h1>
-    </header>
+<script>
+    function goBack() {
+        
+        if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+            history.back();
+        } else {
+            window.location.href = '/';
+        }
+    }
+</script>
+
+<style>
+    .back-btn {
+        font-family: var(--pixel-font);
+        font-size: var(--pixel-font-size-base);
+        color: var(--text-color-secondary);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+</style>
+
+    <h1>About</h1>
+
+    
 
     <div class="post-content">
-      <p>I’m Emmanuel.</p>
+        <p>I’m Emmanuel.</p>
 <p>I write, think, and build things.</p>
 <p>This page is intentionally simple — like a post, but permanent.</p>
 <h2 id="what-i-care-about">What I care about</h2>
@@ -184,8 +264,77 @@ What I care about Writing clearly Building useful things Long-term thinking Else
 
     </div>
 
-  </article>
-</div>
+</article>
+
+<style>
+    .post-container {
+        max-width: 760px;
+        margin: auto;
+        padding: 1.5rem;
+    }
+
+    .post-container h1 {
+        font-family: var(--pixel-font);
+        font-size: 1.8rem;
+        line-height: var(--line-height-base);
+        letter-spacing: 0.5px;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: var(--text-color);
+    }
+
+     
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+        font-family: var(--pixel-font);
+        margin-top: 3rem;
+        margin-bottom: 1.2rem;
+        line-height: var(--line-height-base);
+        letter-spacing: 0.5px;
+        color: var(--text-color);
+    }
+
+    .post-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .post-content h4 {
+        font-size: 1.1rem;
+    }
+
+     
+    .image-wrapper,
+    .post-content img {
+        display: block;
+        width: 100%;
+        max-width: 720px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 2.5rem auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+    }
+
+    .post-content {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+
+    .post-content p img {
+        display: block;
+        margin: 2.5rem auto;
+    }
+</style>
 
 
             </div>
@@ -198,7 +347,7 @@ What I care about Writing clearly Building useful things Long-term thinking Else
       <br>
       <a href="https://www.linkedin.com/in/chinaza-ubanatu-05a983184/" target="_blank" rel="noopener" style="margin:0 8px;">LinkedIn</a> |
       <a href="https://github.com/mmanuelubah" target="_blank" rel="noopener" style="margin:0 8px;">GitHub</a> |
-      <a href="https://x.com/Mind_On_Chain" target="_blank" rel="noopener" style="margin:0 8px;">Twitter</a>
+      <a href="https://x.com/mmanuelubah" target="_blank" rel="noopener" style="margin:0 8px;">Twitter</a>
       <br>
       <span style="font-size:0.85rem;">Lagos, Nigeria 🇳🇬. Internet</span>
     </div>

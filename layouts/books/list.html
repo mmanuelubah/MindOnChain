@@ -1,60 +1,82 @@
 {{ define "main" }}
 <section class="bookshelf">
+  {{ partial "back_button.html" . }}
   <h1>Bookshelf</h1>
 
   <div class="bookshelf-list">
     {{ range (where .Pages "Type" "books") }}
-      <div class="book-row">
-        <a class="book-title" href="{{ .Params.link }}" target="_blank">
-          {{ .Title }} →
-        </a>
+    <div class="book-row">
+      <a class="book-title" href="{{ .Params.link }}" target="_blank">
+        {{ .Title }} →
+      </a>
 
-        <p class="book-status">
-          {{ if eq .Params.status "Read" }}
-            Read • {{ .Date.Format "2006" }}
-          {{ else if eq .Params.status "Reading" }}
-            Reading • {{ .Date.Format "2006" }}
-          {{ else }}
-            Unread
-          {{ end }}
-        </p>
-      </div>
+      <p class="book-status">
+        {{ if eq .Params.status "Read" }}
+        Read • {{ .Date.Format "2006" }}
+        {{ else if eq .Params.status "Reading" }}
+        Reading • {{ .Date.Format "2006" }}
+        {{ else }}
+        Unread
+        {{ end }}
+      </p>
+    </div>
     {{ end }}
   </div>
 </section>
 
 <style>
-.bookshelf {
-  max-width: 650px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+  .bookshelf {
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
 
-.bookshelf-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+  .bookshelf h1 {
+    font-family: var(--pixel-font);
+    font-size: 1.8rem;
+    /* Scaled up */
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
 
-/* Single book row */
-.book-row {
-  border-bottom: 1px solid rgba(150,150,150,0.2);
-  padding-bottom: 1rem;
-}
+  .bookshelf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-/* Title + arrow */
-.book-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--color-text);
-}
+  /* Single book row */
+  .book-row {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+  }
 
-/* Status line below title */
-.book-status {
-  margin-top: 0.3rem;
-  font-size: 0.85rem;
-  opacity: 0.7;
-}
+  /* Title + arrow */
+  .book-title {
+    font-family: var(--pixel-font);
+    font-size: 1.3rem;
+    /* Scaled up */
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-title:hover {
+    color: var(--accent-color);
+  }
+
+  /* Status line below title */
+  .book-status {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    color: var(--text-color-secondary);
+  }
 </style>
 {{ end }}

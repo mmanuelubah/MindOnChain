@@ -1,18 +1,90 @@
 {{ define "main" }}
+<article class="post-container">
 
-<div class="container">
-  <article class="post">
+    {{ partial "back_button.html" . }}
 
-    <header class="post-header">
-      <h1 class="post-title">{{ .Title }}</h1>
-    </header>
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Params.cover }}
+    <div class="image-wrapper">
+        <img src="{{ . }}" alt="Cover image for {{ $.Title }}">
+    </div>
+    {{ end }}
 
     <div class="post-content">
-      {{ .Content }}
+        {{ .Content }}
     </div>
 
-  </article>
-</div>
+</article>
+
+<style>
+    .post-container {
+        max-width: 760px;
+        margin: auto;
+        padding: 1.5rem;
+    }
+
+    .post-container h1 {
+        font-family: var(--pixel-font);
+        font-size: 1.8rem;
+        line-height: var(--line-height-base);
+        letter-spacing: 0.5px;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: var(--text-color);
+    }
+
+    /* Headings in markdown content */
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+        font-family: var(--pixel-font);
+        margin-top: 3rem;
+        margin-bottom: 1.2rem;
+        line-height: var(--line-height-base);
+        letter-spacing: 0.5px;
+        color: var(--text-color);
+    }
+
+    .post-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .post-content h4 {
+        font-size: 1.1rem;
+    }
+
+    /* General image container */
+    .image-wrapper,
+    .post-content img {
+        display: block;
+        width: 100%;
+        max-width: 720px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 2.5rem auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+    }
+
+    .post-content {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+
+    .post-content p img {
+        display: block;
+        margin: 2.5rem auto;
+    }
+</style>
 
 {{ end }}
-

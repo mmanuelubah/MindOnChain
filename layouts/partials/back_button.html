@@ -1,0 +1,30 @@
+<a href="javascript:void(0);" onclick="goBack()" class="back-btn">← Back</a>
+
+<script>
+    function goBack() {
+        // If referrer is internal (same domain), go back. Otherwise go home.
+        if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+            history.back();
+        } else {
+            window.location.href = '/';
+        }
+    }
+</script>
+
+<style>
+    .back-btn {
+        font-family: var(--pixel-font);
+        font-size: var(--pixel-font-size-base);
+        color: var(--text-color-secondary);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+</style>

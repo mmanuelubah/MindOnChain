@@ -1,6 +1,8 @@
 {{ define "main" }}
 <main class="posts-page">
 
+  {{ partial "back_button.html" . }}
+
   <!-- ================= SEARCH BAR ================= -->
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search by title" class="search-input">
@@ -10,12 +12,12 @@
   <div class="filters-container">
     {{ $allTags := .Site.Taxonomies.tags }}
     {{ range $tag, $pages := $allTags }}
-      <span class="filter-item" data-filter="{{ $tag }}" data-type="tag">#{{ $tag }}</span>
+    <span class="filter-item" data-filter="{{ $tag }}" data-type="tag">#{{ $tag }}</span>
     {{ end }}
 
     {{ $allCategories := .Site.Taxonomies.categories }}
     {{ range $cat, $pages := $allCategories }}
-      <span class="filter-item" data-filter="{{ $cat }}" data-type="category">#{{ $cat }}</span>
+    <span class="filter-item" data-filter="{{ $cat }}" data-type="category">#{{ $cat }}</span>
     {{ end }}
 
     <button id="clearFilters" class="clear-filters">Clear Filters</button>
@@ -26,204 +28,239 @@
   {{ $currentYear := 0 }}
   <ul class="posts-list">
     {{ range $pages }}
-      {{ $yr := .Date.Year }}
-      {{ if ne $yr $currentYear }}
-        {{ if ne $currentYear 0 }}</ul>{{ end }}
-        <h2 class="year-heading">{{ $yr }}</h2>
-        <ul class="posts-list">
-        {{ $currentYear = $yr }}
+    {{ $yr := .Date.Year }}
+    {{ if ne $yr $currentYear }}
+    {{ if ne $currentYear 0 }}</ul>{{ end }}
+  <h2 class="year-heading">{{ $yr }}</h2>
+  <ul class="posts-list">
+    {{ $currentYear = $yr }}
+    {{ end }}
+
+    <li class="post-item" data-tags="{{ if .Params.tags }}{{ delimit .Params.tags " " }}{{ end }}"
+      data-categories="{{ if .Params.categories }}{{ delimit .Params.categories " " }}{{ end }}">
+
+      {{/* POST TITLE FORMATTING */}}
+      {{ if in .Params.tags "weekly-roundup" }}
+      {{ $week := .Params.week }}
+      <a href="{{ .RelPermalink }}" class="post-link">
+        Week {{ $week }} • {{ .Date.Format "January 2006" }}
+      </a>
+      {{ else }}
+      <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
       {{ end }}
 
-      <li class="post-item"
-          data-tags="{{ if .Params.tags }}{{ delimit .Params.tags " " }}{{ end }}"
-          data-categories="{{ if .Params.categories }}{{ delimit .Params.categories " " }}{{ end }}">
-
-        {{/* POST TITLE FORMATTING */}}
-        {{ if in .Params.tags "weekly-roundup" }}
-          {{ $week := .Params.week }}
-          <a href="{{ .RelPermalink }}" class="post-link">
-            Week {{ $week }} • {{ .Date.Format "January 2006" }}
-          </a>
-        {{ else }}
-          <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+      {{/* METADATA */}}
+      <div class="post-meta">
+        {{ .Date.Format "Jan 2 2006" }} •
+        {{ if .Params.tags }}
+        {{ range .Params.tags }}
+        <span class="meta-tag">#{{ . }}</span>
         {{ end }}
-
-        {{/* METADATA */}}
-        <div class="post-meta">
-          {{ .Date.Format "Jan 2 2006" }} •
-          {{ if .Params.tags }}
-            {{ range .Params.tags }}
-              <span class="meta-tag">#{{ . }}</span>
-            {{ end }}
-          {{ end }}
-        </div>
-      </li>
+        {{ end }}
+      </div>
+    </li>
     {{ end }}
   </ul>
 
 </main>
 
+
 <!-- ================= STYLE ================= -->
 <style>
-.posts-page {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem 1.5rem;
-  font-family: "Ubuntu", sans-serif;
-  color: #ccc;
-}
+  .posts-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+    font-family: "Ubuntu", sans-serif;
+    color: var(--text-color);
+  }
 
-/* Pixel font for titles */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-.post-link {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #fff;
-}
+  .post-link {
+    font-family: var(--pixel-font);
+    font-size: 1.3rem;
+    /* Scaled up for VT323 */
+    line-height: 1.6;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    /* Ensure block for consistent spacing */
+    margin-bottom: 0.4rem;
+  }
 
-/* Post metadata */
-.post-meta {
-  font-family: sans-serif;
-  font-size: 0.75rem;
-  margin-top: 0.3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  color: #a8ffa8;
-}
+  .post-link:hover {
+    color: var(--accent-color);
+  }
 
-.meta-tag {
-  background-color: rgba(255,255,255,0.08);
-  padding: 0.1rem 0.3rem;
-  border-radius: 4px;
-  color: #ccc;
-}
+  /* Post metadata */
+  .post-meta {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color-secondary);
+  }
 
-/* Search bar */
-.search-container {
-  margin-bottom: 1.5rem;
-}
+  .meta-tag {
+    background-color: var(--card-bg);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: var(--text-color-secondary);
+    font-size: 0.7rem;
+    border: 1px solid var(--border-color);
+  }
 
-.search-input {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  border-radius: 12px;
-  border: 1px solid #444;
-  background-color: #1b1b1b;
-  color: #fff;
-  outline: none;
-}
+  /* Search bar */
+  .search-container {
+    margin-bottom: 1.5rem;
+  }
 
-/* Filter items */
-.filters-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  align-items: center;
-}
+  .search-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    /* Larger for VT323 */
+    font-family: var(--pixel-font);
+    /* Pixel font for input */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    outline: none;
+  }
 
-.filter-item {
-  cursor: pointer;
-  background-color: rgba(255,255,255,0.08);
-  color: #ccc;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  transition: all 0.2s;
-}
+  /* Filter items */
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
 
-.filter-item:hover {
-  background-color: rgba(0,255,0,0.15);
-  color: #0f0;
-}
+  .filter-item {
+    cursor: pointer;
+    background-color: var(--card-bg);
+    color: var(--text-color-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+    border: 1px solid var(--border-color);
+  }
 
-.filter-item.active {
-  background-color: rgba(0,255,0,0.3);
-  color: #0f0;
-}
+  .filter-item:hover {
+    background-color: rgba(0, 255, 0, 0.15);
+    color: #0d0;
+    /* Greener? Or use theme accent */
+    border-color: rgba(0, 255, 0, 0.3);
+  }
 
-/* Clear filters button */
-.clear-filters {
-  margin-left: 1rem;
-  cursor: pointer;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  background-color: rgba(255,0,0,0.2);
-  border: none;
-  color: #fff;
-}
+  .filter-item.active {
+    background-color: rgba(0, 255, 0, 0.3);
+    color: #0d0;
+    border-color: #0d0;
+  }
 
-/* Year headings */
-.year-heading {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #555;
-  padding-bottom: 0.3rem;
-  color: #fff;
-}
+  /* Clear filters button */
+  .clear-filters {
+    margin-left: auto;
+    /* Push to right */
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    background-color: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ffcccb;
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    transition: 0.2s;
+  }
 
-/* Posts list */
-.posts-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 1.5rem;
-}
+  .clear-filters:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: #fff;
+  }
 
-.post-item {
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #444;
-}
+  /* Year headings */
+  .year-heading {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    /* Scaled up for VT323 */
+    font-family: var(--pixel-font);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
+  }
+
+  /* Posts list */
+  .posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border-color);
+  }
 </style>
 
 <!-- ================= SCRIPT ================= -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
-  const posts = document.querySelectorAll(".post-item");
-  const filters = document.querySelectorAll(".filter-item");
-  const clearBtn = document.getElementById("clearFilters");
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const posts = document.querySelectorAll(".post-item");
+    const filters = document.querySelectorAll(".filter-item");
+    const clearBtn = document.getElementById("clearFilters");
 
-  let activeFilters = new Set();
+    let activeFilters = new Set();
 
-  function updatePosts() {
-    const query = searchInput.value.toLowerCase();
-    posts.forEach(post => {
-      const title = post.querySelector(".post-link").textContent.toLowerCase();
-      const postTags = post.dataset.tags ? post.dataset.tags.split(" ") : [];
-      const postCategories = post.dataset.categories ? post.dataset.categories.split(" ") : [];
-      const hasFilter = activeFilters.size === 0 || [...activeFilters].some(f => postTags.includes(f) || postCategories.includes(f));
-      post.style.display = (title.includes(query) && hasFilter) ? "" : "none";
+    function updatePosts() {
+      const query = searchInput.value.toLowerCase();
+      posts.forEach(post => {
+        const title = post.querySelector(".post-link").textContent.toLowerCase();
+        // FIX: Lowercase tags/categories for case-insensitive comparison
+        const postTags = post.dataset.tags ? post.dataset.tags.toLowerCase().split(" ") : [];
+        const postCategories = post.dataset.categories ? post.dataset.categories.toLowerCase().split(" ") : [];
+
+        const hasFilter = activeFilters.size === 0 || [...activeFilters].some(f => postTags.includes(f) || postCategories.includes(f));
+
+        post.style.display = (title.includes(query) && hasFilter) ? "" : "none";
+      });
+    }
+
+    // Search input
+    searchInput.addEventListener("input", updatePosts);
+
+    // Filters click
+    filters.forEach(filter => {
+      filter.addEventListener("click", () => {
+        // FIX: Use lowercased filter for comparison
+        const name = filter.dataset.filter.toLowerCase();
+        if (filter.classList.contains("active")) {
+          filter.classList.remove("active");
+          activeFilters.delete(name);
+        } else {
+          filter.classList.add("active");
+          activeFilters.add(name);
+        }
+        updatePosts();
+      });
     });
-  }
 
-  // Search input
-  searchInput.addEventListener("input", updatePosts);
-
-  // Filters click
-  filters.forEach(filter => {
-    filter.addEventListener("click", () => {
-      const name = filter.dataset.filter;
-      if (filter.classList.contains("active")) {
-        filter.classList.remove("active");
-        activeFilters.delete(name);
-      } else {
-        filter.classList.add("active");
-        activeFilters.add(name);
-      }
+    // Clear filters button
+    clearBtn.addEventListener("click", () => {
+      activeFilters.clear();
+      filters.forEach(f => f.classList.remove("active"));
+      searchInput.value = ""; // Also clear search
       updatePosts();
     });
   });
-
-  // Clear filters button
-  clearBtn.addEventListener("click", () => {
-    activeFilters.clear();
-    filters.forEach(f => f.classList.remove("active"));
-    updatePosts();
-  });
-});
 </script>
 {{ end }}
