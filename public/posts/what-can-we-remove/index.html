@@ -30,7 +30,8 @@ We add and add. More features. More steps. More rules. Interdependencies prolife
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Ubuntu+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
 <style>
     :root {
@@ -46,8 +47,11 @@ We add and add. More features. More steps. More rules. Interdependencies prolife
 
         --pixel-font: 'VT323', monospace;
         --pixel-font-size-base: 1.3rem;
+
          
-        --line-height-base: 1.6;
+        --body-font: 'Ubuntu Mono', monospace;
+        --body-font-weight: 500;
+        --line-height-base: 1.7;
     }
 
     [data-theme="light"] {
@@ -64,6 +68,9 @@ We add and add. More features. More steps. More rules. Interdependencies prolife
     body {
         background-color: var(--bg-color) !important;
         color: var(--text-color) !important;
+        font-family: var(--body-font) !important;
+        font-weight: var(--body-font-weight);
+        line-height: var(--line-height-base);
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -72,6 +79,7 @@ We add and add. More features. More steps. More rules. Interdependencies prolife
     li,
     p {
         color: inherit;
+        font-family: inherit;
     }
 </style>
 

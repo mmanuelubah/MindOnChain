@@ -19,6 +19,8 @@ This page is intentionally simple — like a post, but permanent.
 ## Elsewhere
 - Twitter
 - GitHub
+- LinkedIn
+
 
 
 

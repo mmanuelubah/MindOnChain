@@ -25,7 +25,8 @@
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Ubuntu+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
 <style>
     :root {
@@ -41,8 +42,11 @@
 
         --pixel-font: 'VT323', monospace;
         --pixel-font-size-base: 1.3rem;
+
          
-        --line-height-base: 1.6;
+        --body-font: 'Ubuntu Mono', monospace;
+        --body-font-weight: 500;
+        --line-height-base: 1.7;
     }
 
     [data-theme="light"] {
@@ -59,6 +63,9 @@
     body {
         background-color: var(--bg-color) !important;
         color: var(--text-color) !important;
+        font-family: var(--body-font) !important;
+        font-weight: var(--body-font-weight);
+        line-height: var(--line-height-base);
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -67,6 +74,7 @@
     li,
     p {
         color: inherit;
+        font-family: inherit;
     }
 </style>
 
@@ -323,7 +331,8 @@
     max-width: 900px;
     margin: auto;
     padding: 2rem 1.5rem;
-    font-family: "Ubuntu", sans-serif;
+    font-family: var(--body-font);
+    font-weight: var(--body-font-weight);
     color: var(--text-color);
   }
 

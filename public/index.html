@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.151.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.151.1">
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -14,7 +14,7 @@
     content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="http://localhost:1313/" />
+<link rel="canonical" href="https://mmanuelubah.netlify.app/" />
 
 
 <title>
@@ -26,7 +26,8 @@
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Ubuntu+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
 <style>
     :root {
@@ -42,8 +43,11 @@
 
         --pixel-font: 'VT323', monospace;
         --pixel-font-size-base: 1.3rem;
+
          
-        --line-height-base: 1.6;
+        --body-font: 'Ubuntu Mono', monospace;
+        --body-font-weight: 500;
+        --line-height-base: 1.7;
     }
 
     [data-theme="light"] {
@@ -60,6 +64,9 @@
     body {
         background-color: var(--bg-color) !important;
         color: var(--text-color) !important;
+        font-family: var(--body-font) !important;
+        font-weight: var(--body-font-weight);
+        line-height: var(--line-height-base);
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -68,6 +75,7 @@
     li,
     p {
         color: inherit;
+        font-family: inherit;
     }
 </style>
 
@@ -102,7 +110,7 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/">
+<meta property="og:url" content="https://mmanuelubah.netlify.app/">
   <meta property="og:site_name" content="mmanuelubah">
   <meta property="og:title" content="mmanuelubah">
   <meta property="og:description" content="MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel.">
@@ -119,7 +127,7 @@
 
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="mmanuelubah" />
+<link rel="alternate" type="application/rss+xml" href="https://mmanuelubah.netlify.app/index.xml" title="mmanuelubah" />
 
 
 
@@ -139,9 +147,9 @@
   <span class="header__inner">
 
     
-    <a href="http://localhost:1313/" class="logo">
+    <a href="https://mmanuelubah.netlify.app/" class="logo">
       
-        <img src="http://localhost:1313/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
+        <img src="https://mmanuelubah.netlify.app/images/IMG_4493.jpeg" alt="mmanuelubah" class="logo-img">
       
     </a>
 
@@ -211,7 +219,7 @@
   <div class="top-section">
 
     <div class="avatar-container" id="avatarBox">
-      <img src="http://localhost:1313/images/Avatar.png" alt="mmanuelubah" class="author-avatar">
+      <img src="https://mmanuelubah.netlify.app/images/Avatar.png" alt="mmanuelubah" class="author-avatar">
     </div>
 
     <h1 id="animated-title" class="site-title">
@@ -342,9 +350,11 @@
 
 <style>
   .home {
-    font-family: system-ui, sans-serif;
-    font-size: 13.5px;
-    font-weight: 300;
+    font-family: var(--body-font);
+    font-size: 15px;
+     
+    font-weight: var(--body-font-weight);
+    line-height: var(--line-height-base);
     max-width: 720px;
     margin: auto;
     padding: 2rem 1.5rem 3rem;
