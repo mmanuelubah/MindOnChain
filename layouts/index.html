@@ -32,7 +32,7 @@
     <a href="/books/" class="card-link">
       <div class="card">
         <div class="card-emoji">📚</div>
-        <div class="card-title">Bookshelf</div>
+        <div class="card-title">Books</div>
         <!-- Try 'Books' first based on directory name, if 0 fallback to 'books' might be needed but case sensitivity usually normalizes to lowercase in Hugo sections -->
         {{ $bookCount := len (where .Site.RegularPages "Section" "books") }}
         {{ if eq $bookCount 0 }}
@@ -54,7 +54,7 @@
 
   <!-- ================= CURRENTLY READING ================= -->
   <section>
-    <h2 class="section-title">Currently reading:</h2>
+    <h2 class="section-title">CURRENTLY READING:</h2>
 
     <div class="highlight-box">
       <ul class="reading-list">
@@ -86,7 +86,7 @@
 
   <!-- ================= FEATURED WRITING ================= -->
   <section>
-    <h2 class="section-title">Featured Writing</h2>
+    <h2 class="section-title">FEATURED WRITING</h2>
 
     <ul class="writing-list">
       {{ $featured := where .Site.RegularPages "Params.featured" true }}
@@ -103,7 +103,7 @@
 
   <!-- ================= LATEST ROUNDUP ================= -->
   <section>
-    <h2 class="section-title">Latest Roundup</h2>
+    <h2 class="section-title">LATEST ROUNDUP</h2>
 
     <div class="highlight-box">
       {{ $roundup := where .Site.RegularPages "Params.tags" "intersect" (slice "weekly-roundup") }}
