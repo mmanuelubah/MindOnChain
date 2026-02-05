@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Books on mmanuelubah</title>
-    <link>https://mmanuelubah.netlify.app/books/</link>
+    <link>http://localhost:1313/books/</link>
     <description>Recent content in Books on mmanuelubah</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://mmanuelubah.netlify.app/books/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/books/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Beautiful Life</title>
-      <link>https://mmanuelubah.netlify.app/books/a-beautiful-life/</link>
+      <link>http://localhost:1313/books/a-beautiful-life/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://mmanuelubah.netlify.app/books/a-beautiful-life/</guid>
+      <guid>http://localhost:1313/books/a-beautiful-life/</guid>
       <description></description>
     </item>
     <item>
       <title>Ikigai</title>
-      <link>https://mmanuelubah.netlify.app/books/ikigai/</link>
+      <link>http://localhost:1313/books/ikigai/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://mmanuelubah.netlify.app/books/ikigai/</guid>
+      <guid>http://localhost:1313/books/ikigai/</guid>
       <description></description>
     </item>
     <item>
       <title>The Psychology of Money</title>
-      <link>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</link>
+      <link>http://localhost:1313/books/the-psychology-of-money/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://mmanuelubah.netlify.app/books/the-psychology-of-money/</guid>
+      <guid>http://localhost:1313/books/the-psychology-of-money/</guid>
       <description></description>
     </item>
   </channel>

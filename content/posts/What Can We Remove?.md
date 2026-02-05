@@ -7,6 +7,7 @@ categories:
   - Fireside
 draft: false
 featured: true
+cover: /images/covers/W49.jpeg
 ---
 
 

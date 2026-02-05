@@ -4,12 +4,7 @@ draft: false
 type: "about"
 layout: "single"
 ---
-
-I’m Emmanuel.
-
-I write, think, and build things.
-
-This page is intentionally simple — like a post, but permanent.
+I AM EMMANUEL UBAH
 
 ## What I care about
 - Writing clearly

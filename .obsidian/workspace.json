@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/Weekly RoundUp.md",
+                "file": "content/posts/What Can We Remove?.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Weekly RoundUp"
+              "title": "What Can We Remove?"
             }
           }
         ],
@@ -200,8 +200,8 @@
   },
   "active": "9f2a64304b41ad62",
   "lastOpenFiles": [
-    "content/posts/What Can We Remove?.md",
     "content/posts/Weekly RoundUp.md",
+    "content/posts/What Can We Remove?.md",
     "public/posts/weekly-roundup/index.html",
     "public/posts/weekly-roundup",
     "Templates/post-template.md",

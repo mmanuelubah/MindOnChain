@@ -16,9 +16,6 @@ week: 4
 - Dark Matter
 - Daemon
 ### Music
-- Brent Faiyaz ft Trey Amanie : Price Of Fame 
 - Brent Faiyaz : JACKIE BROWN - ![](/images/covers/W49.jpeg)
-**Note**: _While i don't like the idea of youtube and spotify recap, it did give me a sense of who i'm becoming and i like it, 😂_
-Here > ![](/images/covers/W49.jpeg)
 
 

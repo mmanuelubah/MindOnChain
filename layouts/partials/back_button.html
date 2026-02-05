@@ -1,5 +1,12 @@
-<a href="javascript:void(0);" onclick="goBack()" class="back-btn">← Back</a>
+{{ $dest := "" }}
+{{ if reflect.IsMap . }}
+{{ $dest = .Destination }}
+{{ end }}
 
+{{ if $dest }}
+<a href="{{ $dest }}" class="back-btn">← Back</a>
+{{ else }}
+<a href="javascript:void(0);" onclick="goBack()" class="back-btn">← Back</a>
 <script>
     function goBack() {
         // If referrer is internal (same domain), go back. Otherwise go home.
@@ -10,6 +17,7 @@
         }
     }
 </script>
+{{ end }}
 
 <style>
     .back-btn {

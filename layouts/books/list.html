@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="bookshelf">
-  {{ partial "back_button.html" . }}
+  {{ partial "back_button.html" (dict "Destination" "/") }}
   <h1>Bookshelf</h1>
 
   <div class="bookshelf-list">

@@ -1,19 +1,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on mmanuelubah</title>
-        <link>https://mmanuelubah.netlify.app/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>Recent content in Posts on mmanuelubah</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Fri, 30 Jan 2026 00:00:00 +0000</lastBuildDate>
-        <atom:link href="https://mmanuelubah.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Week 4 • January 2026</title>
-            <link>https://mmanuelubah.netlify.app/posts/weekly-roundup/</link>
+            <link>http://localhost:1313/posts/weekly-roundup/</link>
             <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://mmanuelubah.netlify.app/posts/weekly-roundup/</guid>
+            <guid>http://localhost:1313/posts/weekly-roundup/</guid>
             <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;
@@ -27,10 +27,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/li&gt;
-&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;
-Here &amp;gt; &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
             <content type="html"><![CDATA[<h3 id="articles">Articles</h3>
 <ul>
@@ -45,20 +42,17 @@ Here &amp;gt; &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49
 </ul>
 <h3 id="music">Music</h3>
 <ul>
-<li>Brent Faiyaz ft Trey Amanie : Price Of Fame</li>
-<li>Brent Faiyaz : JACKIE BROWN - <img src="/images/covers/W49.jpeg" alt="">
-<strong>Note</strong>: <em>While i don&rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&rsquo;m becoming and i like it, 😂</em>
-Here &gt; <img src="/images/covers/W49.jpeg" alt=""></li>
+<li>Brent Faiyaz : JACKIE BROWN - <img src="/images/covers/W49.jpeg" alt=""></li>
 </ul>
 ]]></content>
         </item>
         
         <item>
             <title>What Can We Remove?</title>
-            <link>https://mmanuelubah.netlify.app/posts/what-can-we-remove/</link>
+            <link>http://localhost:1313/posts/what-can-we-remove/</link>
             <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://mmanuelubah.netlify.app/posts/what-can-we-remove/</guid>
+            <guid>http://localhost:1313/posts/what-can-we-remove/</guid>
             <description>&lt;p&gt;In 2021, the noise got too loud. My screen was filled with other people&amp;rsquo;s highlights, and i felt behind.&lt;br&gt;
 I was tired, anxious, and scrolling through a life that wasn&amp;rsquo;t mine.&lt;/p&gt;
 &lt;p&gt;So I started to quietly unfollow.

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Weekly-Roundup on mmanuelubah</title>
-    <link>https://mmanuelubah.netlify.app/tags/weekly-roundup/</link>
+    <link>http://localhost:1313/tags/weekly-roundup/</link>
     <description>Recent content in Weekly-Roundup on mmanuelubah</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://mmanuelubah.netlify.app/tags/weekly-roundup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/weekly-roundup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Week 4 • January 2026</title>
-      <link>https://mmanuelubah.netlify.app/posts/weekly-roundup/</link>
+      <link>http://localhost:1313/posts/weekly-roundup/</link>
       <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://mmanuelubah.netlify.app/posts/weekly-roundup/</guid>
-      <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The long march of electrification&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;Daemon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Brent Faiyaz ft Trey Amanie : Price Of Fame&lt;/li&gt;&#xA;&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&#xA;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;While i don&amp;rsquo;t like the idea of youtube and spotify recap, it did give me a sense of who i&amp;rsquo;m becoming and i like it, 😂&lt;/em&gt;&#xA;Here &amp;gt; &lt;img src=&#34;https://mmanuelubah.netlify.app/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <guid>http://localhost:1313/posts/weekly-roundup/</guid>
+      <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The long march of electrification&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;Daemon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
