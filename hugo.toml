@@ -12,6 +12,7 @@ pagination.pagerSize = 10
   enableSharingButtons = true
   enableGlobalLanguageMenu = true
   enableThemeToggle = true
+  customCSS = ["/css/custom.css"]
   defaultTheme = "dark"
   showPostsOnHomePage = true
   numberOfPostsOnHomePage = 3

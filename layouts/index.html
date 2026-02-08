@@ -3,7 +3,7 @@
 
   <!-- Pixel Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
   <!-- ================= TOP SECTION ================= -->
   <div class="top-section">
@@ -13,7 +13,8 @@
     </div>
 
     <h1 id="animated-title" class="site-title">
-      {{ .Site.Title }}
+      <span class="name-tooltip name-underlined" data-meaning="God answers prayers">(Ubanatu Chinaza)</span>
+      <span class="name-tooltip name-quoted" data-meaning="means 'God is with us'">Emmanuel</span>
     </h1>
 
   </div>
@@ -22,7 +23,7 @@
   <div class="cards-container">
     <a href="/posts/" class="card-link">
       <div class="card">
-        <div class="card-emoji">📝</div>
+        <div class="card-emoji">✍️</div>
         <div class="card-title">Posts</div>
         {{ $postCount := len (where .Site.RegularPages "Section" "posts") }}
         <div class="card-count">{{ $postCount }}</div>
@@ -31,7 +32,7 @@
 
     <a href="/books/" class="card-link">
       <div class="card">
-        <div class="card-emoji">📚</div>
+        <div class="card-emoji">📖</div>
         <div class="card-title">Books</div>
         <!-- Try 'Books' first based on directory name, if 0 fallback to 'books' might be needed but case sensitivity usually normalizes to lowercase in Hugo sections -->
         {{ $bookCount := len (where .Site.RegularPages "Section" "books") }}
@@ -44,8 +45,15 @@
 
     <a href="/about/" class="card-link">
       <div class="card">
-        <div class="card-emoji">👤</div>
+        <div class="card-emoji">👨‍💻</div>
         <div class="card-title">About</div>
+      </div>
+    </a>
+
+    <a href="/colophon/" class="card-link">
+      <div class="card">
+        <div class="card-emoji">💾</div>
+        <div class="card-title">Colophon</div>
       </div>
     </a>
   </div>
