@@ -93,6 +93,10 @@
 
 
 
+<link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -137,6 +141,9 @@
 
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
 
 
@@ -218,7 +225,7 @@
 
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
   
   <div class="top-section">
@@ -228,7 +235,8 @@
     </div>
 
     <h1 id="animated-title" class="site-title">
-      mmanuelubah
+      <span class="name-tooltip name-underlined" data-meaning="means God answers prayers">Ubanatu Chinaza</span>
+      <span class="name-tooltip name-underlined" data-meaning="means God is with us">Emmanuel</span>
     </h1>
 
   </div>
@@ -237,7 +245,7 @@
   <div class="cards-container">
     <a href="/posts/" class="card-link">
       <div class="card">
-        <div class="card-emoji">📝</div>
+        <div class="card-emoji">✍️</div>
         <div class="card-title">Posts</div>
         
         <div class="card-count">2</div>
@@ -246,7 +254,7 @@
 
     <a href="/books/" class="card-link">
       <div class="card">
-        <div class="card-emoji">📚</div>
+        <div class="card-emoji">📖</div>
         <div class="card-title">Books</div>
         
         
@@ -257,8 +265,15 @@
 
     <a href="/about/" class="card-link">
       <div class="card">
-        <div class="card-emoji">👤</div>
+        <div class="card-emoji">👨‍💻</div>
         <div class="card-title">About</div>
+      </div>
+    </a>
+
+    <a href="/colophon/" class="card-link">
+      <div class="card">
+        <div class="card-emoji">💾</div>
+        <div class="card-title">Colophon</div>
       </div>
     </a>
   </div>
@@ -271,6 +286,8 @@
 
     <div class="highlight-box">
       <ul class="reading-list">
+        
+        
         
         
         
@@ -621,7 +638,8 @@
     <div class="footer__content" style="text-align:center; font-size:0.9rem; opacity:0.8;">
       <span>© 2026  — mmanuelubah</span>
       <br>
-      <a href="https://www.linkedin.com/in/chinaza-ubanatu-05a983184/" target="_blank" rel="noopener" style="margin:0 8px;">LinkedIn</a> |
+      <a href="https://www.linkedin.com/in/chinaza-ubanatu-05a983184/" target="_blank" rel="noopener"
+        style="margin:0 8px;">LinkedIn</a> |
       <a href="https://github.com/mmanuelubah" target="_blank" rel="noopener" style="margin:0 8px;">GitHub</a> |
       <a href="https://x.com/mmanuelubah" target="_blank" rel="noopener" style="margin:0 8px;">Twitter</a>
       <br>
@@ -630,6 +648,28 @@
   </div>
 </footer>
 
+<button id="back-to-top" title="Back to Top">
+  <span>↑</span> TOP
+</button>
+
+<script>
+  const backToTop = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
             
         </div>
 

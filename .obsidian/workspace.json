@@ -27,16 +27,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/What Can We Remove?.md",
+                "file": "archetypes/default.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What Can We Remove?"
+              "title": "default"
+            }
+          },
+          {
+            "id": "b30854f4bb14fbfe",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -109,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/Week49.md",
+                "file": "archetypes/default.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +131,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Week49"
+              "title": "Backlinks for default"
             }
           },
           {
@@ -198,15 +210,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "9f2a64304b41ad62",
+  "active": "b30854f4bb14fbfe",
   "lastOpenFiles": [
-    "content/posts/Weekly RoundUp.md",
-    "content/posts/What Can We Remove?.md",
-    "public/posts/weekly-roundup/index.html",
-    "public/posts/weekly-roundup",
+    "content/projects/MyEasyAgent",
+    "Templates/weekly-roundup-template.md",
     "Templates/post-template.md",
     "Templates/book-template.md",
-    "Templates/weekly-roundup-template.md",
+    "content/posts/What Can We Remove?.md",
+    "content/posts/Weekly RoundUp.md",
+    "public/posts/weekly-roundup/index.html",
+    "public/posts/weekly-roundup",
     "layouts/posts/list.html",
     "layouts/posts",
     "public/images/IMG_4493.jpeg",
