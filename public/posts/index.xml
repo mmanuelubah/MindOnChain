@@ -5,8 +5,726 @@
         <description>Recent content in Posts on mmanuelubah</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 30 Jan 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Strategy</title>
+            <link>http://localhost:1313/posts/strategy/</link>
+            <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/strategy/</guid>
+            <description>&lt;blockquote&gt;
+&lt;p&gt;[!info]+ Important&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is more than a business; it’s a mission to bridge the gap between the &amp;ldquo;average Nigerian&amp;rdquo; and their right to a home. In a market like Lagos, where &amp;ldquo;Who you know&amp;rdquo; often outweighs &amp;ldquo;What you pay,&amp;rdquo; our platform prioritizes performance over deep pockets. This blueprint defines the &amp;ldquo;What,&amp;rdquo; &amp;ldquo;Why,&amp;rdquo; and &amp;ldquo;How&amp;rdquo; of our journey.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;1-execution-summary&#34;&gt;1. Execution Summary&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is a trust-centric PropTech ecosystem designed specifically for the Nigerian market. Unlike traditional listing sites that prioritize paid visibility, we utilize a &lt;strong&gt;Performance-Based Ranking&lt;/strong&gt; system and a &lt;strong&gt;Usage-Based Monetization&lt;/strong&gt; model.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<blockquote>
+<p>[!info]+ Important</p>
+<p><strong>MyEasyAgent</strong> is more than a business; it’s a mission to bridge the gap between the &ldquo;average Nigerian&rdquo; and their right to a home. In a market like Lagos, where &ldquo;Who you know&rdquo; often outweighs &ldquo;What you pay,&rdquo; our platform prioritizes performance over deep pockets. This blueprint defines the &ldquo;What,&rdquo; &ldquo;Why,&rdquo; and &ldquo;How&rdquo; of our journey.</p>
+</blockquote>
+<hr>
+<h1 id="1-execution-summary">1. Execution Summary</h1>
+<p><strong>MyEasyAgent</strong> is a trust-centric PropTech ecosystem designed specifically for the Nigerian market. Unlike traditional listing sites that prioritize paid visibility, we utilize a <strong>Performance-Based Ranking</strong> system and a <strong>Usage-Based Monetization</strong> model.</p>
+<ul>
+<li>
+<p><strong>Problem Statement:</strong> We aim to solve the twin crises of fraud and exploitative &ldquo;Agency Fees.&rdquo;</p>
+</li>
+<li>
+<p><strong>Solution:</strong> A regulated commitment fee system (₦2,500) and verified property intelligence.</p>
+</li>
+<li>
+<p><strong>Mission:</strong> To democratize access to affordable housing in Nigeria through transparent, tech-enabled connections.</p>
+</li>
+<li>
+<p><strong>Vision:</strong> To be the primary infrastructure for trust in Nigerian Real Estate, eliminating the fear of exploitation.</p>
+</li>
+</ul>
+<hr>
+<h1 id="2-business-model--strategy">2. Business Model &amp; Strategy</h1>
+<h3 id="21-revenue-model">2.1 Revenue Model</h3>
+<p>Our revenue is built on three distinct pillars to ensure sustainability and align with user success.</p>
+<ol>
+<li>
+<p><strong>Unit Economics:</strong></p>
+<ul>
+<li>
+<p><strong>HuntSmart Pass (Primary):</strong> A ₦15,000 usage-based pass. Includes 1 complimentary inspection and 4 additional prioritized slots (subject to the ₦2,500 commitment fee).</p>
+</li>
+<li>
+<p><strong>Commitment Fees:</strong> ₦2,500 per inspection.</p>
+<ul>
+<li>
+<p><em>Platform Share:</em> ₦500 (Covers operational overhead and verification).</p>
+</li>
+<li>
+<p><em>Agent Share:</em> ₦2,000 (Incentivizes attendance and covers transport).</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Commission Split (Performance Fees):</strong></p>
+<ul>
+<li>
+<p><strong>Direct Deals:</strong> 50/50 split between the agent and the platform.</p>
+</li>
+<li>
+<p><strong>Sub-Direct Deals:</strong> 50/25/25 split (Direct Agent / Sub-Direct Agent / Platform).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Scalability Plan:</strong> The usage-based model avoids &ldquo;subscription fatigue,&rdquo; allowing users to pay only when they are actively hunting for a home.</p>
+</li>
+</ol>
+<h3 id="22-market-positioning">2.2 Market Positioning</h3>
+<p>We move away from being a &ldquo;Listing Directory&rdquo; to becoming a <strong>Trust Infrastructure &amp; Matchmaker</strong>.</p>
+<ul>
+<li>
+<p><strong>The Problem with Traditional Sites:</strong> Platforms like PropertyPro.ng or Nigeria Property Centre operate on &ldquo;Pay-to-Play&rdquo; subscription models. They provide leads but do not guarantee results or safety.</p>
+</li>
+<li>
+<p><strong>The MyEasyAgent Core Positioning Statement:</strong>  For the average Nigerian and hustling family in Lagos who are tired of &lsquo;ghost&rsquo; listings and exploitative agency fees, MyEasyAgent is the performance-based connector that guarantees verified property access. Unlike traditional sites that rank agents by how much they pay, we rank agents by how much they deliver.</p>
+</li>
+<li>
+<p><strong>Solving Transaction Leakage:</strong> Traditional sites lose revenue when agents move deals offline (&ldquo;Sidelining&rdquo;). We prevent this via the <strong>Digital Handshake (QR Check-in)</strong> at the property, tracking the deal from inspection to closing.</p>
+</li>
+</ul>
+<hr>
+<h1 id="3-competitive-landscape">3. Competitive Landscape</h1>
+<h3 id="31-competitor-comparison-table">3.1 Competitor Comparison Table</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Feature</strong></th>
+          <th><strong>PropertyPro.ng</strong></th>
+          <th><strong>Land.ng</strong></th>
+          <th><strong>Expertlisting.ng</strong></th>
+          <th><strong>MyEasyAgent.com</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Business Model</strong></td>
+          <td>Subscription-based</td>
+          <td>Freemium + Legal services</td>
+          <td>Transparency &amp; Data-driven</td>
+          <td>Usage-based (HuntSmart)</td>
+      </tr>
+      <tr>
+          <td><strong>Agent Ranking</strong></td>
+          <td><strong>Pay-to-Play</strong></td>
+          <td>Listing-based</td>
+          <td>Data-based</td>
+          <td><strong>Performance-based</strong></td>
+      </tr>
+      <tr>
+          <td><strong>Trust Factor</strong></td>
+          <td>Low (Ghost listings)</td>
+          <td>Moderate (Land titles)</td>
+          <td>High (Flood/Price data)</td>
+          <td>High (TrustShield &amp; QR), Flood and Price data</td>
+      </tr>
+      <tr>
+          <td><strong>Audience</strong></td>
+          <td>Everyone (Luxury focus)</td>
+          <td>Buyers/Developers</td>
+          <td>Data-conscious seekers</td>
+          <td><strong>Average Nigerians</strong>, and  Data-Conscious seekers</td>
+      </tr>
+      <tr>
+          <td><strong>Incentive</strong></td>
+          <td>Lead Generation</td>
+          <td>Secure Documentation</td>
+          <td>No Middlemen</td>
+          <td><strong>Affordability &amp; Access</strong></td>
+      </tr>
+      <tr>
+          <td><strong>Revenue Source</strong></td>
+          <td>Monthly Subscriptions</td>
+          <td>Ad packages</td>
+          <td>Data Intel</td>
+          <td><strong>Success Fees &amp; Splits</strong>, and Data Intel</td>
+      </tr>
+      <tr>
+          <td><strong>Transaction Cut</strong></td>
+          <td><strong>0%</strong></td>
+          <td>0%</td>
+          <td>0%</td>
+          <td><strong>25% to 50%</strong></td>
+      </tr>
+      <tr>
+          <td><strong>Platform Risk</strong></td>
+          <td>Zero Risk</td>
+          <td>Low Risk</td>
+          <td>Low Risk</td>
+          <td><strong>Shared Risk/High Reward</strong></td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>[!tip] Tips</p>
+<ul>
+<li><strong>The &ldquo;Flood-Proof&rdquo; Filter:</strong> Integrating flood-data tags to address a major Lagos pain point.</li>
+<li><strong>The &ldquo;Agent Identity&rdquo; Tier:</strong> Differentiating between <strong>&ldquo;Verified Key-Holders&rdquo;</strong> (Direct access) and <strong>&ldquo;Property Scouts&rdquo;</strong> (Semi-direct) to show the user the length of the chain.</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="4-risk-assessment-the-bad-sides">4. Risk Assessment: The &ldquo;Bad Sides&rdquo;</h1>
+<p>Despite our safeguards, we must navigate these inherent Lagos market risks:</p>
+<ol>
+<li>
+<p><strong>Agent Resistance:</strong> A 25–50% commission split is a massive jump from the 0% charged by competitors.</p>
+</li>
+<li>
+<p><strong>Sidelining Vulnerability:</strong> High incentives for agents to &ldquo;hide&rdquo; the deal to save the commission cut.</p>
+</li>
+<li>
+<p><strong>Scaling Bottlenecks:</strong> Manual &ldquo;HomeView&rdquo; inspections are slow and costly.</p>
+</li>
+<li>
+<p><strong>Market Speed vs. Process:</strong> Lagos rentals move in hours; our legal review/offer process might be perceived as a delay.</p>
+</li>
+<li>
+<p><strong>Legal Limits:</strong> Our Provisional Offer is not a Tenancy Agreement; we still rely on client due diligence.</p>
+</li>
+<li>
+<p><strong>Upfront Fee Psychology:</strong> Overcoming the barrier of users expecting &ldquo;Free Browsing.&rdquo;</p>
+</li>
+</ol>
+<hr>
+<h1 id="5-strategic-solutions--success-probabilities">5. Strategic Solutions &amp; Success Probabilities</h1>
+<h3 id="51-success-probability-risk-weighted">5.1 Success Probability (Risk-Weighted)</h3>
+<ul>
+<li>
+<p><strong>Financial Sustainability:</strong> <strong>70%</strong> (Steady cash flow from HuntSmart Pass/Commitment fees).</p>
+</li>
+<li>
+<p><strong>Trust &amp; Adoption:</strong> <strong>55%</strong> (High value vs. psychological barrier of upfront fees).</p>
+</li>
+<li>
+<p><strong>Sidelining Prevention:</strong> <strong>40%</strong> (The most difficult area; requires strong digital &ldquo;locks&rdquo;).</p>
+</li>
+</ul>
+<h3 id="52-the-solution-set">5.2 The Solution Set</h3>
+<ul>
+<li>
+<p><strong>Leakage Prevention:</strong> Use the <strong>&ldquo;Legal Review Lock&rdquo;</strong>, clients are warned that paying without our &ldquo;Safe to Sign&rdquo; certificate voids all platform protections.</p>
+</li>
+<li>
+<p><strong>Scaling through &ldquo;Graduated Trust&rdquo;:</strong> Use the <strong>HomeView Badge</strong> for team-verified properties and <strong>Incentivized Video Walkthroughs</strong> for agent-verified (Standard) listings.</p>
+</li>
+<li>
+<p><strong>The &ldquo;Remote Handover&rdquo; Script:</strong> Allow Semi-Direct agents to stay home while the Direct Agent takes the ₦2,000 transport fee, protecting everyone’s split.</p>
+</li>
+<li>
+<p><strong>Fast Market Fix:</strong> Implement <strong>Instant Digital Receipts</strong>. The moment a client clicks &ldquo;I Want This House,&rdquo; an offer letter is generated and the agent is notified immediately via WhatsApp.</p>
+</li>
+</ul>
+<hr>
+<h1 id="6-homeview-audit--checklist">6. HomeView Audit &amp; Checklist</h1>
+<blockquote>
+<p>[!danger] Danger</p>
+<p>Do not launch the website until you have at least 20 properties that have gone through the &ldquo;HomeView&rdquo; process. Devaluing the HuntSmart Pass by launching an empty shell will destroy our brand.</p>
+</blockquote>
+<h3 id="61-the-professional-property-audit-checklist">6.1 The Professional Property Audit Checklist</h3>
+<p><strong>1. Exterior &amp; Structural:</strong></p>
+<ul>
+<li>
+<p>Check for structural cracks, roof leaks (water stains), and drainage/flood history.</p>
+</li>
+<li>
+<p>Security features (fence height, gate condition).</p>
+</li>
+</ul>
+<p><strong>2. Utilities &amp; Services:</strong></p>
+<ul>
+<li>
+<p><strong>Water:</strong> Test pump, check for &ldquo;Iron Water,&rdquo; and tank availability.</p>
+</li>
+<li>
+<p><strong>Electricity:</strong> Confirm Prepaid vs. Estimated billing; test all sockets.</p>
+</li>
+<li>
+<p><strong>Waste:</strong> Verify PSP collection points.</p>
+</li>
+</ul>
+<p><strong>3. Interior Audit:</strong></p>
+<ul>
+<li>
+<p>Check for hollow tiles and ventilation quality.</p>
+</li>
+<li>
+<p>Inspect cabinetry for termites (wood-borers) or dampness.</p>
+</li>
+<li>
+<p>Plumbing: Flush all toilets; check soakaway proximity to water sources.</p>
+</li>
+</ul>
+<p><strong>4. Neighborhood Context:</strong></p>
+<ul>
+<li>
+<p>Road accessibility during rain and proximity to noise sources (churches/bars).</p>
+</li>
+<li>
+<p>Estimated commute times and mobile network strength (MTN/Airtel/Starlink).</p>
+</li>
+</ul>
+<blockquote>
+<p>[!info] info
+<strong>HomeView</strong> is the core value proposition of the <strong>HuntSmart Pass</strong>, the checklist must be exhaustive. It transforms a simple &ldquo;house viewing&rdquo; into a professional <strong>Property Audit</strong>.</p>
+</blockquote>
+<hr>
+<h1 id="7-organizational-structure">7. Organizational Structure</h1>
+<h3 id="71-governance-framework">7.1 Governance Framework</h3>
+<ul>
+<li>
+<p><strong>Model:</strong> High-Accountability / Domain-Authority.</p>
+</li>
+<li>
+<p><strong>Equity:</strong> 40%/60% split among 3 co-founders.</p>
+</li>
+<li>
+<p><strong>Vesting:</strong> 4-year schedule with a <strong>1-year cliff</strong>.</p>
+</li>
+</ul>
+<h3 id="72-roles--responsibilities-co-founder-matrix">7.2 Roles &amp; Responsibilities (Co-founder Matrix)</h3>
+<h4 id="1-emmanuel--chief-executive-officer-ceo--head-of-product"><strong>1. Emmanuel — Chief Executive Officer (CEO) &amp; Head of Product</strong></h4>
+<p><strong>Mission:</strong> <em>To protect the long-term sustainability and unit economics of the platform.</em></p>
+<ul>
+<li>
+<p><strong>Core Responsibilities:</strong></p>
+<ul>
+<li>
+<p><strong>Monetization Strategy:</strong> Final authority on the pricing of the HuntSmart Pass and the percentage splits (50/50, 50/25/25).</p>
+</li>
+<li>
+<p><strong>Unit Economics:</strong> Monitoring the &ldquo;Platform Drain&rdquo;—ensuring the ₦500 platform fee from the commitment fee covers SMS, server, and administrative costs.</p>
+</li>
+<li>
+<p><strong>Investor &amp; Legal Relations:</strong> Sourcing institutional partnerships (Banks/Insurance) for the &ldquo;Legal Review&rdquo; and &ldquo;Rent Financing&rdquo; phases.</p>
+</li>
+<li>
+<p><strong>The &ldquo;Build Once&rdquo; Philosophy:</strong> Reviewing all features to ensure they are automated and don&rsquo;t require manual human labor at scale.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>System Ownership:</strong> The Admin Dashboard, Revenue Reporting, and Strategic Roadmap.</p>
+</li>
+<li>
+<p><strong>Success Metric (KPI):</strong> Monthly Recurring Revenue (MRR) and Platform Profitability.</p>
+</li>
+</ul>
+<h4 id="2-arinze--chief-technology-officer-cto--lead-developer"><strong>2. Arinze — Chief Technology Officer (CTO) &amp; Lead Developer</strong></h4>
+<p><strong>Mission:</strong> <em>To build the &ldquo;Trust Engine&rdquo; that automates agent payouts and client security.</em></p>
+<ul>
+<li>
+<p><strong>Core Responsibilities:</strong></p>
+<ul>
+<li>
+<p><strong>Full-Stack Architecture:</strong> Managing the entire codebase, ensuring the &ldquo;Mobile-First&rdquo; PWA (Progressive Web App) experience is seamless.</p>
+</li>
+<li>
+<p><strong>Automation Logic:</strong> Developing the <strong>QR Code/Unique Booking ID</strong> system that triggers the ₦1,500 payout to agents without manual admin intervention.</p>
+</li>
+<li>
+<p><strong>Security &amp; Scale:</strong> Integrating Paystack/Flutterwave and ensuring 99.9% uptime.</p>
+</li>
+<li>
+<p><strong>Currency Check System:</strong> Building the automated 48-72 hour &ldquo;Nudge&rdquo; system that removes expired listings.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>System Ownership:</strong> Backend database, Payment APIs, and the Agent/Client User Interface.</p>
+</li>
+<li>
+<p><strong>Success Metric (KPI):</strong> System Uptime and Successful Automation Rate (payouts with zero manual errors).</p>
+</li>
+</ul>
+<h4 id="3-precious--chief-customer-officer-cco--head-of-field-ops"><strong>3. Precious — Chief Customer Officer (CCO) &amp; Head of Field Ops</strong></h4>
+<p><strong>Mission:</strong> <em>To ensure that &ldquo;Verified&rdquo; actually means &ldquo;Truthful&rdquo; and to professionalize the agents.</em></p>
+<ul>
+<li>
+<p><strong>Core Responsibilities:</strong></p>
+<ul>
+<li>
+<p><strong>TrustShield Operations:</strong> Physical and digital verification of LASRERA/ERCAAN certificates for every agent.</p>
+</li>
+<li>
+<p><strong>HomeView Management:</strong> Scheduling and executing the physical audits (The Checklist) to create the Truth Reports for HuntSmart users.</p>
+</li>
+<li>
+<p><strong>Agent Discipline:</strong> Enforcing the &ldquo;Indictment &amp; Punishment&rdquo; rules. If an agent lies about a property, Precious is the one who suspends them.</p>
+</li>
+<li>
+<p><strong>Dispute Resolution:</strong> Handling &ldquo;No-Show&rdquo; tickets when a client pays ₦2,000 but the agent is unavailable.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>System Ownership:</strong> Agent Onboarding Workflow, HomeView Checklists, and Customer Support.</p>
+</li>
+<li>
+<p><strong>Success Metric (KPI):</strong> Agent Integrity Score and User Trust (measured by CSAT).</p>
+</li>
+</ul>
+<h4 id="4-samson--chief-marketing-officer-cmo--communications-lead"><strong>4. Samson — Chief Marketing Officer (CMO) &amp; Communications Lead</strong></h4>
+<p><strong>Mission:</strong> <em>To simplify the &ldquo;Why&rdquo; and educate the market on paying upfront for trust.</em></p>
+<ul>
+<li>
+<p><strong>Core Responsibilities:</strong></p>
+<ul>
+<li>
+<p><strong>Educational Marketing:</strong> Creating content that explains why the ₦15,000 HuntSmart Pass is cheaper than traditional &ldquo;Lagos Form Fees.&rdquo;</p>
+</li>
+<li>
+<p><strong>Legal-to-Simple Copy:</strong> Translating the &ldquo;Provisional Offer &amp; Acceptance Form&rdquo; and &ldquo;Legal Review&rdquo; into language a regular tenant understands and trusts.</p>
+</li>
+<li>
+<p><strong>Lead Acquisition:</strong> Driving serious home-seekers (not window shoppers) to the platform through targeted Lagos-centric social media campaigns.</p>
+</li>
+<li>
+<p><strong>Brand Authority:</strong> Ensuring MyEasyAgent is positioned as the &ldquo;Bank of Trust&rdquo; in real estate.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>System Ownership:</strong> All Social Media Channels, Content Strategy, and the Onboarding Educational Loop.</p>
+</li>
+<li>
+<p><strong>Success Metric (KPI):</strong> Cost Per Acquired User (CAC) and &ldquo;HuntSmart&rdquo; conversion rate.</p>
+</li>
+</ul>
+<h3 id="73-the-raci-matrix">7.3 The RACI Matrix</h3>
+<p>R = Responsible (Doer) | A = Accountable (Owner/Sign-off) | C = Consulted | I = Informed</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Key Process</strong></th>
+          <th><strong>Emmanuel</strong></th>
+          <th><strong>Arinze</strong></th>
+          <th><strong>Precious</strong></th>
+          <th><strong>Samson</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>New Property Validation</strong></td>
+          <td>C</td>
+          <td>I</td>
+          <td><strong>A</strong></td>
+          <td>R</td>
+      </tr>
+      <tr>
+          <td><strong>HomeView Audit</strong></td>
+          <td>I</td>
+          <td>I</td>
+          <td><strong>R/A</strong></td>
+          <td>C</td>
+      </tr>
+      <tr>
+          <td><strong>Automated Payout (₦1,500)</strong></td>
+          <td>A</td>
+          <td><strong>R</strong></td>
+          <td>I</td>
+          <td>I</td>
+      </tr>
+      <tr>
+          <td><strong>Closing 50/50 Deal</strong></td>
+          <td><strong>R/A</strong></td>
+          <td>I</td>
+          <td>C</td>
+          <td>C</td>
+      </tr>
+      <tr>
+          <td><strong>Agent Suspension</strong></td>
+          <td><strong>A</strong></td>
+          <td>I</td>
+          <td><strong>R</strong></td>
+          <td>I</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="74-decision-making--conflict-resolution">7.4 Decision-Making &amp; Conflict Resolution</h3>
+<ul>
+<li>
+<p><strong>Expert Domain Rule:</strong> Arinze and Emmanuel have the tie-breaking vote for Technology. Samson holds the vote for Marketing. Precious holds the vote for Agent Operations.</p>
+</li>
+<li>
+<p><strong>CEO Veto:</strong> Emmanuel holds final veto power for financial or survival matters (requires written justification).</p>
+</li>
+<li>
+<p><strong>Truth First:</strong> No decision can compromise the &ldquo;Trust Infrastructure&rdquo; for clicks.</p>
+</li>
+</ul>
+<hr>
+<h1 id="8-key-milestones-q1--q4">8. Key Milestones (Q1 – Q4)</h1>
+<p>These milestones focus on a <strong>&ldquo;Revenue First, Scale Second&rdquo;</strong> approach to ensure Phase 1 brings in value immediately.</p>
+<h4 id="q1-the-validation-phase-the"><strong>Q1: The Validation Phase (The &ldquo;Zero-to-One&rdquo; Launch)</strong></h4>
+<ul>
+<li>
+<p><strong>Technical:</strong> Deploy MVP with mandatory email verification, Launch HuntSmart Pass + HomeView + ₦2,000 commitment fee in <strong>one</strong> high-demand neighborhood. Target: 100% accuracy on reports</p>
+</li>
+<li>
+<p><strong>Operational:</strong> Onboard first 20-50 LASRERA/ERCAAN-certified agents in a specific Lagos cluster (e.g., Amuwo or Satlite).</p>
+</li>
+<li>
+<p><strong>Revenue:</strong> Secure the first 50 <strong>HuntSmart Pass (₦15,000)</strong> sales and 100 successful <strong>Commitment Fee (₦2,000)</strong> transactions.</p>
+</li>
+<li>
+<p><strong>Goal:</strong> Prove that the &ldquo;Commitment Fee Logic&rdquo; reduces client and agent no-shows.</p>
+</li>
+</ul>
+<h4 id="q2-the-trust-deepening-phase-physical-vs-digital"><strong>Q2: The Trust-Deepening Phase (Physical vs. Digital)</strong></h4>
+<ul>
+<li>
+<p><strong>System:</strong> Automate the <strong>48-72 Hour Currency Check</strong>—if an agent doesn&rsquo;t confirm availability via email/SMS nudge, the property status shifts to <strong>#AwaitingUpdate</strong>.</p>
+</li>
+<li>
+<p><strong>Goal:</strong> Increase platform reliability and reduce &ldquo;Ghost Listings.&rdquo;</p>
+</li>
+</ul>
+<h4 id="q3-the-anti-sidelining-phase-transaction-security"><strong>Q3: The Anti-Sidelining Phase (Transaction Security)</strong></h4>
+<ul>
+<li>
+<p><strong>Feature:</strong> Launch the digital <strong>Provisional Tenancy Offer &amp; Acceptance Form</strong> and the <strong>Free Legal Review</strong> service.</p>
+</li>
+<li>
+<p><strong>Strategy:</strong> Aggressively market the <strong>&ldquo;Legal Review Lock&rdquo;</strong> to prevent users from paying landlords/agents off-platform.</p>
+</li>
+<li>
+<p><strong>Revenue:</strong> Track first 10 successful <strong>Commission Splits (50/50 or 50/25/25)</strong> on closed deals.</p>
+</li>
+<li>
+<p><strong>Goal:</strong> Capture the &ldquo;Big Money&rdquo; at the end of the funnel.</p>
+</li>
+</ul>
+<h4 id="q4-the-expansion--scale-phase"><strong>Q4: The Expansion &amp; Scale Phase</strong></h4>
+<ul>
+<li>
+<p><strong>Technical:</strong> Upgrade the Booking ID system to a full <strong>QR Code Check-in</strong> and automated payout dashboard.</p>
+</li>
+<li>
+<p><strong>Market:</strong> Expand from the initial cluster to cover 80% of Lagos mainland and island.</p>
+</li>
+<li>
+<p><strong>Governance:</strong> Review the 4-year vesting performance; hire the first <strong>Customer Care/Operations</strong> team to offload Precious and Samson.</p>
+</li>
+<li>
+<p><strong>Goal:</strong> Reach a <strong>62%+ Success Rate</strong> across all system pillars (Financial, Trust, and Sidelining).</p>
+</li>
+</ul>
+<hr>
+<h1 id="9-ux--founder-refinement">9. UX &amp; Founder Refinement</h1>
+<ul>
+<li>
+<p><strong>9.1 Website Testing &amp; Development Issues</strong>:</p>
+<p>This document outlines the major challenges and required improvements identified during testing. All team members are expected to read and understand these points to ensure proper implementation and quality control.</p>
+</li>
+</ul>
+<hr>
+<ol>
+<li>
+<p>User Registration &amp; Email Verification</p>
+<p>When users sign up with email/ Google mail as:</p>
+<ul>
+<li>Agents - looking to list properties.</li>
+<li>Clients - looking to rent properties/ Scanning the website.</li>
+<li>Landlords - looking to list properties.</li>
+</ul>
+</li>
+</ol>
+<p>After registration, users should see a popup or banner notification requesting them to:</p>
+<ul>
+<li>Check their email for confirmation.</li>
+<li>verify their account.</li>
+</ul>
+<p>After verification, users should be redirected back to the platform, they can either:</p>
+<ul>
+<li>Complete their profile.</li>
+<li>Scan through the website for what they want.</li>
+</ul>
+<hr>
+<ol start="2">
+<li>Agent/Landlord Hero Page:</li>
+</ol>
+<p>Agents should have a dynamic hero page, for mobile and desktop and displays the following:</p>
+<ul>
+<li>Home</li>
+<li>Notification</li>
+<li>Manage your listings (Dashboard) - Agent.</li>
+<li>My Watchlist</li>
+<li>Profile</li>
+<li>Share feedback</li>
+<li>Sign Out.</li>
+</ul>
+<p>Agents should have a profile page that is simple to navigate and allows them to:</p>
+<ul>
+<li>Fill their personal details after sign in.</li>
+<li>Upload required data</li>
+<li>Change password</li>
+<li>Add phone number</li>
+<li>Add profile picture</li>
+<li>Change email address</li>
+</ul>
+<p>Agents should have a <strong>minimalist and easy-to-use dashboard</strong> that allows them to:</p>
+<ul>
+<li>
+<p>Set available days and times for inspections.</p>
+</li>
+<li>
+<p>Allow clients to book inspections based on availability.</p>
+</li>
+<li>
+<p>Add Property details such as</p>
+</li>
+<li>
+<p>Edit or cancel inspection schedules.</p>
+</li>
+<li>
+<p>Manage individual inspections for each property.</p>
+</li>
+<li>
+<p>Adjust schedules based on landlord availability.</p>
+</li>
+</ul>
+<hr>
+<!-- raw HTML omitted -->
+<ol start="3">
+<li>Client Hero Page:</li>
+</ol>
+<p>Client should have a dynamic hero page, for mobile and desktop and displays the following:</p>
+<ul>
+<li>Home</li>
+<li>Notification</li>
+<li>Manage your Inspections (Dashboard) - Client.</li>
+<li>My Watchlist</li>
+<li>Profile</li>
+<li>Share feedback</li>
+<li>Sign Out.</li>
+</ul>
+<p>Clients should have a profile page that is simple to navigate and allows them to:</p>
+<ul>
+<li>Fill their personal details after sign in.</li>
+<li>Change password</li>
+<li>Add phone number</li>
+<li>Add profile picture</li>
+<li>Change email address</li>
+<li>Preferences</li>
+</ul>
+<hr>
+<ol start="4">
+<li>Property Access levels (Basic Vs Premium Users)</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th>Feature / Access</th>
+          <th>Basic User (Standard Property) by Agent</th>
+          <th>Basic User (Premium Property) by MyEasyAgent</th>
+          <th>Premium User</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Pictures</td>
+          <td>Full Access</td>
+          <td>Up to 5 Images Only</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Description</td>
+          <td>Full Description</td>
+          <td>Short Description</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Video (Agent Upload)</td>
+          <td>Available (If Uploaded)</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Features</td>
+          <td>Full Features</td>
+          <td>Limited Features</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Phone Contact</td>
+          <td>MyEasyAgent Contact Only</td>
+          <td>MyEasyAgent Contact Only</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Google Maps</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Overview Map</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Book Inspection</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Defect Reports</td>
+          <td>Available (If Uploaded)</td>
+          <td>Not Available (Upgrade Needed)</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Special Features / Extras</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Local Area Advantages;<!-- raw HTML omitted --><!-- raw HTML omitted -->Flood insights, Pricing, and Data</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+      </tr>
+      <tr>
+          <td>Location &amp; Exact address</td>
+          <td>Location Only</td>
+          <td>Location Only</td>
+          <td>Exact Address</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<ul>
+<li>
+<p><strong>9.2 Refined Journey:</strong> Ensure the &ldquo;HuntSmart&rdquo; core loop is seamless.</p>
+</li>
+<li>
+<p><strong>Founder Requests:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Review 2.1 for tax implications.</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Audit UX Flow for technical feasibility.</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Week 4 • January 2026</title>
