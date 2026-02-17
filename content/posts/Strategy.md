@@ -231,7 +231,7 @@ Even with safeguards, these risks exist:
 
 - **Model:** High-Accountability / Domain-Authority
     
-- **Equity:** 40%/60% split among 3 co-founders
+- **Equity:** 40% CEO and 60% split among 3 co-founders
     
 - **Vesting:** 4-year schedule, 1-year cliff
     
@@ -286,13 +286,13 @@ Even with safeguards, these risks exist:
 
 R = Responsible (Doer) | A = Accountable (Owner/Sign-off) | C = Consulted | I = Informed
 
-|**Process**|**Emmanuel**|**Arinze**|**Precious**|**Samson**|
-|---|---|---|---|---|
-|New Property Validation|C|I|A|R|
-|HomeView Audit|I|I|R/A|C|
-|Automated Payout (₦1,500)|A|R|I|I|
-|Closing 50/50 Deal|R/A|I|C|C|
-|Agent Suspension|A|I|R|I|
+| **Process**               |**Emmanuel**|**Arinze**|**Precious**|**Samson**|
+| ------------------------- | ------------ | ---------- | ------------ | ---------- |
+| New Property Validation   |C|I|A|R|
+| HomeView Audit            |I|I|R/A|C|
+| Automated Payout (₦2,500) |A|R|I|I|
+| Closing 50/50 Deal        |R/A|I|C|C|
+| Agent Suspension          |A|I|R|I|
 
 ### **7.4 Decision-Making & Conflict Resolution**
 

@@ -1,102 +1,135 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on mmanuelubah</title>
-        <link>http://localhost:1313/posts/</link>
-        <description>Recent content in Posts on mmanuelubah</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
-        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Strategy</title>
-            <link>http://localhost:1313/posts/strategy/</link>
-            <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-            
-            <guid>http://localhost:1313/posts/strategy/</guid>
-            <description>&lt;blockquote&gt;
-&lt;p&gt;[!info]+ Important&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is more than a business; it’s a mission to bridge the gap between the &amp;ldquo;average Nigerian&amp;rdquo; and their right to a home. In a market like Lagos, where &amp;ldquo;Who you know&amp;rdquo; often outweighs &amp;ldquo;What you pay,&amp;rdquo; our platform prioritizes performance over deep pockets. This blueprint defines the &amp;ldquo;What,&amp;rdquo; &amp;ldquo;Why,&amp;rdquo; and &amp;ldquo;How&amp;rdquo; of our journey.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;1-execution-summary&#34;&gt;1. Execution Summary&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is a trust-centric PropTech ecosystem designed specifically for the Nigerian market. Unlike traditional listing sites that prioritize paid visibility, we utilize a &lt;strong&gt;Performance-Based Ranking&lt;/strong&gt; system and a &lt;strong&gt;Usage-Based Monetization&lt;/strong&gt; model.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<blockquote>
-<p>[!info]+ Important</p>
-<p><strong>MyEasyAgent</strong> is more than a business; it’s a mission to bridge the gap between the &ldquo;average Nigerian&rdquo; and their right to a home. In a market like Lagos, where &ldquo;Who you know&rdquo; often outweighs &ldquo;What you pay,&rdquo; our platform prioritizes performance over deep pockets. This blueprint defines the &ldquo;What,&rdquo; &ldquo;Why,&rdquo; and &ldquo;How&rdquo; of our journey.</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on mmanuelubah</title><link>/posts/</link><description>Recent content in Posts on mmanuelubah</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Strategy</title><link>/posts/strategy/</link><pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate><guid>/posts/strategy/</guid><description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!info]+ &lt;strong&gt;Important&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is more than a business; it is a mission-driven PropTech platform aimed at bridging the gap between the “average Nigerian” and their right to a home. In a market like Lagos, where personal networks (“Who you know”) often outweigh financial capability (“What you pay”), MyEasyAgent prioritizes &lt;strong&gt;performance, trust, and transparency&lt;/strong&gt; over deep pockets. This blueprint defines the &lt;strong&gt;What, Why, and How&lt;/strong&gt; of our journey, providing a clear roadmap for execution.&lt;/p&gt;</description><content type="html"><![CDATA[<hr>
+<blockquote>
+<p>[!info]+ <strong>Important</strong></p>
+<p><strong>MyEasyAgent</strong> is more than a business; it is a mission-driven PropTech platform aimed at bridging the gap between the “average Nigerian” and their right to a home. In a market like Lagos, where personal networks (“Who you know”) often outweigh financial capability (“What you pay”), MyEasyAgent prioritizes <strong>performance, trust, and transparency</strong> over deep pockets. This blueprint defines the <strong>What, Why, and How</strong> of our journey, providing a clear roadmap for execution.</p>
 </blockquote>
 <hr>
-<h1 id="1-execution-summary">1. Execution Summary</h1>
-<p><strong>MyEasyAgent</strong> is a trust-centric PropTech ecosystem designed specifically for the Nigerian market. Unlike traditional listing sites that prioritize paid visibility, we utilize a <strong>Performance-Based Ranking</strong> system and a <strong>Usage-Based Monetization</strong> model.</p>
+<h1 id="1-executive-summary"><strong>1. Executive Summary</strong></h1>
+<p><strong>MyEasyAgent</strong> is a trust-centric PropTech ecosystem tailored specifically for the Nigerian real estate market. Unlike conventional listing sites that prioritize paid visibility, our platform leverages:</p>
 <ul>
 <li>
-<p><strong>Problem Statement:</strong> We aim to solve the twin crises of fraud and exploitative &ldquo;Agency Fees.&rdquo;</p>
+<p><strong>Performance-Based Ranking:</strong> Agents are ranked by delivery, not by payment.</p>
 </li>
 <li>
-<p><strong>Solution:</strong> A regulated commitment fee system (₦2,500) and verified property intelligence.</p>
-</li>
-<li>
-<p><strong>Mission:</strong> To democratize access to affordable housing in Nigeria through transparent, tech-enabled connections.</p>
-</li>
-<li>
-<p><strong>Vision:</strong> To be the primary infrastructure for trust in Nigerian Real Estate, eliminating the fear of exploitation.</p>
+<p><strong>Usage-Based Monetization:</strong> Users pay only when actively hunting for homes.</p>
 </li>
 </ul>
-<hr>
-<h1 id="2-business-model--strategy">2. Business Model &amp; Strategy</h1>
-<h3 id="21-revenue-model">2.1 Revenue Model</h3>
-<p>Our revenue is built on three distinct pillars to ensure sustainability and align with user success.</p>
+<h3 id="11-problem-statement"><strong>1.1 Problem Statement</strong></h3>
+<p>The Nigerian real estate market suffers from:</p>
 <ol>
 <li>
-<p><strong>Unit Economics:</strong></p>
-<ul>
-<li>
-<p><strong>HuntSmart Pass (Primary):</strong> A ₦15,000 usage-based pass. Includes 1 complimentary inspection and 4 additional prioritized slots (subject to the ₦2,500 commitment fee).</p>
+<p>Fraudulent listings</p>
 </li>
 <li>
-<p><strong>Commitment Fees:</strong> ₦2,500 per inspection.</p>
-<ul>
-<li>
-<p><em>Platform Share:</em> ₦500 (Covers operational overhead and verification).</p>
+<p>Exploitative agency fees</p>
 </li>
 <li>
-<p><em>Agent Share:</em> ₦2,000 (Incentivizes attendance and covers transport).</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Commission Split (Performance Fees):</strong></p>
-<ul>
-<li>
-<p><strong>Direct Deals:</strong> 50/50 split between the agent and the platform.</p>
-</li>
-<li>
-<p><strong>Sub-Direct Deals:</strong> 50/25/25 split (Direct Agent / Sub-Direct Agent / Platform).</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Scalability Plan:</strong> The usage-based model avoids &ldquo;subscription fatigue,&rdquo; allowing users to pay only when they are actively hunting for a home.</p>
+<p>Lack of verified property intelligence</p>
 </li>
 </ol>
-<h3 id="22-market-positioning">2.2 Market Positioning</h3>
-<p>We move away from being a &ldquo;Listing Directory&rdquo; to becoming a <strong>Trust Infrastructure &amp; Matchmaker</strong>.</p>
+<h3 id="12-solution"><strong>1.2 Solution</strong></h3>
+<p>Our solution integrates:</p>
 <ul>
 <li>
-<p><strong>The Problem with Traditional Sites:</strong> Platforms like PropertyPro.ng or Nigeria Property Centre operate on &ldquo;Pay-to-Play&rdquo; subscription models. They provide leads but do not guarantee results or safety.</p>
+<p><strong>Regulated Commitment Fees:</strong> ₦2,500 per inspection to ensure accountability</p>
 </li>
 <li>
-<p><strong>The MyEasyAgent Core Positioning Statement:</strong>  For the average Nigerian and hustling family in Lagos who are tired of &lsquo;ghost&rsquo; listings and exploitative agency fees, MyEasyAgent is the performance-based connector that guarantees verified property access. Unlike traditional sites that rank agents by how much they pay, we rank agents by how much they deliver.</p>
+<p><strong>Verified Property Intelligence:</strong> Physical and digital audits of properties via HomeView</p>
+</li>
+</ul>
+<h3 id="13-mission"><strong>1.3 Mission</strong></h3>
+<p>To democratize access to affordable, verified housing in Nigeria through transparent, tech-enabled connections.</p>
+<h3 id="14-vision"><strong>1.4 Vision</strong></h3>
+<p>To establish <strong>MyEasyAgent</strong> as the <strong>primary trust infrastructure</strong> in Nigerian real estate, eliminating fear of exploitation and ensuring safe transactions for all users.</p>
+<hr>
+<h1 id="2-business-model--strategy"><strong>2. Business Model &amp; Strategy</strong></h1>
+<h3 id="21-revenue-model"><strong>2.1 Revenue Model</strong></h3>
+<p>Our revenue framework is designed for <strong>sustainability</strong>, <strong>alignment with user success</strong>, and <strong>scalability</strong>.</p>
+<h4 id="211-unit-economics"><strong>2.1.1 Unit Economics</strong></h4>
+<ol>
+<li>
+<p><strong>HuntSmart Pass (Primary Revenue Driver)</strong></p>
+<ul>
+<li>
+<p>₦15,000 usage-based pass</p>
 </li>
 <li>
-<p><strong>Solving Transaction Leakage:</strong> Traditional sites lose revenue when agents move deals offline (&ldquo;Sidelining&rdquo;). We prevent this via the <strong>Digital Handshake (QR Check-in)</strong> at the property, tracking the deal from inspection to closing.</p>
+<p>Includes 1 complimentary inspection</p>
+</li>
+<li>
+<p>4 additional prioritized inspection slots (subject to ₦2,500 commitment fee)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Commitment Fees:</strong> ₦2,500 per inspection</p>
+<ul>
+<li>
+<p><strong>Platform Share:</strong> ₦500 (operational overhead, verification)</p>
+</li>
+<li>
+<p><strong>Agent Share:</strong> ₦2,000 (incentivizes attendance, covers transport)</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="212-commission-split-performance-fees"><strong>2.1.2 Commission Split (Performance Fees)</strong></h4>
+<ol>
+<li>
+<p><strong>Direct Deals:</strong> 50/50 split between agent and platform</p>
+</li>
+<li>
+<p><strong>Sub-Direct Deals:</strong> 50/25/25 split (Direct Agent / Sub-Direct Agent / Platform)</p>
+</li>
+</ol>
+<h4 id="213-scalability-plan"><strong>2.1.3 Scalability Plan</strong></h4>
+<ul>
+<li>
+<p>Users only pay when actively hunting, avoiding subscription fatigue</p>
+</li>
+<li>
+<p>Platform can scale without forcing long-term subscriptions</p>
 </li>
 </ul>
 <hr>
-<h1 id="3-competitive-landscape">3. Competitive Landscape</h1>
-<h3 id="31-competitor-comparison-table">3.1 Competitor Comparison Table</h3>
+<h3 id="22-market-positioning"><strong>2.2 Market Positioning</strong></h3>
+<p><strong>MyEasyAgent</strong> is positioned as a <strong>Trust Infrastructure &amp; Matchmaker</strong>, not just a listing site.</p>
+<ol>
+<li>
+<p><strong>Challenges with Traditional Sites</strong></p>
+<ul>
+<li>
+<p>Platforms like PropertyPro.ng and Nigeria Property Centre operate on “Pay-to-Play” subscriptions.</p>
+</li>
+<li>
+<p>Leads are generated but results and safety are not guaranteed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Core Positioning Statement</strong></p>
+<blockquote>
+<p>“For the average Nigerian and hustling Lagos family tired of ghost listings and exploitative agency fees, MyEasyAgent guarantees verified property access through a performance-based connector.”</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Solving Transaction Leakage</strong></p>
+<ul>
+<li>
+<p>Prevents offline deal skimming (“Sidelining”) using a <strong>Digital Handshake (QR Check-in)</strong></p>
+</li>
+<li>
+<p>Tracks deals from inspection to closing</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="3-competitive-landscape"><strong>3. Competitive Landscape</strong></h1>
+<h3 id="31-competitor-comparison-table"><strong>3.1 Competitor Comparison Table</strong></h3>
 <table>
   <thead>
       <tr>
@@ -111,13 +144,13 @@
       <tr>
           <td><strong>Business Model</strong></td>
           <td>Subscription-based</td>
-          <td>Freemium + Legal services</td>
+          <td>Freemium + Legal Services</td>
           <td>Transparency &amp; Data-driven</td>
-          <td>Usage-based (HuntSmart)</td>
+          <td>Usage-based (HuntSmart Pass)</td>
       </tr>
       <tr>
           <td><strong>Agent Ranking</strong></td>
-          <td><strong>Pay-to-Play</strong></td>
+          <td>Pay-to-Play</td>
           <td>Listing-based</td>
           <td>Data-based</td>
           <td><strong>Performance-based</strong></td>
@@ -131,282 +164,236 @@
       </tr>
       <tr>
           <td><strong>Audience</strong></td>
-          <td>Everyone (Luxury focus)</td>
+          <td>General, Luxury Focus</td>
           <td>Buyers/Developers</td>
           <td>Data-conscious seekers</td>
-          <td><strong>Average Nigerians</strong>, and  Data-Conscious seekers</td>
+          <td>Average Nigerians, Data-Conscious seekers</td>
       </tr>
       <tr>
           <td><strong>Incentive</strong></td>
           <td>Lead Generation</td>
           <td>Secure Documentation</td>
           <td>No Middlemen</td>
-          <td><strong>Affordability &amp; Access</strong></td>
+          <td>Affordability &amp; Access</td>
       </tr>
       <tr>
           <td><strong>Revenue Source</strong></td>
           <td>Monthly Subscriptions</td>
-          <td>Ad packages</td>
+          <td>Ad Packages</td>
           <td>Data Intel</td>
-          <td><strong>Success Fees &amp; Splits</strong>, and Data Intel</td>
+          <td>Success Fees &amp; Splits, Data Intel</td>
       </tr>
       <tr>
           <td><strong>Transaction Cut</strong></td>
-          <td><strong>0%</strong></td>
           <td>0%</td>
           <td>0%</td>
-          <td><strong>25% to 50%</strong></td>
+          <td>0%</td>
+          <td>25%–50%</td>
       </tr>
       <tr>
           <td><strong>Platform Risk</strong></td>
           <td>Zero Risk</td>
           <td>Low Risk</td>
           <td>Low Risk</td>
-          <td><strong>Shared Risk/High Reward</strong></td>
+          <td>Shared Risk/High Reward</td>
       </tr>
   </tbody>
 </table>
 <blockquote>
-<p>[!tip] Tips</p>
+<p>[!tip] <strong>Tips for Competitive Advantage:</strong></p>
 <ul>
-<li><strong>The &ldquo;Flood-Proof&rdquo; Filter:</strong> Integrating flood-data tags to address a major Lagos pain point.</li>
-<li><strong>The &ldquo;Agent Identity&rdquo; Tier:</strong> Differentiating between <strong>&ldquo;Verified Key-Holders&rdquo;</strong> (Direct access) and <strong>&ldquo;Property Scouts&rdquo;</strong> (Semi-direct) to show the user the length of the chain.</li>
+<li>
+<p><strong>Flood-Proof Filter:</strong> Use flood-data tags to mitigate Lagos-specific flooding challenges.</p>
+</li>
+<li>
+<p><strong>Agent Identity Tier:</strong> Differentiate <strong>Verified Key-Holders</strong> (Direct access) from <strong>Property Scouts</strong> (Semi-direct), enhancing transparency for clients.</p>
+</li>
 </ul>
 </blockquote>
 <hr>
-<h1 id="4-risk-assessment-the-bad-sides">4. Risk Assessment: The &ldquo;Bad Sides&rdquo;</h1>
-<p>Despite our safeguards, we must navigate these inherent Lagos market risks:</p>
+<h1 id="4-risk-assessment-the"><strong>4. Risk Assessment: The &ldquo;Bad Sides&rdquo;</strong></h1>
+<p>Even with safeguards, these risks exist:</p>
 <ol>
 <li>
-<p><strong>Agent Resistance:</strong> A 25–50% commission split is a massive jump from the 0% charged by competitors.</p>
+<p><strong>Agent Resistance:</strong> 25–50% commission is significantly higher than 0% competitors charge</p>
 </li>
 <li>
-<p><strong>Sidelining Vulnerability:</strong> High incentives for agents to &ldquo;hide&rdquo; the deal to save the commission cut.</p>
+<p><strong>Sidelining Vulnerability:</strong> Agents may try to hide deals to retain full commission</p>
 </li>
 <li>
-<p><strong>Scaling Bottlenecks:</strong> Manual &ldquo;HomeView&rdquo; inspections are slow and costly.</p>
+<p><strong>Scaling Bottlenecks:</strong> Manual HomeView inspections are resource-intensive</p>
 </li>
 <li>
-<p><strong>Market Speed vs. Process:</strong> Lagos rentals move in hours; our legal review/offer process might be perceived as a delay.</p>
+<p><strong>Market Speed vs. Process:</strong> Lagos rental deals move fast; legal reviews may be perceived as delays</p>
 </li>
 <li>
-<p><strong>Legal Limits:</strong> Our Provisional Offer is not a Tenancy Agreement; we still rely on client due diligence.</p>
+<p><strong>Legal Limits:</strong> Provisional Offer ≠ Tenancy Agreement; due diligence still required</p>
 </li>
 <li>
-<p><strong>Upfront Fee Psychology:</strong> Overcoming the barrier of users expecting &ldquo;Free Browsing.&rdquo;</p>
+<p><strong>Upfront Fee Psychology:</strong> Users expect free browsing, overcoming this is critical</p>
 </li>
 </ol>
 <hr>
-<h1 id="5-strategic-solutions--success-probabilities">5. Strategic Solutions &amp; Success Probabilities</h1>
-<h3 id="51-success-probability-risk-weighted">5.1 Success Probability (Risk-Weighted)</h3>
+<h1 id="5-strategic-solutions--success-probabilities"><strong>5. Strategic Solutions &amp; Success Probabilities</strong></h1>
+<h3 id="51-success-probability-risk-weighted"><strong>5.1 Success Probability (Risk-Weighted)</strong></h3>
 <ul>
 <li>
-<p><strong>Financial Sustainability:</strong> <strong>70%</strong> (Steady cash flow from HuntSmart Pass/Commitment fees).</p>
+<p><strong>Financial Sustainability:</strong> 70% (Revenue from HuntSmart Pass &amp; Commitment Fees)</p>
 </li>
 <li>
-<p><strong>Trust &amp; Adoption:</strong> <strong>55%</strong> (High value vs. psychological barrier of upfront fees).</p>
+<p><strong>Trust &amp; Adoption:</strong> 55% (Overcoming psychological barriers)</p>
 </li>
 <li>
-<p><strong>Sidelining Prevention:</strong> <strong>40%</strong> (The most difficult area; requires strong digital &ldquo;locks&rdquo;).</p>
+<p><strong>Sidelining Prevention:</strong> 40% (Requires strong digital “locks”)</p>
 </li>
 </ul>
-<h3 id="52-the-solution-set">5.2 The Solution Set</h3>
-<ul>
+<h3 id="52-solution-set"><strong>5.2 Solution Set</strong></h3>
+<ol>
 <li>
-<p><strong>Leakage Prevention:</strong> Use the <strong>&ldquo;Legal Review Lock&rdquo;</strong>, clients are warned that paying without our &ldquo;Safe to Sign&rdquo; certificate voids all platform protections.</p>
+<p><strong>Leakage Prevention:</strong> Legal Review Lock warns clients that paying without verification voids platform protections</p>
 </li>
 <li>
-<p><strong>Scaling through &ldquo;Graduated Trust&rdquo;:</strong> Use the <strong>HomeView Badge</strong> for team-verified properties and <strong>Incentivized Video Walkthroughs</strong> for agent-verified (Standard) listings.</p>
+<p><strong>Scaling via Graduated Trust:</strong> HomeView Badge for team-verified properties; incentivized video walkthroughs for agent-verified listings</p>
 </li>
 <li>
-<p><strong>The &ldquo;Remote Handover&rdquo; Script:</strong> Allow Semi-Direct agents to stay home while the Direct Agent takes the ₦2,000 transport fee, protecting everyone’s split.</p>
+<p><strong>Remote Handover Script:</strong> Semi-Direct agents can avoid site travel while protecting commission splits</p>
 </li>
 <li>
-<p><strong>Fast Market Fix:</strong> Implement <strong>Instant Digital Receipts</strong>. The moment a client clicks &ldquo;I Want This House,&rdquo; an offer letter is generated and the agent is notified immediately via WhatsApp.</p>
+<p><strong>Fast Market Fix:</strong> Instant Digital Receipts sent to agents/clients immediately upon “I Want This House” click</p>
 </li>
-</ul>
+</ol>
 <hr>
-<h1 id="6-homeview-audit--checklist">6. HomeView Audit &amp; Checklist</h1>
+<h1 id="6-homeview-audit--checklist"><strong>6. HomeView Audit &amp; Checklist</strong></h1>
 <blockquote>
-<p>[!danger] Danger</p>
-<p>Do not launch the website until you have at least 20 properties that have gone through the &ldquo;HomeView&rdquo; process. Devaluing the HuntSmart Pass by launching an empty shell will destroy our brand.</p>
+<p>[!danger] <strong>Do not launch without at least 20 HomeView-verified properties.</strong> Launching an empty platform undermines HuntSmart Pass value.</p>
 </blockquote>
-<h3 id="61-the-professional-property-audit-checklist">6.1 The Professional Property Audit Checklist</h3>
-<p><strong>1. Exterior &amp; Structural:</strong></p>
+<h3 id="61-professional-property-audit-checklist"><strong>6.1 Professional Property Audit Checklist</strong></h3>
+<h4 id="a-exterior--structural"><strong>A. Exterior &amp; Structural</strong></h4>
 <ul>
 <li>
-<p>Check for structural cracks, roof leaks (water stains), and drainage/flood history.</p>
+<p>Inspect structural cracks, roof leaks, and drainage/flood history</p>
 </li>
 <li>
-<p>Security features (fence height, gate condition).</p>
+<p>Security: fence height, gate integrity, general access</p>
 </li>
 </ul>
-<p><strong>2. Utilities &amp; Services:</strong></p>
+<h4 id="b-utilities--services"><strong>B. Utilities &amp; Services</strong></h4>
 <ul>
 <li>
-<p><strong>Water:</strong> Test pump, check for &ldquo;Iron Water,&rdquo; and tank availability.</p>
+<p><strong>Water:</strong> Pump test, tank availability, iron content</p>
 </li>
 <li>
-<p><strong>Electricity:</strong> Confirm Prepaid vs. Estimated billing; test all sockets.</p>
+<p><strong>Electricity:</strong> Prepaid vs. estimated billing; socket testing</p>
 </li>
 <li>
-<p><strong>Waste:</strong> Verify PSP collection points.</p>
+<p><strong>Waste Management:</strong> Verify PSP collection points</p>
 </li>
 </ul>
-<p><strong>3. Interior Audit:</strong></p>
+<h4 id="c-interior-audit"><strong>C. Interior Audit</strong></h4>
 <ul>
 <li>
-<p>Check for hollow tiles and ventilation quality.</p>
+<p>Flooring: Check for hollow tiles, ventilation</p>
 </li>
 <li>
-<p>Inspect cabinetry for termites (wood-borers) or dampness.</p>
+<p>Cabinetry: Termite/dampness inspection</p>
 </li>
 <li>
-<p>Plumbing: Flush all toilets; check soakaway proximity to water sources.</p>
+<p>Plumbing: Flush toilets; check soakaway proximity</p>
 </li>
 </ul>
-<p><strong>4. Neighborhood Context:</strong></p>
+<h4 id="d-neighborhood-context"><strong>D. Neighborhood Context</strong></h4>
 <ul>
 <li>
-<p>Road accessibility during rain and proximity to noise sources (churches/bars).</p>
+<p>Road access during rainy season, noise levels, proximity to markets/churches/bars</p>
 </li>
 <li>
-<p>Estimated commute times and mobile network strength (MTN/Airtel/Starlink).</p>
+<p>Estimated commute times, mobile network coverage (MTN, Airtel, Starlink)</p>
 </li>
 </ul>
 <blockquote>
-<p>[!info] info
-<strong>HomeView</strong> is the core value proposition of the <strong>HuntSmart Pass</strong>, the checklist must be exhaustive. It transforms a simple &ldquo;house viewing&rdquo; into a professional <strong>Property Audit</strong>.</p>
+<p>[!info] <strong>HomeView</strong> transforms house viewing into a professional <strong>Property Audit</strong>, central to the HuntSmart Pass value proposition.</p>
 </blockquote>
 <hr>
-<h1 id="7-organizational-structure">7. Organizational Structure</h1>
-<h3 id="71-governance-framework">7.1 Governance Framework</h3>
+<h1 id="7-organizational-structure"><strong>7. Organizational Structure</strong></h1>
+<h3 id="71-governance-framework"><strong>7.1 Governance Framework</strong></h3>
 <ul>
 <li>
-<p><strong>Model:</strong> High-Accountability / Domain-Authority.</p>
+<p><strong>Model:</strong> High-Accountability / Domain-Authority</p>
 </li>
 <li>
-<p><strong>Equity:</strong> 40%/60% split among 3 co-founders.</p>
+<p><strong>Equity:</strong> 40% CEO and 60% split among 3 co-founders</p>
 </li>
 <li>
-<p><strong>Vesting:</strong> 4-year schedule with a <strong>1-year cliff</strong>.</p>
+<p><strong>Vesting:</strong> 4-year schedule, 1-year cliff</p>
 </li>
 </ul>
-<h3 id="72-roles--responsibilities-co-founder-matrix">7.2 Roles &amp; Responsibilities (Co-founder Matrix)</h3>
-<h4 id="1-emmanuel--chief-executive-officer-ceo--head-of-product"><strong>1. Emmanuel — Chief Executive Officer (CEO) &amp; Head of Product</strong></h4>
-<p><strong>Mission:</strong> <em>To protect the long-term sustainability and unit economics of the platform.</em></p>
+<h3 id="72-roles--responsibilities-co-founder-matrix"><strong>7.2 Roles &amp; Responsibilities (Co-founder Matrix)</strong></h3>
+<h4 id="1-emmanuel--ceo--head-of-product"><strong>1. Emmanuel — CEO &amp; Head of Product</strong></h4>
 <ul>
 <li>
-<p><strong>Core Responsibilities:</strong></p>
+<p><strong>Mission:</strong> Protect long-term sustainability and unit economics</p>
+</li>
+<li>
+<p><strong>Responsibilities:</strong> Pricing, unit economics, investor/legal relations, “Build Once” automation</p>
+</li>
+<li>
+<p><strong>Ownership:</strong> Admin Dashboard, Revenue Reporting, Strategic Roadmap</p>
+</li>
+<li>
+<p><strong>KPI:</strong> MRR, Platform Profitability</p>
+</li>
+</ul>
+<h4 id="2-arinze--cto--lead-developer"><strong>2. Arinze — CTO &amp; Lead Developer</strong></h4>
 <ul>
 <li>
-<p><strong>Monetization Strategy:</strong> Final authority on the pricing of the HuntSmart Pass and the percentage splits (50/50, 50/25/25).</p>
+<p><strong>Mission:</strong> Build the Trust Engine to automate payouts and client security</p>
 </li>
 <li>
-<p><strong>Unit Economics:</strong> Monitoring the &ldquo;Platform Drain&rdquo;—ensuring the ₦500 platform fee from the commitment fee covers SMS, server, and administrative costs.</p>
+<p><strong>Responsibilities:</strong> Full-stack architecture, QR booking system, Paystack/Flutterwave integration, system uptime</p>
 </li>
 <li>
-<p><strong>Investor &amp; Legal Relations:</strong> Sourcing institutional partnerships (Banks/Insurance) for the &ldquo;Legal Review&rdquo; and &ldquo;Rent Financing&rdquo; phases.</p>
+<p><strong>Ownership:</strong> Backend, APIs, UI</p>
 </li>
 <li>
-<p><strong>The &ldquo;Build Once&rdquo; Philosophy:</strong> Reviewing all features to ensure they are automated and don&rsquo;t require manual human labor at scale.</p>
+<p><strong>KPI:</strong> Uptime, Automation Success Rate</p>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>System Ownership:</strong> The Admin Dashboard, Revenue Reporting, and Strategic Roadmap.</p>
-</li>
-<li>
-<p><strong>Success Metric (KPI):</strong> Monthly Recurring Revenue (MRR) and Platform Profitability.</p>
-</li>
-</ul>
-<h4 id="2-arinze--chief-technology-officer-cto--lead-developer"><strong>2. Arinze — Chief Technology Officer (CTO) &amp; Lead Developer</strong></h4>
-<p><strong>Mission:</strong> <em>To build the &ldquo;Trust Engine&rdquo; that automates agent payouts and client security.</em></p>
+<h4 id="3-precious--cco--head-of-field-ops"><strong>3. Precious — CCO &amp; Head of Field Ops</strong></h4>
 <ul>
 <li>
-<p><strong>Core Responsibilities:</strong></p>
+<p><strong>Mission:</strong> Ensure property verification integrity</p>
+</li>
+<li>
+<p><strong>Responsibilities:</strong> TrustShield verification, HomeView management, agent discipline, dispute resolution</p>
+</li>
+<li>
+<p><strong>Ownership:</strong> Agent onboarding, HomeView checklists, Customer Support</p>
+</li>
+<li>
+<p><strong>KPI:</strong> Agent Integrity Score, User Trust (CSAT)</p>
+</li>
+</ul>
+<h4 id="4-samson--cmo--communications-lead"><strong>4. Samson — CMO &amp; Communications Lead</strong></h4>
 <ul>
 <li>
-<p><strong>Full-Stack Architecture:</strong> Managing the entire codebase, ensuring the &ldquo;Mobile-First&rdquo; PWA (Progressive Web App) experience is seamless.</p>
+<p><strong>Mission:</strong> Educate market on upfront payments for trust</p>
 </li>
 <li>
-<p><strong>Automation Logic:</strong> Developing the <strong>QR Code/Unique Booking ID</strong> system that triggers the ₦1,500 payout to agents without manual admin intervention.</p>
+<p><strong>Responsibilities:</strong> Educational marketing, legal simplification, lead acquisition, brand authority</p>
 </li>
 <li>
-<p><strong>Security &amp; Scale:</strong> Integrating Paystack/Flutterwave and ensuring 99.9% uptime.</p>
+<p><strong>Ownership:</strong> Social media, content strategy, onboarding loop</p>
 </li>
 <li>
-<p><strong>Currency Check System:</strong> Building the automated 48-72 hour &ldquo;Nudge&rdquo; system that removes expired listings.</p>
+<p><strong>KPI:</strong> CAC, HuntSmart conversion rate</p>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>System Ownership:</strong> Backend database, Payment APIs, and the Agent/Client User Interface.</p>
-</li>
-<li>
-<p><strong>Success Metric (KPI):</strong> System Uptime and Successful Automation Rate (payouts with zero manual errors).</p>
-</li>
-</ul>
-<h4 id="3-precious--chief-customer-officer-cco--head-of-field-ops"><strong>3. Precious — Chief Customer Officer (CCO) &amp; Head of Field Ops</strong></h4>
-<p><strong>Mission:</strong> <em>To ensure that &ldquo;Verified&rdquo; actually means &ldquo;Truthful&rdquo; and to professionalize the agents.</em></p>
-<ul>
-<li>
-<p><strong>Core Responsibilities:</strong></p>
-<ul>
-<li>
-<p><strong>TrustShield Operations:</strong> Physical and digital verification of LASRERA/ERCAAN certificates for every agent.</p>
-</li>
-<li>
-<p><strong>HomeView Management:</strong> Scheduling and executing the physical audits (The Checklist) to create the Truth Reports for HuntSmart users.</p>
-</li>
-<li>
-<p><strong>Agent Discipline:</strong> Enforcing the &ldquo;Indictment &amp; Punishment&rdquo; rules. If an agent lies about a property, Precious is the one who suspends them.</p>
-</li>
-<li>
-<p><strong>Dispute Resolution:</strong> Handling &ldquo;No-Show&rdquo; tickets when a client pays ₦2,000 but the agent is unavailable.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>System Ownership:</strong> Agent Onboarding Workflow, HomeView Checklists, and Customer Support.</p>
-</li>
-<li>
-<p><strong>Success Metric (KPI):</strong> Agent Integrity Score and User Trust (measured by CSAT).</p>
-</li>
-</ul>
-<h4 id="4-samson--chief-marketing-officer-cmo--communications-lead"><strong>4. Samson — Chief Marketing Officer (CMO) &amp; Communications Lead</strong></h4>
-<p><strong>Mission:</strong> <em>To simplify the &ldquo;Why&rdquo; and educate the market on paying upfront for trust.</em></p>
-<ul>
-<li>
-<p><strong>Core Responsibilities:</strong></p>
-<ul>
-<li>
-<p><strong>Educational Marketing:</strong> Creating content that explains why the ₦15,000 HuntSmart Pass is cheaper than traditional &ldquo;Lagos Form Fees.&rdquo;</p>
-</li>
-<li>
-<p><strong>Legal-to-Simple Copy:</strong> Translating the &ldquo;Provisional Offer &amp; Acceptance Form&rdquo; and &ldquo;Legal Review&rdquo; into language a regular tenant understands and trusts.</p>
-</li>
-<li>
-<p><strong>Lead Acquisition:</strong> Driving serious home-seekers (not window shoppers) to the platform through targeted Lagos-centric social media campaigns.</p>
-</li>
-<li>
-<p><strong>Brand Authority:</strong> Ensuring MyEasyAgent is positioned as the &ldquo;Bank of Trust&rdquo; in real estate.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>System Ownership:</strong> All Social Media Channels, Content Strategy, and the Onboarding Educational Loop.</p>
-</li>
-<li>
-<p><strong>Success Metric (KPI):</strong> Cost Per Acquired User (CAC) and &ldquo;HuntSmart&rdquo; conversion rate.</p>
-</li>
-</ul>
-<h3 id="73-the-raci-matrix">7.3 The RACI Matrix</h3>
+<h3 id="73-raci-matrix"><strong>7.3 RACI Matrix</strong></h3>
 <p>R = Responsible (Doer) | A = Accountable (Owner/Sign-off) | C = Consulted | I = Informed</p>
 <table>
   <thead>
       <tr>
-          <th><strong>Key Process</strong></th>
+          <th><strong>Process</strong></th>
           <th><strong>Emmanuel</strong></th>
           <th><strong>Arinze</strong></th>
           <th><strong>Precious</strong></th>
@@ -415,339 +402,1307 @@
   </thead>
   <tbody>
       <tr>
-          <td><strong>New Property Validation</strong></td>
+          <td>New Property Validation</td>
           <td>C</td>
           <td>I</td>
-          <td><strong>A</strong></td>
+          <td>A</td>
           <td>R</td>
       </tr>
       <tr>
-          <td><strong>HomeView Audit</strong></td>
+          <td>HomeView Audit</td>
           <td>I</td>
           <td>I</td>
-          <td><strong>R/A</strong></td>
+          <td>R/A</td>
           <td>C</td>
       </tr>
       <tr>
-          <td><strong>Automated Payout (₦1,500)</strong></td>
+          <td>Automated Payout (₦2,500)</td>
           <td>A</td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>I</td>
           <td>I</td>
       </tr>
       <tr>
-          <td><strong>Closing 50/50 Deal</strong></td>
-          <td><strong>R/A</strong></td>
+          <td>Closing 50/50 Deal</td>
+          <td>R/A</td>
           <td>I</td>
           <td>C</td>
           <td>C</td>
       </tr>
       <tr>
-          <td><strong>Agent Suspension</strong></td>
-          <td><strong>A</strong></td>
+          <td>Agent Suspension</td>
+          <td>A</td>
           <td>I</td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>I</td>
       </tr>
   </tbody>
 </table>
-<h3 id="74-decision-making--conflict-resolution">7.4 Decision-Making &amp; Conflict Resolution</h3>
+<h3 id="74-decision-making--conflict-resolution"><strong>7.4 Decision-Making &amp; Conflict Resolution</strong></h3>
 <ul>
 <li>
-<p><strong>Expert Domain Rule:</strong> Arinze and Emmanuel have the tie-breaking vote for Technology. Samson holds the vote for Marketing. Precious holds the vote for Agent Operations.</p>
+<p><strong>Expert Domain Rule:</strong> Tie-breakers by domain expert</p>
 </li>
 <li>
-<p><strong>CEO Veto:</strong> Emmanuel holds final veto power for financial or survival matters (requires written justification).</p>
+<p><strong>CEO Veto:</strong> Emmanuel holds final decision power for financial/survival issues</p>
 </li>
 <li>
-<p><strong>Truth First:</strong> No decision can compromise the &ldquo;Trust Infrastructure&rdquo; for clicks.</p>
+<p><strong>Truth First:</strong> No decision may compromise trust infrastructure</p>
 </li>
 </ul>
 <hr>
-<h1 id="8-key-milestones-q1--q4">8. Key Milestones (Q1 – Q4)</h1>
-<p>These milestones focus on a <strong>&ldquo;Revenue First, Scale Second&rdquo;</strong> approach to ensure Phase 1 brings in value immediately.</p>
-<h4 id="q1-the-validation-phase-the"><strong>Q1: The Validation Phase (The &ldquo;Zero-to-One&rdquo; Launch)</strong></h4>
+<h1 id="8-key-milestones-q1--q4"><strong>8. Key Milestones (Q1 – Q4)</strong></h1>
+<h3 id="q1--validation-phase-zero-to-one-launch"><strong>Q1 – Validation Phase (Zero-to-One Launch)</strong></h3>
 <ul>
 <li>
-<p><strong>Technical:</strong> Deploy MVP with mandatory email verification, Launch HuntSmart Pass + HomeView + ₦2,000 commitment fee in <strong>one</strong> high-demand neighborhood. Target: 100% accuracy on reports</p>
+<p>Deploy MVP, HuntSmart Pass, HomeView, ₦2,000 commitment fee</p>
 </li>
 <li>
-<p><strong>Operational:</strong> Onboard first 20-50 LASRERA/ERCAAN-certified agents in a specific Lagos cluster (e.g., Amuwo or Satlite).</p>
+<p>Onboard 20–50 certified agents</p>
 </li>
 <li>
-<p><strong>Revenue:</strong> Secure the first 50 <strong>HuntSmart Pass (₦15,000)</strong> sales and 100 successful <strong>Commitment Fee (₦2,000)</strong> transactions.</p>
-</li>
-<li>
-<p><strong>Goal:</strong> Prove that the &ldquo;Commitment Fee Logic&rdquo; reduces client and agent no-shows.</p>
+<p>Secure 50 HuntSmart Pass sales and 100 commitment fee transactions</p>
 </li>
 </ul>
-<h4 id="q2-the-trust-deepening-phase-physical-vs-digital"><strong>Q2: The Trust-Deepening Phase (Physical vs. Digital)</strong></h4>
+<h3 id="q2--trust-deepening-phase"><strong>Q2 – Trust Deepening Phase</strong></h3>
 <ul>
 <li>
-<p><strong>System:</strong> Automate the <strong>48-72 Hour Currency Check</strong>—if an agent doesn&rsquo;t confirm availability via email/SMS nudge, the property status shifts to <strong>#AwaitingUpdate</strong>.</p>
+<p>Automate 48–72 hour currency check</p>
 </li>
 <li>
-<p><strong>Goal:</strong> Increase platform reliability and reduce &ldquo;Ghost Listings.&rdquo;</p>
+<p>Increase platform reliability, reduce ghost listings</p>
 </li>
 </ul>
-<h4 id="q3-the-anti-sidelining-phase-transaction-security"><strong>Q3: The Anti-Sidelining Phase (Transaction Security)</strong></h4>
+<h3 id="q3--anti-sidelining-phase"><strong>Q3 – Anti-Sidelining Phase</strong></h3>
 <ul>
 <li>
-<p><strong>Feature:</strong> Launch the digital <strong>Provisional Tenancy Offer &amp; Acceptance Form</strong> and the <strong>Free Legal Review</strong> service.</p>
+<p>Launch Provisional Tenancy Offer &amp; Acceptance, Free Legal Review</p>
 </li>
 <li>
-<p><strong>Strategy:</strong> Aggressively market the <strong>&ldquo;Legal Review Lock&rdquo;</strong> to prevent users from paying landlords/agents off-platform.</p>
+<p>Aggressively market Legal Review Lock</p>
 </li>
 <li>
-<p><strong>Revenue:</strong> Track first 10 successful <strong>Commission Splits (50/50 or 50/25/25)</strong> on closed deals.</p>
-</li>
-<li>
-<p><strong>Goal:</strong> Capture the &ldquo;Big Money&rdquo; at the end of the funnel.</p>
+<p>Track first 10 commission splits</p>
 </li>
 </ul>
-<h4 id="q4-the-expansion--scale-phase"><strong>Q4: The Expansion &amp; Scale Phase</strong></h4>
+<h3 id="q4--expansion--scale-phase"><strong>Q4 – Expansion &amp; Scale Phase</strong></h3>
 <ul>
 <li>
-<p><strong>Technical:</strong> Upgrade the Booking ID system to a full <strong>QR Code Check-in</strong> and automated payout dashboard.</p>
+<p>Full QR Code Check-in &amp; payout dashboard</p>
 </li>
 <li>
-<p><strong>Market:</strong> Expand from the initial cluster to cover 80% of Lagos mainland and island.</p>
+<p>Expand to 80% Lagos</p>
 </li>
 <li>
-<p><strong>Governance:</strong> Review the 4-year vesting performance; hire the first <strong>Customer Care/Operations</strong> team to offload Precious and Samson.</p>
+<p>Hire Customer Care/Operations to support co-founders</p>
 </li>
 <li>
-<p><strong>Goal:</strong> Reach a <strong>62%+ Success Rate</strong> across all system pillars (Financial, Trust, and Sidelining).</p>
+<p>Achieve 62%+ success across pillars</p>
 </li>
 </ul>
 <hr>
-<h1 id="9-ux--founder-refinement">9. UX &amp; Founder Refinement</h1>
+<h1 id="9-ux--founder-refinement"><strong>9. UX &amp; Founder Refinement</strong></h1>
+<h3 id="91-user-registration--verification"><strong>9.1 User Registration &amp; Verification</strong></h3>
 <ul>
 <li>
-<p><strong>9.1 Website Testing &amp; Development Issues</strong>:</p>
-<p>This document outlines the major challenges and required improvements identified during testing. All team members are expected to read and understand these points to ensure proper implementation and quality control.</p>
-</li>
-</ul>
-<hr>
-<ol>
-<li>
-<p>User Registration &amp; Email Verification</p>
-<p>When users sign up with email/ Google mail as:</p>
-<ul>
-<li>Agents - looking to list properties.</li>
-<li>Clients - looking to rent properties/ Scanning the website.</li>
-<li>Landlords - looking to list properties.</li>
-</ul>
-</li>
-</ol>
-<p>After registration, users should see a popup or banner notification requesting them to:</p>
-<ul>
-<li>Check their email for confirmation.</li>
-<li>verify their account.</li>
-</ul>
-<p>After verification, users should be redirected back to the platform, they can either:</p>
-<ul>
-<li>Complete their profile.</li>
-<li>Scan through the website for what they want.</li>
-</ul>
-<hr>
-<ol start="2">
-<li>Agent/Landlord Hero Page:</li>
-</ol>
-<p>Agents should have a dynamic hero page, for mobile and desktop and displays the following:</p>
-<ul>
-<li>Home</li>
-<li>Notification</li>
-<li>Manage your listings (Dashboard) - Agent.</li>
-<li>My Watchlist</li>
-<li>Profile</li>
-<li>Share feedback</li>
-<li>Sign Out.</li>
-</ul>
-<p>Agents should have a profile page that is simple to navigate and allows them to:</p>
-<ul>
-<li>Fill their personal details after sign in.</li>
-<li>Upload required data</li>
-<li>Change password</li>
-<li>Add phone number</li>
-<li>Add profile picture</li>
-<li>Change email address</li>
-</ul>
-<p>Agents should have a <strong>minimalist and easy-to-use dashboard</strong> that allows them to:</p>
-<ul>
-<li>
-<p>Set available days and times for inspections.</p>
+<p>Agents, Clients, Landlords register via email/Google</p>
 </li>
 <li>
-<p>Allow clients to book inspections based on availability.</p>
+<p>Email verification mandatory</p>
 </li>
 <li>
-<p>Add Property details such as</p>
-</li>
-<li>
-<p>Edit or cancel inspection schedules.</p>
-</li>
-<li>
-<p>Manage individual inspections for each property.</p>
-</li>
-<li>
-<p>Adjust schedules based on landlord availability.</p>
+<p>Post-verification: complete profile or browse platform</p>
 </li>
 </ul>
-<hr>
-<!-- raw HTML omitted -->
-<ol start="3">
-<li>Client Hero Page:</li>
-</ol>
-<p>Client should have a dynamic hero page, for mobile and desktop and displays the following:</p>
+<h3 id="92-agentlandlord-hero-page--dashboard"><strong>9.2 Agent/Landlord Hero Page &amp; Dashboard</strong></h3>
 <ul>
-<li>Home</li>
-<li>Notification</li>
-<li>Manage your Inspections (Dashboard) - Client.</li>
-<li>My Watchlist</li>
-<li>Profile</li>
-<li>Share feedback</li>
-<li>Sign Out.</li>
+<li>
+<p>Navigation: Home, Notifications, Dashboard, Watchlist, Profile, Feedback, Sign Out</p>
+</li>
+<li>
+<p>Profile: Personal details, phone/email, password, profile picture</p>
+</li>
+<li>
+<p>Dashboard: Schedule inspections, manage property listings, adjust availability.</p>
+</li>
 </ul>
-<p>Clients should have a profile page that is simple to navigate and allows them to:</p>
+<h3 id="93-client-hero-page--dashboard"><strong>9.3 Client Hero Page &amp; Dashboard</strong></h3>
 <ul>
-<li>Fill their personal details after sign in.</li>
-<li>Change password</li>
-<li>Add phone number</li>
-<li>Add profile picture</li>
-<li>Change email address</li>
-<li>Preferences</li>
+<li>
+<p>Navigation: Home, Notifications, Dashboard, Watchlist, Profile, Feedback, Sign Out</p>
+</li>
+<li>
+<p>Dashboard: Ownership control, booking history, payment records, inspection tracking, preferences.</p>
+</li>
 </ul>
-<hr>
-<ol start="4">
-<li>Property Access levels (Basic Vs Premium Users)</li>
-</ol>
+<h3 id="94-property-access-levels"><strong>9.4 Property Access Levels</strong></h3>
 <table>
   <thead>
       <tr>
-          <th>Feature / Access</th>
-          <th>Basic User (Standard Property) by Agent</th>
-          <th>Basic User (Premium Property) by MyEasyAgent</th>
-          <th>Premium User</th>
+          <th>Feature</th>
+          <th>Basic (Agent)</th>
+          <th>Basic (Premium)</th>
+          <th>Premium</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>Pictures</td>
-          <td>Full Access</td>
-          <td>Up to 5 Images Only</td>
-          <td>Available</td>
+          <td>Full</td>
+          <td>Up to 5</td>
+          <td>All</td>
       </tr>
       <tr>
           <td>Description</td>
-          <td>Full Description</td>
-          <td>Short Description</td>
-          <td>Available</td>
+          <td>Full</td>
+          <td>Short</td>
+          <td>Full</td>
       </tr>
       <tr>
-          <td>Video (Agent Upload)</td>
-          <td>Available (If Uploaded)</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Available</td>
+          <td>Video</td>
+          <td>Agent-uploaded</td>
+          <td>Not Available</td>
+          <td>All</td>
       </tr>
       <tr>
           <td>Features</td>
-          <td>Full Features</td>
-          <td>Limited Features</td>
-          <td>Available</td>
+          <td>Full</td>
+          <td>Limited</td>
+          <td>All</td>
       </tr>
       <tr>
-          <td>Phone Contact</td>
-          <td>MyEasyAgent Contact Only</td>
-          <td>MyEasyAgent Contact Only</td>
-          <td>Available</td>
+          <td>Contact</td>
+          <td>MyEasyAgent Only</td>
+          <td>MyEasyAgent Only</td>
+          <td>Full</td>
       </tr>
       <tr>
           <td>Google Maps</td>
-          <td>Available</td>
-          <td>Available</td>
-          <td>Available</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
       </tr>
       <tr>
           <td>Overview Map</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Available</td>
+          <td>Upgrade Needed</td>
+          <td>Upgrade Needed</td>
+          <td>Yes</td>
       </tr>
       <tr>
           <td>Book Inspection</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Available</td>
+          <td>Upgrade Needed</td>
+          <td>Upgrade Needed</td>
+          <td>Yes</td>
       </tr>
       <tr>
           <td>Defect Reports</td>
-          <td>Available (If Uploaded)</td>
-          <td>Not Available (Upgrade Needed)</td>
-          <td>Available</td>
+          <td>Agent-uploaded</td>
+          <td>Upgrade Needed</td>
+          <td>Yes</td>
       </tr>
       <tr>
-          <td>Special Features / Extras</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Not Available<!-- raw HTML omitted -->(Upgrade Needed)</td>
-          <td>Available</td>
+          <td>Local Area Data</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
       </tr>
       <tr>
-          <td>Local Area Advantages;<!-- raw HTML omitted --><!-- raw HTML omitted -->Flood insights, Pricing, and Data</td>
-          <td>Available</td>
-          <td>Available</td>
-          <td>Available</td>
-      </tr>
-      <tr>
-          <td>Location &amp; Exact address</td>
-          <td>Location Only</td>
-          <td>Location Only</td>
           <td>Exact Address</td>
+          <td>Location Only</td>
+          <td>Location Only</td>
+          <td>Full</td>
       </tr>
   </tbody>
 </table>
+<h3 id="95-admin-dashboard-responsibilities"><strong>9.5 Admin Dashboard Responsibilities</strong></h3>
+<ul>
+<li>Email ticketing, dispute management, suspension management, customer care, operational control, agent approval, service management, payment monitoring</li>
+</ul>
+<h3 id="96-property--agent-information-fields"><strong>9.6 Property &amp; Agent Information Fields</strong></h3>
+<ul>
+<li>
+<p>Agent/Agency details: Name, phone, address, license, specialization, experience</p>
+</li>
+<li>
+<p>Property: Address, price, type</p>
+</li>
+<li>
+<p>Status: Active, Awaiting Update, Undergoing Views, Sold/Rented</p>
+</li>
+</ul>
 <hr>
+<h1 id="10-inspection-commitment-fee--booking-management"><strong>10. Inspection Commitment Fee &amp; Booking Management</strong></h1>
+<p>Below is a <strong>clear, professional, and team-ready version</strong> of the inspection payment and cancellation logic. This document is designed for developers, testers, operations, and management to follow during implementation and quality assurance.</p>
+<p><strong>System Logic Specification</strong></p>
+<p>This document defines the official rules for handling:</p>
 <ul>
 <li>
-<p><strong>9.2 Refined Journey:</strong> Ensure the &ldquo;HuntSmart&rdquo; core loop is seamless.</p>
+<p>Client no-shows</p>
 </li>
 <li>
-<p><strong>Founder Requests:</strong></p>
+<p>Cancellations</p>
+</li>
+<li>
+<p>Refunds</p>
+</li>
+<li>
+<p>Agent payments</p>
+</li>
+<li>
+<p>Platform fees</p>
+</li>
+<li>
+<p>Booking time states</p>
+</li>
+<li>
+<p>Abuse prevention</p>
+</li>
+</ul>
+<p>All system behavior must follow this specification exactly.</p>
+<hr>
+<h3 id="1-inspection-commitment-fee-structure"><strong>1. Inspection Commitment Fee Structure</strong></h3>
+<h3 id="total-fee-per-inspection">Total Fee Per Inspection</h3>
+<p>Each client pays:</p>
+<blockquote>
+<p><strong>₦2,500 per confirmed booking</strong></p>
+</blockquote>
+<h5 id="breakdown">Breakdown</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Recipient</th>
+          <th>Amount</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Agent</td>
+          <td>₦2,000</td>
+      </tr>
+      <tr>
+          <td>Platform</td>
+          <td>₦500</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="important-rule">Important Rule</h5>
+<p>Funds are <strong>not distributed immediately</strong>.<br>
+Distribution only happens after:</p>
 <ul>
 <li>
-<p><input disabled="" type="checkbox"> Review 2.1 for tax implications.</p>
+<p>Inspection completion, OR</p>
 </li>
 <li>
-<p><input disabled="" type="checkbox"> Audit UX Flow for technical feasibility.</p>
+<p>Client no-show, OR</p>
+</li>
+<li>
+<p>Late cancellation (after lock period)</p>
+</li>
+</ul>
+<p>No early allocation is allowed.</p>
+<hr>
+<h3 id="2-booking-time-states"><strong>2. Booking Time States</strong></h3>
+<p>Every booking must always exist in one of these three states:</p>
+<h5 id="1-scheduled-more-than-24-hours-remaining">1. Scheduled (More than 24 Hours Remaining)</h5>
+<ul>
+<li>
+<p>Time remaining: ＞ 24 hours</p>
+</li>
+<li>
+<p>Booking is flexible</p>
+</li>
+<li>
+<p>Cancellations allowed</p>
+</li>
+</ul>
+<h5 id="2-locked-within-24-hours">2. Locked (Within 24 Hours)</h5>
+<ul>
+<li>
+<p>Time remaining: ≤ 24 hours</p>
+</li>
+<li>
+<p>System automatically locks booking</p>
+</li>
+<li>
+<p>No manual override</p>
+</li>
+</ul>
+<h5 id="3-completed--expired">3. Completed / Expired</h5>
+<ul>
+<li>
+<p>Inspection finished OR</p>
+</li>
+<li>
+<p>No-show confirmed</p>
+</li>
+<li>
+<p>Record permanently locked</p>
+</li>
+</ul>
+<p>Locking occurs automatically exactly 24 hours before inspection time.</p>
+<hr>
+<h4 id="3-client-cancellation-rules"><strong>3. Client Cancellation Rules</strong></h4>
+<h3 id="a-client-cancels-before-24-hours-not-locked">A. Client Cancels Before 24 Hours (Not Locked)</h3>
+<h6 id="conditions">Conditions</h6>
+<ul>
+<li>
+<p>Time remaining ＞ 24 hours</p>
+</li>
+<li>
+<p>Status = Scheduled</p>
+</li>
+</ul>
+<h6 id="system-must">System Must:</h6>
+<ul>
+<li>
+<p>Cancel the booking</p>
+</li>
+<li>
+<p>Refund ₦2,500 to client</p>
+</li>
+<li>
+<p>Restore 1 inspection credit</p>
+</li>
+<li>
+<p>Remove ₦2,000 from agent expected earnings</p>
+</li>
+<li>
+<p>Cancel ₦500 platform pending revenue</p>
+</li>
+<li>
+<p>Log cancellation ID</p>
+</li>
+<li>
+<p>Log refund ID</p>
+</li>
+</ul>
+<h6 id="status">Status</h6>
+<blockquote>
+<p><strong>“Cancelled — Refunded (Early)”</strong></p>
+</blockquote>
+<hr>
+<h4 id="b-client-cancels-within-24-hours-locked">B. Client Cancels Within 24 Hours (Locked)</h4>
+<h6 id="conditions-1">Conditions</h6>
+<ul>
+<li>
+<p>Time remaining ≤ 24 hours</p>
+</li>
+<li>
+<p>Status = Locked</p>
+</li>
+</ul>
+<h5 id="system-must-1">System Must:</h5>
+<ul>
+<li>
+<p>Deny refund</p>
+</li>
+<li>
+<p>Do not restore credit</p>
+</li>
+<li>
+<p>Forfeit ₦2,500</p>
+</li>
+<li>
+<p>Mark as late cancellation</p>
+</li>
+<li>
+<p>Pay agent ₦2,000</p>
+</li>
+<li>
+<p>Pay platform ₦500</p>
+</li>
+<li>
+<p>Log forfeiture</p>
+</li>
+</ul>
+<h5 id="status-1">Status</h5>
+<blockquote>
+<p><strong>“Locked — Late Cancel (No Refund)”</strong></p>
+</blockquote>
+<hr>
+<h4 id="4-agent-cancellation-rules"><strong>4. Agent Cancellation Rules</strong></h4>
+<h5 id="a-agent-cancels-before-24-hours">A. Agent Cancels Before 24 Hours</h5>
+<h5 id="conditions-2">Conditions</h5>
+<ul>
+<li>
+<p>Time remaining ＞ 24 hours</p>
+</li>
+<li>
+<p>Not locked</p>
+</li>
+</ul>
+<h5 id="system-must-2">System Must:</h5>
+<ul>
+<li>
+<p>Cancel booking</p>
+</li>
+<li>
+<p>Refund ₦2,500 to client</p>
+</li>
+<li>
+<p>Restore client credit</p>
+</li>
+<li>
+<p>Remove ₦2,000 agent earnings</p>
+</li>
+<li>
+<p>Remove ₦500 platform allocation</p>
+</li>
+<li>
+<p>Issue agent warning</p>
+</li>
+<li>
+<p>Log incident</p>
+</li>
+</ul>
+<h4 id="status-2">Status</h4>
+<blockquote>
+<p><strong>“Cancelled by Agent — Refunded”</strong></p>
+</blockquote>
+<hr>
+<h4 id="b-agent-cancels-within-24-hours-locked">B. Agent Cancels Within 24 Hours (Locked)</h4>
+<h5 id="conditions-3">Conditions</h5>
+<ul>
+<li>Time remaining ≤ 24 hours</li>
+</ul>
+<h5 id="system-rules">System Rules</h5>
+<h5 id="default">Default:</h5>
+<ul>
+<li>Cancellation is blocked</li>
+</ul>
+<h6 id="emergency-override-admin-approved">Emergency Override (Admin Approved):</h6>
+<ul>
+<li>
+<p>Refund ₦2,500 to client</p>
+</li>
+<li>
+<p>Agent receives ₦0</p>
+</li>
+<li>
+<p>Platform receives ₦0</p>
+</li>
+<li>
+<p>Issue serious warning</p>
+</li>
+<li>
+<p>Escalate to admin review</p>
+</li>
+</ul>
+<h5 id="status-3">Status</h5>
+<blockquote>
+<p><strong>“Agent Cancelled After Lock — Penalty”</strong></p>
+</blockquote>
+<hr>
+<h2 id="5-client-no-show-rules"><strong>5. Client No-Show Rules</strong></h2>
+<h3 id="trigger-conditions">Trigger Conditions</h3>
+<p>A no-show is triggered when:</p>
+<ul>
+<li>
+<p>Inspection timer expires</p>
+</li>
+<li>
+<p>Client did not confirm completion</p>
+</li>
+<li>
+<p>Client did not cancel</p>
+</li>
+<li>
+<p>Agent attended</p>
+</li>
+</ul>
+<h3 id="system-must-automatically">System Must Automatically:</h3>
+<ul>
+<li>
+<p>Mark client as “No Show”</p>
+</li>
+<li>
+<p>Forfeit ₦2,500</p>
+</li>
+<li>
+<p>Pay agent ₦2,000</p>
+</li>
+<li>
+<p>Pay platform ₦500</p>
+</li>
+<li>
+<p>Deduct 1 inspection credit</p>
+</li>
+<li>
+<p>Lock record permanently</p>
+</li>
+<li>
+<p>Log attendance metadata (timestamp, GPS/IP)</p>
+</li>
+</ul>
+<h4 id="status-4">Status</h4>
+<blockquote>
+<p><strong>“Client No-Show — Forfeited”</strong></p>
+</blockquote>
+<p>No manual review is required.</p>
+<hr>
+<h3 id="6-successful-inspection-payment-logic"><strong>6. Successful Inspection Payment Logic</strong></h3>
+<h5 id="conditions-4">Conditions</h5>
+<p>All of the following must be true:</p>
+<ul>
+<li>
+<p>Client confirms completion</p>
+</li>
+<li>
+<p>Agent submits valid booking code</p>
+</li>
+<li>
+<p>Code is verified</p>
+</li>
+<li>
+<p>Timer is valid</p>
+</li>
+</ul>
+<h5 id="system-must-3">System Must:</h5>
+<ul>
+<li>
+<p>Deduct 1 inspection credit</p>
+</li>
+<li>
+<p>Mark inspection as certified</p>
+</li>
+<li>
+<p>Allocate ₦2,000 to agent (withdrawable)</p>
+</li>
+<li>
+<p>Allocate ₦500 to platform revenue</p>
+</li>
+<li>
+<p>Lock session</p>
+</li>
+<li>
+<p>Generate payout record</p>
+</li>
+</ul>
+<h5 id="status-5">Status</h5>
+<blockquote>
+<p><strong>“Completed — Certified”</strong></p>
+</blockquote>
+<hr>
+<h3 id="7-payment-distribution-engine"><strong>7. Payment Distribution Engine</strong></h3>
+<h4 id="distribution-rule">Distribution Rule</h4>
+<p>From every ₦2,500 payment:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Allocation</th>
+          <th>Amount</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Agent</td>
+          <td>₦2,000</td>
+      </tr>
+      <tr>
+          <td>Platform</td>
+          <td>₦500</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="distribution-only-occurs-when">Distribution Only Occurs When:</h3>
+<ul>
+<li>
+<p>Inspection is certified, OR</p>
+</li>
+<li>
+<p>Client no-show confirmed, OR</p>
+</li>
+<li>
+<p>Late cancellation after lock</p>
+</li>
+</ul>
+<p>Early distribution is prohibited.</p>
+<hr>
+<h3 id="8-refund-rules-summary"><strong>8. Refund Rules Summary</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Scenario</th>
+          <th>Client Refund</th>
+          <th>Agent Paid</th>
+          <th>Platform Paid</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Client cancels ＞24hrs</td>
+          <td>₦2,500</td>
+          <td>₦0</td>
+          <td>₦0</td>
+      </tr>
+      <tr>
+          <td>Agent cancels ＞24hrs</td>
+          <td>₦2,500</td>
+          <td>₦0</td>
+          <td>₦0</td>
+      </tr>
+      <tr>
+          <td>Client cancels ≤24hrs</td>
+          <td>₦0</td>
+          <td>₦2,000</td>
+          <td>₦500</td>
+      </tr>
+      <tr>
+          <td>Agent cancels ≤24hrs (Emergency)</td>
+          <td>₦2,500</td>
+          <td>₦0</td>
+          <td>₦0</td>
+      </tr>
+      <tr>
+          <td>Client no-show</td>
+          <td>₦0</td>
+          <td>₦2,000</td>
+          <td>₦500</td>
+      </tr>
+      <tr>
+          <td>Successful inspection</td>
+          <td>₦0</td>
+          <td>₦2,000</td>
+          <td>₦500</td>
+      </tr>
+  </tbody>
+</table>
+<p>This table must match system code exactly.</p>
+<hr>
+<h3 id="9-earnings--revenue-dashboard-rules"><strong>9. Earnings &amp; Revenue Dashboard Rules</strong></h3>
+<h4 id="agent-dashboard-categories">Agent Dashboard Categories</h4>
+<ul>
+<li>
+<p>Expected (before lock)</p>
+</li>
+<li>
+<p>Locked (within 24 hours)</p>
+</li>
+<li>
+<p>Certified (completed)</p>
+</li>
+<li>
+<p>Withdrawable (approved payout)</p>
+</li>
+</ul>
+<h4 id="platform-dashboard-categories">Platform Dashboard Categories</h4>
+<ul>
+<li>
+<p>Pending Revenue</p>
+</li>
+<li>
+<p>Locked Revenue</p>
+</li>
+<li>
+<p>Realized Revenue</p>
+</li>
+<li>
+<p>Refunded Revenue</p>
+</li>
+</ul>
+<p>Manual editing is not permitted.</p>
+<hr>
+<h3 id="10-abuse-prevention--monitoring"><strong>10. Abuse Prevention &amp; Monitoring</strong></h3>
+<p>The system must monitor:</p>
+<ul>
+<li>
+<p>Repeated early cancellations</p>
+</li>
+<li>
+<p>Frequent agent late cancellations</p>
+</li>
+<li>
+<p>No-show patterns</p>
+</li>
+<li>
+<p>Refund abuse loops</p>
+</li>
+</ul>
+<h4 id="automated-triggers">Automated Triggers</h4>
+<ul>
+<li>
+<p>Warning notifications</p>
+</li>
+<li>
+<p>Ranking reduction</p>
+</li>
+<li>
+<p>Payout delays</p>
+</li>
+<li>
+<p>Admin review flags</p>
+</li>
+</ul>
+<p>No automatic bans without human review.</p>
+<hr>
+<h3 id="11-system-guarantees"><strong>11. System Guarantees</strong></h3>
+<p>When implemented correctly, this logic ensures:</p>
+<ul>
+<li>
+<p>Financial fairness</p>
+</li>
+<li>
+<p>Predictable enforcement</p>
+</li>
+<li>
+<p>Clear 24-hour policy</p>
+</li>
+<li>
+<p>Agent protection</p>
+</li>
+<li>
+<p>Client protection</p>
+</li>
+<li>
+<p>Platform revenue security</p>
+</li>
+<li>
+<p>Reduced disputes</p>
+</li>
+<li>
+<p>Full audit readiness</p>
+</li>
+</ul>
+<h4 id="conclusion"><strong>Conclusion</strong></h4>
+<p>All development, testing, and operations teams must treat this document as the <strong>official reference</strong> for inspection payments and cancellations.</p>
+<p>Any system behavior that contradicts this specification must be considered a critical defect.</p>
+<hr>
+<h1 id="11-homeview-inspection-report--system-testing--implementation"><strong>11. HomeView Inspection Report – System Testing &amp; Implementation</strong></h1>
+<ul>
+<li>
+<p><strong>Property ID:</strong> MEA-L-10293</p>
+</li>
+<li>
+<p><strong>Inspection Date:</strong> October 12, 2026</p>
+</li>
+<li>
+<p><strong>Inspector:</strong> MyEasyAgent Field Team (Precious O.)</p>
+</li>
+<li>
+<p><strong>Property Type:</strong> 3-Bedroom Apartment</p>
+</li>
+<li>
+<p><strong>Location:</strong> Onike, Yaba, Lagos</p>
+</li>
+</ul>
+<h3 id="111-purpose"><strong>11.1 Purpose</strong></h3>
+<ul>
+<li>
+<p>Standardized data capture</p>
+</li>
+<li>
+<p>Media verification</p>
+</li>
+<li>
+<p>Access control</p>
+</li>
+<li>
+<p>Financial accuracy</p>
+</li>
+<li>
+<p>Automated actions</p>
+</li>
+</ul>
+<h3 id="112-video-tour-module"><strong>11.2 Video Tour Module</strong></h3>
+<ul>
+<li>
+<p>2–4 minutes, 360° view</p>
+</li>
+<li>
+<p>Entrance, rooms, bathrooms, kitchen, outdoor areas</p>
+</li>
+<li>
+<p>Streaming performance checks</p>
+</li>
+</ul>
+<h3 id="113-property-assessment-truth-score"><strong>11.3 Property Assessment (“Truth Score”)</strong></h3>
+<ul>
+<li>
+<p>Verified star rating (e.g., 3.5/5)</p>
+</li>
+<li>
+<p>Defect log: structural, plumbing, electrical, water supply, paint/finish</p>
+</li>
+</ul>
+<h3 id="114-utility--neighborhood-module"><strong>11.4 Utility &amp; Neighborhood Module</strong></h3>
+<ul>
+<li>
+<p>Electricity type, average daily supply, noise, network, security, flood risk</p>
+</li>
+<li>
+<p>Editable only by inspectors</p>
+</li>
+</ul>
+<h3 id="115-financial-transparency"><strong>11.5 Financial Transparency</strong></h3>
+<ul>
+<li>
+<p>Display annual rent, service charge, caution deposit, legal fees, agency fees</p>
+</li>
+<li>
+<p>Auto-calculation, no manual override</p>
+</li>
+</ul>
+<h3 id="116-inspector-verdict-module"><strong>11.6 Inspector Verdict Module</strong></h3>
+<ul>
+<li>Professional recommendation with timestamp, signature, immutable post-submission</li>
+</ul>
+<h3 id="117-user-action-panel"><strong>11.7 User Action Panel</strong></h3>
+<ul>
+<li>
+<p>Buttons: Proceed to Offer, Book Repairs, Not For Me</p>
+</li>
+<li>
+<p>Tracks inspection credits, logs all actions</p>
+</li>
+</ul>
+<h3 id="118-access-control--subscription"><strong>11.8 Access Control &amp; Subscription</strong></h3>
+<ul>
+<li>
+<p>HuntSmart Pass: full access</p>
+</li>
+<li>
+<p>Basic: exterior + price</p>
+</li>
+<li>
+<p>Premium: full access</p>
+</li>
+</ul>
+<h3 id="119-business-workflow-integration"><strong>11.9 Business Workflow Integration</strong></h3>
+<ul>
+<li>
+<p>CTO: Paid unlock, CDN storage, encrypted access</p>
+</li>
+<li>
+<p>CCO: Agent notifications, commission splits</p>
+</li>
+<li>
+<p>CMO: Campaign exports, data masking</p>
+</li>
+<li>
+<p>CEO: Legal records, compliance</p>
+</li>
+</ul>
+<h3 id="1110-audit-trail"><strong>11.10 Audit Trail</strong></h3>
+<ul>
+<li>
+<p>Timestamps, inspector ID, edit history, access logs, downloads, actions</p>
+</li>
+<li>
+<p>Immutable, retrievable</p>
+</li>
+</ul>
+<h3 id="1111-qa-testing"><strong>11.11 QA Testing</strong></h3>
+<ul>
+<li>Media, ratings, totals, access control, buttons, notifications, logs, data integrity</li>
+</ul>
+<h3 id="1112-strategic-value"><strong>11.12 Strategic Value</strong></h3>
+<ul>
+<li>Builds trust, reduces disputes, protects revenue, enhances marketing credibility, creates verifiable history</li>
+</ul>
+<hr>
+<h2 id="conclusion-1"><strong>Conclusion</strong></h2>
+<p>The HomeView system is mission-critical. All teams must ensure:</p>
+<ul>
+<li>
+<p>Compliance with specifications</p>
+</li>
+<li>
+<p>Secure, consistent data handling</p>
+</li>
+<li>
+<p>Accurate financial reporting</p>
+</li>
+<li>
+<p>Deviations must be immediately reported</p>
+</li>
+</ul>
+<hr>
+<p><strong>Founder Action Items</strong></p>
+<ul>
+<li>
+<p>Review 2.1 for tax implications</p>
+</li>
+<li>
+<p>Audit UX flow for technical feasibility</p>
+</li>
+</ul>
+<hr>
+<h1 id="myeasyagent-professional-partner-consent-forms-web-version"><strong>MyEasyAgent Professional Partner Consent Forms (Web Version)</strong></h1>
+<p>This document is designed to <strong>bind all parties to MyEasyAgent’s high standards</strong> of transparency, accuracy, and integrity. Signing transforms each party into an active partner in the ecosystem.</p>
+<hr>
+<h2 id="a-direct-agent-consent-form"><strong>A. Direct Agent Consent Form</strong></h2>
+<h3 id="1-identity--verification"><strong>1. Identity &amp; Verification</strong></h3>
+<p>By signing this form, I, the undersigned <strong>Direct Agent/Agency</strong>, confirm that:</p>
+<ul>
+<li>
+<p>I hold a valid <strong>LASRERA</strong> or <strong>ERCAAN</strong> registration certificate and will maintain its validity.</p>
+</li>
+<li>
+<p>I have completed my profile to <strong>100%</strong> and will provide accurate licensing information for the <strong>TrustShield</strong> verification system.</p>
+</li>
+<li>
+<p>I understand that my performance metrics (response rate, inspection completion, punctuality) will be <strong>publicly visible</strong> to clients.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-property-availability-commitment"><strong>2. Property Availability Commitment</strong></h3>
+<p>I agree to maintain <strong>real-time property accuracy</strong>:</p>
+<ul>
+<li>
+<p><strong>Mandatory Updates:</strong> Update the status of every property under my dashboard immediately upon any change in availability.</p>
+</li>
+<li>
+<p><strong>Platform Statuses:</strong></p>
+<ul>
+<li>
+<p><strong>#Active:</strong> 100% available for viewing/lease/sale.</p>
+</li>
+<li>
+<p><strong>#Undergoing Views:</strong> Currently being inspected.</p>
+</li>
+<li>
+<p><strong>#Awaiting Update:</strong> Pending verification of current status.</p>
+</li>
+<li>
+<p><strong>#Rented / # Sold:</strong> Closed deal; property removed after commission payment.</p>
 </li>
 </ul>
 </li>
 </ul>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Week 4 • January 2026</title>
-            <link>http://localhost:1313/posts/weekly-roundup/</link>
-            <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-            
-            <guid>http://localhost:1313/posts/weekly-roundup/</guid>
-            <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;
+<hr>
+<h3 id="3-inspection--commitment-fee-protocol"><strong>3. Inspection &amp; Commitment Fee Protocol</strong></h3>
+<ul>
+<li>
+<p>Verify the <strong>Unique Booking ID</strong> for every client arrival.</p>
+</li>
+<li>
+<p>Submit inspection reports (online or via field rep) within <strong>24 hours</strong>.</p>
+</li>
+<li>
+<p><strong>Earnings:</strong> ₦1,500 per completed inspection or client no-show; ₦500 platform fee non-refundable.</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-financial-transparency--commissions"><strong>4. Financial Transparency &amp; Commissions</strong></h3>
+<ul>
+<li>
+<p><strong>Referral Fee:</strong> 10% if a referred client closes a transaction within 6 months.</p>
+</li>
+<li>
+<p><strong>Commission Splits:</strong></p>
+<ul>
+<li>
+<p><strong>Direct Agent:</strong> 50% Agent / 50% Platform</p>
+</li>
+<li>
+<p><strong>Sub-Direct:</strong> 50% Direct / 25% Sub-Direct / 25% Platform</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Off-Platform Prohibition:</strong> No bypassing the platform for bookings or payments.</p>
+</li>
+</ul>
+<hr>
+<h3 id="5-compliance--acknowledgment"><strong>5. Compliance &amp; Acknowledgment</strong></h3>
+<p>I understand that:</p>
+<ul>
+<li>
+<p>Failure to update property statuses</p>
+</li>
+<li>
+<p>Attempting off-platform deals</p>
+</li>
+</ul>
+<p>…will lead to <strong>immediate suspension or permanent removal</strong>.</p>
+<hr>
+<p><strong>Agent/Agency Name:</strong> __________________________<br>
+<strong>Registration Number (LASRERA/ERCAAN):</strong> __________________________<br>
+<strong>Date:</strong> __________________________<br>
+<strong>Signature:</strong> __________________________</p>
+<hr>
+<h2 id="b-semi-direct-agent--property-scout-consent-form"><strong>B. Semi-Direct Agent / Property Scout Consent Form</strong></h2>
+<p>Designed for agents who <strong>assist inspections or act as intermediaries</strong>.</p>
+<h3 id="1-identity--verification-1"><strong>1. Identity &amp; Verification</strong></h3>
+<ul>
+<li>
+<p>I will maintain <strong>accuracy in reporting</strong> and never misrepresent property status.</p>
+</li>
+<li>
+<p>My TrustShield verification level is <strong>Semi-Direct</strong>, indicating partial access only.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-property-assistance-commitment"><strong>2. Property Assistance Commitment</strong></h3>
+<ul>
+<li>
+<p>Only attend inspections assigned by <strong>Direct Agent</strong>.</p>
+</li>
+<li>
+<p>Submit <strong>video/photo walkthroughs</strong> when unable to attend physically.</p>
+</li>
+<li>
+<p>Respect all scheduling and reporting deadlines.</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-inspection--earnings-protocol"><strong>3. Inspection &amp; Earnings Protocol</strong></h3>
+<ul>
+<li>
+<p>Submit confirmation of inspection completion via app within <strong>24 hours</strong>.</p>
+</li>
+<li>
+<p><strong>Earnings:</strong> ₦1,000 per completed semi-direct inspection (subject to Direct Agent allocation).</p>
+</li>
+<li>
+<p>Platform retains ₦500 from commitment fee.</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-compliance--accountability"><strong>4. Compliance &amp; Accountability</strong></h3>
+<ul>
+<li>
+<p>Cannot bypass Direct Agent or platform for compensation.</p>
+</li>
+<li>
+<p>Must maintain professional conduct; violation results in <strong>TrustShield downgrade</strong> or suspension.</p>
+</li>
+</ul>
+<hr>
+<p><strong>Semi-Direct Agent Name:</strong> __________________________<br>
+<strong>Direct Agent Assigned:</strong> __________________________<br>
+<strong>Date:</strong> __________________________<br>
+<strong>Signature:</strong> __________________________</p>
+<hr>
+<h2 id="c-landlord-consent--indemnity-form"><strong>C. Landlord Consent &amp; Indemnity Form</strong></h2>
+<p>For landlords who may <strong>lack complete ownership documentation</strong>.</p>
+<h3 id="1-identity--ownership-confirmation"><strong>1. Identity &amp; Ownership Confirmation</strong></h3>
+<p>By signing this form, I, the undersigned landlord, declare:</p>
+<ul>
+<li>
+<p>I am the legal owner or authorized representative of the property.</p>
+</li>
+<li>
+<p>If unable to provide ownership documents, I <strong>accept full legal indemnity</strong> for misrepresentation.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-property-listing-commitment"><strong>2. Property Listing Commitment</strong></h3>
+<ul>
+<li>
+<p>Provide accurate property description, images, and availability.</p>
+</li>
+<li>
+<p>Update the platform immediately upon any change in availability.</p>
+</li>
+<li>
+<p>Allow MyEasyAgent inspection agents to verify property status.</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-indemnity-clause-optional"><strong>3. Indemnity Clause (Optional)</strong></h3>
+<blockquote>
+<p>“I understand that if I fail to provide adequate proof of ownership, I take full responsibility for any dispute or legal action arising from this listing. I release MyEasyAgent from any liability and agree to indemnify the platform fully.”</p>
+</blockquote>
+<hr>
+<h3 id="4-compliance--acknowledgment"><strong>4. Compliance &amp; Acknowledgment</strong></h3>
+<ul>
+<li>
+<p>Listing false information or obstructing inspections is <strong>grounds for immediate removal</strong>.</p>
+</li>
+<li>
+<p>Landlord agrees to <strong>cooperate fully</strong> with platform verification processes.</p>
+</li>
+</ul>
+<hr>
+<p><strong>Landlord Name:</strong> __________________________<br>
+<strong>Property Address:</strong> __________________________<br>
+<strong>Date:</strong> __________________________<br>
+<strong>Signature:</strong> __________________________</p>
+<hr>
+<p>Perfect. We can create a <strong>Client Consent &amp; Undertaking Form</strong> that clearly outlines <strong>all potential risks, limitations, and responsibilities</strong> while making it explicit that the platform tries to safeguard them but cannot guarantee outcomes beyond its control. This will serve as both a <strong>legal shield for MyEasyAgent</strong> and a clear guide for clients to understand their obligations.</p>
+<p>Here’s a detailed, professional, and <strong>clickable-ready version</strong>:</p>
+<hr>
+<h1 id="myeasyagent-client-consent--undertaking-form"><strong>MyEasyAgent Client Consent &amp; Undertaking Form</strong></h1>
+<p>This form ensures that every client understands the terms of engagement with <strong>MyEasyAgent</strong>, the limitations of the platform, and their responsibilities during property searches, inspections, and transactions.</p>
+<p>By signing this form, I, the undersigned client, <strong>acknowledge and agree</strong> to the following:</p>
+<hr>
+<h2 id="1-acknowledgment-of-platform-role"><strong>1. Acknowledgment of Platform Role</strong></h2>
+<ol>
+<li>
+<p>I understand that <strong>MyEasyAgent acts as a facilitator and trust infrastructure</strong>.</p>
+</li>
+<li>
+<p>The platform <strong>does not guarantee</strong> that:</p>
+<ul>
+<li>
+<p>Agents will follow the <strong>10% commission rule</strong>.</p>
+</li>
+<li>
+<p>All listed properties will be inspected by MyEasyAgent.</p>
+</li>
+<li>
+<p>All agents are fully honest or infallible.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>MyEasyAgent will <strong>endeavor to inspect properties</strong> or ensure agents do so, but inspections may not always occur.</p>
+</li>
+<li>
+<p>The platform provides a <strong>verified agent network</strong>, but <strong>verification is not an absolute guarantee of honesty or performance</strong>.</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-client-responsibilities"><strong>2. Client Responsibilities</strong></h2>
+<ol>
+<li>
+<p>Always carry and use your <strong>Unique Booking ID</strong> for every inspection.</p>
+</li>
+<li>
+<p>Click <strong>“Completed”</strong> on the platform only after inspections are physically done. This serves as the <strong>official handshake</strong> between client, agent, and platform.</p>
+</li>
+<li>
+<p>Adhere strictly to <strong>platform rules</strong> regarding bookings, inspections, and communications.</p>
+</li>
+<li>
+<p>Regularly <strong>check your email and platform dashboard</strong> for notifications, including <strong>smart match offers</strong> and inspection updates.</p>
+</li>
+<li>
+<p>Never attempt to <strong>deal outside the platform</strong>. Any off-platform transaction occurs at your own risk and <strong>will not be protected by MyEasyAgent</strong>.</p>
+</li>
+</ol>
+<hr>
+<h2 id="3-potential-risks--legal-limitations"><strong>3. Potential Risks &amp; Legal Limitations</strong></h2>
+<p>I understand that using MyEasyAgent may involve the following risks:</p>
+<p><strong>A. Agent-Related Risks</strong></p>
+<ul>
+<li>
+<p>Agents may fail to show up for inspections despite commitment.</p>
+</li>
+<li>
+<p>Agents may misrepresent property availability, price, or features.</p>
+</li>
+<li>
+<p>Agents may attempt to bypass platform rules or charge outside commission.</p>
+</li>
+</ul>
+<p><strong>B. Property-Related Risks</strong></p>
+<ul>
+<li>
+<p>Not all properties listed on the platform may be inspected by MyEasyAgent.</p>
+</li>
+<li>
+<p>Some property information may be outdated, incomplete, or inaccurate.</p>
+</li>
+<li>
+<p>Environmental, structural, or legal issues may exist even if flagged by MyEasyAgent inspections.</p>
+</li>
+</ul>
+<p><strong>C. Transaction Risks</strong></p>
+<ul>
+<li>
+<p>Deals conducted <strong>outside the platform</strong> will not be protected; MyEasyAgent assumes no liability.</p>
+</li>
+<li>
+<p>Disputes arising from off-platform transactions will not involve the platform.</p>
+</li>
+<li>
+<p>Payment errors, cancellations, or misunderstandings are limited to the platform’s terms of service.</p>
+</li>
+</ul>
+<p><strong>D. Legal Limitations</strong></p>
+<ul>
+<li>
+<p>MyEasyAgent is <strong>not the legal owner or agent</strong> of properties.</p>
+</li>
+<li>
+<p>The platform provides <strong>information and verification services only</strong>.</p>
+</li>
+<li>
+<p>Clients are responsible for due diligence, including checking ownership, legal status, and other critical documentation.</p>
+</li>
+</ul>
+<hr>
+<h2 id="4-undertaking--consent"><strong>4. Undertaking &amp; Consent</strong></h2>
+<p>By signing this form, I undertake that:</p>
+<ol>
+<li>
+<p>I will <strong>only conduct transactions on the MyEasyAgent platform</strong>.</p>
+</li>
+<li>
+<p>I accept all <strong>risks associated with agent behavior, property condition, or transaction outcomes</strong>.</p>
+</li>
+<li>
+<p>I understand that MyEasyAgent <strong>cannot be held liable for losses, damages, or disputes</strong> arising from:</p>
+<ul>
+<li>
+<p>Off-platform dealings</p>
+</li>
+<li>
+<p>Misrepresentation by agents or landlords</p>
+</li>
+<li>
+<p>Incomplete or missed inspections</p>
+</li>
+<li>
+<p>Failure to follow platform processes</p>
+</li>
+</ul>
+</li>
+<li>
+<p>I agree to <strong>actively participate in the platform processes</strong> (clicking completed, carrying booking number, responding to notifications).</p>
+</li>
+<li>
+<p>I release MyEasyAgent from any <strong>claims, suits, or legal actions</strong> relating to the aforementioned risks.</p>
+</li>
+</ol>
+<hr>
+<h2 id="5-acknowledgment--digital-signature"><strong>5. Acknowledgment &amp; Digital Signature</strong></h2>
+<blockquote>
+<p>By signing this form, I confirm that I have <strong>read, understood, and accepted all terms, risks, and responsibilities</strong> listed above.</p>
+</blockquote>
+<p><strong>Client Name:</strong> __________________________<br>
+<strong>Email Address:</strong> __________________________<br>
+<strong>Phone Number:</strong> __________________________<br>
+<strong>Booking ID (if applicable):</strong> __________________________<br>
+<strong>Date:</strong> __________________________<br>
+<strong>Signature / Digital Signature:</strong> __________________________</p>
+<hr>
+<h3 id="-notes-for-implementation">✅ <strong>Notes for Implementation</strong></h3>
+<ol>
+<li>
+<p>Use <strong>checkboxes for each acknowledgment point</strong> so the client must actively confirm understanding.</p>
+</li>
+<li>
+<p>Include <strong>mandatory signature field</strong> or typed name for legal effect.</p>
+</li>
+<li>
+<p>Add <strong>tooltip or info icons</strong> explaining terms like “Completed Handshake,” “Smart Match,” and “TrustShield.”</p>
+</li>
+<li>
+<p>Generate <strong>PDF copy automatically</strong> for both client and platform records.</p>
+</li>
+<li>
+<p>Include a <strong>“print or save” button</strong> so clients can retain proof of consent.</p>
+</li>
+</ol>
+<hr>
+]]></content></item><item><title>Week 4 • January 2026</title><link>/posts/weekly-roundup/</link><pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate><guid>/posts/weekly-roundup/</guid><description>&lt;h3 id="articles"&gt;Articles&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;The long march of electrification&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;
+&lt;h3 id="books"&gt;Books&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Dark Matter&lt;/li&gt;
 &lt;li&gt;Daemon&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;
+&lt;h3 id="music"&gt;Music&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-            <content type="html"><![CDATA[<h3 id="articles">Articles</h3>
+&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src="/images/covers/W49.jpeg" alt=""&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><content type="html"><![CDATA[<h3 id="articles">Articles</h3>
 <ul>
 <li>The Unexpected poetry of PhD acknowledgements</li>
 <li>&ldquo;while still making seem like i wrote it&rdquo;</li>
@@ -762,16 +1717,7 @@
 <ul>
 <li>Brent Faiyaz : JACKIE BROWN - <img src="/images/covers/W49.jpeg" alt=""></li>
 </ul>
-]]></content>
-        </item>
-        
-        <item>
-            <title>What Can We Remove?</title>
-            <link>http://localhost:1313/posts/what-can-we-remove/</link>
-            <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-            
-            <guid>http://localhost:1313/posts/what-can-we-remove/</guid>
-            <description>&lt;p&gt;In 2021, the noise got too loud. My screen was filled with other people&amp;rsquo;s highlights, and i felt behind.&lt;br&gt;
+]]></content></item><item><title>What Can We Remove?</title><link>/posts/what-can-we-remove/</link><pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate><guid>/posts/what-can-we-remove/</guid><description>&lt;p&gt;In 2021, the noise got too loud. My screen was filled with other people&amp;rsquo;s highlights, and i felt behind.&lt;br&gt;
 I was tired, anxious, and scrolling through a life that wasn&amp;rsquo;t mine.&lt;/p&gt;
 &lt;p&gt;So I started to quietly unfollow.
 I kept only what built me up.
@@ -781,8 +1727,7 @@ I could breathe again.&lt;/p&gt;
 &lt;p&gt;We add and add. More features. More steps. More rules.
 Interdependencies proliferate, and gradually strangle us.
 We think more means better.
-But really, more often means more clutter.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>In 2021, the noise got too loud. My screen was filled with other people&rsquo;s highlights, and i felt behind.<br>
+But really, more often means more clutter.&lt;/p&gt;</description><content type="html"><![CDATA[<p>In 2021, the noise got too loud. My screen was filled with other people&rsquo;s highlights, and i felt behind.<br>
 I was tired, anxious, and scrolling through a life that wasn&rsquo;t mine.</p>
 <p>So I started to quietly unfollow.
 I kept only what built me up.
@@ -810,8 +1755,4 @@ One old rule you can delete?
 One expectation you can release?</p>
 <p>You don&rsquo;t have to build a castle to matter.
 Sometimes the most sacred work is sweeping the sand so others can walk barefoot and feel the earth.</p>
-]]></content>
-        </item>
-        
-    </channel>
-</rss>
+]]></content></item></channel></rss>

@@ -1,68 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>mmanuelubah</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on mmanuelubah</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Strategy</title>
-      <link>http://localhost:1313/posts/strategy/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/strategy/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;[!info]+ Important&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is more than a business; it’s a mission to bridge the gap between the &amp;ldquo;average Nigerian&amp;rdquo; and their right to a home. In a market like Lagos, where &amp;ldquo;Who you know&amp;rdquo; often outweighs &amp;ldquo;What you pay,&amp;rdquo; our platform prioritizes performance over deep pockets. This blueprint defines the &amp;ldquo;What,&amp;rdquo; &amp;ldquo;Why,&amp;rdquo; and &amp;ldquo;How&amp;rdquo; of our journey.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;1-execution-summary&#34;&gt;1. Execution Summary&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is a trust-centric PropTech ecosystem designed specifically for the Nigerian market. Unlike traditional listing sites that prioritize paid visibility, we utilize a &lt;strong&gt;Performance-Based Ranking&lt;/strong&gt; system and a &lt;strong&gt;Usage-Based Monetization&lt;/strong&gt; model.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 4 • January 2026</title>
-      <link>http://localhost:1313/posts/weekly-roundup/</link>
-      <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/weekly-roundup/</guid>
-      <description>&lt;h3 id=&#34;articles&#34;&gt;Articles&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The long march of electrification&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;Daemon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src=&#34;http://localhost:1313/images/covers/W49.jpeg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>What Can We Remove?</title>
-      <link>http://localhost:1313/posts/what-can-we-remove/</link>
-      <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-can-we-remove/</guid>
-      <description>&lt;p&gt;In 2021, the noise got too loud. My screen was filled with other people&amp;rsquo;s highlights, and i felt behind.&lt;br&gt;&#xA;I was tired, anxious, and scrolling through a life that wasn&amp;rsquo;t mine.&lt;/p&gt;&#xA;&lt;p&gt;So I started to quietly unfollow.&#xA;I kept only what built me up.&#xA;The noise faded. My mind cleared.&#xA;I could breathe again.&lt;/p&gt;&#xA;&lt;p&gt;We often treat our lives and our businesses like our social feeds.&lt;/p&gt;&#xA;&lt;p&gt;We add and add. More features. More steps. More rules.&#xA;Interdependencies proliferate, and gradually strangle us.&#xA;We think more means better.&#xA;But really, more often means more clutter.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>A Beautiful Life</title>
-      <link>http://localhost:1313/books/a-beautiful-life/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/a-beautiful-life/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ikigai</title>
-      <link>http://localhost:1313/books/ikigai/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/ikigai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>The Psychology of Money</title>
-      <link>http://localhost:1313/books/the-psychology-of-money/</link>
-      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/the-psychology-of-money/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Colophon</title>
-      <link>http://localhost:1313/colophon/</link>
-      <pubDate>Fri, 27 Oct 2023 16:54:39 +0100</pubDate>
-      <guid>http://localhost:1313/colophon/</guid>
-      <description>&lt;p&gt;How this site is made and tendered.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;I AM EMMANUEL UBAH&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-i-care-about&#34;&gt;What I care about&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Writing clearly&lt;/li&gt;&#xA;&lt;li&gt;Building useful things&lt;/li&gt;&#xA;&lt;li&gt;Long-term thinking&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;elsewhere&#34;&gt;Elsewhere&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Twitter&lt;/li&gt;&#xA;&lt;li&gt;GitHub&lt;/li&gt;&#xA;&lt;li&gt;LinkedIn&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mmanuelubah</title><link>/</link><description>Recent content on mmanuelubah</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Strategy</title><link>/posts/strategy/</link><pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate><guid>/posts/strategy/</guid><description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!info]+ &lt;strong&gt;Important&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MyEasyAgent&lt;/strong&gt; is more than a business; it is a mission-driven PropTech platform aimed at bridging the gap between the “average Nigerian” and their right to a home. In a market like Lagos, where personal networks (“Who you know”) often outweigh financial capability (“What you pay”), MyEasyAgent prioritizes &lt;strong&gt;performance, trust, and transparency&lt;/strong&gt; over deep pockets. This blueprint defines the &lt;strong&gt;What, Why, and How&lt;/strong&gt; of our journey, providing a clear roadmap for execution.&lt;/p&gt;</description></item><item><title>Week 4 • January 2026</title><link>/posts/weekly-roundup/</link><pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate><guid>/posts/weekly-roundup/</guid><description>&lt;h3 id="articles"&gt;Articles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The Unexpected poetry of PhD acknowledgements&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;while still making seem like i wrote it&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;The long march of electrification&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="books"&gt;Books&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Dark Matter&lt;/li&gt;
+&lt;li&gt;Daemon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="music"&gt;Music&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Brent Faiyaz : JACKIE BROWN - &lt;img src="/images/covers/W49.jpeg" alt=""&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>What Can We Remove?</title><link>/posts/what-can-we-remove/</link><pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate><guid>/posts/what-can-we-remove/</guid><description>&lt;p&gt;In 2021, the noise got too loud. My screen was filled with other people&amp;rsquo;s highlights, and i felt behind.&lt;br&gt;
+I was tired, anxious, and scrolling through a life that wasn&amp;rsquo;t mine.&lt;/p&gt;
+&lt;p&gt;So I started to quietly unfollow.
+I kept only what built me up.
+The noise faded. My mind cleared.
+I could breathe again.&lt;/p&gt;
+&lt;p&gt;We often treat our lives and our businesses like our social feeds.&lt;/p&gt;
+&lt;p&gt;We add and add. More features. More steps. More rules.
+Interdependencies proliferate, and gradually strangle us.
+We think more means better.
+But really, more often means more clutter.&lt;/p&gt;</description></item><item><title>A Beautiful Life</title><link>/books/a-beautiful-life/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>/books/a-beautiful-life/</guid><description/></item><item><title>Ikigai</title><link>/books/ikigai/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>/books/ikigai/</guid><description/></item><item><title>The Psychology of Money</title><link>/books/the-psychology-of-money/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>/books/the-psychology-of-money/</guid><description/></item><item><title>Colophon</title><link>/colophon/</link><pubDate>Fri, 27 Oct 2023 16:54:39 +0100</pubDate><guid>/colophon/</guid><description>&lt;p&gt;How this site is made and tendered.&lt;/p&gt;</description></item><item><title>About</title><link>/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/</guid><description>&lt;p&gt;I AM EMMANUEL UBAH&lt;/p&gt;
+&lt;h2 id="what-i-care-about"&gt;What I care about&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Writing clearly&lt;/li&gt;
+&lt;li&gt;Building useful things&lt;/li&gt;
+&lt;li&gt;Long-term thinking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="elsewhere"&gt;Elsewhere&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter&lt;/li&gt;
+&lt;li&gt;GitHub&lt;/li&gt;
+&lt;li&gt;LinkedIn&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

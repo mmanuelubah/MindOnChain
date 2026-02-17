@@ -1,4 +1,4 @@
-baseURL = "https://mmanuelubah.netlify.app/"
+baseURL = "/"
 title = "mmanuelubah"
 languageCode = "en-us"
 theme = "hello-friend-ng"
