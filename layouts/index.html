@@ -1,10 +1,6 @@
 {{ define "main" }}
 <main class="home">
 
-  <!-- Pixel Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-
   <!-- ================= TOP SECTION ================= -->
   <div class="top-section">
 
@@ -34,7 +30,6 @@
       <div class="card">
         <div class="card-emoji">📖</div>
         <div class="card-title">Books</div>
-        <!-- Try 'Books' first based on directory name, if 0 fallback to 'books' might be needed but case sensitivity usually normalizes to lowercase in Hugo sections -->
         {{ $bookCount := len (where .Site.RegularPages "Section" "books") }}
         {{ if eq $bookCount 0 }}
         {{ $bookCount = len (where .Site.RegularPages "Section" "Books") }}
@@ -60,30 +55,29 @@
 
   <hr class="section-separator">
 
-  <!-- ================= CURRENTLY READING ================= -->
-  <section>
-    <h2 class="section-title">CURRENTLY READING:</h2>
+  <!-- ================= NOW SECTION ================= -->
+  <section class="now-section">
+    <h2 class="section-title mono-header">NOW</h2>
 
-    <div class="highlight-box">
+    {{ with .Params.now_intro }}
+    <p class="now-intro">{{ . | markdownify }}</p>
+    {{ end }}
+
+    <!-- Currently Reading block — pulled from /Books section with status "reading" -->
+    <div class="reading-block">
+      <span class="reading-label">Currently reading:</span>
       <ul class="reading-list">
-        {{/* Get all pages with status "reading" (case-insensitive) */}}
+        {{ $books := where .Site.RegularPages "Type" "books" }}
         {{ $reading := slice }}
-        {{ range .Site.RegularPages }}
+        {{ range $books }}
         {{ if in (lower .Params.status) "reading" }}
         {{ $reading = $reading | append . }}
         {{ end }}
         {{ end }}
-
-        {{/* Sort by date descending (newest first) */}}
-        {{ $reading = sort $reading "Date" "desc" }}
-
-        {{/* Show first 5 books */}}
-        {{ range first 5 $reading }}
+        {{ range sort $reading "Date" "desc" }}
         <li>
           <a href="{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .RelPermalink }}{{ end }}" class="reading-link"
-            target="_blank">
-            {{ .Title }}
-          </a>
+            target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
         </li>
         {{ end }}
       </ul>
@@ -92,16 +86,34 @@
 
   <hr class="section-separator">
 
+  <!-- ================= WORK SECTION ================= -->
+  <section class="work-section">
+    <h2 class="section-title mono-header">WORK</h2>
+
+    <div class="work-grid">
+      {{ range .Params.work_cards }}
+      <a href="{{ .link }}" class="work-card-link" target="_blank" rel="noopener noreferrer">
+        <div class="work-card">
+          <div class="work-card-title mono-header">{{ .title }}</div>
+          <p class="work-card-desc">{{ .description }}</p>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+
+  <hr class="section-separator">
+
   <!-- ================= FEATURED WRITING ================= -->
-  <section>
-    <h2 class="section-title">FEATURED WRITING</h2>
+  <section class="writing-section">
+    <h2 class="section-title mono-header">FEATURED WRITING</h2>
 
     <ul class="writing-list">
       {{ $featured := where .Site.RegularPages "Params.featured" true }}
-      {{ range first 5 $featured }}
-      <li>
+      {{ range first 6 (sort $featured "Date" "desc") }}
+      <li class="writing-item">
         <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
-        <small class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</small>
+        <small class="post-meta">{{ .Date.Format "Jan 02 2006" }}</small>
       </li>
       {{ end }}
     </ul>
@@ -111,7 +123,7 @@
 
   <!-- ================= LATEST ROUNDUP ================= -->
   <section>
-    <h2 class="section-title">LATEST ROUNDUP</h2>
+    <h2 class="section-title mono-header">LATEST ROUNDUP</h2>
 
     <div class="highlight-box">
       {{ $roundup := where .Site.RegularPages "Params.tags" "intersect" (slice "weekly-roundup") }}
@@ -130,37 +142,39 @@
 
 <!-- ================= STYLES ================= -->
 <style>
+  /* ─── Layout ───────────────────────────────────────── */
   .home {
     font-family: var(--body-font);
     font-size: 15px;
-    /* Bumped up slightly for Ubuntu Mono readability */
     font-weight: var(--body-font-weight);
     line-height: var(--line-height-base);
     max-width: 720px;
     margin: auto;
     padding: 2rem 1.5rem 3rem;
     color: var(--text-color);
-    /* Theme color */
   }
 
-  /* Top spacing */
+  /* ─── Top section ───────────────────────────────────── */
   .top-section {
     text-align: center;
     margin-bottom: 3rem;
   }
 
-  /* Pixel headers */
+  /* ─── Monospace headers (NOW / WORK / …) ────────────── */
+  .mono-header {
+    font-family: 'VT323', monospace, monospace;
+    letter-spacing: 0.08em;
+  }
+
   .site-title,
   .section-title,
   .card-title,
   .card-count {
     font-family: var(--pixel-font);
-    /* Theme font */
   }
 
   .site-title {
     font-size: 1.5rem;
-    /* Larger for VT323 */
     margin-top: 14px;
     line-height: 1.6;
     letter-spacing: 0.5px;
@@ -169,16 +183,15 @@
   }
 
   .section-title {
-    font-size: 1.2rem;
-    /* Larger for VT323 */
+    font-size: 1.15rem;
     line-height: 1.6;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.5px;
     opacity: 0.9;
     color: var(--text-color);
   }
 
-  /* Flicker animation */
+  /* ─── Flicker ───────────────────────────────────────── */
   @keyframes flicker {
 
     0%,
@@ -198,7 +211,7 @@
     }
   }
 
-  /* Avatar container */
+  /* ─── Avatar ────────────────────────────────────────── */
   .avatar-container {
     width: 160px;
     height: 100px;
@@ -216,7 +229,6 @@
     object-fit: cover;
   }
 
-  /* Overlay viewer */
   .avatar-overlay {
     position: fixed;
     inset: 0;
@@ -254,7 +266,7 @@
     }
   }
 
-  /* Cards spacing */
+  /* ─── Nav cards ─────────────────────────────────────── */
   .cards-container {
     display: flex;
     justify-content: center;
@@ -265,10 +277,9 @@
 
   .card {
     background: var(--card-bg);
-    /* Theme variable */
     padding: 1.5rem;
     border-radius: 10px;
-    width: 170px;
+    width: 150px;
     text-align: center;
     transition: .2s;
     border: 1px solid var(--border-color);
@@ -276,45 +287,28 @@
 
   .card-emoji {
     font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
     line-height: normal;
   }
 
   .card-title {
     font-size: 1.2rem;
-    /* Larger for VT323 */
     letter-spacing: 0.5px;
     line-height: 1.6;
-    opacity: 0.9;
+    opacity: .9;
     color: var(--text-color);
   }
 
   .card-count {
-    font-size: 0.9rem;
-    /* Larger for VT323 */
-    margin-top: 0.3rem;
+    font-size: .9rem;
+    margin-top: .3rem;
     color: var(--text-color-secondary);
   }
 
   .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 0 12px rgba(0, 255, 204, .25);
-    background: rgba(0, 255, 204, 0.05);
-    /* Subtle highlight */
-  }
-
-  /* Lists */
-  .writing-list,
-  .reading-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .writing-list li,
-  .reading-list li {
-    border-bottom: 1px solid var(--border-color);
-    padding: .9rem 0;
+    background: rgba(0, 255, 204, .05);
   }
 
   .card-link {
@@ -322,27 +316,149 @@
     color: inherit;
   }
 
-  .post-link,
-  .reading-link,
-  .roundup-link {
-    color: var(--text-color);
-    text-decoration: none;
+  /* ─── NOW section ───────────────────────────────────── */
+  .now-section {
+    margin-bottom: 2.5rem;
   }
 
-  .post-link:hover,
-  .reading-link:hover,
-  .roundup-link:hover {
+  .now-intro {
+    margin: 0 0 1.2rem;
+    line-height: 1.7;
+    font-size: .95rem;
+  }
+
+  /* Currently reading dark block */
+  .reading-block {
+    background: var(--input-bg);
+    padding: 1rem 1.2rem 0.4rem;
+    border-radius: 8px;
+  }
+
+  .reading-label {
+    display: block;
+    font-size: .78rem;
+    color: var(--text-color-secondary);
+    margin-bottom: .5rem;
+    font-family: var(--body-font), monospace;
+  }
+
+  .reading-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reading-list li {
+    padding: .45rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .reading-list li:last-child {
+    border-bottom: none;
+  }
+
+  .reading-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: .92rem;
+    transition: opacity .15s;
+  }
+
+  .reading-link:hover {
+    opacity: .75;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  /* ─── WORK section ──────────────────────────────────── */
+  .work-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .work-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .work-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    height: 100%;
+    box-sizing: border-box;
+    transition: border-color .2s, box-shadow .2s, transform .15s;
+  }
+
+  .work-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 255, 204, .15);
+    transform: translateY(-3px);
+  }
+
+  .work-card-title {
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+    color: var(--text-color);
+    letter-spacing: .04em;
+  }
+
+  .work-card-desc {
+    font-size: .85rem;
+    color: var(--text-color-secondary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ─── FEATURED WRITING ──────────────────────────────── */
+  .writing-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .writing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .writing-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .writing-item:last-child {
+    border-bottom: none;
+  }
+
+  .post-link {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.15rem;
+    /* Larger title size to match design */
+    font-family: var(--body-font), sans-serif;
+    margin-bottom: 0.3rem;
+    transition: color .15s;
+  }
+
+  .post-link:hover {
     color: var(--accent-color);
   }
 
   .post-meta {
     display: block;
-    font-size: .8rem;
-    opacity: .7;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-family: var(--body-font), sans-serif;
     color: var(--text-color-secondary);
   }
 
-  /* Highlight boxes */
+  /* ─── Highlight box (roundup) ───────────────────────── */
   .highlight-box {
     background: var(--card-bg);
     padding: 1.2rem;
@@ -350,21 +466,38 @@
     border: 1px solid var(--border-color);
   }
 
-  /* Section spacing */
+  .roundup-link {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .roundup-link:hover {
+    color: var(--accent-color);
+  }
+
+  /* ─── Section separator ─────────────────────────────── */
   section {
-    margin-bottom: 3rem;
+    margin-bottom: 2.8rem;
   }
 
   .section-separator {
     border: none;
     border-top: 1px solid var(--border-color);
-    margin: 2.5rem 0;
+    margin: 2rem 0;
   }
 
-  /* Mobile */
-  @media(max-width:600px) {
+  /* ─── Mobile ────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+
     .card {
-      width: 150px;
+      width: 130px;
+    }
+
+    .reading-block {
+      padding: .8rem 1rem .3rem;
     }
   }
 </style>
@@ -383,8 +516,7 @@
   overlay.onclick = () => overlay.classList.remove("active");
 
   document.addEventListener("keydown", e => {
-    if (e.key === "Escape")
-      overlay.classList.remove("active");
+    if (e.key === "Escape") overlay.classList.remove("active");
   });
 </script>
 

@@ -1,0 +1,279 @@
+{{ define "main" }}
+<main class="list-page">
+
+    <!-- ══ SEARCH BAR ══════════════════════════════════════ -->
+    <div class="search-wrap">
+        <input id="post-search" type="text" placeholder="Search by title" autocomplete="off" spellcheck="false"
+            aria-label="Search posts by title">
+    </div>
+
+    <!-- ══ TAG CLOUD ═══════════════════════════════════════ -->
+    {{ $allTags := slice }}
+    {{ range .Site.RegularPages }}
+    {{ range .Params.tags }}
+    {{ $allTags = $allTags | append . }}
+    {{ end }}
+    {{ end }}
+    {{ $uniqueTags := $allTags | uniq | sort }}
+
+    {{ if $uniqueTags }}
+    <div class="tag-cloud" role="navigation" aria-label="Browse by tag">
+        {{ range $uniqueTags }}
+        <a href="{{ " /tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">#{{ . }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- ══ POSTS GROUPED BY YEAR ═══════════════════════════ -->
+    <div id="post-list">
+        {{ range (.Pages.GroupByDate "2006") }}
+        <div class="year-group" data-year="{{ .Key }}">
+            <h2 class="year-heading mono-header">{{ .Key }}</h2>
+            <hr class="year-rule">
+
+            <ul class="posts-in-year">
+                {{ range .Pages }}
+                <li class="post-item" data-title="{{ .Title | lower }}">
+                    <a href="{{ .RelPermalink }}" class="post-item-link">
+                        {{ .Title }}
+                        {{ if .Params.featured }}<span class="featured-dot" title="Featured">✦</span>{{ end }}
+                    </a>
+                    <div class="post-item-meta">
+                        <time class="post-item-date" datetime="{{ .Date.Format " 2006-01-02" }}">
+                            {{ .Date.Format "Jan 02 2006" }}
+                        </time>
+                        {{ if .Params.tags }}
+                        <span class="post-item-tags">
+                            {{ range .Params.tags }}
+                            <a href="{{ " /tags/" | relURL }}{{ . | urlize }}/" class="tag-pill tag-pill--sm">#{{ .
+                                }}</a>
+                            {{ end }}
+                        </span>
+                        {{ end }}
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        <!-- empty-state shown by JS when nothing matches -->
+        <p id="no-results" class="no-results" hidden>No posts match your search.</p>
+    </div>
+
+</main>
+
+<!-- ══ STYLES ══════════════════════════════════════════════ -->
+<style>
+    /* ─ Layout ─────────────────────────────────────────────── */
+    .list-page {
+        font-family: var(--body-font);
+        font-size: 15px;
+        font-weight: var(--body-font-weight);
+        line-height: var(--line-height-base);
+        max-width: 720px;
+        margin: auto;
+        padding: 2rem 1.5rem 4rem;
+        color: var(--text-color);
+    }
+
+    /* ─ Mono header (year) ──────────────────────────────────── */
+    .mono-header {
+        font-family: 'VT323', monospace, monospace;
+        letter-spacing: 0.08em;
+    }
+
+    /* ─ Search bar ──────────────────────────────────────────── */
+    .search-wrap {
+        margin-bottom: 1.4rem;
+    }
+
+    #post-search {
+        width: 100%;
+        box-sizing: border-box;
+        background: var(--input-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: .65rem 1rem;
+        font-size: .9rem;
+        font-family: var(--body-font), monospace;
+        outline: none;
+        transition: border-color .2s, box-shadow .2s;
+    }
+
+    #post-search::placeholder {
+        color: var(--text-color-secondary);
+    }
+
+    #post-search:focus {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(0, 255, 204, .08);
+    }
+
+    /* ─ Tag cloud ───────────────────────────────────────────── */
+    .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .4rem .5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* ─ Tag pill (shared by cloud + post-level tags) ─────────── */
+    .tag-pill {
+        display: inline-block;
+        background: var(--pill-bg);
+        color: var(--text-color-secondary);
+        border-radius: 20px;
+        padding: .22rem .7rem;
+        font-family: 'VT323', monospace;
+        font-size: 1rem;
+        text-decoration: none;
+        line-height: 1.4;
+        transition: background .15s, color .15s;
+        white-space: nowrap;
+    }
+
+    .tag-pill:hover {
+        background: var(--pill-hover-bg);
+        color: var(--accent-color);
+    }
+
+    /* Smaller variant used inline on each post */
+    .tag-pill--sm {
+        font-size: .85rem;
+        padding: .12rem .55rem;
+    }
+
+    /* ─ Year group ──────────────────────────────────────────── */
+    .year-group {
+        margin-bottom: 2.8rem;
+    }
+
+    .year-heading {
+        font-size: 1rem;
+        color: var(--text-color-secondary);
+        margin-bottom: .4rem;
+        margin-top: 0;
+        font-weight: normal;
+    }
+
+    .year-rule {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 0 0 1rem;
+    }
+
+    /* ─ Post list ───────────────────────────────────────────── */
+    .posts-in-year {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .post-item {
+        padding: .8rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .post-item:last-child {
+        border-bottom: none;
+    }
+
+    .post-item-link {
+        display: inline;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: .97rem;
+        font-family: var(--body-font), sans-serif;
+        line-height: 1.4;
+        transition: color .15s;
+    }
+
+    .post-item-link:hover {
+        color: var(--accent-color);
+    }
+
+    .featured-dot {
+        color: var(--accent-color);
+        font-size: .7rem;
+        margin-left: .25rem;
+        vertical-align: middle;
+    }
+
+    /* date + tags row */
+    .post-item-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .3rem .5rem;
+        margin-top: .3rem;
+    }
+
+    .post-item-date {
+        font-family: 'VT323', monospace;
+        font-size: .9rem;
+        color: var(--text-color-secondary);
+        white-space: nowrap;
+    }
+
+    .post-item-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .25rem .35rem;
+    }
+
+    /* ─ No results ──────────────────────────────────────────── */
+    .no-results {
+        color: var(--text-color-secondary);
+        font-size: .9rem;
+        margin-top: 1rem;
+    }
+
+    /* ─ Mobile ──────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+        #post-search {
+            font-size: .85rem;
+        }
+
+        .post-item-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: .2rem;
+        }
+    }
+</style>
+
+<!-- ══ SEARCH SCRIPT ════════════════════════════════════════ -->
+<script>
+    (function () {
+        const input = document.getElementById('post-search');
+        const items = document.querySelectorAll('.post-item');
+        const noRes = document.getElementById('no-results');
+        const groups = document.querySelectorAll('.year-group');
+
+        input.addEventListener('input', function () {
+            const q = this.value.trim().toLowerCase();
+            let visible = 0;
+
+            items.forEach(function (item) {
+                const title = item.dataset.title || '';
+                const show = !q || title.includes(q);
+                item.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            // Hide year headings that have no visible posts
+            groups.forEach(function (group) {
+                const hasVisible = Array.from(
+                    group.querySelectorAll('.post-item')
+                ).some(function (i) { return i.style.display !== 'none'; });
+                group.style.display = hasVisible ? '' : 'none';
+            });
+
+            noRes.hidden = visible > 0;
+        });
+    })();
+</script>
+
+{{ end }}
