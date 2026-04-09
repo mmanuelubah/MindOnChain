@@ -1,0 +1,10 @@
+# Hugo build output - Vercel builds this itself
+public/
+resources/_gen/
+
+# Hugo lock file
+.hugo_build.lock
+
+# OS & editor
+.DS_Store
+.obsidian/workspace.json

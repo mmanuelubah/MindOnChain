@@ -3,60 +3,58 @@
 
     {{ partial "back_button.html" . }}
 
-    <div class="post-info">
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-clock">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-            {{ i18n "readingTime" .Page.ReadingTime }}
+    <!-- ══ POST HEADER ══════════════════════════════════════ -->
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title | upper }}</h1>
 
-            {{ if .IsTranslated }} | {{ i18n "postAvailable" }}
-            {{ range .Translations }}
-            <a href="{{ .Permalink }}"><span class="flag fi fi-{{ index $.Site.Data.langFlags (.Lang) }}"></span></a>
-            {{ end}}
+        <div class="post-meta-row">
+            <time class="post-meta-date" datetime="{{ .Date.Format " 2006-01-02" }}">
+                {{ .Date.Format "Jan 02 2006" }}
+            </time>
+            <span class="meta-sep">•</span>
+            <span class="post-meta-read">{{ .ReadingTime }} min{{ if gt .ReadingTime 1 }}s{{ end }} read</span>
+            {{ if .Params.tags }}
+            <span class="meta-sep">•</span>
+            <span class="post-meta-tags">
+                {{ range .Params.tags }}
+                <a href="{{ " /tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">#{{ . }}</a>
+                {{ end }}
+            </span>
             {{ end }}
-        </p>
-    </div>
-
-    <article>
-        <h1 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-        </h1>
-
-        {{ with .Params.Description }}
-        <div class="post-excerpt">{{ . }}</div>
-        {{ end }}
-
-        {{ if .Params.Cover }}
-        <figure class="post-cover">
-            <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
-
-            {{ if .Params.CoverCaption }}
-            <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
-            {{ end }}
-        </figure>
-        {{ end }}
-
-        {{- if .Params.toc }}
-        <hr />
-        <aside id="toc">
-            <div class="toc-title">{{ i18n "tableOfContents" }}</div>
-            {{ .TableOfContents }}
-        </aside>
-        <hr />
-        {{- end }}
-
-        {{ if .Params.Audio }}
-        <div class="post-audio">
-            <audio controls>
-                <source src="{{ .Params.Audio }}">
-            </audio>
         </div>
-        {{ end }}
+    </header>
 
+    <!-- ══ COVER IMAGE ════════════════════════════════════════ -->
+    {{ if .Params.Cover }}
+    <figure class="post-cover">
+        <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
+        {{ if .Params.CoverCaption }}
+        <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
+        {{ end }}
+    </figure>
+    {{ end }}
+
+    <!-- ══ TOC ════════════════════════════════════════════════ -->
+    {{- if .Params.toc }}
+    <hr />
+    <aside id="toc">
+        <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+        {{ .TableOfContents }}
+    </aside>
+    <hr />
+    {{- end }}
+
+    <!-- ══ AUDIO ══════════════════════════════════════════════ -->
+    {{ if .Params.Audio }}
+    <div class="post-audio">
+        <audio controls>
+            <source src="{{ .Params.Audio }}">
+        </audio>
+    </div>
+    {{ end }}
+
+    <!-- ══ BODY ═══════════════════════════════════════════ -->
+    <article class="post-body-wrap">
         <div class="post-content">
             {{ .Content }}
         </div>
@@ -64,65 +62,10 @@
 
     <hr />
 
+    <!-- ══ FOOTER META ════════════════════════════════════════ -->
     <div class="post-info">
         {{ partial "tags.html" .Params.tags }}
         {{ partial "categories.html" . }}
-
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-file-text">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            {{ i18n "wordCount" .Page.WordCount }}
-        </p>
-
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-calendar">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            {{ if .Site.Params.dateformNumTime }}
-            {{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
-            {{ else }}
-            {{ dateFormat "2006-01-02 15:04" .Date.Local }}
-            {{ end }}
-
-            {{ if .Lastmod }}
-            {{ if not (eq .Lastmod .Date )}}
-            {{ if .Site.Params.dateformNumTime }}
-            ({{ i18n "lastModified" }}: {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }})
-            {{ else }}
-            ({{ i18n "lastModified" }}: {{ dateFormat "2006-01-02 15:04" .Lastmod.Local }})
-            {{ end }}
-            {{ end }}
-            {{ end }}
-        </p>
-
-        {{- if .GitInfo }}
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-git-commit">
-                <circle cx="12" cy="12" r="4"></circle>
-                <line x1="1.05" y1="12" x2="7" y2="12"></line>
-                <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
-            </svg>
-
-            <a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{
-                .GitInfo.AbbreviatedHash }}</a>
-            @ {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{
-            else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}
-        </p>
-        {{- end }}
     </div>
 
     {{- if .Site.Params.EnableSharingButtons }}
@@ -136,14 +79,12 @@
 
     {{ if .Site.Config.Services.Disqus.Shortname }}
     {{ if not (eq .Params.Comments "false") }}
-    <div id="comments">
-        {{ template "_internal/disqus.html" . }}
-    </div>
+    <div id="comments">{{ template "_internal/disqus.html" . }}</div>
     {{ end }}
     {{ end }}
 
     {{ if .Site.Params.Commento.Url }}
-    <script defer src={{ .Site.Params.Commento.Url }}></script>
+    <script defer src="{{ .Site.Params.Commento.Url }}"></script>
     <div id="commento"></div>
     {{ end }}
 
@@ -157,79 +98,284 @@
 
 </main>
 
+<!-- ══ STYLES ══════════════════════════════════════════════════ -->
 <style>
-    /* Pixel Post Titles */
-    .post-title a,
-    .post-title {
-        font-family: var(--pixel-font) !important;
-        font-size: 1.8rem;
-        /* Adjusted for VT323 */
-        line-height: var(--line-height-base);
-        letter-spacing: 0.5px;
-        text-decoration: none;
+    /* ─ Wrapper ─────────────────────────────────────────────── */
+    .post {
+        max-width: 900px;
+        /* allow theme chrome to breathe */
+        margin: 0 auto;
+        padding: 1.5rem 1.5rem 4rem;
+    }
+
+    /* ─ Centered content column (matches cover image) ──────── */
+    .post-header,
+    .post-cover,
+    .post-body-wrap,
+    .post-info {
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ─ Centered header ─────────────────────────────────────── */
+    .post-header {
         text-align: center;
-        color: var(--text-color);
+        margin-bottom: 2.6rem;
+    }
+
+    /* Uppercase monospace title */
+    .post-title,
+    .post-title a {
+        font-family: 'VT323', monospace !important;
+        font-size: 2.5rem !important;
+        line-height: 1.25 !important;
+        letter-spacing: 0.06em !important;
+        text-decoration: none !important;
+        color: var(--text-color) !important;
+        margin: 0 0 .9rem !important;
+        display: block;
     }
 
     .post-title a:hover {
-        color: var(--accent-color);
+        color: var(--accent-color) !important;
     }
 
-    /* Subtitles in Post Body */
+    /* Meta row */
+    .post-meta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: .25rem .45rem;
+        font-family: 'VT323', monospace;
+        font-size: 1.1rem;
+        color: var(--text-color-secondary);
+    }
+
+    .meta-sep {
+        opacity: .5;
+    }
+
+    .post-meta-tags {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: .2rem .3rem;
+    }
+
+    /* Tag pill */
+    .tag-pill {
+        display: inline-block;
+        background: var(--pill-bg);
+        color: var(--text-color-secondary);
+        border-radius: 20px;
+        padding: .15rem .6rem;
+        font-family: 'VT323', monospace;
+        font-size: 1rem;
+        text-decoration: none !important;
+        line-height: 1.4;
+        transition: background .15s, color .15s;
+        white-space: nowrap;
+    }
+
+    .tag-pill:hover {
+        background: var(--pill-hover-bg);
+        color: var(--accent-color) !important;
+    }
+
+    /* ─ Cover image ─────────────────────────────────────────── */
+    .post-cover {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto 2.5rem;
+    }
+
+    .post-cover img,
+    .post-content img {
+        display: block;
+        width: 100%;
+        max-width: 680px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 2rem auto;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+        border: 1px solid var(--border-color);
+    }
+
+    /* ─ Body content ─────────────────────────────────────────── */
+    .post-content {
+        font-family: var(--body-font), sans-serif !important;
+        font-size: 1.05rem !important;
+        line-height: 1.75 !important;
+        color: var(--text-color) !important;
+    }
+
+    /* Paragraphs */
+    .post-content p {
+        font-size: 1.05rem !important;
+        line-height: 1.75 !important;
+        margin: 0 0 1.4rem !important;
+        font-family: var(--body-font), sans-serif !important;
+    }
+
+    /* ─ In-article headings (monospace) ─────────────────────── */
     .post-content h1,
     .post-content h2,
     .post-content h3,
     .post-content h4,
     .post-content h5,
     .post-content h6 {
-        font-family: var(--pixel-font) !important;
-        margin-top: 3rem;
-        margin-bottom: 1.2rem;
-        line-height: var(--line-height-base);
-        letter-spacing: 0.5px;
+        font-family: 'VT323', monospace !important;
         color: var(--text-color) !important;
+        letter-spacing: 0.04em;
+        margin-top: 2.8rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
     }
 
     .post-content h2 {
-        font-size: 1.5rem;
+        font-size: 2rem !important;
     }
 
     .post-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.7rem !important;
     }
 
     .post-content h4 {
-        font-size: 1.1rem;
+        font-size: 1.45rem !important;
     }
 
-    /* IMAGE STYLING: Enforce rectangular, centered, same size */
-    .post-cover {
-        display: flex;
-        justify-content: center;
-        /* helps align the figure if it has width */
-        margin: 2rem auto;
+    .post-content h5,
+    .post-content h6 {
+        font-size: 1.2rem !important;
     }
 
-    .post-cover img,
-    .post-content img,
-    .post-content p img {
-        display: block;
-        width: 100%;
-        max-width: 720px;
-        /* Constrain width */
-        height: 400px;
-        /* Enforce height */
-        object-fit: cover;
-        /* Crop to fill */
-        border-radius: 10px;
-        margin: 2.5rem auto;
-        /* Centered */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* ─ Lists ────────────────────────────────────────────────── */
+    .post-content ul,
+    .post-content ol {
+        padding-left: 1.5rem !important;
+        margin: 0 0 1.4rem !important;
     }
 
-    /* Ensure content images have spacing - wrapper might need it */
-    .post-content img {
-        margin: 2.5rem auto;
+    .post-content li {
+        margin-bottom: .55rem !important;
+        line-height: 1.7 !important;
+        font-size: 1.05rem !important;
+        font-family: var(--body-font), sans-serif !important;
+    }
+
+    /* ─ Links + arrow hover effect ──────────────────────────── */
+    .post-content a {
+        color: var(--accent-color) !important;
+        text-decoration: none !important;
+        position: relative;
+        transition: color .15s, opacity .15s;
+    }
+
+    /* The ↗ arrow — hidden by default */
+    .post-content a::after {
+        content: ' ↗';
+        display: inline-block;
+        font-size: .75em;
+        opacity: 0;
+        transform: translate(-3px, 3px);
+        transition: opacity .18s ease, transform .18s ease;
+    }
+
+    /* Exclude tag pills and nav links from the arrow */
+    .post-content a.tag-pill::after {
+        display: none;
+    }
+
+    .post-content a:hover {
+        text-decoration: underline !important;
+        text-decoration-style: dotted !important;
+        text-decoration-color: var(--accent-color) !important;
+    }
+
+    .post-content a:hover::after {
+        opacity: 1;
+        transform: translate(1px, -1px);
+    }
+
+    /* ─ Blockquote ───────────────────────────────────────────── */
+    .post-content blockquote {
+        border-left: 3px solid var(--accent-color);
+        margin: 1.8rem 0 !important;
+        padding: .6rem 1.2rem;
+        color: var(--text-color-secondary);
+        font-style: italic;
+    }
+
+    /* ─ Code ─────────────────────────────────────────────────── */
+    .post-content :not(pre)>code {
+        font-family: 'VT323', monospace;
+        font-size: 1.05rem;
+        background: var(--input-bg);
+        padding: .15rem .4rem;
+        border-radius: 4px;
+        color: var(--accent-color);
+    }
+
+    .post-content pre {
+        background: var(--input-bg) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px;
+        padding: 1.2rem 1.4rem;
+        overflow-x: auto;
+        margin: 1.6rem 0 !important;
+    }
+
+    .post-content pre code {
+        background: none !important;
+        padding: 0;
+        font-size: .9rem;
+        color: var(--text-color);
+    }
+
+    /* ─ HR ───────────────────────────────────────────────────── */
+    .post-content hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 2.4rem 0;
+    }
+
+    /* ─ Strong / em ─────────────────────────────────────────── */
+    .post-content strong {
+        font-weight: 700;
+    }
+
+    .post-content em {
+        font-style: italic;
+    }
+
+    /* ─ Mobile ───────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+        .post-title {
+            font-size: 1.9rem !important;
+        }
+
+        .post-meta-row {
+            font-size: 1rem;
+            flex-direction: column;
+            gap: .15rem;
+        }
+
+        .post-content,
+        .post-content p,
+        .post-content li {
+            font-size: 1rem !important;
+        }
+
+        .post-content h2 {
+            font-size: 1.65rem !important;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem !important;
+        }
     }
 </style>
 

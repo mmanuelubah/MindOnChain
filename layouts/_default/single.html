@@ -3,87 +3,294 @@
 
   {{ partial "back_button.html" . }}
 
-  <h1>{{ .Title }}</h1>
+  <!-- ══ HEADER ════════════════════════════════════════════ -->
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title | upper }}</h1>
 
+    <div class="post-meta-row">
+      <time class="post-date" datetime="{{ .Date.Format " 2006-01-02" }}">
+        {{ .Date.Format "Jan 02 2006" }}
+      </time>
+
+      <span class="meta-sep">•</span>
+
+      <span class="post-readtime">{{ .ReadingTime }} min{{ if gt .ReadingTime 1 }}s{{ end }} read</span>
+
+      {{ if .Params.tags }}
+      <span class="meta-sep">•</span>
+      <span class="post-tags-row">
+        {{ range .Params.tags }}
+        <a href="{{ " /tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">#{{ . }}</a>
+        {{ end }}
+      </span>
+      {{ end }}
+    </div>
+  </header>
+
+  <!-- ══ COVER IMAGE ════════════════════════════════════════ -->
   {{ with .Params.cover }}
   <div class="image-wrapper">
     <img src="{{ . }}" alt="Cover image for {{ $.Title }}">
   </div>
   {{ end }}
 
+  <!-- ══ BODY ══════════════════════════════════════════════ -->
   <div class="post-content">
     {{ .Content }}
   </div>
 
 </article>
 
+<!-- ══ STYLES ════════════════════════════════════════════════ -->
 <style>
+  /* ─ Container ───────────────────────────────────────────── */
   .post-container {
-    max-width: 760px;
-    margin: auto;
-    padding: 1.5rem;
-  }
-
-  .post-container h1 {
-    font-family: var(--pixel-font);
-    font-size: 1.8rem;
-    line-height: var(--line-height-base);
-    letter-spacing: 0.5px;
-    margin-bottom: 2rem;
-    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
     color: var(--text-color);
   }
 
-  /* Headings in markdown content */
+  /* ─ Header block (centered) ─────────────────────────────── */
+  .post-header {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+
+  .post-title {
+    font-family: 'VT323', monospace, monospace;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    margin: 0 0 1rem;
+    color: var(--text-color);
+  }
+
+  /* ─ Meta row ────────────────────────────────────────────── */
+  .post-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .3rem .5rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.05rem;
+    color: var(--text-color-secondary, #888);
+  }
+
+  .meta-sep {
+    opacity: .5;
+  }
+
+  .post-date,
+  .post-readtime {
+    color: var(--text-color-secondary, #888);
+  }
+
+  /* ─ Tag pills ───────────────────────────────────────────── */
+  .post-tags-row {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: .25rem .35rem;
+  }
+
+  .tag-pill {
+    display: inline-block;
+    background: #2a2a2a;
+    color: var(--text-color-secondary, #aaa);
+    border-radius: 20px;
+    padding: .18rem .65rem;
+    font-family: 'VT323', monospace;
+    font-size: .95rem;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background .15s, color .15s;
+    white-space: nowrap;
+  }
+
+  .tag-pill:hover {
+    background: #333;
+    color: var(--accent-color);
+  }
+
+  /* ─ Cover image ─────────────────────────────────────────── */
+  .image-wrapper,
+  .post-content>img {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 2.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+    border: 1px solid var(--border-color);
+  }
+
+  /* ─ Body content ─────────────────────────────────────────── */
+  .post-content {
+    font-family: var(--body-font), sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-color);
+  }
+
+  /* Paragraphs */
+  .post-content p {
+    margin: 0 0 1.4rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* ─ In-article headings ──────────────────────────────────── */
   .post-content h2,
   .post-content h3,
   .post-content h4,
   .post-content h5,
   .post-content h6 {
-    font-family: var(--pixel-font);
-    margin-top: 3rem;
-    margin-bottom: 1.2rem;
-    line-height: var(--line-height-base);
-    letter-spacing: 0.5px;
+    font-family: 'VT323', monospace;
     color: var(--text-color);
+    letter-spacing: 0.04em;
+    margin-top: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
   }
 
   .post-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 
   .post-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .post-content h4 {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
   }
 
-  /* General image container */
-  .image-wrapper,
-  .post-content img {
+  .post-content h5,
+  .post-content h6 {
+    font-size: 1.15rem;
+  }
+
+  /* ─ Lists ────────────────────────────────────────────────── */
+  .post-content ul,
+  .post-content ol {
+    padding-left: 1.5rem;
+    margin: 0 0 1.4rem;
+  }
+
+  .post-content li {
+    margin-bottom: .55rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .post-content li+li {
+    margin-top: .1rem;
+  }
+
+  /* ─ Links with arrow hover effect ────────────────────────── */
+  .post-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    position: relative;
+    transition: color .15s;
+  }
+
+  .post-content a::after {
+    content: ' ↗';
+    display: inline-block;
+    font-size: .8em;
+    opacity: 0;
+    transform: translate(-4px, 2px);
+    transition: opacity .18s, transform .18s;
+  }
+
+  .post-content a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  .post-content a:hover::after {
+    opacity: 1;
+    transform: translate(1px, -1px);
+  }
+
+  /* ─ Inline images ────────────────────────────────────────── */
+  .post-content p img {
     display: block;
-    width: 100%;
-    max-width: 720px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 2.5rem auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 2rem auto;
     border: 1px solid var(--border-color);
   }
 
-  .post-content {
-    line-height: 1.8;
-    font-size: 1.1rem;
+  /* ─ Blockquote ───────────────────────────────────────────── */
+  .post-content blockquote {
+    border-left: 3px solid var(--accent-color);
+    margin: 1.8rem 0;
+    padding: .6rem 1.2rem;
+    color: var(--text-color-secondary, #aaa);
+    font-style: italic;
+  }
+
+  /* ─ Code ─────────────────────────────────────────────────── */
+  .post-content code {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    background: #1e1e1e;
+    padding: .15rem .4rem;
+    border-radius: 4px;
+    color: var(--accent-color);
+  }
+
+  .post-content pre {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    overflow-x: auto;
+    margin: 1.6rem 0;
+  }
+
+  .post-content pre code {
+    background: none;
+    padding: 0;
+    font-size: .9rem;
     color: var(--text-color);
   }
 
-  .post-content p img {
-    display: block;
-    margin: 2.5rem auto;
+  /* ─ Horizontal rule ──────────────────────────────────────── */
+  .post-content hr {
+    border: none;
+    border-top: 1px solid var(--border-color, #333);
+    margin: 2.4rem 0;
+  }
+
+  /* ─ Mobile ───────────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .post-title {
+      font-size: 1.85rem;
+    }
+
+    .post-meta-row {
+      font-size: .95rem;
+      flex-direction: column;
+      gap: .2rem;
+    }
+
+    .post-content {
+      font-size: 1rem;
+    }
+
+    .post-content p,
+    .post-content li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
   }
 </style>
 
