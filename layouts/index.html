@@ -20,7 +20,7 @@
     <a href="/posts/" class="card-link">
       <div class="card">
         <div class="card-emoji">✍️</div>
-        <div class="card-title">Posts</div>
+        <div class="card-title">POSTS</div>
         {{ $postCount := len (where .Site.RegularPages "Section" "posts") }}
         <div class="card-count">{{ $postCount }}</div>
       </div>
@@ -29,7 +29,7 @@
     <a href="/books/" class="card-link">
       <div class="card">
         <div class="card-emoji">📖</div>
-        <div class="card-title">Books</div>
+        <div class="card-title">BOOKS</div>
         {{ $bookCount := len (where .Site.RegularPages "Section" "books") }}
         {{ if eq $bookCount 0 }}
         {{ $bookCount = len (where .Site.RegularPages "Section" "Books") }}
@@ -41,14 +41,14 @@
     <a href="/about/" class="card-link">
       <div class="card">
         <div class="card-emoji">👨‍💻</div>
-        <div class="card-title">About</div>
+        <div class="card-title">ABOUT</div>
       </div>
     </a>
 
     <a href="/colophon/" class="card-link">
       <div class="card">
         <div class="card-emoji">💾</div>
-        <div class="card-title">Colophon</div>
+        <div class="card-title">COLOPHON</div>
       </div>
     </a>
   </div>
