@@ -16,6 +16,12 @@ pagination.pagerSize = 10
   defaultTheme = "dark"
   showPostsOnHomePage = true
   numberOfPostsOnHomePage = 3
+  ownerNameDisplay = "Ubanatu Chinaza Emmanuel"
+  ownerNameMeaning = "Ubanatu means 'honour/nobility'; Chinaza means 'God answers'; Emmanuel means 'God is with us'."
+  ownerNameTooltip = true
+
+[params.passwords]
+  default = "emmanuel"
 
 [build]
   writeStats = true

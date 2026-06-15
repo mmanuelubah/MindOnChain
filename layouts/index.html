@@ -9,8 +9,15 @@
     </div>
 
     <h1 id="animated-title" class="site-title">
-      <span class="name-tooltip name-underlined" data-meaning="means God answers prayers">Ubanatu Chinaza</span>
-      <span class="name-tooltip name-underlined" data-meaning="means God is with us">Emmanuel</span>
+      {{- $name := .Site.Params.ownerNameDisplay | default .Site.Title -}}
+      {{- $meaning := .Site.Params.ownerNameMeaning -}}
+      {{- $show := .Site.Params.ownerNameTooltip -}}
+      <span class="owner-name-wrap">
+        {{- $name -}}
+        {{- if $show -}}
+        <span class="owner-tooltip" role="tooltip" aria-hidden="true">{{ $meaning }}</span>
+        {{- end -}}
+      </span>
     </h1>
 
   </div>

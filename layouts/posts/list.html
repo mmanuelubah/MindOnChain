@@ -44,9 +44,33 @@
       {{ $week := .Params.week }}
       <a href="{{ .RelPermalink }}" class="post-link">
         Week {{ $week }} • {{ .Date.Format "January 2006" }}
+        {{- if .Params.private -}}
+        <span class="moc-lock-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 14" width="10" height="12" aria-hidden="true"
+            focusable="false" fill="none">
+            <rect x="1" y="5.5" width="10" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+            <path d="M3.5 5.5V4a2.5 2.5 0 0 1 5 0v1.5" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" />
+          </svg>
+          Private
+        </span>
+        {{- end -}}
       </a>
       {{ else }}
-      <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+      <a href="{{ .RelPermalink }}" class="post-link">
+        {{ .Title }}
+        {{- if .Params.private -}}
+        <span class="moc-lock-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 14" width="10" height="12" aria-hidden="true"
+            focusable="false" fill="none">
+            <rect x="1" y="5.5" width="10" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+            <path d="M3.5 5.5V4a2.5 2.5 0 0 1 5 0v1.5" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" />
+          </svg>
+          Private
+        </span>
+        {{- end -}}
+      </a>
       {{ end }}
 
       {{/* METADATA */}}

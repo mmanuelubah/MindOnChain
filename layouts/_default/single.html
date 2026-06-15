@@ -36,7 +36,84 @@
 
   <!-- ══ BODY ══════════════════════════════════════════════ -->
   <div class="post-content">
+    {{- if .Params.private -}}
+    {{- $pwKey := .Params.password_id | default "default" -}}
+    {{- $pwValue := index .Site.Params.passwords $pwKey -}}
+
+    <div id="moc-gate" class="moc-gate">
+      <div class="moc-gate-card">
+        <svg class="moc-lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="44" height="44"
+          aria-hidden="true" focusable="false" fill="none">
+          <rect x="8" y="22" width="32" height="22" rx="6" stroke="currentColor" stroke-width="2.5" />
+          <path d="M15 22V16a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          <circle cx="24" cy="33" r="2.5" fill="currentColor" />
+          <line x1="24" y1="35.5" x2="24" y2="39.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+
+        <p class="moc-gate-tagline">This post is password-protected,<br>but available on request.<br><br>Email me at <a
+            href="mailto:ubahchinaza@gmail.com">ubahchinaza@gmail.com</a></p>
+
+        <div class="moc-gate-form">
+          <label for="moc-pw-input">Password</label>
+          <div class="moc-input-row">
+            <input id="moc-pw-input" type="password" placeholder="Enter password" autocomplete="current-password" />
+            <button id="moc-pw-btn" type="button">Unlock &rarr;</button>
+          </div>
+          <p id="moc-pw-error" class="moc-pw-error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <a href="{{ $.Site.BaseURL }}posts/" class="moc-back-link">&larr; Back to posts</a>
+      </div>
+    </div>
+
+    <div id="moc-content" class="moc-content-locked" aria-hidden="true" inert>
+      {{ .Content }}
+    </div>
+
+    <script>
+      (function () {
+        var CORRECT = {{ $pwValue | jsonify
+      }};
+      var SESSION_ID = 'moc_unlocked_' + {{ .RelPermalink | jsonify }};
+      var gate = document.getElementById('moc-gate');
+      var content = document.getElementById('moc-content');
+      var input = document.getElementById('moc-pw-input');
+      var btn = document.getElementById('moc-pw-btn');
+      var errEl = document.getElementById('moc-pw-error');
+
+      function unlock() {
+        gate.style.display = 'none';
+        content.classList.remove('moc-content-locked');
+        content.removeAttribute('aria-hidden');
+        content.removeAttribute('inert');
+        try { sessionStorage.setItem(SESSION_ID, '1'); } catch (e) { }
+      }
+
+      try { if (sessionStorage.getItem(SESSION_ID) === '1') { unlock(); return; } } catch (e) { }
+
+      btn.addEventListener('click', function () {
+        errEl.textContent = '';
+        var attempt = input.value.trim();
+        if (!attempt) {
+          errEl.textContent = 'Please enter the password.';
+          input.focus();
+          return;
+        }
+        if (attempt === CORRECT) {
+          unlock();
+        } else {
+          errEl.textContent = 'Wrong password. Try again.';
+          input.value = '';
+          input.focus();
+        }
+      });
+
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') btn.click(); });
+      }) ();
+    </script>
+    {{- else -}}
     {{ .Content }}
+    {{- end -}}
   </div>
 
 </article>
