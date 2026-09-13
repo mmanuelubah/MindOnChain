@@ -3,26 +3,180 @@
 
   {{ partial "back_button.html" . }}
 
-  <header class="alltech-hero">
-    <div class="alltech-hero-bg"></div>
-    <div class="alltech-hero-content">
-      <div class="alltech-trust-badge">Professional Diagnostic Solutions</div>
-      <h1 class="alltech-title">AllTech Solutions</h1>
-      <p class="alltech-subtitle">Automotive hardware, ECU modules, advanced programming guides, and precision diagnostic tools.</p>
-      <div class="alltech-hero-actions">
-        <a href="#panel-database" class="button alltech-hero-btn primary" onclick="document.getElementById('tab-database').click();">Access Database</a>
-        <a href="#panel-concierge" class="button alltech-hero-btn secondary" onclick="document.getElementById('tab-concierge').click();">Source Parts</a>
+  <!-- ══ HERO SECTION ══════════════════════════════════════════ -->
+  <header class="at-hero">
+    <div class="at-hero__bg"></div>
+    <div class="at-hero__overlay"></div>
+    <div class="at-hero__content">
+      <div class="at-hero__badge">AllTech Diagnostics</div>
+      <h1 class="at-hero__title">
+        <span class="at-hero__title-line">Your Vehicle.</span>
+        <span class="at-hero__title-line at-hero__title-accent">Our Expertise.</span>
+      </h1>
+      <p class="at-hero__subtitle">Professional ECU programming, precision diagnostics, and genuine parts sourcing — all in one place.</p>
+      <div class="at-hero__trust-bar">
+        <span class="at-hero__trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Fast Diagnostics
+        </span>
+        <span class="at-hero__trust-sep">·</span>
+        <span class="at-hero__trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Expert Programming
+        </span>
+        <span class="at-hero__trust-sep">·</span>
+        <span class="at-hero__trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8M8 8l8 8"/></svg>
+          Quality Guaranteed
+        </span>
       </div>
     </div>
   </header>
 
-  <!-- ══ TAB NAVIGATION ═══════════════════════════════════ -->
-  <nav class="alltech-tabs" role="tablist" aria-label="AllTech sections">
-    <!-- 
-    <button class="alltech-tab" role="tab" aria-selected="false" aria-controls="panel-shop" id="tab-shop">
-      Shop
-    </button>
-    -->
+  <!-- ══ SERVICES SECTION ══════════════════════════════════════ -->
+  <section class="at-services" id="services">
+    <div class="at-section-header">
+      <span class="at-section-label">What We Do</span>
+      <h2 class="at-section-title">Our Services</h2>
+    </div>
+    <div class="at-services__grid">
+
+      <a href="/alltech/database/" class="at-service-card">
+        <div class="at-service-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+            <rect x="9" y="9" width="6" height="6"/>
+            <line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/>
+            <line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/>
+            <line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/>
+            <line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+          </svg>
+        </div>
+        <h3 class="at-service-card__title">ECU Programming</h3>
+        <p class="at-service-card__desc">Full flash, EEPROM read/write, and calibration procedures for all major ECU platforms.</p>
+        <span class="at-service-card__link">Learn More →</span>
+      </a>
+
+      <a href="/alltech/database/guides/" class="at-service-card">
+        <div class="at-service-card__icon at-service-card__icon--warn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3 class="at-service-card__title">Engine Diagnostics</h3>
+        <p class="at-service-card__desc">Advanced scanning, fault code analysis, and step-by-step troubleshooting guides.</p>
+        <span class="at-service-card__link">Learn More →</span>
+      </a>
+
+      <a href="/alltech/database/" class="at-service-card">
+        <div class="at-service-card__icon at-service-card__icon--info">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+          </svg>
+        </div>
+        <h3 class="at-service-card__title">Key & Immobilizer</h3>
+        <p class="at-service-card__desc">Pinout diagrams, immobilizer bypass procedures, and key programming for all brands.</p>
+        <span class="at-service-card__link">Learn More →</span>
+      </a>
+
+      <div class="at-service-card at-service-card--clickable" onclick="document.getElementById('tab-concierge').click(); document.getElementById('panel-concierge').scrollIntoView({behavior:'smooth'});">
+        <div class="at-service-card__icon at-service-card__icon--success">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </div>
+        <h3 class="at-service-card__title">Part Sourcing</h3>
+        <p class="at-service-card__desc">Engines, ECUs, and modules sourced directly from Ladipo Market, inspected and verified.</p>
+        <span class="at-service-card__link">Learn More →</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ WHY ALLTECH TRUST STRIP ═══════════════════════════════ -->
+  <section class="at-trust" id="why-alltech">
+    <h2 class="at-trust__title">Why AllTech?</h2>
+    <div class="at-trust__grid">
+
+      <div class="at-trust__item">
+        <div class="at-trust__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3 class="at-trust__item-title">Expert Technicians</h3>
+        <p class="at-trust__item-desc">Skilled professionals you can trust with your vehicle's electronics.</p>
+      </div>
+
+      <div class="at-trust__item">
+        <div class="at-trust__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 12 15 16 10"/>
+          </svg>
+        </div>
+        <h3 class="at-trust__item-title">Verified Parts</h3>
+        <p class="at-trust__item-desc">Every part is inspected and tested before delivery to you.</p>
+      </div>
+
+      <div class="at-trust__item">
+        <div class="at-trust__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3 class="at-trust__item-title">Transparent Pricing</h3>
+        <p class="at-trust__item-desc">No hidden charges. No surprises. Clear quotes before any work begins.</p>
+      </div>
+
+      <div class="at-trust__item">
+        <div class="at-trust__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="at-trust__item-title">Nationwide Delivery</h3>
+        <p class="at-trust__item-desc">Parts shipped anywhere in Nigeria or available for pickup in Lagos.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SUPPORTED BRANDS STRIP ════════════════════════════════ -->
+  <section class="at-brands">
+    <div class="at-brands__track">
+      <span class="at-brands__item">BMW</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Toyota</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Ford</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Chevrolet</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Chrysler</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Fiat</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Jeep</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Opel</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">PSA</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">VAG</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">Volvo</span>
+      <span class="at-brands__sep">·</span>
+      <span class="at-brands__item">GM</span>
+    </div>
+  </section>
+
+  <!-- ══ TAB NAVIGATION ═══════════════════════════════════════ -->
+  <nav class="alltech-tabs" role="tablist" aria-label="AllTech sections" id="alltech-tabs">
     <button class="alltech-tab active" role="tab" aria-selected="true" aria-controls="panel-database" id="tab-database">
       ECU Database & Guides
     </button>
@@ -31,50 +185,18 @@
     </button>
   </nav>
 
-  <!-- ══ SHOP PANEL (Archived) ════════════════════════════ -->
-  <!--
-  <section id="panel-shop" class="alltech-panel" role="tabpanel" aria-labelledby="tab-shop" hidden>
-    <div class="shop-grid">
-      {{ $shopProducts := where site.RegularPages "Section" "shop" }}
-      {{ range sort $shopProducts "Date" "desc" }}
-      <a href="{{ .RelPermalink }}" class="shop-item-card">
-        <div class="shop-item-image">
-          {{ if .Params.images }}
-          <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
-          {{ else }}
-          <div class="placeholder-img">No Image</div>
-          {{ end }}
-        </div>
-        <div class="shop-item-info">
-          <h2 class="shop-item-title">{{ .Title }}</h2>
-          <p class="shop-item-price">${{ printf "%.2f" .Params.price }}</p>
-          {{ if .Params.in_stock }}
-          <span class="shop-item-badge in-stock">In Stock ({{ .Params.stock_count }})</span>
-          {{ else }}
-          <span class="shop-item-badge out-stock">Out of Stock</span>
-          {{ end }}
-        </div>
-      </a>
-      {{ end }}
-    </div>
-
-    {{ if eq (len $shopProducts) 0 }}
-    <div class="empty-state"><p>No products listed yet. Check back soon.</p></div>
-    {{ end }}
-  </section>
-  -->
-
-  <!-- ══ DATABASE & GUIDES PANEL ══════════════════════════ -->
+  <!-- ══ DATABASE & GUIDES PANEL ══════════════════════════════ -->
   <section id="panel-database" class="alltech-panel active" role="tabpanel" aria-labelledby="tab-database">
-    <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 10px; padding: 3rem 1.5rem; text-align: center; margin-bottom: 2rem;">
-      <h3 style="margin-top: 0; font-family: var(--pixel-font); font-size: 2rem; color: var(--color-accent-primary);">The Locksmith ECU Terminal</h3>
-      <p style="margin-bottom: 2rem; color: var(--text-color-secondary); font-size: 1.1rem;">Access the interactive database for ECU pinouts, EEPROM reading guides, and immobilizer bypass procedures.</p>
-      <a href="/alltech/database/" class="button" style="display: inline-block; padding: 1rem 2rem; background: var(--color-accent-primary); color: var(--color-bg-primary); text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 1.1rem; transition: transform 0.2s;">Access Terminal →</a>
+    <div class="at-terminal-cta">
+      <div class="at-terminal-cta__glow"></div>
+      <h3 class="at-terminal-cta__title">The Locksmith ECU Terminal</h3>
+      <p class="at-terminal-cta__desc">Access the interactive database for ECU pinouts, EEPROM reading guides, and immobilizer bypass procedures.</p>
+      <a href="/alltech/database/" class="at-btn at-btn--primary at-btn--lg">Access Terminal →</a>
     </div>
 
-    <hr class="section-separator" style="border: none; border-top: 1px solid var(--color-divider); margin: 3rem 0;">
-    
-    <h3 style="font-family: var(--pixel-font); font-size: 1.5rem; margin-bottom: 1.5rem;">Programming Guides</h3>
+    <hr class="at-divider">
+
+    <h3 class="at-panel-heading">Programming Guides</h3>
     <!-- Difficulty filters -->
     <div class="guide-filters" role="group" aria-label="Filter by difficulty">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -112,13 +234,13 @@
     {{ end }}
   </section>
 
-  <!-- ══ CONCIERGE PANEL ══════════════════════════════════ -->
+  <!-- ══ CONCIERGE PANEL ══════════════════════════════════════ -->
   <section id="panel-concierge" class="alltech-panel" role="tabpanel" aria-labelledby="tab-concierge" hidden>
-    
-    <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem;">
-      <h3 style="margin-top: 0; font-family: var(--pixel-font);">How Concierge Sourcing Works</h3>
-      <p style="margin-bottom: 0.5rem; color: var(--text-color-secondary); font-size: 1rem;">Can't find what you need? I source engines, ECUs, and modules directly from Ladipo Market.</p>
-      <ol style="margin-bottom: 0; padding-left: 1.2rem; color: var(--text-color-secondary); font-size: 1rem; line-height: 1.6;">
+
+    <div class="at-concierge-how">
+      <h3 class="at-concierge-how__title">How Concierge Sourcing Works</h3>
+      <p class="at-concierge-how__intro">Can't find what you need? I source engines, ECUs, and modules directly from Ladipo Market.</p>
+      <ol class="at-concierge-how__steps">
         <li><strong>Browse & Request</strong> — Find the part you need and tap "Request a Quote" to start a WhatsApp conversation.</li>
         <li><strong>I Source It</strong> — I personally source the part from Ladipo Market, Lagos's largest auto-parts hub.</li>
         <li><strong>Inspection & Verification</strong> — Every part is inspected and verified before you commit to buying.</li>
@@ -138,27 +260,27 @@
     <div class="shop-grid concierge-list">
       {{ $conciergeItems := where site.RegularPages "Type" "concierge" }}
       {{ range sort $conciergeItems "Date" "desc" }}
-      <a href="{{ .RelPermalink }}" class="shop-item-card concierge-item" data-category="{{ .Params.category | default "other" }}">
-        <div class="shop-item-image">
+      <a href="{{ .RelPermalink }}" class="at-part-card concierge-item" data-category="{{ .Params.category | default "other" }}">
+        <div class="at-part-card__image">
           {{ if .Params.images }}
           <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
           {{ else }}
-          <div class="placeholder-img">No Image</div>
+          <div class="at-part-card__placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
           {{ end }}
         </div>
-        <div class="shop-item-info">
-          <h2 class="shop-item-title">{{ .Title }}</h2>
-          <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0; flex-wrap: wrap;">
+        <div class="at-part-card__body">
+          <h2 class="at-part-card__title">{{ .Title }}</h2>
+          <div class="at-part-card__tags">
              {{ if .Params.condition }}
-             <span class="shop-item-badge" style="background: var(--color-accent-muted); color: var(--color-accent-primary);">{{ .Params.condition | upper }}</span>
+             <span class="at-part-card__badge at-part-card__badge--condition">{{ .Params.condition | upper }}</span>
              {{ end }}
              {{ if .Params.category }}
-             <span class="shop-item-badge" style="background: var(--color-trust-badge); color: var(--text-color-secondary);">{{ .Params.category | upper }}</span>
+             <span class="at-part-card__badge at-part-card__badge--category">{{ .Params.category | upper }}</span>
              {{ end }}
           </div>
-          <span style="font-size: 1rem; font-weight: 600; color: var(--color-accent-primary); margin-top: auto; display: flex; align-items: center;">
-            Request a Quote →
-          </span>
+          <span class="at-part-card__cta">Request a Quote →</span>
         </div>
       </a>
       {{ end }}
@@ -171,181 +293,524 @@
 
 </main>
 
-<!-- ══ STYLES ══════════════════════════════════════════════ -->
+<!-- ══ STYLES ══════════════════════════════════════════════════ -->
 <style>
+  /* ─────────────────────────────────────────────────────────────
+     BASE PAGE
+     ───────────────────────────────────────────────────────────── */
   .alltech-page {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 4rem;
-    color: var(--text-color);
+    color: var(--color-text-primary);
   }
 
-  .alltech-hero {
+  /* ─────────────────────────────────────────────────────────────
+     HERO
+     ───────────────────────────────────────────────────────────── */
+  .at-hero {
     position: relative;
-    border-radius: 16px;
+    border-radius: var(--radius-xl, 16px);
     overflow: hidden;
-    margin-bottom: 3rem;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-    background: #000;
-    min-height: 380px;
+    margin-bottom: 4rem;
+    min-height: 440px;
     display: flex;
     align-items: center;
+    background: #000;
   }
 
-  .alltech-hero-bg {
+  .at-hero__bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image: url('/images/alltech-mechanic-bg.png');
     background-size: cover;
-    background-position: center;
-    opacity: 0.55;
+    background-position: center 30%;
+    opacity: 0.8;
     z-index: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease, transform 8s ease;
+    transform: scale(1);
   }
 
-  .alltech-hero-bg::after {
-    content: '';
+  .at-hero:hover .at-hero__bg {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+
+  .at-hero__overlay {
     position: absolute;
-    bottom: 0; left: 0; width: 100%; height: 60%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  }
-
-  .alltech-hero-content {
-    position: relative;
+    inset: 0;
     z-index: 2;
-    padding: 3rem 2.5rem;
-    max-width: 700px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.85) 100%),
+      linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 70%);
   }
 
-  .alltech-trust-badge {
+  .at-hero__content {
+    position: relative;
+    z-index: 3;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .at-hero__badge {
     display: inline-block;
-    padding: 4px 12px;
-    background: rgba(0, 229, 160, 0.15);
-    color: var(--color-accent-primary, #00e5a0);
-    border: 1px solid rgba(0, 229, 160, 0.3);
-    border-radius: 20px;
+    padding: 5px 14px;
+    background: rgba(46, 160, 67, 0.15);
+    color: var(--color-accent-primary);
+    border: 1px solid rgba(46, 160, 67, 0.3);
+    border-radius: var(--radius-full, 9999px);
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     backdrop-filter: blur(4px);
   }
 
-  .alltech-title {
-    font-family: var(--pixel-font);
-    font-size: 3rem;
-    letter-spacing: 0.02em;
-    margin: 0 0 1rem;
+  .at-hero__title {
+    margin: 0 0 1.25rem;
+    line-height: 1.1;
+  }
+
+  .at-hero__title-line {
+    display: block;
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
     color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
   }
 
-  .alltech-subtitle {
-    color: #e2e8f0;
-    font-size: 1.2rem;
-    margin: 0 0 2rem;
-    line-height: 1.6;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  .at-hero__title-accent {
+    color: var(--color-accent-primary);
+    text-shadow: 0 2px 20px var(--color-accent-glow);
   }
 
-  .alltech-hero-actions {
+  .at-hero__subtitle {
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    margin: 0 auto 2rem;
+    line-height: 1.65;
+    max-width: 540px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+
+
+
+  .at-hero__trust-bar {
     display: flex;
-    gap: 1rem;
-  }
-
-  .alltech-hero-btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
     font-weight: 600;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
-  .alltech-hero-btn.primary {
-    background: var(--color-accent-primary, #00e5a0);
-    color: #0f172a;
-    box-shadow: 0 4px 12px rgba(0, 229, 160, 0.3);
+  .at-hero__trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
   }
 
-  .alltech-hero-btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 229, 160, 0.4);
-    background: #00ffb3;
+  .at-hero__trust-item svg {
+    opacity: 0.8;
   }
 
-  .alltech-hero-btn.secondary {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(8px);
-  }
-
-  .alltech-hero-btn.secondary:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.4);
+  .at-hero__trust-sep {
+    color: rgba(255,255,255,0.3);
+    font-size: 1.2rem;
   }
 
   @media (max-width: 768px) {
-    .alltech-hero {
-      min-height: auto;
+    .at-hero {
+      min-height: 380px;
+      border-radius: var(--radius-lg, 12px);
     }
-    .alltech-hero-content {
-      padding: 2.5rem 1.5rem;
-      text-align: center;
+    .at-hero__content {
+      padding: 2rem 1.5rem;
     }
-    .alltech-trust-badge {
-      margin: 0 auto 1.2rem;
+    .at-hero__title-line {
+      font-size: clamp(2rem, 8vw, 2.8rem);
     }
-    .alltech-title {
-      font-size: 2.2rem;
-    }
-    .alltech-hero-actions {
+    .at-hero__actions {
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.75rem;
+    }
+    .at-hero__trust-bar {
+      justify-content: center;
     }
   }
 
-  /* ─ Tab navigation ─────────────────────────────────────── */
+  /* ─────────────────────────────────────────────────────────────
+     BUTTONS
+     ───────────────────────────────────────────────────────────── */
+  .at-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius-md, 8px);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: var(--font-body);
+  }
+
+  .at-btn__arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .at-btn:hover .at-btn__arrow {
+    transform: translateX(3px);
+  }
+
+  .at-btn--primary {
+    background: var(--color-accent-primary);
+    color: var(--color-text-inverse, #0d1117);
+    box-shadow: 0 4px 14px var(--color-accent-glow);
+  }
+
+  .at-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--color-accent-glow);
+    filter: brightness(1.1);
+  }
+
+  .at-btn--ghost {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+  }
+
+  .at-btn--ghost:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+  }
+
+  .at-btn--lg {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     SECTION HEADERS
+     ───────────────────────────────────────────────────────────── */
+  .at-section-header {
+    margin-bottom: 2rem;
+  }
+
+  .at-section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .at-section-title {
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     SERVICE CARDS
+     ───────────────────────────────────────────────────────────── */
+  .at-services {
+    margin-bottom: 4rem;
+  }
+
+  .at-services__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .at-service-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1.75rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+  }
+
+  .at-service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3), 0 0 0 1px var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+  }
+
+  .at-service-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-lg, 12px);
+    background: var(--color-accent-muted);
+    color: var(--color-accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .at-service-card:hover .at-service-card__icon {
+    transform: scale(1.1);
+  }
+
+  .at-service-card__icon--warn {
+    background: rgba(255, 179, 71, 0.12);
+    color: var(--color-warning, #ffb347);
+  }
+
+  .at-service-card__icon--info {
+    background: rgba(100, 181, 246, 0.12);
+    color: var(--color-info, #64b5f6);
+  }
+
+  .at-service-card__icon--success {
+    background: rgba(0, 229, 160, 0.12);
+    color: var(--color-success, #00e5a0);
+  }
+
+  .at-service-card__title {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .at-service-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+
+  .at-service-card__link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: gap 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: auto;
+  }
+
+  .at-service-card:hover .at-service-card__link {
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .at-services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .at-services__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     TRUST STRIP
+     ───────────────────────────────────────────────────────────── */
+  .at-trust {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl, 16px);
+    padding: 3rem 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .at-trust__title {
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    margin: 0 0 2.5rem;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  .at-trust__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .at-trust__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .at-trust__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-accent-muted);
+    color: var(--color-accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .at-trust__item:hover .at-trust__icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--color-accent-glow);
+  }
+
+  .at-trust__item-title {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+
+  .at-trust__item-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    .at-trust__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 1.5rem;
+    }
+    .at-trust {
+      padding: 2rem 1.25rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .at-trust__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     BRANDS STRIP
+     ───────────────────────────────────────────────────────────── */
+  .at-brands {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+  }
+
+  .at-brands__track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .at-brands__item {
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    cursor: default;
+  }
+
+  .at-brands__item:hover {
+    color: var(--color-accent-primary);
+  }
+
+  .at-brands__sep {
+    color: var(--color-text-tertiary);
+    font-size: 1.4rem;
+    user-select: none;
+  }
+
+  @media (max-width: 500px) {
+    .at-brands__item {
+      font-size: 1.05rem;
+    }
+    .at-brands__track {
+      gap: 0.6rem;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     TAB NAVIGATION
+     ───────────────────────────────────────────────────────────── */
   .alltech-tabs {
     display: flex;
     gap: 0;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
     margin-bottom: 2rem;
   }
 
   .alltech-tab {
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     background: none;
     border: none;
-    border-bottom: 2px solid transparent;
-    color: var(--text-color-secondary);
-    font-family: var(--body-font);
+    border-bottom: 3px solid transparent;
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
     position: relative;
-    min-height: 44px;
+    min-height: 48px;
     min-width: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: -2px;
   }
 
   .alltech-tab:hover {
-    color: var(--text-color);
+    color: var(--color-text-primary);
+    background: var(--color-accent-muted);
   }
 
   .alltech-tab.active {
-    color: var(--color-accent-primary, #00e5a0);
-    border-bottom-color: var(--color-accent-primary, #00e5a0);
+    color: var(--color-accent-primary);
+    border-bottom-color: var(--color-accent-primary);
   }
 
   .alltech-tab:focus-visible {
@@ -353,41 +818,156 @@
     outline-offset: -2px;
   }
 
-  /* ─ Panels ─────────────────────────────────────────────── */
+  /* ─────────────────────────────────────────────────────────────
+     PANELS
+     ───────────────────────────────────────────────────────────── */
   .alltech-panel {
     display: none;
   }
 
   .alltech-panel.active {
     display: block;
+    animation: panelFadeIn 0.3s ease;
   }
 
-  /* ─ Shop grid (reuses shop/list styles) ────────────────── */
+  @keyframes panelFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Terminal CTA Card ──────────────────────────────────────── */
+  .at-terminal-cta {
+    position: relative;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg, 12px);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+  }
+
+  .at-terminal-cta__glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .at-terminal-cta__title {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 0.75rem;
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: 2rem;
+    color: var(--color-accent-primary);
+    letter-spacing: 0.02em;
+  }
+
+  .at-terminal-cta__desc {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 2rem;
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .at-terminal-cta .at-btn {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Divider ────────────────────────────────────────────────── */
+  .at-divider {
+    border: none;
+    border-top: 1px solid var(--color-divider);
+    margin: 3rem 0;
+  }
+
+  /* ── Panel Heading ──────────────────────────────────────────── */
+  .at-panel-heading {
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Concierge How-It-Works ─────────────────────────────────── */
+  .at-concierge-how {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg, 12px);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .at-concierge-how__title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display, 'VT323', monospace);
+    font-size: 1.4rem;
+  }
+
+  .at-concierge-how__intro {
+    margin: 0 0 1rem;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .at-concierge-how__steps {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .at-concierge-how__steps li {
+    margin-bottom: 0.4rem;
+  }
+
+  .at-concierge-how__steps strong {
+    color: var(--color-text-primary);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     PART CARDS (CONCIERGE)
+     ───────────────────────────────────────────────────────────── */
   .shop-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
-  .shop-item-card {
+  .at-part-card {
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius-lg, 12px);
     overflow: hidden;
     background: var(--color-bg-secondary);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
   }
 
-  .shop-item-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 20px var(--color-accent-glow);
+  .at-part-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.3), 0 0 0 1px var(--color-accent-primary);
     border-color: var(--color-accent-primary);
   }
 
-  .shop-item-image {
+  .at-part-card__image {
     aspect-ratio: 4/3;
     background: var(--color-bg-tertiary);
     display: flex;
@@ -396,59 +976,78 @@
     overflow: hidden;
   }
 
-  .shop-item-image img {
+  .at-part-card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
   }
 
-  .shop-item-info {
+  .at-part-card:hover .at-part-card__image img {
+    transform: scale(1.05);
+  }
+
+  .at-part-card__placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  .at-part-card__body {
     padding: 1.25rem;
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.5rem;
   }
 
-  .shop-item-title {
+  .at-part-card__title {
     margin: 0;
     font-size: 1.05rem;
-    font-family: var(--body-font);
     font-weight: 600;
     line-height: 1.35;
   }
 
-  .shop-item-price {
-    font-size: 1.2rem;
+  .at-part-card__tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .at-part-card__badge {
+    padding: 3px 8px;
+    border-radius: var(--radius-sm, 4px);
+    font-size: 0.7rem;
     font-weight: 700;
-    margin: 0;
+    letter-spacing: 0.05em;
   }
 
-  .shop-item-badge {
-    align-self: flex-start;
-    padding: 3px 7px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-top: auto;
-  }
-
-  .shop-item-badge.in-stock {
+  .at-part-card__badge--condition {
     background: var(--color-accent-muted);
     color: var(--color-accent-primary);
   }
 
-  .shop-item-badge.out-stock {
-    background: rgba(255, 107, 107, 0.1);
-    color: var(--color-error);
+  .at-part-card__badge--category {
+    background: var(--color-trust-badge);
+    color: var(--color-text-secondary);
   }
 
-  .placeholder-img {
-    color: var(--text-color-secondary);
+  .at-part-card__cta {
     font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent-primary);
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+    transition: gap 0.2s ease;
   }
 
-  /* ─ Guide items ────────────────────────────────────────── */
+  .at-part-card:hover .at-part-card__cta {
+    text-decoration: underline;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     GUIDE ITEMS & FILTERS
+     ───────────────────────────────────────────────────────────── */
   .guide-filters {
     display: flex;
     gap: 0.5rem;
@@ -457,14 +1056,15 @@
   }
 
   .filter-btn {
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.1rem;
     border: 1px solid var(--color-border);
-    border-radius: 20px;
+    border-radius: var(--radius-full, 9999px);
     background: transparent;
-    color: var(--text-color-secondary);
-    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-family: var(--font-body);
     cursor: pointer;
-    transition: all 0.15s;
+    transition: all 0.2s;
     min-height: 44px;
     min-width: 44px;
     display: inline-flex;
@@ -473,31 +1073,34 @@
   }
 
   .filter-btn:hover {
-    border-color: var(--text-color-secondary);
+    border-color: var(--color-text-secondary);
+    background: var(--color-bg-tertiary);
   }
 
   .filter-btn.active {
-    background: var(--color-accent-primary, #00e5a0);
-    color: var(--color-text-inverse, #1a1b1e);
-    border-color: var(--color-accent-primary, #00e5a0);
+    background: var(--color-accent-primary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-accent-primary);
     font-weight: 600;
   }
 
   .guides-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .guide-item {
     border: 1px solid var(--color-border);
-    border-radius: 10px;
-    transition: border-color 0.15s, transform 0.15s;
+    border-radius: var(--radius-lg, 12px);
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: var(--color-bg-secondary);
   }
 
   .guide-item:hover {
     border-color: var(--color-accent-primary);
     transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   }
 
   .guide-item.hidden {
@@ -518,17 +1121,17 @@
   }
 
   .difficulty-badge {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
+    padding: 3px 10px;
+    border-radius: var(--radius-full, 9999px);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
   .difficulty-badge.beginner {
-    background: rgba(0, 229, 160, 0.12);
-    color: var(--color-accent-primary, #00e5a0);
+    background: rgba(46, 160, 67, 0.12);
+    color: var(--color-accent-primary);
   }
 
   .difficulty-badge.intermediate {
@@ -542,12 +1145,12 @@
   }
 
   .locked-badge {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
+    padding: 3px 10px;
+    border-radius: var(--radius-full, 9999px);
     background: var(--color-bg-tertiary);
-    color: var(--text-color-secondary);
+    color: var(--color-text-secondary);
   }
 
   .guide-item-title {
@@ -558,8 +1161,8 @@
   }
 
   .guide-item-excerpt {
-    font-size: 1rem;
-    color: var(--text-color-secondary);
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
     margin: 0 0 0.75rem;
     line-height: 1.6;
   }
@@ -567,18 +1170,26 @@
   .guide-item-footer {
     display: flex;
     gap: 1rem;
-    font-size: 0.875rem;
-    color: var(--text-color-secondary);
+    font-size: 0.8rem;
+    color: var(--color-text-tertiary);
   }
 
   .empty-state {
     text-align: center;
     padding: 3rem 1rem;
-    color: var(--text-color-secondary);
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     SERVICE CARD CLICKABLE (div instead of <a>)
+     ───────────────────────────────────────────────────────────── */
+  .at-service-card--clickable {
+    cursor: pointer;
   }
 </style>
 
-<!-- ══ SCRIPT ══════════════════════════════════════════════ -->
+<!-- ══ SCRIPT ══════════════════════════════════════════════════ -->
 <script>
 (function () {
   // Tab switching
@@ -659,7 +1270,40 @@
     });
   });
 
-  })();
+  // Intersection Observer for scroll-in animations
+  const animatedSections = document.querySelectorAll('.at-services, .at-trust, .at-brands');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('at-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animatedSections.forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  }
+
+  // Apply visibility class
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.at-visible').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  });
+
+  // Handle observer callback
+  const style = document.createElement('style');
+  style.textContent = '.at-visible { opacity: 1 !important; transform: translateY(0) !important; }';
+  document.head.appendChild(style);
+
+})();
 </script>
 
 {{ end }}

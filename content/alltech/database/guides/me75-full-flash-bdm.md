@@ -26,12 +26,12 @@ BDM (Background Debug Mode) is the lowest-level access method for Motorola/Frees
 
 | Pin | Signal | Wire Color |
 |-----|--------|------------|
-| 1  | GND  | Black   |
-| 2  | DSCK  | Yellow   |
-| 3  | DSDI  | Green   |
-| 4  | DSDO  | Blue    |
-| 5  | RESET | Red    |
-| 6  | VCC  | Orange   |
+| 1   | GND    | Black      |
+| 2   | DSCK   | Yellow     |
+| 3   | DSDI   | Green      |
+| 4   | DSDO   | Blue       |
+| 5   | RESET  | Red        |
+| 6   | VCC    | Orange     |
 
 ## Procedure
 

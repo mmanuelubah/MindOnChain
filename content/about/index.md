@@ -12,15 +12,16 @@ This site serves as my digital garden—a place where I explore ideas, document 
 
 I specialize in building intelligent systems and robust technical solutions. My work spans across multiple domains:
 
-*  **Software Engineering:** Developing scalable applications and exploring the bleeding edge of AI and autonomous agents.
-*  **Automotive Technology:** Providing hardware solutions, ECU modules, and diagnostic tools through **AllTech Solutions**.
-*  **Writing:** Sharing my thoughts on technology, productivity, and life lessons.
+* **Software Engineering:** Developing scalable applications and exploring the bleeding edge of AI and autonomous agents.
+* **Automotive Technology:** Providing hardware solutions, ECU modules, and diagnostic tools through **AllTech Solutions**.
+* **Writing:** Sharing my thoughts on technology, productivity, and life lessons.
 
 ## Current Focus (Now)
 
 Right now, I am actively building:
-*  **MyEasyAgents:** Building automated agents and intelligent systems.
-*  **AllTech Solutions:** Growing our automotive hardware and programming database.
+
+* **MyEasyAgents:** Building automated agents and intelligent systems.
+* **AllTech Solutions:** Growing our automotive hardware and programming database.
 
 *See my [Now](/now/) page for more details on what I'm currently up to.*
 
@@ -28,7 +29,7 @@ Right now, I am actively building:
 
 I'm always open to interesting conversations, collaborations, or just a quick hello.
 
-*  **Email:** [ubanatuchinaza@gmail.com](mailto:ubanatuchinaza@gmail.com)
-*  **LinkedIn:** [Connect with me](https://linkedin.com/)
-*  **GitHub:** [View my projects](https://github.com/)
-*  **Twitter/X:** [Follow me](https://twitter.com/)
+* **Email:** [ubanatuchinaza@gmail.com](mailto:ubanatuchinaza@gmail.com)
+* **LinkedIn:** [Connect with me](https://linkedin.com/)
+* **GitHub:** [View my projects](https://github.com/)
+* **Twitter/X:** [Follow me](https://twitter.com/)
