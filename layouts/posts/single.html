@@ -163,6 +163,7 @@
         {{- else -}}
         {{ .Content }}
         {{- end -}}
+      </div> <!-- Close post-content -->
       
 
       <!-- Share Buttons -->
@@ -182,7 +183,17 @@
       <div class="author-card">
         <img src="{{ .Site.Params.avatar | absURL }}" alt="{{ .Site.Params.ownerNameDisplay | default "Emmanuel" }}" class="author-card__avatar" loading="lazy" decoding="async">
         <div class="author-card__content">
-          <h3 class="author-card__name">{{ .Site.Params.ownerNameDisplay | default "Emmanuel" }}</h3>
+          {{- $name := .Site.Params.ownerNameDisplay | default .Site.Title -}}
+          {{- $meaning := .Site.Params.ownerNameMeaning -}}
+          {{- $show := .Site.Params.ownerNameTooltip -}}
+          <h3 class="author-card__name">
+            <span class="owner-name-wrap" tabindex="0">
+              {{- $name -}}
+              {{- if $show -}}
+              <span class="owner-tooltip" role="tooltip" aria-hidden="true">{{ $meaning }}</span>
+              {{- end -}}
+            </span>
+          </h3>
           <p class="author-card__bio">Software engineer and technology analyst. I provide technical resources on automotive hardware, ECU modules, and insights into system architecture and intelligent agents.</p>
           <div class="author-card__social">
             {{ if .Site.Params.social.twitter }}

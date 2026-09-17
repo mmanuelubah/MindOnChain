@@ -256,6 +256,13 @@ html[data-theme="dark"] .owner-tooltip::after {
   }
 }
 
+.owner-name-wrap:focus .owner-tooltip,
+.owner-name-wrap:focus-within .owner-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ----------------------------------------------------------
    3. PASSWORD GATE STYLES
    ---------------------------------------------------------- */

@@ -23,10 +23,12 @@ categories_list:
 
 # ── WORK SECTION ─────────────────────────────────────────────────
 work_cards:
- - title: "AllTech Solutions"
-   description: "Automotive hardware, ECU modules, programming guides, and diagnostic tools."
+ - title: "Alltech Solutions"
+   description: "Solving complex automotive faults from ECU programming to advanced wiring, saving car owners from ridiculous dealership fees."
    link: "/alltech/database/"
+   tags: ["Automotive", "Hardware", "ECU"]
  - title: "MyEasyAgents"
-   description: "Building automated agents and intelligent systems."
+   description: "A platform created to remove the stress of the Lagos property rental scene and make viewings work for everyone."
    link: "https://myeasyagents.com"
+   tags: ["PropTech", "Software", "Platform"]
 ---

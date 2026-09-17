@@ -176,6 +176,7 @@
       {{- else -}}
       {{ .Content }}
       {{- end -}}
+    </div> <!-- Close post-content -->
 
       <!-- Share Buttons -->
       <div class="share-buttons">
@@ -194,7 +195,17 @@
       <div class="author-card">
         <img src="{{ .Site.Params.avatar | absURL }}" alt="{{ .Site.Params.ownerNameDisplay | default "Emmanuel" }}" class="author-card__avatar" loading="lazy" decoding="async">
         <div class="author-card__content">
-          <h3 class="author-card__name">{{ .Site.Params.ownerNameDisplay | default "Emmanuel" }}</h3>
+          {{- $name := .Site.Params.ownerNameDisplay | default .Site.Title -}}
+          {{- $meaning := .Site.Params.ownerNameMeaning -}}
+          {{- $show := .Site.Params.ownerNameTooltip -}}
+          <h3 class="author-card__name">
+            <span class="owner-name-wrap" tabindex="0">
+              {{- $name -}}
+              {{- if $show -}}
+              <span class="owner-tooltip" role="tooltip" aria-hidden="true">{{ $meaning }}</span>
+              {{- end -}}
+            </span>
+          </h3>
           <p class="author-card__bio">Exploring ideas at the intersection of technology, life, and learning. Automotive technology specialist and software engineer.</p>
           <div class="author-card__social">
             {{ if .Site.Params.social.twitter }}
@@ -216,7 +227,6 @@
         </div>
       </div>
 
-    </div>
   </div>
 
 </article>

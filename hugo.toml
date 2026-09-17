@@ -33,7 +33,7 @@ pagination.pagerSize = 10
 
 # Favicon
 [params.assets]
-  favicon = "images/Avatar.png"                # Path: /static/images/favicon.ico
+  favicon = "images/favicon.jpeg"                # Path: /static/images/favicon.jpeg
 
 # Footer Section
 [params.footer]

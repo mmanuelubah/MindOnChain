@@ -56,12 +56,22 @@
   <section class="work-section">
     <h2 class="section-title mono-header">WORK</h2>
 
-    <div class="work-grid">
+    <div class="portfolio-grid">
       {{ range .Params.work_cards }}
-      <a href="{{ .link }}" class="work-card-link" target="_blank" rel="noopener noreferrer">
-        <div class="work-card">
-          <div class="work-card-title mono-header">{{ .title }}</div>
-          <p class="work-card-desc">{{ .description }}</p>
+      <a href="{{ .link }}" class="portfolio-card" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-card__content">
+          <div class="portfolio-card__header">
+            <h3 class="portfolio-card__title mono-header">{{ .title }}</h3>
+            <span class="portfolio-card__arrow">↗</span>
+          </div>
+          <p class="portfolio-card__desc">{{ .description }}</p>
+          {{ if .tags }}
+          <div class="portfolio-card__tags">
+            {{ range .tags }}
+            <span class="portfolio-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
         </div>
       </a>
       {{ end }}
@@ -146,7 +156,7 @@
             {{- end -}}
           </span>
         </h3>
-        <p class="author-bottom-card__bio">Software engineer and technology analyst. I provide technical resources on automotive hardware, ECU modules, and insights into system architecture and intelligent agents.</p>
+        <p class="author-bottom-card__bio">My work revolves around fixing real problems for Nigerians using technical skills and good software—whether that's tackling complex automotive faults at Alltech, or removing the stress of Lagos property rentals through MyEasyAgents.</p>
         <a href="/about/" class="author-bottom-card__link">More about me →</a>
       </div>
     </div>
@@ -413,44 +423,109 @@
     margin-right: auto;
   }
 
-  .work-grid {
+  .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
-  .work-card-link {
+  .portfolio-card {
     text-decoration: none;
     color: inherit;
-  }
-
-  .work-card {
+    display: block;
+    background: var(--card-bg, rgba(255, 255, 255, 0.03));
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    padding: 1.5rem;
     height: 100%;
     box-sizing: border-box;
-    transition: border-color .2s, box-shadow .2s, transform .15s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
   }
 
-  .work-card:hover {
+  .portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0,255,204,0.1) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .portfolio-card:hover {
     border-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 255, 204, .15);
-    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 255, 204, 0.1);
+    transform: translateY(-4px);
   }
 
-  .work-card-title {
-    font-size: 1.1rem;
-    margin-bottom: .5rem;
+  .portfolio-card:hover::before {
+    opacity: 1;
+  }
+
+  .portfolio-card__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .portfolio-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .portfolio-card__title {
+    font-size: 1.3rem;
+    margin: 0;
     color: var(--text-color);
-    letter-spacing: .04em;
+    letter-spacing: .02em;
   }
 
-  .work-card-desc {
-    font-size: 0.9375rem;
+  .portfolio-card__arrow {
+    color: var(--text-color-secondary);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .portfolio-card:hover .portfolio-card__arrow {
+    transform: translate(3px, -3px);
+    color: var(--accent-color);
+  }
+
+  .portfolio-card__desc {
+    font-size: 0.95rem;
     color: var(--text-color-secondary);
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 1.25rem 0;
+    flex-grow: 1;
+  }
+
+  .portfolio-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .portfolio-tag {
+    background: var(--input-bg, rgba(255,255,255,0.08));
+    color: var(--text-color-secondary);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    font-family: var(--body-font), sans-serif;
+    transition: all 0.2s ease;
+  }
+  
+  .portfolio-card:hover .portfolio-tag {
+    border-color: rgba(0,255,204,0.3);
+    color: var(--text-color);
   }
 
   /* ─── Section separator ─────────────────────────────── */

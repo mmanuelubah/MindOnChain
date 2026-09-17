@@ -4,26 +4,15 @@ date: 2023-10-27T16:54:39+01:00
 draft: false
 ---
 
-Hi, I'm **Emmanuel**. I'm a technology enthusiast, software engineer, and continuous learner based in Lagos, Nigeria.
+Hi, I'm **Emmanuel**.
 
-This site serves as my digital garden—a place where I explore ideas, document my journey, and share insights on the topics that fascinate me.
+My work revolves around fixing real problems for Nigerians using technical skills and good software. 
 
-## What I Do
+As the founder of **Alltech** in Ladipo, I take on complex automotive faults from ECU programming to advanced wiring. I save car owners from ridiculous dealership fees while getting them back on the road safely. 
 
-I specialize in building intelligent systems and robust technical solutions. My work spans across multiple domains:
+Beyond the workshop, I am the co-founder of **MyEasyAgents**. The Lagos property rental scene is notoriously difficult, so we created a platform to remove the stress and make property viewings and management actually work for everyone involved.
 
-* **Software Engineering:** Developing scalable applications and exploring the bleeding edge of AI and autonomous agents.
-* **Automotive Technology:** Providing hardware solutions, ECU modules, and diagnostic tools through **AllTech Solutions**.
-* **Writing:** Sharing my thoughts on technology, productivity, and life lessons.
-
-## Current Focus (Now)
-
-Right now, I am actively building:
-
-* **MyEasyAgents:** Building automated agents and intelligent systems.
-* **AllTech Solutions:** Growing our automotive hardware and programming database.
-
-*See my [Now](/now/) page for more details on what I'm currently up to.*
+Whether it's writing code, diagnosing a faulty control module, or building platforms that simplify life, I believe in practical, hands-on problem-solving. This site serves as my digital garden—a place where I document my journey, share technical insights, and explore ideas.
 
 ## Get in Touch
 
