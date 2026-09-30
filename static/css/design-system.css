@@ -114,9 +114,9 @@ html[data-theme="light"] {
 /* ── Typography Tokens ───────────────────────────────────────── */
 :root {
   /* Font Families */
-  --font-display:  'VT323', 'Courier New', monospace;
+  --font-display:  monospace;
   --font-body:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono:     'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-mono:     monospace;
 
   /* Legacy aliases */
   --pixel-font:            var(--font-display);
@@ -127,9 +127,9 @@ html[data-theme="light"] {
   --body-letter-spacing:   0.02em;
 
   /* Scale — Major Third (1.250) */
-  --text-xs:    0.75rem;  /* 12px — badges/labels only, never body text */
-  --text-sm:    0.875rem; /* 14px — captions/meta only, never body text */
-  --text-base:  1.00rem;  /* 16px — minimum for body text */
+  --text-xs:    0.85rem;  /* 13.6px — badges/labels only */
+  --text-sm:    0.95rem;  /* 15.2px — captions/meta only */
+  --text-base:  1.05rem;  /* 16.8px — minimum for body text */
   --text-md:    1.125rem;
   --text-lg:    1.25rem;
   --text-xl:    1.563rem;

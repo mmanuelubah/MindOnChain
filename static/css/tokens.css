@@ -1,0 +1,92 @@
+/* static/css/tokens.css */
+html {
+    
+    --bg: #ffffff;
+    --text-primary: #333333;
+    --text-primary-light: #6b6b6b;
+    --border-color: rgb(224, 224, 224);
+    --highlight-bg: #ffeb3b;
+    --aside-color: hsl(129, 90%, 28%);
+
+    /* Callouts - Light (95% lightness backgrounds) */
+    --callout-success-bg: hsl(129, 50%, 95%);
+    --callout-success-border: hsl(129, 70%, 40%);
+    --callout-success-text: hsl(129, 70%, 25%);
+
+    --callout-warning-bg: hsl(45, 100%, 95%);
+    --callout-warning-border: hsl(45, 100%, 40%);
+    --callout-warning-text: hsl(45, 100%, 25%);
+
+    --callout-error-bg: hsl(0, 70%, 95%);
+    --callout-error-border: hsl(0, 70%, 45%);
+    --callout-error-text: hsl(0, 70%, 30%);
+
+    --callout-info-bg: hsl(210, 100%, 95%);
+    --callout-info-border: hsl(210, 100%, 45%);
+    --callout-info-text: hsl(210, 100%, 30%);
+
+    --callout-neutral-bg: hsl(0, 0%, 95%);
+    --callout-neutral-border: hsl(0, 0%, 60%);
+    --callout-neutral-text: hsl(0, 0%, 30%);
+}
+
+html.dark {
+    --bg: #1a1a1a;
+    --text-primary: #e8e8e8;
+    --text-primary-light: #a0a0a0;
+    --border-color: #404040;
+    --highlight-bg: #806600;
+    --aside-color: hsl(129, 70%, 60%);
+
+    /* Callouts - Dark (15% lightness backgrounds, 70% lightness text) */
+    --callout-success-bg: hsl(129, 50%, 15%);
+    --callout-success-border: hsl(129, 60%, 45%);
+    --callout-success-text: hsl(129, 50%, 70%);
+
+    --callout-warning-bg: hsl(45, 80%, 15%);
+    --callout-warning-border: hsl(45, 80%, 50%);
+    --callout-warning-text: hsl(45, 80%, 70%);
+
+    --callout-error-bg: hsl(0, 60%, 15%);
+    --callout-error-border: hsl(0, 60%, 50%);
+    --callout-error-text: hsl(0, 60%, 70%);
+
+    --callout-info-bg: hsl(210, 60%, 15%);
+    --callout-info-border: hsl(210, 80%, 55%);
+    --callout-info-text: hsl(210, 70%, 70%);
+
+    --callout-neutral-bg: hsl(0, 0%, 15%);
+    --callout-neutral-border: hsl(0, 0%, 50%);
+    --callout-neutral-text: hsl(0, 0%, 70%);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.light) {
+        --bg: #1a1a1a;
+        --text-primary: #e8e8e8;
+        --text-primary-light: #a0a0a0;
+        --border-color: #404040;
+        --highlight-bg: #806600;
+        --aside-color: hsl(129, 70%, 60%);
+
+        --callout-success-bg: hsl(129, 50%, 15%);
+        --callout-success-border: hsl(129, 60%, 45%);
+        --callout-success-text: hsl(129, 50%, 70%);
+
+        --callout-warning-bg: hsl(45, 80%, 15%);
+        --callout-warning-border: hsl(45, 80%, 50%);
+        --callout-warning-text: hsl(45, 80%, 70%);
+
+        --callout-error-bg: hsl(0, 60%, 15%);
+        --callout-error-border: hsl(0, 60%, 50%);
+        --callout-error-text: hsl(0, 60%, 70%);
+
+        --callout-info-bg: hsl(210, 60%, 15%);
+        --callout-info-border: hsl(210, 80%, 55%);
+        --callout-info-text: hsl(210, 70%, 70%);
+
+        --callout-neutral-bg: hsl(0, 0%, 15%);
+        --callout-neutral-border: hsl(0, 0%, 50%);
+        --callout-neutral-text: hsl(0, 0%, 70%);
+    }
+}

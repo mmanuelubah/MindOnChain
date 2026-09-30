@@ -256,6 +256,7 @@
       "portfolio-tag",
       "post",
       "post-card",
+      "post-card--no-image",
       "post-card__content",
       "post-card__excerpt",
       "post-card__image",

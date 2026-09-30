@@ -466,7 +466,7 @@ html[data-theme="dark"] .moc-pw-error {
   align-items: center;
   gap: 3px;
   padding: 2px 7px;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-color, #444);
   border: 1px solid var(--border-color, rgba(0, 0, 0, 0.14));
@@ -616,7 +616,7 @@ html[data-theme="dark"] .obs-callout-tip { --callout-color: 29, 233, 182; }
   align-self: flex-start;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-top: auto;
 }
