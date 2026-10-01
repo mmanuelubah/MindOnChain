@@ -170,6 +170,7 @@ The passwords for gated content are managed centrally in your `hugo.toml` config
    ```bash
    echo -n "MyNewPassword123" | sha256sum
    ```
+
    *(Alternatively, use any free online SHA-256 hash generator).*
 4. Replace the old hash string in `hugo.toml` with the new hash.
 
@@ -187,37 +188,58 @@ Then, in the front matter of your post, specify which password to use: `password
 
 ---
 
-## 4. Linking Images and PDFs from Google Drive
+## 4. Linking Images (Pinterest, Google Drive) and PDFs
 
-To keep the website incredibly fast and save storage, **all images and PDFs should be hosted on your Google Drive**.
+To keep the website incredibly fast and save storage, **all images and PDFs should be hosted externally** (e.g., on Pinterest, Google Drive, or other web sources).
 
-### Step 1: Organize Your Google Drive
+### Option A: Using Images from Pinterest (or any website)
 
-When you share the folder with the nested car brands, organize it clearly:
+You can easily use images found on Pinterest as your cover photo or within the body of your article.
+
+1. Open the Pinterest image you want to use in your browser.
+2. **Right-click** on the image itself.
+3. Select **"Copy Image Address"** (or "Copy Image Link").
+   *(The copied link should look something like: `https://i.pinimg.com/originals/.../....jpg`)*
+
+### Option B: Hosting Files on Your Google Drive
+
+#### Step 1: Organize Your Google Drive
+
+Organize your files clearly (e.g., by car brand):
 
 - `Locksmith_Database/`
   - `Toyota/`
     - `Camry_2016_Pinout.jpg`
     - `Corolla_EEPROM_Guide.pdf`
 
-### Step 2: Get the Google Drive Link
+#### Step 2: Get the Google Drive Link
 
-1. Right-click the image or PDF in Google Drive and select **Share**.
-2. Under "General Access", change it from "Restricted" to **"Anyone with the link"**.
-3. Click **"Copy Link"**.
-   - The link will look like this: `https://drive.google.com/file/d/1a2b3c4d5e6f7g8h9i/view?usp=sharing`
+1. Right-click the file in Google Drive and select **Share**. Change "General Access" to **"Anyone with the link"**.
+2. Click **"Copy Link"**. (e.g., `https://drive.google.com/file/d/1a2b3c4d5e6f7g8h9i/view?usp=sharing`)
 
-### Step 3: Convert the Link for Your Website
+#### Step 3: Convert the Link for Your Website
 
-Hugo needs a direct download link to display the image. You must take the **FILE ID** from the link above (e.g., `1a2b3c4d5e6f7g8h9i`) and format it like this:
+Hugo needs a direct download link. Take the **FILE ID** from the link above (e.g., `1a2b3c4d5e6f7g8h9i`) and format it like this:
 
 **`https://drive.google.com/uc?export=view&id=YOUR_FILE_ID`**
 
-### Step 4: Add it to Your Obsidian Post
+### How to Add the Image/File Link to Your Obsidian Post
 
-- **For an Image inside the text:** `![Image Description](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)`
-- **For a PDF Download Link:** `[Click Here to Download PDF Manual](https://drive.google.com/uc?export=download&id=YOUR_FILE_ID)`
-- **For a Cover Image (in the Frontmatter):** Just paste the converted link inside the quotes for `images:` or `cover:`.
+Once you have your direct link (either the `.jpg` link from Pinterest or the formatted Google Drive link):
+
+- **For a Cover Image (in the Frontmatter):** Paste the link inside the quotes for `cover:` or `images:` at the very top of your file.
+
+  ```yaml
+  cover: "https://i.pinimg.com/originals/example-image.jpg"
+  ```
+
+- **For an Image inside the text:** Use standard Markdown syntax wherever you want the image to appear.
+
+  ```markdown
+  ![Image Description](https://i.pinimg.com/originals/example-image.jpg)
+  ```
+
+- **For a PDF Download Link:** `[Click Here to Download PDF](https://drive.google.com/uc?export=download&id=YOUR_FILE_ID)`
 
 ---
 
@@ -253,5 +275,5 @@ If you ever need to write custom HTML/CSS inside a post, always use the site's t
 
 1. You use **Obsidian Templates** to instantly load the correct formatting for any new feature or section.
 2. You save your files directly into the respective `content/` folders.
-3. You use **Google Drive IDs** to display all visual media.
+3. You use **Direct Image Links** (Pinterest, Google Drive, etc.) to display all visual media.
 4. You adhere to the **Zero-Emoji Policy** and let the automated Hugo layouts handle the mature styling.
