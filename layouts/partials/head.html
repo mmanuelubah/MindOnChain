@@ -81,7 +81,19 @@
 <meta property="og:image" content="{{ .Params.cover | absURL }}" />
 <meta name="twitter:image" content="{{ .Params.cover | absURL }}" />
 <meta name="twitter:card" content="summary_large_image" />
+{{ else if .Site.Params.logo.logoImage }}
+<meta property="og:image" content="{{ .Site.Params.logo.logoImage | absURL }}" />
+<meta name="twitter:image" content="{{ .Site.Params.logo.logoImage | absURL }}" />
+<meta name="twitter:card" content="summary" />
+{{ else if .Site.Params.avatar }}
+<meta property="og:image" content="{{ .Site.Params.avatar | absURL }}" />
+<meta name="twitter:image" content="{{ .Site.Params.avatar | absURL }}" />
+<meta name="twitter:card" content="summary" />
 {{ end }}
+
+<meta property="og:url" content="{{ .Permalink | absURL }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
+<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Summary | plainify }}{{ end }}{{ end }}" />
 
 {{ range .Params.categories }}
 <meta property="article:section" content="{{ . }}" />
