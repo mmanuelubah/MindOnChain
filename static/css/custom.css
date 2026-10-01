@@ -1041,3 +1041,27 @@ h1, h2, h3, .site-title, .nav-link, .meta-text {
     font-size: 13px;
   }
 }
+
+/* ============================================
+   ADDITIONAL MOBILE OPTIMIZATIONS
+   ============================================ */
+@media screen and (max-width: 600px) {
+  /* Scale down massive headers on mobile */
+  .post-content h1, .article-header h1, h1.post-title {
+    font-size: 1.8rem !important;
+  }
+  .post-content h2, .article-content h2 {
+    font-size: 1.4rem !important;
+  }
+  .post-content h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  /* Ensure tables don't overflow screen width */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
