@@ -159,6 +159,53 @@
   display: inline-block;
 }
 
+/* ============================================
+   POST COVER IMAGE ALIGNMENT & SIZING
+   ============================================ */
+.post-cover,
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto 2.5rem auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.post-cover img,
+.image-wrapper img {
+  width: 100%;
+  max-width: 740px; /* Never exceed post width */
+  height: 320px; /* Small rectangular box */
+  object-fit: cover; /* Keeps aspect ratio properly */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+.post-cover figcaption {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .post-cover img,
+  .image-wrapper img {
+    height: 250px;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post-cover img,
+  .image-wrapper img {
+    height: 200px;
+  }
+}
+
 .post-content h2 {
   font-size: 1.6rem;
   font-weight: 700;

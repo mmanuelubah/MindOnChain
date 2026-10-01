@@ -1,4 +1,4 @@
-baseURL = "https://mindonchain.vercel.app/"
+baseURL = "https://mind-on-chain.vercel.app/"
 title = "MindOnChain"
 languageCode = "en-us"
 theme = "hello-friend-ng"
