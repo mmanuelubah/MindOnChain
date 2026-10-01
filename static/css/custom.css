@@ -628,3 +628,299 @@ html[data-theme="dark"] .obs-callout-tip { --callout-color: 29, 233, 182; }
   background: rgba(255, 107, 107, 0.1);
   color: var(--color-error);
 }
+
+/* ============================================
+   MINDONCHAIN ANTIGRAVITY OVERHAUL
+   ============================================ */
+:root, html, html.dark, html[data-theme="dark"] {
+  /* Removed 62.5% font-size override */
+  
+  --bg: #1a1a1a;
+  --bg-color: #1a1a1a;
+  --color-bg-primary: #1a1a1a;
+  --color-bg-secondary: #1a1a1a;
+  
+  --text-primary: #e8e8e8;
+  --text-color: #e8e8e8;
+  --color-text-primary: #e8e8e8;
+  
+  --text-muted: #a0a0a0;
+  --text-color-secondary: #a0a0a0;
+  --color-text-secondary: #a0a0a0;
+  
+  --border-color: #404040;
+  --color-border: #404040;
+  
+  --accent: #3dd68c;
+  --accent-color: #3dd68c;
+  --color-accent-primary: #3dd68c;
+
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  --font-mono: 'Departure Mono', monospace !important;
+  --font-display: 'Departure Mono', monospace !important;
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  margin: 0;
+  padding: 100px 24px 0 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container, .page-container {
+  width: 100%;
+  max-width: 740px !important;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1600px) {
+  .container, .page-container {
+    max-width: 45% !important;
+  }
+}
+
+h1, h2, h3, .site-title, .nav-link, .meta-text {
+  font-family: var(--font-mono) !important;
+}
+
+/* ============================================
+   TOP NAVIGATION
+   ============================================ */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 48px;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-primary) !important;
+  transition: text-decoration 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary) !important;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--border-color);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================
+   POSTS LIST & SEARCH
+   ============================================ */
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.tag-pill {
+  background: #404040;
+  color: #e8e8e8;
+  border-radius: 30px;
+  padding: 4px 10px;
+  font-size: 12px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: background-color 0.2s ease;
+}
+
+.tag-pill:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.year-header {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  border-bottom: 1px solid #404040;
+  padding: 24px 0;
+}
+
+.post-title {
+  display: block;
+  font-family: var(--font-mono) !important;
+  font-size: 18px;
+  color: var(--text-primary) !important;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.post-title:hover {
+  color: var(--accent) !important;
+}
+
+.post-meta {
+  font-family: var(--font-mono) !important;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.post-meta-tag {
+  margin-left: 4px;
+}
+
+/* ============================================
+   ARTICLE BODY & ABOUT ME
+   ============================================ */
+.article-header h1, h1.post-title, .post-content h1 {
+  font-size: 28px !important;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.article-meta {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.article-content h2, .post-content h2 {
+  font-family: var(--font-mono) !important;
+  font-size: 24px !important;
+  margin-top: 32px !important;
+  margin-bottom: 16px !important;
+}
+
+.article-content ul, .post-content ul {
+  list-style-type: disc !important;
+  margin-left: 32px !important;
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+
+.article-content li, .post-content li {
+  font-family: var(--font-body) !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  margin-top: 10px !important;
+}
+
+.article-content blockquote, .post-content blockquote {
+  border-left: 4px solid #e8e8e8 !important;
+  padding-left: 20px !important;
+  margin: 32px 0 !important;
+  color: var(--text-muted) !important;
+  background: transparent !important;
+}
+
+.article-content blockquote p, .post-content blockquote p {
+  color: var(--text-muted) !important;
+  font-size: 18px !important;
+}
+
+/* About Page Specifics */
+.page-about .post-content p {
+  font-family: var(--font-body) !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 32px !important;
+}
+
+.page-about .post-content p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+.page-about .post-content a {
+  display: inline-block;
+  font-family: var(--font-mono) !important;
+  font-size: 18px !important;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  margin-top: 0 !important;
+}
+
+.page-about .post-content a:hover {
+  text-decoration: underline !important;
+}
+
+/* Hide footer and socials strictly on about page */
+.page-about .footer,
+.page-about .author-card__social,
+.page-about .share-buttons,
+.page-about .post-footer {
+  display: none !important;
+}

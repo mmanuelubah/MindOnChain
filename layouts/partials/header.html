@@ -1,73 +1,30 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<header class="header">
-  <span class="header__inner">
-
-    <!-- Logo / Home Button -->
-    <a href="{{ .Site.Params.logo.logoHomeLink | absURL }}" class="logo">
-      {{ if .Site.Params.logo.logoImage }}
-        <img src="{{ .Site.Params.logo.logoImage | absURL }}" alt="{{ .Site.Title }}" class="logo-img">
-      {{ else }}
-        <span class="logo-text">{{ .Site.Title }}</span>
-      {{ end }}
-    </a>
-
-    <!-- Right Side -->
-    <span class="header__right">
-      {{- if len .Site.Menus }}
-        {{ partial "menu.html" . }}
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      {{- end }}
-
-      {{- if .Site.Params.enableThemeToggle }}
-        <span class="theme-toggle not-selectable">
-          {{ partial "theme-toggle-icon.html" . }}
-        </span>
-      {{- end }}
-    </span>
-
-  </span>
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link {{ if .IsHome }}active{{ end }}">HOME</a></li>
+        <li><a href="/about/" class="nav-link {{ if in .RelPermalink "/about" }}active{{ end }}">ABOUT</a></li>
+        <li><a href="/posts/" class="nav-link {{ if in .RelPermalink "/posts" }}active{{ end }}">POSTS</a></li>
+        <li><a href="/alltech/" class="nav-link {{ if in .RelPermalink "/alltech" }}active{{ end }}">ALLTECH</a></li>
+        <li><a href="/books/" class="nav-link {{ if in .RelPermalink "/books" }}active{{ end }}">BOOKS</a></li>
+        <li><a href="/colophon/" class="nav-link {{ if in .RelPermalink "/colophon" }}active{{ end }}">COLOPHON</a></li>
+      </ul>
+      
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <!-- Sun Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </nav>
+  </div>
 </header>
-
-<style>
-/* Header alignment */
-.header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo text fallback */
-.logo-text {
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-/* Logo image styling */
-.logo-img {
-  height: 46px;
-  width: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: all 0.25s ease;
-}
-
-/* Subtle glow + hover lift */
-.logo-img:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 10px rgba(0, 255, 204, 0.35),
-              0 0 18px rgba(0, 255, 204, 0.15);
-}
-
-/* Mobile size adjustment */
-@media (max-width: 600px) {
-  .logo-img {
-    height: 40px;
-    width: 40px;
-  }
-}
-</style>

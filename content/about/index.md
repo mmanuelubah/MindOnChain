@@ -4,21 +4,14 @@ date: 2023-10-27T16:54:39+01:00
 draft: false
 ---
 
-Hi, I'm **Emmanuel**.
+I am Emmanuel, but my friends call me Abobo.
 
-My work revolves around fixing real problems for Nigerians using technical skills and good software. 
+I am an automobile locksmith and technician, currently running my own business, and I co-founded [MyEasyAgents](https://www.myeasyagents.com).
 
-As the founder of **Alltech** in Ladipo, I take on complex automotive faults from ECU programming to advanced wiring. I save car owners from ridiculous dealership fees while getting them back on the road safely. 
+I grew up knowing that *wahala no dey finish*: problems never end. Most days, I just try to make one of them smaller. Right now, I am on my way to getting my PMP, currently taking a course with Humanitarian.org, participating as a Forward Learner with McKinsey, and saving a few bucks for my Master's degree.
 
-Beyond the workshop, I am the co-founder of **MyEasyAgents**. The Lagos property rental scene is notoriously difficult, so we created a platform to remove the stress and make property viewings and management actually work for everyone involved.
+I love difficult things, but people are the most difficult—working on cars and real estate can definitely make you pass out. If you're building something odd, fun, or useful, I'd love to hear about it. Bonus points if it keeps me up at night.
 
-Whether it's writing code, diagnosing a faulty control module, or building platforms that simplify life, I believe in practical, hands-on problem-solving. This site serves as my digital garden—a place where I document my journey, share technical insights, and explore ideas.
+Outside of work, I take photos of people and places I want to remember, watch an ungodly amount of podcasts, and listen to Jazz and lofi chill songs—which you'll see scattered throughout my posts and articles constantly.
 
-## Get in Touch
-
-I'm always open to interesting conversations, collaborations, or just a quick hello.
-
-* **Email:** [ubanatuchinaza@gmail.com](mailto:ubanatuchinaza@gmail.com)
-* **LinkedIn:** [Connect with me](https://linkedin.com/)
-* **GitHub:** [View my projects](https://github.com/)
-* **Twitter/X:** [Follow me](https://twitter.com/)
+[hi@mindonchain.com](mailto:ubahchinaza@gmail.com)

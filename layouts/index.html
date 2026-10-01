@@ -6,30 +6,14 @@
     <h1 id="animated-title" class="site-title">MindOnChain</h1>
   </div>
 
-  <!-- ================= INLINE NAV ================= -->
-  <nav class="inline-nav" aria-label="Main navigation">
-    <a href="/posts/" class="inline-nav__link">Posts</a>
-    <span class="inline-nav__sep" aria-hidden="true">·</span>
-    <a href="/alltech/" class="inline-nav__link">AllTech</a>
-    <span class="inline-nav__sep" aria-hidden="true">·</span>
-    <a href="/books/" class="inline-nav__link">Books</a>
-    <span class="inline-nav__sep" aria-hidden="true">·</span>
-    <a href="/colophon/" class="inline-nav__link">Colophon</a>
-  </nav>
-
   <hr class="section-separator">
 
   <!-- ================= NOW SECTION (Currently Reading) ================= -->
   <section class="now-section">
-    <h2 class="section-title mono-header">NOW</h2>
 
-    {{ with .Params.now_intro }}
-    <p class="now-intro">{{ . | markdownify }}</p>
-    {{ end }}
-
-    <div class="reading-block">
-      <span class="reading-label">Currently reading:</span>
-      <ul class="reading-list">
+    <div class="reading-block" style="background: #2b2b2b; border-radius: 8px; padding: 20px; margin-bottom: 48px;">
+      <div style="font-family: var(--font-body); font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Currently reading:</div>
+      <div class="reading-list" style="margin: 0; padding: 0;">
         {{ $books := where .Site.RegularPages "Type" "books" }}
         {{ $reading := slice }}
         {{ range $books }}
@@ -38,41 +22,31 @@
         {{ end }}
         {{ end }}
         {{ range sort $reading "Date" "desc" }}
-        <li>
+        <div>
           <a href="{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .RelPermalink }}{{ end }}" class="reading-link"
-            target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
-        </li>
+            style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #555; font-family: var(--font-body); font-size: 18px;" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
+        </div>
         {{ end }}
         {{ if eq (len $reading) 0 }}
-        <li><span style="color: var(--text-color-secondary);">Nothing currently active.</span></li>
+        <div><span style="color: var(--text-muted); font-family: var(--font-body);">Nothing currently active.</span></div>
         {{ end }}
-      </ul>
+      </div>
     </div>
   </section>
 
   <hr class="section-separator">
 
-  <!-- ================= WORK SECTION (Building) ================= -->
+  <!-- ================= WORK SECTION ================= -->
   <section class="work-section">
-    <h2 class="section-title mono-header">WORK</h2>
+    <div class="section-header" style="margin-bottom: 16px;">
+      <h2 class="section-title mono-header" style="margin: 0; font-size: 12px; font-weight: normal; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">WORK</h2>
+    </div>
 
-    <div class="portfolio-grid">
+    <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
       {{ range .Params.work_cards }}
-      <a href="{{ .link }}" class="portfolio-card" target="_blank" rel="noopener noreferrer">
-        <div class="portfolio-card__content">
-          <div class="portfolio-card__header">
-            <h3 class="portfolio-card__title mono-header">{{ .title }}</h3>
-            <span class="portfolio-card__arrow">↗</span>
-          </div>
-          <p class="portfolio-card__desc">{{ .description }}</p>
-          {{ if .tags }}
-          <div class="portfolio-card__tags">
-            {{ range .tags }}
-            <span class="portfolio-tag">{{ . }}</span>
-            {{ end }}
-          </div>
-          {{ end }}
-        </div>
+      <a href="{{ .link }}" class="portfolio-card" style="border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; text-decoration: none; display: block; transition: border-color 0.2s;" target="_blank" rel="noopener noreferrer">
+        <h3 class="portfolio-card__title mono-header" style="margin: 0 0 8px 0; font-size: 18px; color: var(--text-primary);">{{ .title }}</h3>
+        <p class="portfolio-card__desc" style="margin: 0; font-family: var(--font-body); font-size: 14px; color: var(--text-muted); line-height: 1.5;">{{ .description }}</p>
       </a>
       {{ end }}
     </div>
@@ -80,89 +54,63 @@
 
   <hr class="section-separator">
 
-  <!-- ================= FEATURED POST (Editor's Pick) ================= -->
-  {{ $featured := where .Site.RegularPages "Type" "posts" }}
-  {{ if gt (len $featured) 0 }}
-  {{ $topPost := index $featured 0 }}
-  <section class="featured-section">
-    <h2 class="section-title mono-header">EDITOR'S PICK</h2>
-    <div class="featured-card">
-      {{ if $topPost.Params.cover }}
-      <div class="featured-card__image">
-        <a href="{{ $topPost.RelPermalink }}"><img src="{{ $topPost.Params.cover | absURL }}" alt="{{ $topPost.Title }}"></a>
-      </div>
-      {{ end }}
-      <div class="featured-card__content">
-        <div class="featured-card__meta">
-          <span class="featured-card__category">Featured</span>
-          <span class="featured-card__date">{{ $topPost.Date.Format "Jan 02 2006" }}</span>
-        </div>
-        <h3 class="featured-card__title"><a href="{{ $topPost.RelPermalink }}">{{ $topPost.Title }}</a></h3>
-        <p class="featured-card__excerpt">{{ $topPost.Summary | plainify | truncate 150 }}</p>
-        <a href="{{ $topPost.RelPermalink }}" class="featured-card__readmore">Read article →</a>
-      </div>
-    </div>
-  </section>
-  <hr class="section-separator">
-  {{ end }}
 
-  <!-- ================= LATEST POSTS ================= -->
-  <section class="latest-section">
-    <div class="section-header">
-      <h2 class="section-title mono-header">LATEST ARTICLES</h2>
-      <a href="/posts/" class="view-all-link">View all →</a>
-    </div>
 
-    <div class="post-grid">
-      {{ $posts := where .Site.RegularPages "Type" "posts" }}
-      {{ range first 6 (sort $posts "Date" "desc") }}
-      <article class="post-card {{ if not .Params.cover }}post-card--no-image{{ end }}">
-        {{ if .Params.cover }}
-        <a href="{{ .RelPermalink }}" class="post-card__image">
-          <img src="{{ .Params.cover | absURL }}" alt="{{ .Title }}" loading="lazy">
-        </a>
+
+  <!-- ================= FEATURED WRITING ================= -->
+  <section class="featured-writing-section">
+    <div class="section-header" style="margin-bottom: 16px;">
+      <h2 class="section-title mono-header" style="margin: 0; font-size: 12px; font-weight: normal; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">FEATURED WRITING</h2>
+    </div>
+    {{ $posts := where .Site.RegularPages "Type" "posts" }}
+    <ul class="post-list">
+      {{ $articles := slice }}
+      {{ range $posts }}
+        {{ $isRoundup := false }}
+        {{ range .Params.tags }}
+          {{ if in (slice "roundup" "Roundup" "weekly-roundup" "Weekly Roundup") . }}
+            {{ $isRoundup = true }}
+          {{ end }}
         {{ end }}
-        <div class="post-card__content">
-          <div class="post-card__meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
-            <span class="meta-sep">·</span>
-            <span>{{ .ReadingTime }} min read</span>
-          </div>
-          <h3 class="post-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <p class="post-card__excerpt">{{ .Summary | plainify | truncate 75 }}</p>
+        {{ if not $isRoundup }}
+          {{ $articles = $articles | append . }}
+        {{ end }}
+      {{ end }}
+      
+      {{ $featured := where $articles "Params.featured" true }}
+      {{ if eq (len $featured) 0 }}{{ $featured = first 3 $articles }}{{ end }}
+      {{ range first 3 (sort $featured "Date" "desc") }}
+      <li class="post-item">
+        <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+        <div class="post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02 2006" }}</time>
         </div>
-      </article>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <hr class="section-separator" style="margin: 48px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+  <!-- ================= LATEST ROUNDUP ================= -->
+  <section class="latest-roundup-section">
+    <div class="section-header" style="margin-bottom: 16px;">
+      <h2 class="section-title mono-header" style="margin: 0; font-size: 12px; font-weight: normal; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">LATEST ROUNDUP</h2>
+    </div>
+    <div class="roundup-container">
+      {{ $roundups := where $posts "Params.tags" "intersect" (slice "roundup" "Roundup" "weekly-roundup" "Weekly Roundup") }}
+      {{ range first 1 (sort $roundups "Date" "desc") }}
+      <div class="reading-block" style="background: #2b2b2b; border-radius: 8px; padding: 16px 20px;">
+        <a href="{{ .RelPermalink }}" class="reading-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #555; font-family: var(--font-body); font-size: 16px;">{{ .Title }}</a>
+      </div>
       {{ end }}
     </div>
   </section>
 
-  <hr class="section-separator">
-
-  <!-- ================= ABOUT THE AUTHOR ================= -->
-  <section class="about-mini">
-    <div class="author-bottom-card">
-      <div class="author-bottom-card__avatar" id="avatarBox">
-        <img src="{{ .Site.Params.avatar | absURL }}" alt="{{ .Site.Title }}">
-      </div>
-      <div class="author-bottom-card__info">
-        {{- $name := .Site.Params.ownerNameDisplay | default .Site.Title -}}
-        {{- $meaning := .Site.Params.ownerNameMeaning -}}
-        {{- $show := .Site.Params.ownerNameTooltip -}}
-        <h3 class="author-bottom-card__name">
-          <span class="owner-name-wrap">
-            {{- $name -}}
-            {{- if $show -}}
-            <span class="owner-tooltip" role="tooltip" aria-hidden="true">{{ $meaning }}</span>
-            {{- end -}}
-          </span>
-        </h3>
-        <p class="author-bottom-card__bio">My work revolves around fixing real problems for Nigerians using technical skills and good software—whether that's tackling complex automotive faults at Alltech, or removing the stress of Lagos property rentals through MyEasyAgents.</p>
-        <a href="/about/" class="author-bottom-card__link">More about me →</a>
-      </div>
-    </div>
-  </section>
+  <hr class="section-separator" style="margin: 48px 0; border: 0; border-top: 1px solid var(--border-color);">
 
 </main>
+
 
 <!-- ================= AVATAR OVERLAY ================= -->
 <dialog id="avatarOverlay" class="avatar-overlay" aria-label="Avatar Image">

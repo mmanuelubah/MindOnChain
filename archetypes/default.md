@@ -6,6 +6,7 @@ cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
 categories: ["Tech"]
 tags: []
 featured: false
+description: ""
 ---
 
 Write an engaging summary or intro paragraph here...
