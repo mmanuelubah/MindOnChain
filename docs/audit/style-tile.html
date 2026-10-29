@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllTech style tile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root {
+  --paper: #FAF8F3; --sunken: #F0EDE5; --ink: #141414; --muted: #5B574F; --hair: #D9D4C8;
+  --danfo: #FFC20E; --ok: #1B6B3A; --bad: #A4161A; --warn-bg: #FFF4CC; --warn-ink: #5C4300; --focus: #0B57D0;
+  --f-ui: "Archivo", system-ui, sans-serif; --f-read: "Source Serif 4", Georgia, serif; --f-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --t-xs: .8125rem; --t-sm: .9375rem; --t-md: 1.0625rem; --t-lg: 1.3125rem; --t-xl: 1.625rem;
+  --t-2xl: clamp(2rem, 6vw, 2.5rem); --t-3xl: clamp(2.5rem, 9vw, 4rem);
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141414; --sunken: #1F1E1B; --ink: #EEEBE4; --muted: #A9A398; --hair: #3A3833;
+    --ok: #7DD3A0; --bad: #FF8A80; --warn-bg: #2E2500; --warn-ink: #FFE08A; --focus: #8AB4F8; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141414; --sunken: #1F1E1B; --ink: #EEEBE4; --muted: #A9A398; --hair: #3A3833;
+  --ok: #7DD3A0; --bad: #FF8A80; --warn-bg: #2E2500; --warn-ink: #FFE08A; --focus: #8AB4F8; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 var(--t-md)/1.55 var(--f-ui); font-variation-settings: "wdth" 100; }
+a { color: inherit; text-decoration-line: underline; text-decoration-color: var(--danfo); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--ink); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+code, .code { font-family: var(--f-code); font-size: .92em; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--s-4); }
+.read { max-width: 68ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Tile chrome: not part of the system */
+.tile-note { background: var(--sunken); border-bottom: 1px solid var(--hair); padding: var(--s-3) 0; font-size: var(--t-sm); color: var(--muted); }
+.tile-note strong { color: var(--ink); }
+.tile-part { margin: var(--s-8) 0 var(--s-4); font: 600 var(--t-xs)/1 var(--f-code); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.todo { background: var(--warn-bg); color: var(--warn-ink); font: 600 var(--t-xs)/1.3 var(--f-ui); padding: 1px 6px; white-space: nowrap; }
+
+/* Header */
+.site-header { border-bottom: 4px solid var(--ink); }
+.site-header .wrap { display: flex; align-items: center; gap: var(--s-5); min-height: 64px; flex-wrap: wrap; }
+.wordmark { font: 800 1.5rem/1 var(--f-ui); font-variation-settings: "wdth" 75; letter-spacing: -.01em; text-decoration: none; }
+.wordmark span { background: var(--danfo); color: #141414; padding: 0 4px; margin-left: 2px; }
+.nav { display: flex; gap: var(--s-5); list-style: none; margin: 0; padding: 0; font-weight: 600; font-size: var(--t-sm); }
+.nav a { text-decoration: none; padding: var(--s-3) 0; display: inline-block; }
+.nav a[aria-current="page"] { box-shadow: inset 0 -4px 0 var(--danfo); }
+.header-tools { margin-left: auto; display: flex; gap: var(--s-2); }
+.icon-btn { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 var(--s-3); background: none; border: 1.5px solid var(--ink); color: var(--ink); font: 600 var(--t-sm)/1 var(--f-ui); cursor: pointer; }
+.icon-btn svg { width: 20px; height: 20px; }
+.menu-btn { display: none; }
+@media (max-width: 640px) {
+  .nav { display: none; }
+  .menu-btn { display: inline-flex; }
+}
+
+/* Labels, headlines */
+.label { display: inline-block; background: var(--danfo); color: #141414; font: 700 var(--t-xs)/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; padding: 6px 8px; }
+.display { font: 800 var(--t-3xl)/1.02 var(--f-ui); font-variation-settings: "wdth" 80; letter-spacing: -.02em; margin: var(--s-4) 0 var(--s-4); text-wrap: balance; }
+.h1 { font: 800 var(--t-2xl)/1.08 var(--f-ui); font-variation-settings: "wdth" 85; letter-spacing: -.01em; margin: var(--s-3) 0; text-wrap: balance; }
+.h2 { font: 700 var(--t-xl)/1.2 var(--f-ui); margin: 0 0 var(--s-4); padding-top: var(--s-3); border-top: 4px solid var(--ink); }
+.h3 { font: 700 var(--t-lg)/1.3 var(--f-ui); margin: var(--s-5) 0 var(--s-2); }
+.standfirst { font: 400 var(--t-lg)/1.45 var(--f-ui); color: var(--ink); max-width: 60ch; margin: 0 0 var(--s-4); }
+.byline { font-size: var(--t-sm); color: var(--muted); }
+.byline strong { color: var(--ink); font-weight: 600; }
+.serif { font-family: var(--f-read); font-size: 1.1875rem; line-height: 1.65; }
+
+/* Swatches */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s-4); }
+.sw { border-top: 1px solid var(--hair); padding-top: var(--s-2); font-size: var(--t-xs); }
+.sw i { display: block; height: 56px; margin-bottom: var(--s-2); border: 1px solid var(--hair); }
+.sw b { display: block; font-size: var(--t-sm); }
+
+/* Type specimen */
+.scale p { margin: 0 0 var(--s-2); }
+.scale small { font: 400 var(--t-xs)/1 var(--f-code); color: var(--muted); margin-right: var(--s-3); }
+
+/* Breadcrumb */
+.crumbs { font-size: var(--t-sm); color: var(--muted); }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s-2); margin: 0; padding: 0; }
+.crumbs li + li::before { content: "/"; margin-right: var(--s-2); color: var(--muted); }
+.crumbs [aria-current] { color: var(--ink); }
+
+/* Search */
+.search label { display: block; font-weight: 700; margin-bottom: var(--s-2); }
+.search-row { display: flex; gap: var(--s-2); }
+.search input { flex: 1; min-width: 0; min-height: 52px; font: 400 var(--t-lg) var(--f-ui); color: var(--ink); background: var(--sunken); border: 1.5px solid var(--ink); border-radius: 0; padding: 0 var(--s-4); }
+.search .hint { font-size: var(--t-sm); color: var(--muted); margin: var(--s-2) 0 0; }
+.results h3 { font: 700 var(--t-xs)/1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: var(--s-5) 0 0; }
+mark { background: var(--danfo); color: #141414; padding: 0 2px; }
+
+/* Rows */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.rows li { border-bottom: 1px solid var(--hair); }
+.rows a { display: grid; grid-template-columns: 1fr auto; gap: var(--s-1) var(--s-4); padding: var(--s-4) 0; text-decoration: none; min-height: 48px; }
+.rows a:hover .row-title { text-decoration: underline 3px var(--danfo); text-underline-offset: 3px; }
+.row-title { font-weight: 700; }
+.row-meta { grid-column: 1; font-size: var(--t-sm); color: var(--muted); display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-3); align-items: center; }
+.row-go { grid-row: 1 / span 2; grid-column: 2; align-self: center; width: 20px; height: 20px; }
+.tag { font: 600 var(--t-xs)/1 var(--f-code); border: 1px solid var(--ink); padding: 3px 6px; color: var(--ink); }
+
+/* Spec table */
+.table-frame { overflow-x: auto; border: 1px solid var(--ink); }
+.table-frame:focus-visible { outline-offset: 0; }
+table { border-collapse: collapse; width: 100%; min-width: 420px; font-size: var(--t-sm); }
+caption { text-align: left; font-weight: 700; padding: var(--s-3); border-bottom: 1px solid var(--ink); }
+th, td { text-align: left; padding: var(--s-3); border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { background: var(--sunken); font-weight: 600; width: 38%; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+
+/* Steps, safety note */
+.steps { padding-left: 1.4em; }
+.steps li { margin-bottom: var(--s-3); padding-left: var(--s-2); }
+.steps li::marker { font-weight: 800; }
+.note { background: var(--warn-bg); color: var(--warn-ink); border-left: 6px solid currentColor; padding: var(--s-4); display: grid; grid-template-columns: 20px 1fr; gap: var(--s-3); }
+.note svg { width: 20px; height: 20px; margin-top: 3px; }
+.note p { margin: 0; }
+
+/* Part cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--s-5); }
+.card { display: flex; flex-direction: column; gap: var(--s-2); border-top: 4px solid var(--ink); padding-top: var(--s-3); text-decoration: none; }
+.card-img { aspect-ratio: 4 / 3; background: var(--sunken); display: grid; place-items: center; color: var(--muted); font-size: var(--t-sm); }
+.card-title { font: 700 var(--t-lg)/1.25 var(--f-ui); }
+.card:hover .card-title { text-decoration: underline 3px var(--danfo); text-underline-offset: 3px; }
+.card-fits { font-size: var(--t-sm); color: var(--muted); margin: 0; }
+.card-foot { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-3); margin-top: auto; padding-top: var(--s-2); border-top: 1px solid var(--hair); font-size: var(--t-sm); }
+.price { font-weight: 800; font-size: var(--t-lg); }
+.stock { font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
+.stock::before { content: ""; width: 8px; height: 8px; background: currentColor; }
+.stock.ok { color: var(--ok); }
+.stock.bad { color: var(--bad); }
+
+/* Product facts */
+.product { display: grid; grid-template-columns: 1fr; gap: var(--s-6); }
+@media (min-width: 1024px) { .product { grid-template-columns: 1.1fr 1fr; } }
+.facts { border-top: 4px solid var(--ink); }
+.facts dl { margin: 0; display: grid; grid-template-columns: 9rem 1fr; }
+.facts dt, .facts dd { margin: 0; padding: var(--s-3) 0; border-bottom: 1px solid var(--hair); }
+.facts dt { color: var(--muted); font-size: var(--t-sm); }
+.facts dd ul { margin: 0; padding-left: 1.1em; }
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-height: 48px; padding: 0 var(--s-5); font: 700 var(--t-md)/1 var(--f-ui); text-decoration: none; border: 2px solid var(--ink); cursor: pointer; }
+.btn svg { width: 20px; height: 20px; }
+.btn-primary { background: var(--danfo); color: #141414; border-color: #141414; }
+.btn-primary:hover { background: #141414; color: var(--danfo); }
+.btn-secondary { background: transparent; color: var(--ink); }
+.btn[aria-disabled="true"] { background: var(--sunken); color: var(--muted); border-color: var(--hair); cursor: not-allowed; }
+.btn-wide { width: 100%; }
+
+.empty { border: 1px dashed var(--muted); padding: var(--s-5); }
+.empty p { margin: 0 0 var(--s-2); }
+
+.site-footer { margin-top: var(--s-9); border-top: 4px solid var(--ink); padding: var(--s-6) 0 var(--s-7); font-size: var(--t-sm); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-6); justify-content: space-between; }
+.site-footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s-4); margin: 0; padding: 0; }
+.site-footer p { margin: 0; color: var(--muted); }
+
+.two { display: grid; gap: var(--s-6); }
+@media (min-width: 1024px) { .two { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Lucide icons, ISC licence: search, menu, chevron-right, triangle-alert, message-circle, sun-moon -->
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></symbol>
+</svg>
+
+<div class="tile-note"><div class="wrap">
+  <strong>Style tile, proposal for Gate 2.</strong> Real content from the site. Highlighted <span class="todo">to confirm</span> items are facts only you can supply; nothing here is invented to fill them.
+</div></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#">All<span>Tech</span></a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a href="#database" aria-current="page">Database</a></li>
+        <li><a href="#guides">Guides</a></li>
+        <li><a href="#parts">Parts</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <a class="icon-btn" href="#search"><svg aria-hidden="true"><use href="#i-search"/></svg>Search</a>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="menu"><svg aria-hidden="true"><use href="#i-menu"/></svg>Menu</button>
+      <button class="icon-btn" type="button" id="theme-btn" aria-label="Switch to dark mode"><svg aria-hidden="true"><use href="#i-theme"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main-content">
+
+  <p class="tile-part">1. Home: expressive layer</p>
+  <span class="label">AllTech, Lagos</span>
+  <h1 class="display">ECU and immobiliser work, written down.</h1>
+  <p class="standfirst">I program ECUs, align immobilisers and source tested parts from Ladipo Market. Every job I can document goes into the database below, open to any technician who needs it.</p>
+  <p class="byline">By <strong>Ubanatu Chinaza Emmanuel</strong>, automobile locksmith and technician</p>
+  <div class="btns">
+    <a class="btn btn-primary" href="#search"><svg aria-hidden="true"><use href="#i-search"/></svg>Search a part number</a>
+    <a class="btn btn-secondary" href="#parts">Browse parts</a>
+  </div>
+
+  <p class="tile-part">2. Colour roles (all text pairs pass WCAG AA in both modes)</p>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--paper)"></i><b>Paper</b>Page background</div>
+    <div class="sw"><i style="background:var(--sunken)"></i><b>Sunken</b>Tables, fields</div>
+    <div class="sw"><i style="background:var(--ink)"></i><b>Ink</b>Text, rules. 17.4:1</div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>Muted</b>Meta text. 6.8:1</div>
+    <div class="sw"><i style="background:var(--danfo)"></i><b>Danfo</b>Highlight. Fill behind ink only, 11.4:1</div>
+    <div class="sw"><i style="background:var(--ok)"></i><b>OK</b>In stock. 6.2:1</div>
+    <div class="sw"><i style="background:var(--bad)"></i><b>Bad</b>Errors, sold out. 7.3:1</div>
+    <div class="sw"><i style="background:var(--focus)"></i><b>Focus</b>Keyboard ring. 6.0:1</div>
+  </div>
+
+  <p class="tile-part">3. Type scale, tested with real strings</p>
+  <div class="scale">
+    <p style="font:800 var(--t-3xl)/1.05 var(--f-ui);font-variation-settings:'wdth' 80"><small>3xl</small>Denso 1KD-FTV / 1GD-FTV</p>
+    <p style="font:800 var(--t-2xl)/1.1 var(--f-ui);font-variation-settings:'wdth' 85"><small>2xl</small>BMW X3 (2006–2009): EWS4, 2L86D 80 QFP</p>
+    <p style="font:700 var(--t-xl)/1.2 var(--f-ui)"><small>xl</small>Bench and wiring steps</p>
+    <p style="font:400 var(--t-lg)/1.4 var(--f-ui)"><small>lg</small>Ọ̀jọ́ from Ìbàdàn paid ₦<span class="todo">price to confirm</span> for a tokunbo MS43.</p>
+    <p><small>md</small>Unscrew the single 8 mm or 10 mm nut securing the EWS4 module.</p>
+    <p style="font-size:var(--t-sm)"><small>sm</small>Part <code>CEL 61 35-6 980 104-02</code>, OEM <code>Bosch 0 261 209 012</code></p>
+    <p style="font-size:var(--t-xs)"><small>xs</small>Lagos, Nigeria</p>
+  </div>
+
+  <p class="tile-part">4. Search: functional layer</p>
+  <section id="search" class="search" aria-labelledby="search-h">
+    <h2 class="h2" id="search-h">Search</h2>
+    <form role="search" onsubmit="return false">
+      <label for="q">Part number, car or module</label>
+      <div class="search-row">
+        <input id="q" type="search" value="2L86D" autocomplete="off" enterkeyhint="search" aria-describedby="q-hint">
+        <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-search"/></svg>Search</button>
+      </div>
+      <p class="hint" id="q-hint">Try <a href="#">MS43</a>, <a href="#">EWS4</a> or <a href="#">Camry 2016</a>.</p>
+    </form>
+    <div class="results" role="status" aria-live="polite">
+      <p><strong>3 results</strong> for “2L86D”</p>
+      <h3>Database</h3>
+      <ul class="rows">
+        <li><a href="#"><span class="row-title">BMW X3 (2006–2009): EWS4, <mark>2L86D</mark> 80 QFP</span><span class="row-meta"><span class="tag">BENCH</span><span>BMW / X3</span></span><svg class="row-go" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+        <li><a href="#"><span class="row-title">BMW X3 (2003–2008): EWS4</span><span class="row-meta"><span class="tag">BENCH</span><span>Read the <mark>2L86D</mark> in-circuit with AK90 or Tango</span></span><svg class="row-go" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+        <li><a href="#"><span class="row-title">BMW all models (EWS4): <mark>2L86D</mark></span><span class="row-meta"><span>BMW / All models EWS4</span></span><svg class="row-go" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="two" style="margin-top:var(--s-6)">
+      <div class="empty" role="status">
+        <p><strong>Nothing found for “ME17.9.2”.</strong></p>
+        <p>It may not be written up yet. Check the spelling, try the car instead, or ask me directly.</p>
+        <div class="btns"><a class="btn btn-secondary" href="#">See all database entries</a></div>
+      </div>
+      <div class="empty" role="status">
+        <p><strong>Search is not available right now.</strong></p>
+        <p>The search index did not load, usually because the connection dropped. The lists still work: <a href="#">Database</a>, <a href="#">Guides</a>, <a href="#">Parts</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="tile-part">5. Database entry: functional layer</p>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#">Database</a></li><li><a href="#">BMW</a></li><li><a href="#">X3</a></li><li aria-current="page">EWS4</li></ol></nav>
+  <h1 class="h1">BMW X3 (2003–2008): EWS4</h1>
+  <p class="byline">Method <span class="tag">BENCH</span> · Tools: AK90, Tango · Source: book p. 16 <span class="todo">rights to confirm</span></p>
+  <div class="two">
+    <div class="table-frame" tabindex="0" role="region" aria-label="Vehicle and ECU details, scrolls sideways">
+      <table>
+        <caption>Vehicle and ECU</caption>
+        <tr><th scope="row">Brand</th><td>BMW</td></tr>
+        <tr><th scope="row">Model</th><td>X3</td></tr>
+        <tr><th scope="row">Years</th><td>2003–2008</td></tr>
+        <tr><th scope="row">Module</th><td>EWS4</td></tr>
+        <tr><th scope="row">Target device</th><td><code>2L86D</code></td></tr>
+      </table>
+    </div>
+    <div>
+      <h2 class="h3" style="margin-top:0">Bench and wiring steps</h2>
+      <ol class="steps">
+        <li>Remove the lower kick panel on the driver’s side.</li>
+        <li>Locate the EWS4 module on the driver’s side ‘A’ pillar, 6 to 10 inches straight up.</li>
+        <li>Identify the module by its white label with black writing (EWS3 has green text).</li>
+        <li>Unscrew the single 8 mm or 10 mm nut securing the module.</li>
+        <li>Read the <code>2L86D</code> in-circuit using the AK90 reader or Tango programmer.</li>
+      </ol>
+      <div class="note" role="note"><svg aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Safety:</strong> confirm the module first. EWS4 has a white label with black writing; EWS3 has green text.</p></div>
+    </div>
+  </div>
+
+  <p class="tile-part">6. Parts list and product page: functional layer</p>
+  <section id="parts" aria-labelledby="parts-h">
+    <h2 class="h2" id="parts-h">Parts</h2>
+    <div class="cards">
+      <a class="card" href="#">
+        <div class="card-img">Photo <span class="todo">to supply</span></div>
+        <span class="card-title">Siemens MS43 DME, BMW E46 330i (M54B30)</span>
+        <p class="card-fits">Fits E46 330i, 330ci, 330xi, E53 X5 3.0i</p>
+        <p class="card-fits">Refurbished, bench tested</p>
+        <span class="card-foot"><span class="price">Price on request</span><span class="stock ok">In stock</span></span>
+      </a>
+      <a class="card" href="#">
+        <div class="card-img">Photo <span class="todo">to supply</span></div>
+        <span class="card-title">Bosch ME7.5.10 ECU, BMW E46 320i (M54B22)</span>
+        <p class="card-fits">Fits E46 320i, 325i, 325ci</p>
+        <p class="card-fits">Refurbished, bench tested</p>
+        <span class="card-foot"><span class="price">₦ <span class="todo">to confirm</span></span><span class="stock bad">Sold out</span></span>
+      </a>
+    </div>
+
+    <div class="product" style="margin-top:var(--s-7)">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="#">Parts</a></li><li aria-current="page">Siemens MS43 DME</li></ol></nav>
+        <h1 class="h1">Siemens MS43 DME, BMW E46 330i (M54B30)</h1>
+        <p class="standfirst" style="font-size:var(--t-md)">The engine computer for BMW’s 3.0-litre M54B30. This unit was bench tested: injector drivers, ignition coil outputs and EEPROM checked. It must be aligned to your car’s EWS before the engine will start.</p>
+        <div class="card-img">Photo <span class="todo">to supply</span></div>
+      </div>
+      <div class="facts">
+        <dl>
+          <dt>Price</dt><dd><span class="price">₦ <span class="todo">to confirm</span></span></dd>
+          <dt>Condition</dt><dd>Refurbished, bench tested</dd>
+          <dt>Fits</dt><dd><ul><li>BMW E46 330i (2001–2005)</li><li>BMW E46 330ci (2001–2005)</li><li>BMW E46 330xi (2001–2005)</li><li>BMW E53 X5 3.0i (2001–2006)</li></ul></dd>
+          <dt>OEM number</dt><dd><code>Siemens 7 518 111</code></dd>
+          <dt>Connector</dt><dd>88-pin + 40-pin</dd>
+          <dt>Stock</dt><dd><span class="stock ok">1 in stock</span></dd>
+          <dt>EWS alignment</dt><dd><span class="todo">included? to confirm</span></dd>
+          <dt>Warranty</dt><dd><span class="todo">30 days? to confirm</span></dd>
+        </dl>
+        <p style="margin:var(--s-5) 0 var(--s-2)"><a class="btn btn-primary btn-wide" href="#"><svg aria-hidden="true"><use href="#i-chat"/></svg>Ask about this part on WhatsApp</a></p>
+        <p class="byline" style="margin:0">Opens WhatsApp with the part number filled in. Number <span class="todo">to supply</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="tile-part">7. Buttons and states</p>
+  <div class="btns">
+    <a class="btn btn-primary" href="#">Primary</a>
+    <a class="btn btn-secondary" href="#">Secondary</a>
+    <a class="btn" aria-disabled="true" role="link">Sold out</a>
+    <span class="byline">Tab through this page to see the focus ring.</span>
+  </div>
+
+  <p class="tile-part">8. Writing: expressive layer</p>
+  <article id="writing" class="read">
+    <span class="label">Fireside</span>
+    <h1 class="display" style="font-size:clamp(2.25rem,7vw,3.25rem)">What can we remove?</h1>
+    <p class="byline">By <strong>Ubanatu Chinaza Emmanuel</strong> · 30 January 2026 · 1 min read</p>
+    <p class="serif">I grew up knowing that <em>wahala no dey finish</em>: problems never end. Most days, I just try to make one of them smaller.</p>
+    <p class="serif" style="color:var(--muted);font-size:var(--t-sm)">(Sample paragraph from the About page, used to test the reading face.)</p>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul>
+      <li><a href="#">Email <span class="todo">which address?</span></a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">X</a></li>
+      <li><a href="#">Colophon</a></li>
+    </ul>
+    <p>AllTech · Lagos, Nigeria · © 2026 Ubanatu Chinaza Emmanuel</p>
+  </div>
+</footer>
+
+<script>
+  // Tile only: lets the owner compare light and dark. The real site follows the phone's setting first.
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('theme-btn');
+    function isDark() { return root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
+    function label() { btn.setAttribute('aria-label', isDark() ? 'Switch to light mode' : 'Switch to dark mode'); }
+    var q = new URLSearchParams(location.search).get('theme');
+    if (q) root.dataset.theme = q;
+    label();
+    btn.addEventListener('click', function () { root.dataset.theme = isDark() ? 'light' : 'dark'; label(); });
+  })();
+</script>
+</body>
+</html>

@@ -20,3 +20,12 @@ scripts/
 run_extractions.sh
 Obsidian_Admin_Guide.md
 pin out/
+
+# Owner's source material in the project root: reference pages saved from
+# another person's site, flyers and adverts. Processed copies live in static/.
+/*.html
+/*.jpeg
+/WhatsApp Image*
+
+# Audit screenshots are large; they stay local
+docs/audit/screenshots/
