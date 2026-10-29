@@ -38,15 +38,15 @@ Kept from the first pass; the current structure is described in `README.md`.
 | Colour (T12) | 3 → 0 | 2 → 0 | 2 → 0 | 2 → 0 | 2 → 0 | 2 → 0 | n/a |
 | Components (T3, T15) | 2 → 0 | 3 → 0 | 1 → 0 | 2 → 0 | 1 → 0 | 1 → 0 | 2 → 0 |
 | Navigation (U5) | 2 → 0 | 2 → 0 | 2 → 0 | 3 → 0 | 1 → 0 | 2 → 0 | n/a |
-| Code (T1, T6, T8) | n/a | n/a | n/a | n/a | n/a | n/a | 2 → 1 |
+| Code (T1, T6, T8) | n/a | n/a | n/a | n/a | n/a | n/a | 2 → 0 |
 | Domain fit (T5) | 2 → 0 | 3 → 0 | 1 → 0 | 3 → 0 | 0 → 0 | 0 → 0 | n/a |
 | Robustness (T4, U1) | 1 → 0 | 2 → 0 | 1 → 0 | 2 → 0 | 1 → 0 | 0 → 0 | 1 → 0 |
 | Performance (W1) | 3 → 0 | 3 → 0 | 3 → 0 | 3 → 0 | 3 → 0 | 3 → 0 | n/a |
 | Accessibility (U3) | 3 → 0 | 2 → 0 | 2 → 0 | 2 → 0 | 2 → 0 | 2 → 0 | n/a |
 | Security (U2) | 0 → 0 | 0 → 0 | 0 → 0 | 0 → 0 | 0 → 0 | 0 → 0 | 3 → 1 |
 
-Why two scores stay at 1:
-- **Code, 1:** the hello-friend-ng theme is still vendored in `themes/`. Its CSS and JS no longer load, but Hugo still uses it for a few fallback templates and copies its static files (old theme favicons, Inter fonts) into the build. Removing it is safe but touches the build, so it is a proposal (section 11).
+Why one score stays at 1:
+- **Code:** now 0; the theme is removed (P-07).
 - **Security, 1:** the locked-writing code passes 15 local checks but has not yet run on Vercel, and the old password is still in git history (it is no longer used by anything).
 
 Measured (`baseline/lighthouse-final.md`): performance 93 to 100, accessibility 100, best practices 100, SEO 100 on all nine page types; weight 148 to 331 KB (was 4,384 to 7,429 KB). Sweep of all 124 pages at 375 and 640 px (200% zoom): no sideways scrolling, no script errors, one `<main>` and one `<h1>` each. No broken internal links (2,630 checked). No banned phrases in the built text. No emoji.
@@ -63,12 +63,12 @@ No packages. Hugo (local 0.154.5, Vercel pins 0.151.1). Self-hosted SIL OFL font
 
 Locked text appears only in its own two pages, which middleware.js guards; it is in no feed, tag feed, search index or sitemap (checked by phrase search across the whole build). The password hash and its plain-text comment are gone from hugo.toml.
 
-## 11. Proposals awaiting approval
+## 11. Proposals (all approved by the owner, 2026-10-29)
 
-- **P-07 Remove the vendored theme.** Replace the last fallback templates (taxonomy feeds already use ours), drop `theme = "hello-friend-ng"`, delete `themes/`. Removes stray files from every build. Risk: low; check with a full route diff.
-- **P-08 Own domain.** `mind-on-chain.vercel.app` carries the old name on every flyer. A domain like alltechsolutions.ng would need buying, DNS on Vercel, and a redirect from the old address.
-- **P-09 Delete unused large files** after you confirm: `static/images/Avatar.png` (2.9 MB, replaced by a 13 KB copy), `static/docs/sample-manual.pdf` (not linked anywhere).
-- **P-10 Independent review.** Hand the Phase 10 checklists to a fresh reviewer who hasn't seen the work (skill rule A11). This review was done by the same agent that made the changes.
+- **P-07 Remove the vendored theme.** DONE. Same 207 pages and the same HTML, feed and JSON files; 547 unused static files gone (534 flag icons, 12 fonts, 1 stylesheet); build 13 MB to 5.3 MB.
+- **P-08 Own domain.** PREPARED. The address now comes from the Vercel variable `SITE_URL` (build command in `vercel.json`, flyers in `tools/marketing.py`); tested with a sample domain. Buying the domain and the DNS steps are the owner's (ADMIN_GUIDE section 6).
+- **P-09 Delete unused large files.** DONE. `Avatar.png` (2.9 MB) and `sample-manual.pdf` removed after a reference check; build 2.4 MB.
+- **P-10 Independent review.** See section 18.
 
 ## 12. Change log (plain language)
 

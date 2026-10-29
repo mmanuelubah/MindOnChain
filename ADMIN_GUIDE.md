@@ -254,6 +254,16 @@ The full system is in `docs/audit/DESIGN_SYSTEM.md`. When writing content:
 
 ---
 
+## 6. Moving to your own domain
+
+The site's address comes from one Vercel setting, `SITE_URL`. Until it is set, the site uses mind-on-chain.vercel.app.
+
+1. Buy the domain from a registrar (for a `.ng` or `.com.ng` name, an NiRA-accredited registrar). A distinctive name such as alltechsolutions.ng is safer than a bare "alltech", which a large international company also uses.
+2. In Vercel: Project → Settings → **Domains** → Add, type the domain, and follow the DNS records Vercel shows you (you enter them at the registrar).
+3. Still in Domains, edit `mind-on-chain.vercel.app` and set it to **redirect** to the new domain, so old links and flyers keep working.
+4. Project → Settings → Environment Variables: add `SITE_URL` = `https://yourdomain/` (with the final slash), then redeploy.
+5. Regenerate the flyers with the new address: `SITE_URL=https://yourdomain/ python3 tools/marketing.py`, then `node tools/render_marketing.cjs`.
+
 ## Summary
 
 1. Insert the right Obsidian template and save the note in its folder (section 2).

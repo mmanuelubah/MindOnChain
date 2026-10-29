@@ -8,6 +8,7 @@ Every claim on these artboards comes from the site or the owner: services from t
 original Alltech flyer, the Ladipo sourcing steps, price on request, no warranty.
 Contact details are read from hugo.toml so they match the website.
 """
+import os
 import pathlib
 import re
 import tomllib
@@ -16,7 +17,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 cfg = tomllib.loads((ROOT / "hugo.toml").read_text())
 contact = cfg["params"]["contact"]
 WA, EMAIL = contact["whatsappDisplay"], contact["email"]
-SITE = cfg["baseURL"].replace("https://", "").rstrip("/")
+# SITE_URL (the same Vercel setting the build uses) wins, so flyers follow a domain change.
+SITE = os.environ.get("SITE_URL", cfg["baseURL"]).replace("https://", "").rstrip("/")
 
 scope = (ROOT / "layouts/partials/can-scope.html").read_text()
 scope_svg = re.search(r"<svg class=\"scope-art\".*?</svg>", scope, re.S).group(0)

@@ -1,7 +1,7 @@
 {
   "framework": "hugo",
   "installCommand": "hugo version",
-  "buildCommand": "hugo --gc --minify",
+  "buildCommand": "hugo --gc --minify ${SITE_URL:+--baseURL \"$SITE_URL\"}",
   "outputDirectory": "public",
   "env": {
     "HUGO_VERSION": "0.151.1"

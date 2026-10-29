@@ -18,7 +18,7 @@ The preview does not run `middleware.js` or `api/`, so locked pages open without
 
 ## Deploy
 
-Vercel builds the `main` branch with the settings in `vercel.json`. Locked writing needs two environment variables in Vercel (Settings → Environment Variables): `ACCESS_SECRET` (random, 32+ characters) and `RESEND_API_KEY`. `ADMIN_GUIDE.md` section 3 walks through it.
+Vercel builds the `main` branch with the settings in `vercel.json`. The address comes from the `SITE_URL` variable when it is set (see ADMIN_GUIDE section 6), otherwise from `baseURL` in `hugo.toml`. Locked writing needs two environment variables in Vercel (Settings → Environment Variables): `ACCESS_SECRET` (random, 32+ characters) and `RESEND_API_KEY`. `ADMIN_GUIDE.md` section 3 walks through it.
 
 ## Where things are
 
@@ -30,7 +30,6 @@ Vercel builds the `main` branch with the settings in `vercel.json`. Locked writi
 | `static/js/` | `site.js` (menu, NEPA bulb), `search.js`, `post-filter.js`, `locked.js`, `access-session.js`. |
 | `middleware.js`, `api/` | Locked writing: Vercel checks the access session before serving a locked page. |
 | `tools/` | `can_scope.py` draws the home page oscilloscope; `test_access.mjs` tests locked writing; `marketing.py` and `render_marketing.cjs` build the flyers, carousels and logo set in `marketing/`. |
-| `themes/hello-friend-ng/` | The original theme (MIT). Kept for fallback templates; its CSS and JS are no longer loaded. |
 | `docs/audit/` | The audit of this site: findings, decisions, design system, before and after numbers. |
 
 ## Checks
