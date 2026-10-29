@@ -29,3 +29,6 @@ pin out/
 
 # Audit screenshots are large; they stay local
 docs/audit/screenshots/
+
+# Python bytecode
+__pycache__/

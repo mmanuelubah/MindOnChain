@@ -28,7 +28,6 @@ AllTech is the main site; blog byline Ubanatu Chinaza Emmanuel; Vox-style design
 | 2 Tells, 3 Modules | 48 findings in FINDINGS.csv (5 critical). |
 | 4 Scores and report | AUDIT_MASTER.md sections 6 to 17. |
 | 5 Design and voice direction | DESIGN_SYSTEM.md, style-tile.html (Lighthouse accessibility 100, no overflow at 375/768/1280), COPY_REVIEW.csv (26 rows), ASSET_CREDITS.md. |
-
 | Gate 2 | Owner answers recorded in PROJECT_PROFILE.md. Later in the session the owner changed the direction to green (MyEasyAgents colours), cartoonish, cyberpunk pixel art, with a CAN oscilloscope on the home page. |
 | Security | Client-side gate removed; private guides behind Vercel Routing Middleware (`middleware.js`, env `GUIDES_PASSWORD`); excluded from lists, feeds, search, sitemap. Password hash and plain-text comment removed from hugo.toml. Middleware not testable locally: UNVERIFIED until a Vercel preview. |
 | Content | Two sample products set to draft (owner: not real stock). |
@@ -41,15 +40,12 @@ Wait for Gate 3 approval of the home page. Then Phase 8 rollout in this order: P
 
 ## Open questions for the owner
 
-1. Approve, change or reject the direction (danfo yellow + ink, Archivo + Source Serif 4, square corners, no shadows).
-2. Trading name: "AllTech" or "Alltech Solutions"?
-3. Buyer contact: WhatsApp number? Real email address?
-4. Shop: are the two products real stock? Currency, and show prices or "Price on request"? Are the 30-day warranty and included EWS alignment real?
-5. Home: may `/` become the AllTech landing page (all other URLs unchanged)?
-6. Search: built-in (recommended, no new tool) or Pagefind?
-7. Password gate: make the two guides public, remove them, or move to real access control? Change the password either way.
-8. Rights to the manuals the database cites; licence of the mechanic hero photo.
-9. Build the "Up NEPA!" bulb toggle, or drop it from the colophon?
+1. Gate 3: approve the green home page (or say what to change) before the rollout to the other pages.
+2. Set `GUIDES_PASSWORD` on Vercel, then open a private guide on a preview deployment to confirm the password box appears.
+3. A vector master of the logo (SVG, AI or PDF) for one-colour logotypes, monograms and the LinkedIn carousels.
+4. Licence of the car photo inside flyer 1.jpeg (used as the halftone car).
+5. Which email the site should show: the About link used ubahchinaza@gmail.com; the flyers show ubanatuchinaza@gmail.com. The site uses the first until told otherwise.
+6. Immobiliser alignment is listed as a service on the home page (from the database work, not the flyer). Confirm or remove.
 
 ## Blocked items
 
