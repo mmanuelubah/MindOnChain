@@ -1,8 +1,6 @@
-# 📘 MindOnChain Comprehensive Admin & Operations Guide
+# Alltech Solutions admin guide
 
-Welcome to your comprehensive manual for managing the **MindOnChain** platform, the **AllTech Locksmith Database**, and the **Concierge** service manually using **Obsidian**.
-
-This guide ensures that you will always be able to create new posts, update the database, manage access, and link your files seamlessly, maintaining the site's mature, professional, and emoji-free design language.
+How to run the site from Obsidian: write blog posts and weekly roundups, add database entries and parts, lock ECU writing, and link images. The site is Alltech Solutions (home page) with a blog by Ubanatu Chinaza Emmanuel.
 
 ---
 
@@ -12,7 +10,7 @@ Obsidian has a built-in feature called **Templates**. Templates allow you to ins
 
 ### How to Enable Templates in Obsidian
 
-1. Open your MindOnChain folder in Obsidian.
+1. Open this project folder in Obsidian.
 2. Click the **Gear icon (Settings)** in the bottom left corner.
 3. Go to **Core Plugins** and make sure **Templates** is toggled ON.
 4. Create a folder in your Obsidian vault called `Obsidian_Templates` (or just `Templates`).
@@ -103,30 +101,40 @@ ecu: "ECU Part Number"
 ---
 
 ## Pinout Diagram
-![Pinout Diagram](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)
+![Pinout diagram for ECU Part Number](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)
 ```
 
-#### Template 4: `TPL - Concierge Item`
+If you have no pinout image yet, delete the whole "Pinout Diagram" section rather than leaving a note that it is coming.
 
-Use this when you are listing a new engine, ECU, or part from Ladipo Market.
+#### Template 4: `TPL - Part for sale`
+
+Use this when you list a real ECU, module or engine you have in hand. Never list a part you don't have, and never use a stock photo.
 
 ```markdown
 ---
 title: "{{title}}"
 date: {{date}}
 draft: false
-ref_code: "LAD-XXX-001"
-category: "engine" # options: engine, ecu, module, other
-condition: "tokunbo" # options: tokunbo, new, refurbished
+price: ""            # for your records; the page always shows "Price on request"
+sku: ""
+oem_number: ""
+in_stock: true
+stock_count: 1
+condition: "Tokunbo, bench tested"
 compatibility:
-  - "Car Make and Model 1"
-  - "Car Make and Model 2"
+  - "Make Model (years)"
+specs:
+  Connector: ""
 images:
   - "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
 ---
 
-Write a description of the part here...
+What the part is and what was tested, in plain words. No warranty promises.
 ```
+
+#### Template 5: weekly roundup
+
+`Templates/weekly-roundup-template.md`. The `weekly-roundup` tag puts it on the blog's Roundups page and in "Latest roundup" on the blog home.
 
 ---
 
@@ -135,13 +143,15 @@ Write a description of the part here...
 When you need to make a new post manually, follow these simple steps:
 
 1. In Obsidian, navigate to the correct folder where the post should live:
-   - **Blog Posts & Guides:** `content/posts/`
-   - **ECU Database:** `content/alltech/database/BrandName/ModelName/`
-   - **Concierge:** `content/alltech/concierge/`
+   - **Blog posts and weekly roundups:** `content/posts/`
+   - **Locked ECU programming writing:** `content/blog/locked/`
+   - **ECU database:** `content/alltech/database/BrandName/ModelName/`
+   - **Parts for sale:** `content/alltech/shop/`
+   - **Books:** `content/books/`
 2. Create a new Note (`Ctrl+N` or `Cmd+N`) inside that folder.
 3. Give the note a clear title (e.g., `toyota-camry-2gr-fe.md`).
 4. Press `Ctrl+P` (or `Cmd+P`) to open the Command Palette, type **"Insert Template"**, and press Enter.
-5. Select the appropriate Template (Blog, Private Guide, Database, or Concierge).
+5. Select the matching template (blog post, locked ECU post, database entry, part, roundup or book).
 6. Fill in the specific details and hit save!
 
 ---
@@ -182,18 +192,13 @@ After setup, on the live site: open a locked post in a private browser window, r
 
 ---
 
-## 4. Linking Images (Pinterest, Google Drive) and PDFs
+## 4. Linking images and PDFs
 
-To keep the website incredibly fast and save storage, **all images and PDFs should be hosted externally** (e.g., on Pinterest, Google Drive, or other web sources).
+Large images and PDFs are hosted on Google Drive rather than in the repository, so the site stays small and pages load fast on mobile data.
 
-### Option A: Using Images from Pinterest (or any website)
+### Option A: Your own photos only
 
-You can easily use images found on Pinterest as your cover photo or within the body of your article.
-
-1. Open the Pinterest image you want to use in your browser.
-2. **Right-click** on the image itself.
-3. Select **"Copy Image Address"** (or "Copy Image Link").
-   *(The copied link should look something like: `https://i.pinimg.com/originals/.../....jpg`)*
+Use photos you took (workshop jobs, labels, pinouts) or images you have permission to use. Images copied from Pinterest or other sites belong to someone else; linking them from your pages can lead to takedowns or broken images when the original is removed. Host your photos on Google Drive (Option B).
 
 ### Option B: Hosting Files on Your Google Drive
 
@@ -219,55 +224,39 @@ Hugo needs a direct download link. Take the **FILE ID** from the link above (e.g
 
 ### How to Add the Image/File Link to Your Obsidian Post
 
-Once you have your direct link (either the `.jpg` link from Pinterest or the formatted Google Drive link):
+Once you have your direct Google Drive link:
 
 - **For a Cover Image (in the Frontmatter):** Paste the link inside the quotes for `cover:` or `images:` at the very top of your file.
 
   ```yaml
-  cover: "https://i.pinimg.com/originals/example-image.jpg"
+  cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
   ```
 
 - **For an Image inside the text:** Use standard Markdown syntax wherever you want the image to appear.
 
   ```markdown
-  ![Image Description](https://i.pinimg.com/originals/example-image.jpg)
+  ![What the photo shows, e.g. EWS4 module behind the kick panel](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)
   ```
 
 - **For a PDF Download Link:** `[Click Here to Download PDF](https://drive.google.com/uc?export=download&id=YOUR_FILE_ID)`
 
 ---
 
-## 5. Design & Operation Guidelines (Recent Features)
+## 5. Design rules to keep
 
-To maintain the sophisticated, mature design identity of MindOnChain, adhere to the following rules when creating content:
+The full system is in `docs/audit/DESIGN_SYSTEM.md`. When writing content:
 
-### 1. The Zero-Emoji Policy
-
-Emojis are strictly banned from all content, titles, and layout elements to ensure maximum professionalism.
-
-- Do not use emojis in your Obsidian templates or markdown files (removed from the templates above).
-- If you need to indicate a status, use text brackets. For example, use `[Private]` or `[Locked]` instead of 🔒, and `[Buyer Only]` instead of 🛒.
-
-### 2. Compact List Views
-
-The site uses highly efficient, compact list designs (grouping by year and date) to maximize information density.
-
-- You do not need to worry about styling post cards; just ensure your `title`, `date`, and `tags` are correct in the frontmatter, and Hugo will automatically render them elegantly without taking up too much screen space.
-
-### 3. Theme Variables
-
-If you ever need to write custom HTML/CSS inside a post, always use the site's theme variables for colors to ensure perfect contrast in both Light and Dark modes.
-
-- Primary Accent: `var(--color-accent-primary)`
-- Text color: `var(--color-text-primary)`
-- Background: `var(--color-bg-primary)`
-- Borders: `var(--color-border)`
+- **No emoji.** Use words: "Locked", "Sold out", "In stock".
+- **Part numbers in backticks** (`` `0 261 209 012` ``) so they show in monospace; the pixel font makes B/8, 5/S and 0/O look alike.
+- **Only true claims.** No prices (the site says "Price on request"), no warranty, no delivery promises beyond "ask about delivery".
+- **One name per thing:** Alltech Solutions, MYEASYAGENT, Ubanatu Chinaza Emmanuel.
+- If you write custom HTML in a post, use the colour tokens: `var(--ink)` text, `var(--paper)` background, `var(--brand)` green, `var(--hair)` lines.
 
 ---
 
-## Summary of Maintenance
+## Summary
 
-1. You use **Obsidian Templates** to instantly load the correct formatting for any new feature or section.
-2. You save your files directly into the respective `content/` folders.
-3. You use **Direct Image Links** (Pinterest, Google Drive, etc.) to display all visual media.
-4. You adhere to the **Zero-Emoji Policy** and let the automated Hugo layouts handle the mature styling.
+1. Insert the right Obsidian template and save the note in its folder (section 2).
+2. Link images from Google Drive or your own photos (section 4).
+3. Lock sensitive ECU writing by saving it in `content/blog/locked/` (section 3).
+4. Keep claims true and part numbers in backticks (section 5).
