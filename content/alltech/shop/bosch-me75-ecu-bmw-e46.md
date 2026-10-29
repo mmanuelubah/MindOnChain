@@ -1,7 +1,7 @@
 ---
 title: "Bosch ME7.5.10 ECU — BMW E46 320i (M54B22)"
 date: 2026-01-15
-draft: false
+draft: true  # sample listing, not real stock (owner, 2026-10-29)
 price: 485.00
 sku: "MOC-ECU-7527249"
 oem_number: "Bosch 0 261 209 012"

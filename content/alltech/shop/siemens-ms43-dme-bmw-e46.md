@@ -1,7 +1,7 @@
 ---
 title: "Siemens MS43 DME — BMW E46 330i (M54B30)"
 date: 2026-02-20
-draft: false
+draft: true  # sample listing, not real stock (owner, 2026-10-29)
 price: 525.00
 sku: "MOC-DME-7518111"
 oem_number: "Siemens 7 518 111"
