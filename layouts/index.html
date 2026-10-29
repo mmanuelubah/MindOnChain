@@ -3,45 +3,26 @@
 {{- $db := site.GetPage "/alltech/database" -}}
 {{- $c := site.Params.contact -}}
 
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero screen" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div>
       <span class="sticker">{{ .Params.hero_label }}</span>
-      <h1 class="display" id="hero-title">{{ .Params.hero_title }}</h1>
+      <h1 class="display" id="hero-title">{{ .Params.hero_title | markdownify }}</h1>
       <p class="standfirst">{{ .Params.hero_intro }}</p>
-      <form class="search-form hero-search" role="search" action="{{ "/search/" | relURL }}" method="get">
-        <label for="home-q">Search the database by part number, car or module</label>
-        <div class="search-row">
-          <input id="home-q" name="q" type="search" placeholder="e.g. 2L86D, MS43, Camry 2016" autocomplete="off" enterkeyhint="search">
-          <button class="btn btn--primary" type="submit">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            Search
-          </button>
-        </div>
-      </form>
     </div>
-
-    <div class="hero-art">
-      <svg class="scene" viewBox="0 0 480 320" role="img" aria-labelledby="scene-t">
-        <title id="scene-t">A yellow Lagos danfo bus carrying a box marked ECU on its roof rack</title>
-        <g stroke="#141414" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
-          <path fill="#FAF8F3" d="M240 36l26 40 46-22-6 50 50 6-36 34 38 34-50 6 8 50-46-22-26 42-26-42-46 22 8-50-50-6 38-34-36-34 50-6-6-50 46 22z"/>
-          <path fill="none" d="M24 214h40M14 236h56M30 258h34"/>
-          <rect fill="#FAF8F3" x="200" y="76" width="70" height="40"/>
-          <path fill="none" d="M200 92h70"/>
-          <text x="235" y="111" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="18" fill="#141414" stroke="none">ECU</text>
-          <path fill="none" d="M120 120v-8h250v8"/>
-          <path fill="#FFC20E" d="M96 124h292c18 0 30 16 36 40l10 46v34c0 6-4 10-10 10H96c-8 0-14-6-14-14v-102c0-8 6-14 14-14z"/>
-          <path fill="#141414" stroke="none" d="M85 200h346v10H85zM85 220h348v8H85z"/>
-          <path fill="#FAF8F3" d="M104 140h56v40h-56zM172 140h56v40h-56zM240 140h56v40h-56zM308 140h52v40h-52zM372 140h20c8 0 14 6 18 16l8 24h-46z"/>
-          <path fill="#FAF8F3" d="M418 222h18v14h-18z"/>
-          <circle fill="#141414" cx="150" cy="256" r="32"/><circle fill="#FAF8F3" cx="150" cy="256" r="12"/>
-          <circle fill="#141414" cx="360" cy="256" r="32"/><circle fill="#FAF8F3" cx="360" cy="256" r="12"/>
-          <path fill="none" d="M40 290h420"/>
-        </g>
-      </svg>
-      <p class="bubble" aria-hidden="true">Ladipo! Ladipo!</p>
-    </div>
+    <form class="search-form hero-search" role="search" action="{{ "/search/" | relURL }}" method="get">
+      <label for="home-q">Search the database by part number, car or module</label>
+      <div class="search-row">
+        <input id="home-q" name="q" type="search" placeholder="e.g. 2L86D, MS43, Camry 2016" autocomplete="off" enterkeyhint="search">
+        <button class="btn btn--primary" type="submit">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="wrap hero-scope">
+    {{ partial "can-scope.html" . }}
   </div>
 </section>
 
@@ -96,7 +77,8 @@
   {{ end }}
 
   <section class="section" aria-labelledby="parts-h">
-    <div class="sourcing">
+    <div class="sourcing screen">
+      <p class="bubble" aria-hidden="true">Ladipo! Ladipo!</p>
       <img class="sourcing-art" src="{{ "images/bg/car-halftone.webp" | relURL }}" width="1400" height="415" alt="" loading="lazy">
       <div class="sourcing-body">
         <div>

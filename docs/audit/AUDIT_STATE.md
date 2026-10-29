@@ -7,8 +7,8 @@ Read this first at the start of every session and resume from **Next step**.
 - **Branch:** `audit/human-grade-2026-10-29` (local only, not pushed)
 - **Safety tag:** `pre-audit-2026-10-29` (points at `d03c278`, the last commit on `main` before the audit)
 - **Return to the starting point:** `git switch main` (main is untouched by the audit). To inspect the exact pre-audit state: `git checkout pre-audit-2026-10-29`.
-- **Current phase:** 5 complete, waiting at **Gate 2**
-- **Product files changed:** none. Audit files in `docs/audit/` are untracked (not committed).
+- **Current phase:** 7 complete, waiting at **Gate 3**
+- **Restore points:** `pre-audit-2026-10-29` (original site), `alltech-yellow-2026-10-29` (yellow version of the new home).
 
 ## Owner direction received (2026-10-29)
 
@@ -29,9 +29,15 @@ AllTech is the main site; blog byline Ubanatu Chinaza Emmanuel; Vox-style design
 | 4 Scores and report | AUDIT_MASTER.md sections 6 to 17. |
 | 5 Design and voice direction | DESIGN_SYSTEM.md, style-tile.html (Lighthouse accessibility 100, no overflow at 375/768/1280), COPY_REVIEW.csv (26 rows), ASSET_CREDITS.md. |
 
+| Gate 2 | Owner answers recorded in PROJECT_PROFILE.md. Later in the session the owner changed the direction to green (MyEasyAgents colours), cartoonish, cyberpunk pixel art, with a CAN oscilloscope on the home page. |
+| Security | Client-side gate removed; private guides behind Vercel Routing Middleware (`middleware.js`, env `GUIDES_PASSWORD`); excluded from lists, feeds, search, sitemap. Password hash and plain-text comment removed from hugo.toml. Middleware not testable locally: UNVERIFIED until a Vercel preview. |
+| Content | Two sample products set to draft (owner: not real stock). |
+| 6 Foundation | One stylesheet `assets/css/alltech.css`, own baseof/head/header/footer, fonts self-hosted, green logo and favicons, old CSS and favicon photo deleted. |
+| 7 Reference screen | Home rebuilt (green, pixel type, CAN scope from tools/can_scope.py), search page, NEPA bulb. Lighthouse in baseline/lighthouse-after-phase7.md. |
+
 ## Next step
 
-Wait for Gate 2 answers. Then Phase 6: one token file (`static/css/alltech.css`), fonts self-hosted, favicon replaced; build and compare screenshots; commit in small steps on the audit branch.
+Wait for Gate 3 approval of the home page. Then Phase 8 rollout in this order: Parts (shop list + product template with "Price on request", no warranty), AllTech hub (remove mechanic photo and slogans), Database lists and entries (breadcrumbs, emoji out, tables, hide pinout placeholder), Guides, Writing (posts list with title filter, post template with byline), Books (fix "Untitled" Deep Work note), About (optimise avatar), Colophon (fonts and bulb text), tags, 404. Then delete the temporary aliases block in alltech.css and the old shop/alltech templates.
 
 ## Open questions for the owner
 

@@ -47,7 +47,7 @@ The rest of your post content goes here. The `<!--more-->` tag ensures the excer
 
 #### Template 2: `TPL - Gated Guide / Private Post`
 
-Use this to create password-protected guides or VIP blog posts.
+Use this for a guide that only people with the password may read. See section 3: the page must also be added to `middleware.js`.
 
 ```markdown
 ---
@@ -55,7 +55,10 @@ title: "{{title}}"
 date: {{date}}
 draft: true
 private: true
-password_id: "default"
+build:
+  list: never
+sitemap:
+  disable: true
 cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
 categories: ["Guides"]
 tags: []
@@ -63,7 +66,7 @@ tags: []
 
 # Introduction
 
-This content will be hidden behind the elegant password gate! Write the guide content here...
+Write the guide here. It is only protected once its address is in middleware.js.
 ```
 
 #### Template 3: `TPL - ECU Database`
@@ -151,40 +154,36 @@ When you need to make a new post manually, follow these simple steps:
 
 ---
 
-## 3. How to Set and Change Passwords
+## 3. Private guides and the password
 
-The passwords for gated content are managed centrally in your `hugo.toml` configuration file. The actual password text is **never** stored; instead, a secure SHA-256 hash of the password is saved.
+Private guides are protected by Vercel, on the server. A visitor without the password never receives the page. (The old in-page gate sent the whole guide to every visitor and only hid it; anyone could read it.)
 
-### To change the password
+### Make a guide private
 
-1. Open `hugo.toml` in your editor.
-2. Scroll down to the `[params.passwords]` section. You will see:
+1. In the guide's front matter add:
 
-   ```toml
-   [params.passwords]
-   default = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92" # Example hash
+   ```yaml
+   private: true
+   build:
+     list: never
+   sitemap:
+     disable: true
    ```
 
-3. Generate a new SHA-256 hash for your new password in your terminal:
+   This keeps it out of lists, feeds, tag pages, search and the sitemap.
+2. Open `middleware.js` in the project root and add the guide's address to the `matcher` list, for example `"/alltech/database/guides/my-new-guide/:path*"`. Vercel cannot read Hugo files, so this list must be written out by hand.
 
-   ```bash
-   echo -n "MyNewPassword123" | sha256sum
-   ```
+### Set or change the password
 
-   *(Alternatively, use any free online SHA-256 hash generator).*
-4. Replace the old hash string in `hugo.toml` with the new hash.
+1. Go to vercel.com, open the project, then **Settings → Environment Variables**.
+2. Add (or edit) a variable named `GUIDES_PASSWORD`. Its value is the password. Choose a long phrase, not a single word.
+3. Redeploy (Deployments → the latest → Redeploy) so the new value takes effect.
 
-### To create multiple different passwords
+The password is never written in the repository. If `GUIDES_PASSWORD` is missing, private guides show "not available" to everyone, including you.
 
-If you want different guides to have different passwords, you can add more keys to `hugo.toml`:
+### Opening a private guide
 
-```toml
-[params.passwords]
-default = "<hash1>"
-vip_access = "<hash2>"
-```
-
-Then, in the front matter of your post, specify which password to use: `password_id: "vip_access"`.
+The browser shows its own sign-in box. Type anything as the username and the password as the password.
 
 ---
 
