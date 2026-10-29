@@ -45,28 +45,20 @@ featured: false # Set to true to pin it as an "Editor's Pick" on the homepage
 The rest of your post content goes here. The `<!--more-->` tag ensures the excerpt on the homepage looks clean.
 ```
 
-#### Template 2: `TPL - Gated Guide / Private Post`
+#### Template 2: `TPL - Locked ECU Post`
 
-Use this for a guide that only people with the password may read. See section 3: the page must also be added to `middleware.js`.
+For ECU programming writing that only approved readers may see. Save it in `content/blog/locked/`. See section 3.
 
 ```markdown
 ---
 title: "{{title}}"
 date: {{date}}
-draft: true
-private: true
-build:
-  list: never
-sitemap:
-  disable: true
-cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
-categories: ["Guides"]
-tags: []
+draft: false
+description: "One line on what this note covers (shown nowhere while locked)."
+tags: ["ecu-programming"]
 ---
 
-# Introduction
-
-Write the guide here. It is only protected once its address is in middleware.js.
+Write the procedure here. Everything in content/blog/locked/ is locked automatically.
 ```
 
 #### Template 3: `TPL - ECU Database`
@@ -154,36 +146,39 @@ When you need to make a new post manually, follow these simple steps:
 
 ---
 
-## 3. Private guides and the password
+## 3. Locked ECU programming writing
 
-Private guides are protected by Vercel, on the server. A visitor without the password never receives the page. (The old in-page gate sent the whole guide to every visitor and only hid it; anyone could read it.)
+Locked writing can only be read with an access code that you approve. Every request gets its own code, a code works once on the device that asked, and access locks again after an hour away from the page. The check runs on Vercel's servers, so a locked page never reaches a browser without a code.
 
-### Make a guide private
+### How a reader gets in
 
-1. In the guide's front matter add:
+1. They open a locked post and land on a page that says "This writing is locked".
+2. They enter their name, email and (optionally) why they need it, and press **Send request**.
+3. You get an email at **ubanatuchinaza@gmail.com**: "Access request: … wants to read …". Only this address ever receives requests.
+4. Press **Review and approve**, check who it is, then press **Approve and show the code**. To refuse, do nothing.
+5. Send them the 8-character code (the page has a button that opens an email to them with the code filled in, or copy it into WhatsApp).
+6. They type the code on the locked page and the post opens. If they leave the page for an hour, it locks and they must ask again.
 
-   ```yaml
-   private: true
-   build:
-     list: never
-   sitemap:
-     disable: true
-   ```
+### One-time setup (about 10 minutes)
 
-   This keeps it out of lists, feeds, tag pages, search and the sitemap.
-2. Open `middleware.js` in the project root and add the guide's address to the `matcher` list, for example `"/alltech/database/guides/my-new-guide/:path*"`. Vercel cannot read Hugo files, so this list must be written out by hand.
+1. **Resend** sends the approval emails. Go to resend.com, sign up **with ubanatuchinaza@gmail.com** (the free plan is enough), open **API Keys**, create a key and copy it.
+2. **Vercel**: open the project, then **Settings → Environment Variables**, and add:
+   - `RESEND_API_KEY` = the key from Resend.
+   - `ACCESS_SECRET` = a long random secret. Make one in a terminal with `openssl rand -base64 48` (this only prints a random string; it changes nothing). Keep it private. Changing it later logs everyone out and voids all open requests.
+3. Redeploy (Deployments → latest → Redeploy).
+4. If you added `GUIDES_PASSWORD` earlier, delete it; nothing uses it any more.
 
-### Set or change the password
+Until `ACCESS_SECRET` is set, every locked page stays locked for everyone, including you.
 
-1. Go to vercel.com, open the project, then **Settings → Environment Variables**.
-2. Add (or edit) a variable named `GUIDES_PASSWORD`. Its value is the password. Choose a long phrase, not a single word.
-3. Redeploy (Deployments → the latest → Redeploy) so the new value takes effect.
+### Write a locked post
 
-The password is never written in the repository. If `GUIDES_PASSWORD` is missing, private guides show "not available" to everyone, including you.
+Save it in `content/blog/locked/` (Obsidian template: `Templates/locked-ecu-post-template.md`). Everything in that folder is locked, tagged `ecu-programming`, listed by title only in the blog, and kept out of feeds, search and the sitemap.
 
-### Opening a private guide
+The two older locked guides in the database (`me75-full-flash-bdm`, `bosch-me75-manual`) are locked by their addresses in `middleware.js`. To lock another database page, add `private: true` to it and its address to that list.
 
-The browser shows its own sign-in box. Type anything as the username and the password as the password.
+### Check it works
+
+After setup, on the live site: open a locked post in a private browser window, request access with another email address, approve it from your Gmail, and enter the code. Then close the tab for an hour and reopen it: it should be locked.
 
 ---
 

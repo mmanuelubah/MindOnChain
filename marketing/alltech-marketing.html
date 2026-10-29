@@ -1,0 +1,171 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><title>Alltech marketing artboards</title><style>
+@font-face { font-family: "Archivo"; font-weight: 400 800; font-stretch: 75% 100%; src: url("../static/fonts/archivo-normal-latin.woff2"); }
+@font-face { font-family: "Pixelify Sans"; font-weight: 400 700; src: url("../static/fonts/pixelify-sans-latin.woff2"); }
+* { box-sizing: border-box; }
+body { margin: 0; background: #333; display: grid; gap: 40px; padding: 40px; justify-content: center; font-family: "Archivo", sans-serif; }
+.board { position: relative; overflow: hidden; background: #0B1510; color: #E2F5E9; padding: 72px;
+  background-image: repeating-linear-gradient(0deg, rgb(57 255 136 / .04) 0 2px, transparent 2px 8px), radial-gradient(rgb(57 255 136 / .12) 2px, transparent 2.6px);
+  background-size: auto, 24px 24px; display: flex; flex-direction: column; }
+.sq { width: 1080px; height: 1080px; }
+.tall { width: 1080px; height: 1350px; }
+.light { background-color: #F0FDF4; color: #0F172A; background-image: radial-gradient(rgb(21 128 61 / .12) 2px, transparent 2.6px); background-size: 24px 24px; }
+.brand { display: flex; align-items: center; gap: 18px; }
+.brand img { width: 84px; height: 84px; border: 4px solid currentColor; }
+.brand b { font: 700 44px/1 "Pixelify Sans"; }
+.brand b span { background: #4ADE80; color: #0B1510; padding: 2px 10px; margin-left: 8px; }
+.light .brand b span { background: #15803D; color: #fff; }
+.sticker { display: inline-block; align-self: flex-start; background: #4ADE80; color: #0B1510; border: 4px solid #0B1510; font: 600 28px/1 "Pixelify Sans"; text-transform: uppercase; letter-spacing: .04em; padding: 12px 18px 10px; transform: rotate(-2deg); }
+.light .sticker { background: #15803D; color: #fff; }
+h1 { font: 500 104px/1.02 "Pixelify Sans"; margin: 40px 0 28px; }
+h1 em { font-style: normal; color: #39FF88; }
+.light h1 em { color: #15803D; }
+h2 { font: 500 76px/1.05 "Pixelify Sans"; margin: 32px 0 24px; }
+p.lead { font-size: 38px; line-height: 1.35; margin: 0 0 24px; max-width: 28ch; }
+.scope { border: 5px solid #4ADE80; background: #12211A; margin-top: auto; }
+.scope svg { display: block; width: 100%; height: auto; }
+.scope-text { font-family: ui-monospace, monospace; font-weight: 600; }
+.contact { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; border-top: 4px solid #4ADE80; padding-top: 28px; font-size: 32px; }
+.light .contact { border-color: #15803D; }
+.contact b { font: 700 48px/1.1 "Archivo"; display: block; }
+.contact small { font-size: 28px; opacity: .85; }
+.services { display: grid; gap: 24px; margin: 8px 0 32px; }
+.svc { display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: center; border: 5px solid currentColor; padding: 24px 28px; }
+.svc .ic { width: 96px; height: 96px; background: #4ADE80; display: grid; place-items: center; font: 700 52px/1 "Pixelify Sans"; color: #0B1510; }
+.light .svc .ic { background: #15803D; color: #fff; }
+.svc strong { display: block; font: 600 46px/1.1 "Pixelify Sans"; }
+.svc span { font-size: 30px; opacity: .85; }
+.steps { list-style: none; padding: 0; margin: 8px 0 32px; display: grid; gap: 22px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 76px 1fr; gap: 24px; align-items: start; font-size: 32px; line-height: 1.3; }
+.steps li::before { content: counter(s); width: 72px; height: 72px; display: grid; place-items: center; background: #4ADE80; color: #0B1510; border: 4px solid #E2F5E9; font: 700 44px/1 "Pixelify Sans"; }
+.steps strong { display: block; font-size: 40px; }
+.car { position: absolute; left: 0; right: 0; bottom: 210px; opacity: .9; }
+.car img { width: 100%; display: block; }
+.bubble { position: relative; display: inline-block; align-self: flex-start; background: #F0FDF4; color: #0B1510; border: 5px solid #0B1510; padding: 14px 26px; font: 700 40px/1 "Pixelify Sans"; transform: rotate(-3deg); }
+.bubble::after { content: ""; position: absolute; left: 40px; bottom: -30px; border-style: solid; border-width: 30px 24px 0 0; border-color: #0B1510 transparent transparent; }
+.brands { display: flex; flex-wrap: wrap; gap: 16px; margin: 8px 0 32px; }
+.brands span { border: 5px solid currentColor; padding: 14px 22px; font: 800 40px/1 "Archivo"; }
+.searchbox { display: flex; border: 5px solid #0F172A; margin: 12px 0 32px; }
+.searchbox span { flex: 1; padding: 26px 28px; font-size: 40px; color: #475569; background: #fff; }
+.searchbox b { background: #15803D; color: #fff; padding: 26px 34px; font: 800 40px/1 "Archivo"; }
+.slide-n { position: absolute; top: 72px; right: 72px; font: 600 30px/1 ui-monospace, monospace; color: #86EFAC; }
+.light .slide-n { color: #15803D; }
+.wire { display: grid; gap: 24px; margin: 24px 0; }
+.wire div { display: grid; grid-template-columns: 220px 1fr; align-items: center; gap: 24px; font: 600 36px ui-monospace, monospace; }
+.wire svg { width: 100%; height: 90px; }
+.fields { display: flex; flex-wrap: wrap; gap: 0; margin: 32px 0; border: 5px solid #4ADE80; }
+.fields span { padding: 26px 20px; font: 600 32px/1.1 ui-monospace, monospace; border-right: 3px solid #1F3A2B; }
+.fields span:last-child { border-right: 0; }
+.fields .hot { background: #4ADE80; color: #0B1510; }
+.bytes { display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0 8px; }
+.bytes span { display: grid; justify-items: center; gap: 10px; border: 5px solid #4ADE80; padding: 22px 24px; font: 700 54px/1 ui-monospace, monospace; }
+.bytes small { font: 600 24px/1.2 "Archivo"; color: #A7B4C6; text-align: center; max-width: 9ch; }
+.bytes .pad { opacity: .45; }
+</style><body>
+<!-- Generated by tools/marketing.py. Edit the script, then run it again. -->
+<section id="flyer-1-car-wont-start" class="board sq"><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h1>Car won’t start? It might be <em>the computer.</em></h1>
+<div class="scope"><svg class="scope-art" viewBox="0 0 1000 400" role="img" aria-labelledby="scope-t scope-d">
+    <title id="scope-t">Oscilloscope showing one CAN bus frame on CAN-H and CAN-L</title>
+    <desc id="scope-d">An OBD-II request for engine RPM: ID 7DF, 8 data bytes 02 01 0C 00 00 00 00 00. CAN-H rises to 3.5 volts and CAN-L falls to 1.5 volts on each dominant bit; both rest at 2.5 volts.</desc>
+    <defs>
+      <filter id="phosphor" x="-5%" y="-20%" width="110%" height="140%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#39FF88" stop-opacity="0"/><stop offset="1" stop-color="#39FF88" stop-opacity=".22"/></linearGradient>
+      <clipPath id="screen"><rect x="40" y="56" width="920" height="252"/></clipPath>
+    </defs>
+    <rect class="scope-bezel" width="1000" height="400"/>
+    <rect x="40" y="56" width="920" height="252" fill="#06110B"/>
+    <g stroke="#1B3A28" stroke-width="1" fill="none"><path d="M40.0 56V308"/><path d="M132.0 56V308"/><path d="M224.0 56V308"/><path d="M316.0 56V308"/><path d="M408.0 56V308"/><path d="M500.0 56V308"/><path d="M592.0 56V308"/><path d="M684.0 56V308"/><path d="M776.0 56V308"/><path d="M868.0 56V308"/><path d="M960.0 56V308"/><path d="M40 56H960"/><path d="M40 92H960"/><path d="M40 128H960"/><path d="M40 164H960"/><path d="M40 200H960"/><path d="M40 236H960"/><path d="M40 272H960"/><path d="M40 308H960"/></g>
+    <g clip-path="url(#screen)"><rect class="scope-beam" x="-80" y="56" width="120" height="252" fill="url(#beam)"/></g>
+    <g fill="none" stroke-width="2.6" stroke-linejoin="round" filter="url(#phosphor)">
+      <path stroke="#39FF88" d="M40.0 128L60.3 128L63.5 92L67.6 92L70.8 128L104.1 128L107.3 92L118.7 92L121.9 128L155.2 128L158.4 92L184.4 92L187.6 128L191.7 128L194.9 92L228.2 92L231.4 128L235.5 128L238.7 92L264.7 92L267.9 128L272.1 128L275.3 92L308.6 92L311.8 128L315.9 128L319.1 92L337.8 92L341.0 128L345.1 128L348.3 92L374.3 92L377.5 128L388.9 128L392.1 92L425.4 92L428.6 128L432.7 128L435.9 92L469.2 92L472.4 128L476.5 128L479.7 92L513.0 92L516.2 128L520.3 128L523.5 92L556.8 92L560.0 128L564.1 128L567.3 92L600.6 92L603.8 128L607.9 128L611.1 92L644.4 92L647.6 128L651.7 128L654.9 92L688.2 92L691.4 128L695.5 128L698.7 92L732.1 92L735.3 128L739.4 128L742.6 92L754.0 92L757.2 128L761.3 128L764.5 92L768.6 92L771.8 128L775.9 128L779.1 92L783.2 92L786.4 128L797.8 128L801.0 92L812.4 92L815.6 128L819.7 128L822.9 92L834.3 92L837.5 128L841.6 128L844.8 92L856.2 92L859.4 128L870.8 128L874.0 92L878.1 92L881.3 128L960.0 128"/>
+      <path stroke="#FB923C" d="M40.0 236L60.3 236L63.5 272L67.6 272L70.8 236L104.1 236L107.3 272L118.7 272L121.9 236L155.2 236L158.4 272L184.4 272L187.6 236L191.7 236L194.9 272L228.2 272L231.4 236L235.5 236L238.7 272L264.7 272L267.9 236L272.1 236L275.3 272L308.6 272L311.8 236L315.9 236L319.1 272L337.8 272L341.0 236L345.1 236L348.3 272L374.3 272L377.5 236L388.9 236L392.1 272L425.4 272L428.6 236L432.7 236L435.9 272L469.2 272L472.4 236L476.5 236L479.7 272L513.0 272L516.2 236L520.3 236L523.5 272L556.8 272L560.0 236L564.1 236L567.3 272L600.6 272L603.8 236L607.9 236L611.1 272L644.4 272L647.6 236L651.7 236L654.9 272L688.2 272L691.4 236L695.5 236L698.7 272L732.1 272L735.3 236L739.4 236L742.6 272L754.0 272L757.2 236L761.3 236L764.5 272L768.6 272L771.8 236L775.9 236L779.1 272L783.2 272L786.4 236L797.8 236L801.0 272L812.4 272L815.6 236L819.7 236L822.9 272L834.3 272L837.5 236L841.6 236L844.8 272L856.2 272L859.4 236L870.8 236L874.0 272L878.1 272L881.3 236L960.0 236"/>
+    </g>
+    <g class="scope-text" font-size="17">
+      <text x="40" y="38" fill="#39FF88">CH1 CAN-H 1V/div</text>
+      <text x="300" y="38" fill="#FB923C">CH2 CAN-L 1V/div</text>
+      <text x="960" y="38" text-anchor="end" fill="#B9F5CF">500 kbit/s · ID 0x7DF</text>
+      <text x="22" y="134" fill="#39FF88">1</text>
+      <text x="22" y="242" fill="#FB923C">2</text>
+    </g>
+    <g class="scope-fields" stroke="#86EFAC" stroke-width="1.5" fill="none"><path d="M62.9 322v8H68.2v-8"/><path d="M70.2 322v8H163.1v-8"/><path d="M165.1 322v8H185.0v-8"/><path d="M187.0 322v8H214.2v-8"/><path d="M216.2 322v8H754.6v-8"/><path d="M756.6 322v8H864.1v-8"/><path d="M873.4 322v8H878.7v-8"/><path d="M888.0 322v8H937.1v-8"/></g>
+    <g class="scope-text" font-size="13" fill="#86EFAC"><text x="116.7" y="348" text-anchor="middle">ID 7DF</text><text x="200.6" y="348" text-anchor="middle">DLC</text><text x="485.4" y="348" text-anchor="middle">DATA 02 01 0C 00 00 00 00 00</text><text x="810.3" y="348" text-anchor="middle">CRC</text><text x="912.5" y="348" text-anchor="middle">EOF</text></g>
+    <text class="scope-text" x="40" y="384" font-size="16" fill="#E2F5E9">TX ▸ 7DF [8] 02 01 0C 00 00 00 00 00</text>
+    <text class="scope-text" x="960" y="384" font-size="16" text-anchor="end" fill="#39FF88">OBD-II · ENGINE RPM?</text>
+  </svg></div>
+<div class="contact"><div><small>WhatsApp</small><b>0803 991 4565</b></div><div style="text-align:right"><small>ubanatuchinaza@gmail.com</small><br><small>mind-on-chain.vercel.app</small></div></div></section>
+<section id="flyer-2-services" class="board sq light"><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h2>ECU work, done in Lagos</h2>
+<div class="services">
+<div class="svc"><div class="ic">01</div><div><strong>ECU programming &amp; cloning</strong><span>Your old ECU’s data on a replacement, so the car starts.</span></div></div>
+<div class="svc"><div class="ic">02</div><div><strong>ECU wiping / virginising</strong><span>A used ECU returned to blank, ready for your car.</span></div></div>
+<div class="svc"><div class="ic">03</div><div><strong>Remapping &amp; calibration</strong><span>Engine software adjusted after a repair or part change.</span></div></div>
+</div>
+<div class="contact"><div><small>WhatsApp</small><b>0803 991 4565</b></div><div style="text-align:right"><small>ubanatuchinaza@gmail.com</small><br><small>mind-on-chain.vercel.app</small></div></div></section>
+<section id="flyer-3-ladipo-parts" class="board sq"><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<div style="margin-top:40px"><span class="bubble">Ladipo! Ladipo!</span></div>
+<h2 style="color:#39FF88">Need a module from Ladipo?</h2>
+<ol class="steps">
+<li><span><strong>Send the part number</strong>or a clear photo of the old module’s label.</span></li>
+<li><span><strong>Get photos and a price</strong>before you pay anything. Price on request.</span></li>
+<li><span><strong>Tested before handover</strong>Collect in Lagos; ask about delivery.</span></li>
+</ol>
+<div class="contact"><div><small>WhatsApp</small><b>0803 991 4565</b></div><div style="text-align:right"><small>ubanatuchinaza@gmail.com</small><br><small>mind-on-chain.vercel.app</small></div></div></section>
+<section id="flyer-4-free-database" class="board sq light"><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h2>The workshop database is free to read</h2>
+<p class="lead">Pinouts, EEPROM locations and programming steps, written down after real jobs.</p>
+<div class="searchbox"><span>2L86D, MS43, Camry 2016…</span><b>Search</b></div>
+<div class="brands"><span>BMW</span><span>Toyota</span><span>Fiat</span><span>Opel</span><span>Jeep</span><span>Volvo</span><span>+ more</span></div>
+<div class="contact"><div><small>WhatsApp</small><b>0803 991 4565</b></div><div style="text-align:right"><small>ubanatuchinaza@gmail.com</small><br><small>mind-on-chain.vercel.app</small></div></div></section>
+<section id="carousel-1" class="board tall"><span class="slide-n">1 / 5</span><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<span class="sticker" style="margin-top:80px">CAN bus, explained</span>
+<h1>What does a car’s <em>CAN bus</em> actually say?</h1>
+<p class="lead">Every module in a modern car talks over two wires. Here is one real message, read off a scope.</p>
+<p class="lead" style="margin-top:auto;color:#39FF88;font:600 40px 'Pixelify Sans'">Swipe ▸</p></section>
+<section id="carousel-2" class="board tall"><span class="slide-n">2 / 5</span><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h2 style="margin-top:80px">Two wires, mirrored</h2>
+<p class="lead">CAN-H and CAN-L both rest at 2.5 V. For each “0” bit, CAN-H rises to 3.5 V and CAN-L falls to 1.5 V.</p>
+<div class="wire"><div><span style="color:#39FF88">CAN-H</span><svg viewBox="0 0 700 90" preserveAspectRatio="none"><path d="M0 45L43.75 45L43.75 45L46.75 12L87.5 12L131.25 12L131.25 12L134.25 45L175.0 45L175.0 45L178.0 12L218.75 12L218.75 12L221.75 45L262.5 45L306.25 45L306.25 45L309.25 12L350.0 12L350.0 12L353.0 45L393.75 45L393.75 45L396.75 12L437.5 12L481.25 12L525.0 12L525.0 12L528.0 45L568.75 45L612.5 45L612.5 45L615.5 12L656.25 12L656.25 12L659.25 45L700.0 45" fill="none" stroke="#39FF88" stroke-width="6"/></svg></div><div><span style="color:#FB923C">CAN-L</span><svg viewBox="0 0 700 90" preserveAspectRatio="none"><path d="M0 45L43.75 45L43.75 45L46.75 78L87.5 78L131.25 78L131.25 78L134.25 45L175.0 45L175.0 45L178.0 78L218.75 78L218.75 78L221.75 45L262.5 45L306.25 45L306.25 45L309.25 78L350.0 78L350.0 78L353.0 45L393.75 45L393.75 45L396.75 78L437.5 78L481.25 78L525.0 78L525.0 78L528.0 45L568.75 45L612.5 45L612.5 45L615.5 78L656.25 78L656.25 78L659.25 45L700.0 45" fill="none" stroke="#FB923C" stroke-width="6"/></svg></div></div>
+<p class="lead">The ECU reads the difference, so noise that hits both wires cancels out.</p></section>
+<section id="carousel-3" class="board tall"><span class="slide-n">3 / 5</span><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h2 style="margin-top:80px">One message, five parts</h2>
+<div class="fields"><span>SOF</span><span class="hot">ID</span><span>CTRL</span><span class="hot">DATA</span><span>CRC</span><span>ACK</span><span>EOF</span></div>
+<p class="lead"><b style="color:#39FF88">ID</b> says what the message is about, and who wins if two modules talk at once: the lower ID goes first.</p>
+<p class="lead"><b style="color:#39FF88">DATA</b> carries up to 8 bytes. <b style="color:#39FF88">CRC</b> lets every module check nothing got scrambled.</p></section>
+<section id="carousel-4" class="board tall"><span class="slide-n">4 / 5</span><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h2 style="margin-top:80px">A scan tool asking for engine RPM</h2>
+<p class="lead" style="font-family:ui-monospace,monospace">ID 7DF · 8 bytes</p>
+<div class="bytes"><span>02<small>2 bytes follow</small></span><span>01<small>show current data</small></span><span>0C<small>engine RPM</small></span><span class="pad">00<small>padding</small></span><span class="pad">00</span><span class="pad">00</span><span class="pad">00</span><span class="pad">00</span></div>
+<div class="scope" style="margin-top:40px"><svg class="scope-art" viewBox="0 0 1000 400" role="img" aria-labelledby="scope-t scope-d">
+    <title id="scope-t">Oscilloscope showing one CAN bus frame on CAN-H and CAN-L</title>
+    <desc id="scope-d">An OBD-II request for engine RPM: ID 7DF, 8 data bytes 02 01 0C 00 00 00 00 00. CAN-H rises to 3.5 volts and CAN-L falls to 1.5 volts on each dominant bit; both rest at 2.5 volts.</desc>
+    <defs>
+      <filter id="phosphor" x="-5%" y="-20%" width="110%" height="140%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#39FF88" stop-opacity="0"/><stop offset="1" stop-color="#39FF88" stop-opacity=".22"/></linearGradient>
+      <clipPath id="screen"><rect x="40" y="56" width="920" height="252"/></clipPath>
+    </defs>
+    <rect class="scope-bezel" width="1000" height="400"/>
+    <rect x="40" y="56" width="920" height="252" fill="#06110B"/>
+    <g stroke="#1B3A28" stroke-width="1" fill="none"><path d="M40.0 56V308"/><path d="M132.0 56V308"/><path d="M224.0 56V308"/><path d="M316.0 56V308"/><path d="M408.0 56V308"/><path d="M500.0 56V308"/><path d="M592.0 56V308"/><path d="M684.0 56V308"/><path d="M776.0 56V308"/><path d="M868.0 56V308"/><path d="M960.0 56V308"/><path d="M40 56H960"/><path d="M40 92H960"/><path d="M40 128H960"/><path d="M40 164H960"/><path d="M40 200H960"/><path d="M40 236H960"/><path d="M40 272H960"/><path d="M40 308H960"/></g>
+    <g clip-path="url(#screen)"><rect class="scope-beam" x="-80" y="56" width="120" height="252" fill="url(#beam)"/></g>
+    <g fill="none" stroke-width="2.6" stroke-linejoin="round" filter="url(#phosphor)">
+      <path stroke="#39FF88" d="M40.0 128L60.3 128L63.5 92L67.6 92L70.8 128L104.1 128L107.3 92L118.7 92L121.9 128L155.2 128L158.4 92L184.4 92L187.6 128L191.7 128L194.9 92L228.2 92L231.4 128L235.5 128L238.7 92L264.7 92L267.9 128L272.1 128L275.3 92L308.6 92L311.8 128L315.9 128L319.1 92L337.8 92L341.0 128L345.1 128L348.3 92L374.3 92L377.5 128L388.9 128L392.1 92L425.4 92L428.6 128L432.7 128L435.9 92L469.2 92L472.4 128L476.5 128L479.7 92L513.0 92L516.2 128L520.3 128L523.5 92L556.8 92L560.0 128L564.1 128L567.3 92L600.6 92L603.8 128L607.9 128L611.1 92L644.4 92L647.6 128L651.7 128L654.9 92L688.2 92L691.4 128L695.5 128L698.7 92L732.1 92L735.3 128L739.4 128L742.6 92L754.0 92L757.2 128L761.3 128L764.5 92L768.6 92L771.8 128L775.9 128L779.1 92L783.2 92L786.4 128L797.8 128L801.0 92L812.4 92L815.6 128L819.7 128L822.9 92L834.3 92L837.5 128L841.6 128L844.8 92L856.2 92L859.4 128L870.8 128L874.0 92L878.1 92L881.3 128L960.0 128"/>
+      <path stroke="#FB923C" d="M40.0 236L60.3 236L63.5 272L67.6 272L70.8 236L104.1 236L107.3 272L118.7 272L121.9 236L155.2 236L158.4 272L184.4 272L187.6 236L191.7 236L194.9 272L228.2 272L231.4 236L235.5 236L238.7 272L264.7 272L267.9 236L272.1 236L275.3 272L308.6 272L311.8 236L315.9 236L319.1 272L337.8 272L341.0 236L345.1 236L348.3 272L374.3 272L377.5 236L388.9 236L392.1 272L425.4 272L428.6 236L432.7 236L435.9 272L469.2 272L472.4 236L476.5 236L479.7 272L513.0 272L516.2 236L520.3 236L523.5 272L556.8 272L560.0 236L564.1 236L567.3 272L600.6 272L603.8 236L607.9 236L611.1 272L644.4 272L647.6 236L651.7 236L654.9 272L688.2 272L691.4 236L695.5 236L698.7 272L732.1 272L735.3 236L739.4 236L742.6 272L754.0 272L757.2 236L761.3 236L764.5 272L768.6 272L771.8 236L775.9 236L779.1 272L783.2 272L786.4 236L797.8 236L801.0 272L812.4 272L815.6 236L819.7 236L822.9 272L834.3 272L837.5 236L841.6 236L844.8 272L856.2 272L859.4 236L870.8 236L874.0 272L878.1 272L881.3 236L960.0 236"/>
+    </g>
+    <g class="scope-text" font-size="17">
+      <text x="40" y="38" fill="#39FF88">CH1 CAN-H 1V/div</text>
+      <text x="300" y="38" fill="#FB923C">CH2 CAN-L 1V/div</text>
+      <text x="960" y="38" text-anchor="end" fill="#B9F5CF">500 kbit/s · ID 0x7DF</text>
+      <text x="22" y="134" fill="#39FF88">1</text>
+      <text x="22" y="242" fill="#FB923C">2</text>
+    </g>
+    <g class="scope-fields" stroke="#86EFAC" stroke-width="1.5" fill="none"><path d="M62.9 322v8H68.2v-8"/><path d="M70.2 322v8H163.1v-8"/><path d="M165.1 322v8H185.0v-8"/><path d="M187.0 322v8H214.2v-8"/><path d="M216.2 322v8H754.6v-8"/><path d="M756.6 322v8H864.1v-8"/><path d="M873.4 322v8H878.7v-8"/><path d="M888.0 322v8H937.1v-8"/></g>
+    <g class="scope-text" font-size="13" fill="#86EFAC"><text x="116.7" y="348" text-anchor="middle">ID 7DF</text><text x="200.6" y="348" text-anchor="middle">DLC</text><text x="485.4" y="348" text-anchor="middle">DATA 02 01 0C 00 00 00 00 00</text><text x="810.3" y="348" text-anchor="middle">CRC</text><text x="912.5" y="348" text-anchor="middle">EOF</text></g>
+    <text class="scope-text" x="40" y="384" font-size="16" fill="#E2F5E9">TX ▸ 7DF [8] 02 01 0C 00 00 00 00 00</text>
+    <text class="scope-text" x="960" y="384" font-size="16" text-anchor="end" fill="#39FF88">OBD-II · ENGINE RPM?</text>
+  </svg></div></section>
+<section id="carousel-5" class="board tall light"><span class="slide-n">5 / 5</span><div class="brand"><img src="../static/brand/icon-192.png" alt=""><b>Alltech<span>Solutions</span></b></div>
+<h2 style="margin-top:80px">When modules stop talking, the car stops too</h2>
+<p class="lead">A dead ECU, a mismatched immobiliser or a replacement module that hasn’t been programmed all look like “won’t start”.</p>
+<p class="lead">Alltech Solutions programs, clones and virginises ECUs in Lagos, and writes the procedures up in a free database.</p>
+<div class="contact"><div><small>WhatsApp</small><b>0803 991 4565</b></div><div style="text-align:right"><small>ubanatuchinaza@gmail.com</small><br><small>mind-on-chain.vercel.app</small></div></div></section>
+</body></html>
