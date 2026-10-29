@@ -1,7 +1,6 @@
 baseURL = "https://mind-on-chain.vercel.app/"
 title = "Alltech Solutions"
 languageCode = "en-NG"
-theme = "hello-friend-ng"
 pagination.pagerSize = 10
 
 [params]
