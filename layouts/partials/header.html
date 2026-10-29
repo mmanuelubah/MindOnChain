@@ -1,30 +1,32 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
+{{- $here := .RelPermalink -}}
 <header class="site-header">
-  <div class="container">
-    <nav class="navbar" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="/" class="nav-link {{ if .IsHome }}active{{ end }}">HOME</a></li>
-        <li><a href="/about/" class="nav-link {{ if in .RelPermalink "/about" }}active{{ end }}">ABOUT</a></li>
-        <li><a href="/posts/" class="nav-link {{ if in .RelPermalink "/posts" }}active{{ end }}">POSTS</a></li>
-        <li><a href="/alltech/" class="nav-link {{ if in .RelPermalink "/alltech" }}active{{ end }}">ALLTECH</a></li>
-        <li><a href="/books/" class="nav-link {{ if in .RelPermalink "/books" }}active{{ end }}">BOOKS</a></li>
-        <li><a href="/colophon/" class="nav-link {{ if in .RelPermalink "/colophon" }}active{{ end }}">COLOPHON</a></li>
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "brand/alltech-mark-96.webp" | relURL }}" width="44" height="44" alt="">
+      <span class="brand-name">Alltech <span>Solutions</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <ul>
+        {{- range site.Menus.main }}
+        {{- $url := .URL }}
+        {{- /* Guides live inside the database folder, so Database must not light up on guide pages. */}}
+        {{- $inside := and (hasPrefix $here $url) (not (and (eq .Name "Database") (hasPrefix $here "/alltech/database/guides/"))) }}
+        <li><a href="{{ $url }}"{{ if eq $here $url }} aria-current="page"{{ else if $inside }} aria-current="true"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
       </ul>
-      
-      <button class="theme-toggle" type="button" aria-label="Toggle theme">
-        <!-- Sun Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-      </button>
     </nav>
+
+    <div class="header-tools">
+      <a class="tool" href="{{ "/search/" | relURL }}"{{ if eq $here "/search/" }} aria-current="page"{{ end }}>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="tool-label">Search</span>
+      </a>
+      <button class="tool menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="tool-label">Menu</span>
+      </button>
+      {{ partial "nepa-bulb.html" . }}
+    </div>
   </div>
 </header>

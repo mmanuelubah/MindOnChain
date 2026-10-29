@@ -1,0 +1,29 @@
+{{- /* Search index for /search/. Private pages and drafts never enter it. */ -}}
+{{- $items := slice -}}
+{{- range site.RegularPages -}}
+  {{- if and (not .Params.private) (ne .Type "search") -}}
+    {{- $group := "Pages" -}}
+    {{- if hasPrefix .RelPermalink "/alltech/database/guides/" }}{{ $group = "Guides" }}
+    {{- else if hasPrefix .RelPermalink "/alltech/database/" }}{{ $group = "Database" }}
+    {{- else if hasPrefix .RelPermalink "/alltech/shop/" }}{{ $group = "Parts" }}
+    {{- else if eq .Section "posts" }}{{ $group = "Writing" }}
+    {{- else if eq .Type "books" }}{{ $group = "Books" }}{{ end -}}
+    {{- $keys := slice -}}
+    {{- range slice .Params.brand .Params.model .Params.ecu .Params.sku .Params.oem_number -}}
+      {{- with . }}{{ $keys = $keys | append (string .) }}{{ end -}}
+    {{- end -}}
+    {{- range .Params.tags }}{{ $keys = $keys | append (string .) }}{{ end -}}
+    {{- /* Database entries start with a table, so their automatic summary is table noise. Use their fields instead. */ -}}
+    {{- $summary := .Summary | plainify | htmlUnescape | strings.TrimSpace | truncate 160 -}}
+    {{- if eq $group "Database" }}{{ $summary = delimit $keys " · " }}{{ end -}}
+    {{- $items = $items | append (dict
+        "t" .Title
+        "u" .RelPermalink
+        "g" $group
+        "k" (delimit $keys " ")
+        "s" $summary
+        "b" (.Plain | htmlUnescape | strings.TrimSpace | truncate 1200)
+      ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $items | jsonify -}}

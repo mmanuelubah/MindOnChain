@@ -1,43 +1,25 @@
-<footer class="footer" style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top: 60px;">
-  <div class="footer__inner" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
-    <div class="footer-links" style="display: flex; gap: 24px; font-family: var(--font-body); font-size: 14px;">
-      <a href="https://www.linkedin.com/in/chinaza-ubanatu-05a983184/" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a>
-      <a href="https://github.com/mmanuelubah" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">GitHub</a>
-      <a href="https://x.com/mmanuelubah" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">Twitter</a>
-    </div>
-    <div class="footer-copy" style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); opacity: 0.7;">
-      <span>© 2026 MindOnChain. Lagos, Nigeria.</span>
-    </div>
+{{- $c := site.Params.contact -}}
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <section class="footer-talk" aria-labelledby="footer-talk-h">
+      <h2 id="footer-talk-h" class="footer-h">Car won’t start? Need a module?</h2>
+      <p>Send Emmanuel the part number, or a photo of the label on the old module.</p>
+      <ul class="footer-contact">
+        <li><a href="https://wa.me/{{ $c.whatsapp }}">WhatsApp {{ $c.whatsappDisplay }}</a></li>
+        <li><a href="mailto:{{ $c.email }}">{{ $c.email }}</a></li>
+      </ul>
+    </section>
+
+    <nav class="footer-links" aria-label="Elsewhere">
+      <ul>
+        <li><a href="{{ site.Params.social.linkedin }}" rel="me noopener">LinkedIn</a></li>
+        <li><a href="{{ site.Params.social.github }}" rel="me noopener">GitHub</a></li>
+        <li><a href="{{ site.Params.social.x }}" rel="me noopener">X</a></li>
+        <li><a href="{{ "/colophon/" | relURL }}">Colophon</a></li>
+        <li><a href="{{ "/index.xml" | relURL }}">RSS</a></li>
+      </ul>
+    </nav>
+
+    <p class="footer-legal">Alltech Solutions · {{ site.Params.location }} · © {{ now.Year }} {{ site.Params.author }}</p>
   </div>
 </footer>
-
-<button id="back-to-top" title="Back to Top">
-  <span>↑</span> TOP
-</button>
-
-<script>
-  const backToTop = document.getElementById('back-to-top');
-
-  let isScrolling = false;
-
-  window.addEventListener('scroll', () => {
-    if (!isScrolling) {
-      window.requestAnimationFrame(() => {
-        if (window.scrollY > 400) {
-          backToTop.classList.add('show');
-        } else {
-          backToTop.classList.remove('show');
-        }
-        isScrolling = false;
-      });
-      isScrolling = true;
-    }
-  });
-
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-</script>

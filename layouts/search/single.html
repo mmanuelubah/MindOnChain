@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{- $c := site.Params.contact -}}
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="h1">Search</h1>
+    <p class="standfirst">Find a database entry, guide, part or post. Part numbers work with or without spaces and dots: <code>2L86D</code>, <code>ME7.5</code>, <code>0261209012</code>.</p>
+  </header>
+
+  <form class="search-form" role="search" action="" method="get" id="search-form">
+    <label for="q">Part number, car, module or topic</label>
+    <div class="search-row">
+      <input id="q" name="q" type="search" autocomplete="off" enterkeyhint="search" aria-describedby="search-hint" aria-controls="search-results">
+      <button class="btn btn--primary" type="submit">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search
+      </button>
+    </div>
+    <p class="search-hint" id="search-hint">Try <a href="?q=MS43">MS43</a>, <a href="?q=EWS4">EWS4</a>, <a href="?q=Camry">Camry</a> or <a href="?q=money&amp;in=Writing">money</a>.</p>
+    <fieldset class="search-scopes">
+      <legend>Look in</legend>
+      {{- range slice "All" "Database" "Guides" "Parts" "Writing" "Books" }}
+      <label class="scope"><input type="radio" name="in" value="{{ . }}"{{ if eq . "All" }} checked{{ end }}><span>{{ . }}</span></label>
+      {{- end }}
+    </fieldset>
+  </form>
+
+  <p class="results-status" id="search-status" role="status" aria-live="polite"></p>
+  <div id="search-results"></div>
+
+  <div class="empty" id="search-empty" hidden>
+    <p><strong>Nothing found for “<span data-q></span>”.</strong></p>
+    <p>It may not be written up yet. Check the spelling, try the car or the module family instead, or ask Emmanuel directly.</p>
+    <div class="btns">
+      <a class="btn btn--primary" href="https://wa.me/{{ $c.whatsapp }}">Ask on WhatsApp</a>
+      <a class="btn" href="{{ "/alltech/database/" | relURL }}">Browse the database</a>
+    </div>
+  </div>
+
+  <div class="empty" id="search-failed" hidden>
+    <p><strong>Search is not available right now.</strong></p>
+    <p>The search index did not load, usually because the connection dropped. The lists still work: <a href="{{ "/alltech/database/" | relURL }}">Database</a>, <a href="{{ "/alltech/database/guides/" | relURL }}">Guides</a>, <a href="{{ "/alltech/shop/" | relURL }}">Parts</a>, <a href="{{ "/posts/" | relURL }}">Writing</a>.</p>
+  </div>
+
+  <noscript><p class="empty">Search needs JavaScript. Browse instead: <a href="{{ "/alltech/database/" | relURL }}">Database</a>, <a href="{{ "/posts/" | relURL }}">Writing</a>.</p></noscript>
+</div>
+<script src="{{ "js/search.js" | relURL }}" data-index="{{ "search-index.json" | relURL }}" defer></script>
+{{ end }}

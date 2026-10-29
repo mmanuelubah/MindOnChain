@@ -1,132 +1,59 @@
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-{{ if .Params.noindex }}
-<meta name="robots" content="noindex" />
-{{ end }}
+{{- $title := cond .IsHome (printf "%s: ECU and immobiliser workshop, Lagos" site.Title) (printf "%s | %s" .Title site.Title) -}}
+{{- $desc := "" -}}
+{{- if .IsHome -}}{{ $desc = site.Params.description }}
+{{- else if .Description -}}{{ $desc = .Description }}
+{{- else if .IsPage -}}{{ $desc = .Summary | plainify | strings.TrimSpace | truncate 160 }}
+{{- else -}}{{ $desc = site.Params.description }}{{- end -}}
+{{- $author := .Params.author | default site.Params.author -}}
+{{- $image := "brand/icon-512.png" -}}
+{{- with .Params.cover }}{{ if . }}{{ $image = . }}{{ end }}{{ end -}}
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author"
-    content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}">
-<meta name="description"
-    content="{{ if .IsHome }}{{ .Site.Params.homeSubtitle }}{{ else }}{{ if .Params.Description }}{{ .Params.Description | htmlEscape }}{{ else }}{{ .Summary | plainify | htmlEscape }}{{ end }}{{ end }}" />
-<meta name="keywords"
-    content="{{ .Site.Params.keywords }}{{ if .Params.tags }}{{ range .Params.tags }}, {{ . }}{{ end }}{{ end }}" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
-<link rel="canonical" href="{{ .Permalink }}" />
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ $author }}">
+{{- if or .Params.noindex .Params.private }}
+<meta name="robots" content="noindex, nofollow">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
 
-{{ block "title" . }}
-<title>
-    {{ if .IsHome }}
-    {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }}
-    {{ else }}
-    {{ .Title }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
-    {{ end }}
-</title>
-{{ end }}
-
-<!-- FOUC Prevention Script for Theme -->
+{{/* Runs before paint so the page never flashes the wrong theme. Key shared with site.js. */}}
 <script>
-  (function() {
-    var defaultTheme = {{ .Site.Params.defaultTheme | default "dark" | jsonify }};
-    var theme = localStorage.getItem("theme-storage") || defaultTheme;
-    document.documentElement.setAttribute("data-theme", theme);
+  (function () {
+    document.documentElement.classList.add("js");
+    try {
+      var t = localStorage.getItem("alltech-theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
   })();
 </script>
+<meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
 
-<!-- Fonts loaded via extra-head.html (single combined request) -->
+<link rel="preload" href="{{ "fonts/archivo-normal-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- $css := resources.Get "css/alltech.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
-<style>
-    /* Body overrides — tokens come from design-system.css */
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: var(--body-font);
-        font-weight: var(--body-font-weight);
-        line-height: var(--line-height-base);
-        letter-spacing: var(--body-letter-spacing);
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
+<link rel="icon" href="{{ "brand/favicon-32.png" | relURL }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ "brand/apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 
-    /* Force text color on lists/paragraphs to inherit */
-    li, p {
-        color: inherit;
-        font-family: inherit;
-    }
-</style>
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:image" content="{{ $image | absURL }}">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="{{ if .Params.cover }}summary_large_image{{ else }}summary{{ end }}">
+{{- with site.Params.social.x }}
+<meta name="twitter:site" content="@{{ path.Base . }}">
+{{- end }}
+{{- if and .IsPage (isset .Params "date") }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
 
-<!-- CSS -->
-{{ $opts := dict "transpiler" "libsass" "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true }}
-{{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
-<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
-
-
-{{ range $val := $.Site.Params.customCSS }}
-{{ if gt (len $val) 0 }}
-<link rel="stylesheet" type="text/css" href="{{ $val }}">
-{{ end }}
-{{ end }}
-
-<!-- Icons -->
-{{- partial "favicons.html" . }}
-
-{{ template "_internal/schema.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
-
-<!-- Open Graph Internal (native) + Custom Override -->
-{{ template "_internal/opengraph.html" . }}
-
-<!-- Explicit Cover Image for Open Graph -->
-{{ if .Params.cover }}
-<meta property="og:image" content="{{ .Params.cover | absURL }}" />
-<meta name="twitter:image" content="{{ .Params.cover | absURL }}" />
-<meta name="twitter:card" content="summary_large_image" />
-{{ else if .Site.Params.logo.logoImage }}
-<meta property="og:image" content="{{ .Site.Params.logo.logoImage | absURL }}" />
-<meta name="twitter:image" content="{{ .Site.Params.logo.logoImage | absURL }}" />
-<meta name="twitter:card" content="summary" />
-{{ else if .Site.Params.avatar }}
-<meta property="og:image" content="{{ .Site.Params.avatar | absURL }}" />
-<meta name="twitter:image" content="{{ .Site.Params.avatar | absURL }}" />
-<meta name="twitter:card" content="summary" />
-{{ end }}
-
-<meta property="og:url" content="{{ .Permalink | absURL }}" />
-<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
-<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Summary | plainify }}{{ end }}{{ end }}" />
-
-{{ range .Params.categories }}
-<meta property="article:section" content="{{ . }}" />
-{{ end }}
-
-{{ if isset .Params "date" }}
-<meta property="article:published_time" content="{{ time .Date }}" />
-{{ end }}
-
-<!-- RSS -->
 {{ with .OutputFormats.Get "rss" -}}
-{{ printf `
-<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
-
-<!-- JSON Feed -->
-{{ if .OutputFormats.Get "json" }}
-<link href="{{ if .OutputFormats.Get " json" }}{{ .Site.BaseURL }}feed.json{{ end }}" rel="alternate"
-    type="application/json" title="{{ .Site.Title }}" />
-{{ end }}
-
-<!-- Custom head tags -->
-{{- if templates.Exists "partials/extra-head.html" -}}
-{{ partial "extra-head.html" . }}
+<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">
 {{- end }}
-
-<!-- Google Analytics internal template -->
-{{- if .Site.Config.Services.GoogleAnalytics.ID }}
-{{ template "_internal/google_analytics.html" . }}
-{{- end }}
-
-<!-- Plausible.io -->
-{{- if $.Site.Params.plausibleDataDomain }}
-<script defer data-domain="{{ .Site.Params.plausibleDataDomain }}"
-    src="{{ .Site.Params.plausibleScriptSource }}"></script>
-{{- end}}

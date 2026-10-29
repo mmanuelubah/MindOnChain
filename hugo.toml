@@ -1,54 +1,64 @@
 baseURL = "https://mind-on-chain.vercel.app/"
-title = "MindOnChain"
-languageCode = "en-us"
+title = "Alltech Solutions"
+languageCode = "en-NG"
 theme = "hello-friend-ng"
 pagination.pagerSize = 10
 
-# Theme Parameters
 [params]
-  title = "MindOnChain"
-  description = "MindOnChain is a blog that explores blockchain analytics, airdrops, and decentralized innovation — written by Emmanuel."
-  avatar = "images/Avatar.png"                  # Path: /static/images/Avatar.png
-  enableSharingButtons = false
-  enableGlobalLanguageMenu = true
-  enableThemeToggle = true
-  customCSS = ["/css/fonts.css", "/css/tokens.css", "/css/design-system.css", "/css/custom.css"]
-  defaultTheme = "dark"
-  showPostsOnHomePage = true
-  numberOfPostsOnHomePage = 3
+  description = "Alltech Solutions is an ECU and immobiliser workshop in Lagos: ECU programming, cloning and virginising, remapping, parts sourced from Ladipo Market, and a free database of the procedures."
+  author = "Ubanatu Chinaza Emmanuel"
+  location = "Lagos, Nigeria"
+  avatar = "images/Avatar.png"
   ownerNameDisplay = "Ubanatu Chinaza Emmanuel"
   ownerNameMeaning = "Ubanatu means 'honour/nobility'; Chinaza means 'God answers'; Emmanuel means 'God is with us'."
   ownerNameTooltip = true
 
-[params.passwords]
-  default = "bf9b5951c550f519c08a4515282f5dc69e0a9e55152d5d316570436b9fa101dc" # SHA-256 for "emmanuel"
+# Every contact route and external profile lives here; templates read them from this block.
+[params.contact]
+  whatsapp = "2348039914565"          # international format for wa.me links
+  whatsappDisplay = "0803 991 4565"
+  email = "ubahchinaza@gmail.com"
+
+[params.social]
+  linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
+  github = "https://github.com/mmanuelubah"
+  x = "https://x.com/mmanuelubah"
 
 [build]
   writeStats = true
 
-# Logo
-[params.logo]
-  logoHomeLink = "/"
-  logoImage = "images/IMG_4493.jpeg"   # Path: /static/images/favicon-logo-96x96.png
-
-# Favicon
-[params.assets]
-  favicon = "images/EmmanuelOriginalNew.jpeg"    # Path: /static/images/EmmanuelOriginalNew.jpeg
-
-# Footer Section
-[params.footer]
-  copyright = "© 2025 Emmanuel"
-
-# Social Links
-[params.social]
-  github = "https://github.com/mmanuelubah"
-  linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
-  twitter = "https://x.com/mmanuelubah"
-
-# Taxonomies
 [taxonomies]
   category = "categories"
   tag = "tags"
   series = "series"
 
-# Menu Navigation
+# The search page loads this JSON index; it is generated at build time, no extra tool.
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+
+[[menus.main]]
+  name = "Database"
+  pageRef = "/alltech/database"
+  weight = 10
+[[menus.main]]
+  name = "Guides"
+  pageRef = "/alltech/database/guides"
+  weight = 20
+[[menus.main]]
+  name = "Parts"
+  pageRef = "/alltech/shop"
+  weight = 30
+[[menus.main]]
+  name = "Writing"
+  pageRef = "/posts"
+  weight = 40
+[[menus.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 50

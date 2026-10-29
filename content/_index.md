@@ -1,34 +1,26 @@
 ---
-title: "MindOnChain"
+title: "Alltech Solutions"
 
-# ── NOW SECTION ──────────────────────────────────────────────
-now_intro: >
- Exploring ideas at the intersection of technology, life, and learning.
- 
-currently_reading:
+# Home page copy. Edit the words here; the layout is layouts/index.html.
+hero_label: "Lagos · ECU & immobiliser workshop"
+hero_title: "Car won’t start? It might be the computer."
+hero_intro: >
+  Alltech Solutions programs, clones and virginises ECUs, aligns immobilisers,
+  and finds tested modules at Ladipo Market. The procedures go into a free
+  database, so other technicians don’t have to start from zero.
 
-# ── FEATURED SECTION ─────────────────────────────────────────
-featured_posts:
- - title: "Editor's Pick: The Unexpected poetry of PhD acknowledgements"
-   link: "/posts/weekly-roundup/"
-
-# ── CATEGORIES ───────────────────────────────────────────────
-categories_list:
- - name: "Tech"
-   link: "/tags/tech/"
- - name: "Life"
-   link: "/tags/life/"
- - name: "Books"
-   link: "/tags/books/"
-
-# ── WORK SECTION ─────────────────────────────────────────────────
-work_cards:
- - title: "Alltech Solutions"
-   description: "Solving complex automotive faults from ECU programming to advanced wiring, saving car owners from ridiculous dealership fees."
-   link: "/alltech/database/"
-   tags: ["Automotive", "Hardware", "ECU"]
- - title: "MyEasyAgents"
-   description: "A platform created to remove the stress of the Lagos property rental scene and make viewings work for everyone."
-   link: "https://myeasyagents.com"
-   tags: ["PropTech", "Software", "Platform"]
+# Services, from the Alltech flyers. icon: chip, clone, wipe, gauge or key.
+services:
+  - title: "ECU programming & cloning"
+    icon: clone
+    text: "Copy the data from your old engine computer to a replacement, so the car starts without a dealer visit."
+  - title: "ECU wiping / virginising"
+    icon: wipe
+    text: "Return a used ECU to a blank state so it can be programmed to your car."
+  - title: "Remapping & calibration"
+    icon: gauge
+    text: "Adjust the engine software after a repair, a part change or a fault."
+  - title: "Immobiliser alignment"
+    icon: key
+    text: "Pair the ECU, immobiliser module and keys so they recognise each other again. BMW EWS3 and EWS4 included."
 ---

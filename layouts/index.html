@@ -1,972 +1,151 @@
+{{ define "bodyclass" }}page-home{{ end }}
 {{ define "main" }}
-<main class="home" id="main-content">
+{{- $db := site.GetPage "/alltech/database" -}}
+{{- $c := site.Params.contact -}}
 
-  <!-- ================= TOP SECTION (Brand Title) ================= -->
-  <div class="top-section">
-    <h1 id="animated-title" class="site-title">MindOnChain</h1>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="sticker">{{ .Params.hero_label }}</span>
+      <h1 class="display" id="hero-title">{{ .Params.hero_title }}</h1>
+      <p class="standfirst">{{ .Params.hero_intro }}</p>
+      <form class="search-form hero-search" role="search" action="{{ "/search/" | relURL }}" method="get">
+        <label for="home-q">Search the database by part number, car or module</label>
+        <div class="search-row">
+          <input id="home-q" name="q" type="search" placeholder="e.g. 2L86D, MS43, Camry 2016" autocomplete="off" enterkeyhint="search">
+          <button class="btn btn--primary" type="submit">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="hero-art">
+      <svg class="scene" viewBox="0 0 480 320" role="img" aria-labelledby="scene-t">
+        <title id="scene-t">A yellow Lagos danfo bus carrying a box marked ECU on its roof rack</title>
+        <g stroke="#141414" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+          <path fill="#FAF8F3" d="M240 36l26 40 46-22-6 50 50 6-36 34 38 34-50 6 8 50-46-22-26 42-26-42-46 22 8-50-50-6 38-34-36-34 50-6-6-50 46 22z"/>
+          <path fill="none" d="M24 214h40M14 236h56M30 258h34"/>
+          <rect fill="#FAF8F3" x="200" y="76" width="70" height="40"/>
+          <path fill="none" d="M200 92h70"/>
+          <text x="235" y="111" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="18" fill="#141414" stroke="none">ECU</text>
+          <path fill="none" d="M120 120v-8h250v8"/>
+          <path fill="#FFC20E" d="M96 124h292c18 0 30 16 36 40l10 46v34c0 6-4 10-10 10H96c-8 0-14-6-14-14v-102c0-8 6-14 14-14z"/>
+          <path fill="#141414" stroke="none" d="M85 200h346v10H85zM85 220h348v8H85z"/>
+          <path fill="#FAF8F3" d="M104 140h56v40h-56zM172 140h56v40h-56zM240 140h56v40h-56zM308 140h52v40h-52zM372 140h20c8 0 14 6 18 16l8 24h-46z"/>
+          <path fill="#FAF8F3" d="M418 222h18v14h-18z"/>
+          <circle fill="#141414" cx="150" cy="256" r="32"/><circle fill="#FAF8F3" cx="150" cy="256" r="12"/>
+          <circle fill="#141414" cx="360" cy="256" r="32"/><circle fill="#FAF8F3" cx="360" cy="256" r="12"/>
+          <path fill="none" d="M40 290h420"/>
+        </g>
+      </svg>
+      <p class="bubble" aria-hidden="true">Ladipo! Ladipo!</p>
+    </div>
   </div>
+</section>
 
-  <hr class="section-separator">
-
-  <!-- ================= NOW SECTION (Currently Reading) ================= -->
-  <section class="now-section">
-
-    <div class="reading-block" style="background: #2b2b2b; border-radius: 8px; padding: 20px; margin-bottom: 48px;">
-      <div style="font-family: var(--font-body); font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Currently reading:</div>
-      <div class="reading-list" style="margin: 0; padding: 0;">
-        {{ $books := where .Site.RegularPages "Type" "books" }}
-        {{ $reading := slice }}
-        {{ range $books }}
-        {{ if in (lower .Params.status) "reading" }}
-        {{ $reading = $reading | append . }}
-        {{ end }}
-        {{ end }}
-        {{ range sort $reading "Date" "desc" }}
-        <div>
-          <a href="{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .RelPermalink }}{{ end }}" class="reading-link"
-            style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #555; font-family: var(--font-body); font-size: 18px;" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
-        </div>
-        {{ end }}
-        {{ if eq (len $reading) 0 }}
-        <div><span style="color: var(--text-muted); font-family: var(--font-body);">Nothing currently active.</span></div>
-        {{ end }}
-      </div>
+<div class="wrap">
+  <section class="section" aria-labelledby="services-h">
+    <div class="section-head">
+      <h2 class="h2" id="services-h">What Alltech does</h2>
     </div>
-  </section>
-
-  <hr class="section-separator">
-
-  <!-- ================= WORK SECTION ================= -->
-  <section class="work-section">
-    <div class="section-header" style="margin-bottom: 16px;">
-      <h2 class="section-title mono-header" style="margin: 0; font-size: 12px; font-weight: normal; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">WORK</h2>
-    </div>
-
-    <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-      {{ range .Params.work_cards }}
-      <a href="{{ .link }}" class="portfolio-card" style="border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; text-decoration: none; display: block; transition: border-color 0.2s;" target="_blank" rel="noopener noreferrer">
-        <h3 class="portfolio-card__title mono-header" style="margin: 0 0 8px 0; font-size: 18px; color: var(--text-primary);">{{ .title }}</h3>
-        <p class="portfolio-card__desc" style="margin: 0; font-family: var(--font-body); font-size: 14px; color: var(--text-muted); line-height: 1.5;">{{ .description }}</p>
-      </a>
-      {{ end }}
-    </div>
-  </section>
-
-  <hr class="section-separator">
-
-
-
-
-  <!-- ================= FEATURED WRITING ================= -->
-  <section class="featured-writing-section">
-    <div class="section-header" style="margin-bottom: 16px;">
-      <h2 class="section-title mono-header" style="margin: 0; font-size: 12px; font-weight: normal; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">FEATURED WRITING</h2>
-    </div>
-    {{ $posts := where .Site.RegularPages "Type" "posts" }}
-    <ul class="post-list">
-      {{ $articles := slice }}
-      {{ range $posts }}
-        {{ $isRoundup := false }}
-        {{ range .Params.tags }}
-          {{ if in (slice "roundup" "Roundup" "weekly-roundup" "Weekly Roundup") . }}
-            {{ $isRoundup = true }}
-          {{ end }}
-        {{ end }}
-        {{ if not $isRoundup }}
-          {{ $articles = $articles | append . }}
-        {{ end }}
-      {{ end }}
-      
-      {{ $featured := where $articles "Params.featured" true }}
-      {{ if eq (len $featured) 0 }}{{ $featured = first 3 $articles }}{{ end }}
-      {{ range first 3 (sort $featured "Date" "desc") }}
-      <li class="post-item">
-        <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
-        <div class="post-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02 2006" }}</time>
-        </div>
+    <ul class="services">
+      {{- range .Params.services }}
+      <li class="service">
+        {{ partial "service-icon.html" .icon }}
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
       </li>
-      {{ end }}
+      {{- end }}
     </ul>
   </section>
 
-  <hr class="section-separator" style="margin: 48px 0; border: 0; border-top: 1px solid var(--border-color);">
-
-  <!-- ================= LATEST ROUNDUP ================= -->
-  <section class="latest-roundup-section">
-    <div class="section-header" style="margin-bottom: 16px;">
-      <h2 class="section-title mono-header" style="margin: 0; font-size: 12px; font-weight: normal; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">LATEST ROUNDUP</h2>
+  {{ with $db }}
+  {{- $entries := where .RegularPagesRecursive "Params.private" "!=" true -}}
+  <section class="section" aria-labelledby="db-h">
+    <div class="section-head">
+      <h2 class="h2" id="db-h">The workshop database</h2>
+      <a class="more" href="{{ .RelPermalink }}">All {{ len $entries }} entries</a>
     </div>
-    <div class="roundup-container">
-      {{ $roundups := where $posts "Params.tags" "intersect" (slice "roundup" "Roundup" "weekly-roundup" "Weekly Roundup") }}
-      {{ range first 1 (sort $roundups "Date" "desc") }}
-      <div class="reading-block" style="background: #2b2b2b; border-radius: 8px; padding: 16px 20px;">
-        <a href="{{ .RelPermalink }}" class="reading-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #555; font-family: var(--font-body); font-size: 16px;">{{ .Title }}</a>
+    <p class="standfirst">Pinouts, EEPROM locations and step-by-step programming notes, written down after real jobs. Free to read.</p>
+    <ul class="brand-grid">
+      {{- range .Sections }}
+      {{- if ne (path.Base .RelPermalink) "guides" }}
+      <li><a class="brand-chip" href="{{ .RelPermalink }}">{{ .Title }} <span>{{ len .RegularPagesRecursive }}</span></a></li>
+      {{- end }}
+      {{- end }}
+    </ul>
+    <h3 class="h3">Recently written up</h3>
+    <ul class="rows">
+      {{- $shown := 0 }}
+      {{- range $entries.ByDate.Reverse }}
+      {{- if and (lt $shown 4) (not (strings.Contains .Title "Pending")) }}
+      {{- $shown = add $shown 1 }}
+      <li>
+        <a class="row-link" href="{{ .RelPermalink }}">
+          <span class="row-title">{{ .Title }}</span>
+          <span class="row-meta">{{ with .Params.brand }}<span>{{ . }}</span>{{ end }}{{ range first 2 .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</span>
+          <svg class="row-go" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  <section class="section" aria-labelledby="parts-h">
+    <div class="sourcing">
+      <img class="sourcing-art" src="{{ "images/bg/car-halftone.webp" | relURL }}" width="1400" height="415" alt="" loading="lazy">
+      <div class="sourcing-body">
+        <div>
+          <span class="sticker sticker--flat">Parts</span>
+          <h2 id="parts-h">Need a module from Ladipo?</h2>
+          <p>ECUs, immobiliser modules and engines, found at Ladipo Market and tested before handover. Prices are on request, because they change with the market.</p>
+          <a class="btn btn--primary" href="https://wa.me/{{ $c.whatsapp }}?text={{ "Hello Alltech, I need a part:" | urlquery }}">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+        <ol class="steps">
+          <li><span><strong>Send the details</strong>The part number from the label, or a clear photo of the old module, and your car’s make, model and year.</span></li>
+          <li><span><strong>Get photos and a price</strong>Emmanuel finds the part and sends photos before you pay anything.</span></li>
+          <li><span><strong>Tested before handover</strong>Modules are tested on the bench before you collect them.</span></li>
+          <li><span><strong>Collect in Lagos</strong>Ask about delivery if you are outside Lagos.</span></li>
+        </ol>
       </div>
-      {{ end }}
     </div>
   </section>
 
-  <hr class="section-separator" style="margin: 48px 0; border: 0; border-top: 1px solid var(--border-color);">
-
-</main>
-
-
-<!-- ================= AVATAR OVERLAY ================= -->
-<dialog id="avatarOverlay" class="avatar-overlay" aria-label="Avatar Image">
-  <button id="closeOverlayBtn" class="avatar-overlay-close" aria-label="Close avatar overlay">×</button>
-  <img id="overlayImg" src="" alt="">
-</dialog>
-
-<!-- ================= STYLES ================= -->
-<style>
-  /* ─── Layout ───────────────────────────────────────── */
-  .home {
-    font-family: var(--body-font);
-    font-size: 1rem;
-    font-weight: var(--body-font-weight);
-    line-height: var(--line-height-base);
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem 1.5rem 3rem;
-    color: var(--text-color);
-  }
-
-  /* ─── Top section ───────────────────────────────────── */
-  .top-section {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  /* ─── Inline Nav ────────────────────────────────────── */
-  .inline-nav {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    font-family: var(--body-font), sans-serif;
-  }
-  .inline-nav__link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1rem;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 0.25rem 0.5rem;
-    transition: color 0.2s;
-  }
-  .inline-nav__link:hover {
-    color: var(--accent-color);
-  }
-  .inline-nav__sep {
-    margin: 0 0.5rem;
-    color: var(--border-color);
-    font-size: 0.875rem;
-  }
-
-  /* ─── Monospace headers ────────────── */
-  .mono-header {
-    font-family: 'VT323', monospace;
-    letter-spacing: 0.08em;
-  }
-
-  .site-title,
-  .section-title,
-  .card-title,
-  .card-count {
-    font-family: var(--pixel-font);
-  }
-
-  .site-title {
-    font-size: 1.5rem;
-    margin-top: 14px;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-    animation: flicker 4s infinite;
-    color: var(--accent-color);
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    letter-spacing: 0.5px;
-    opacity: 0.9;
-    color: var(--text-color);
-  }
-
-  /* ─── Flicker ───────────────────────────────────────── */
-  @keyframes flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-    20%, 24%, 55% { opacity: .4; }
-  }
-
-  /* ─── Author Bottom Card ─────────────────────────────── */
-  .author-bottom-card {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    background: var(--card-bg);
-  }
-
-  .author-bottom-card__avatar {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border-radius: 10px;
-    flex-shrink: 0;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
-    border: 1px solid var(--border-color);
-  }
-
-  .author-bottom-card__avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .author-bottom-card__info {
-    flex: 1;
-  }
-
-  .author-bottom-card__name {
-    font-family: var(--pixel-font);
-    font-size: 1.3rem;
-    margin: 0 0 0.4rem;
-    color: var(--accent-color);
-    letter-spacing: 0.5px;
-  }
-
-  .author-bottom-card__bio {
-    font-size: 0.9375rem;
-    color: var(--text-color-secondary);
-    line-height: 1.6;
-    margin: 0 0 0.6rem;
-  }
-
-  .author-bottom-card__link {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    transition: opacity 0.15s;
-  }
-
-  .author-bottom-card__link:hover {
-    opacity: 0.75;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-  }
-
-  /* Avatar overlay (for click-to-expand) */
-  .avatar-overlay {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: auto;
-    overflow: visible;
-  }
-
-  .avatar-overlay::backdrop {
-    background: rgba(0, 0, 0, .85);
-  }
-
-  .avatar-overlay-close {
-    position: absolute;
-    top: 24px;
-    right: -40px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-    padding: 8px;
-    border-radius: 4px;
-  }
-
-  .avatar-overlay-close:focus-visible {
-    outline: 3px solid var(--color-accent-primary);
-  }
-
-  .avatar-overlay img {
-    max-width: 90vw;
-    max-height: 85vh;
-    border-radius: 12px;
-    animation: zoomIn .3s ease;
-  }
-
-  @keyframes zoomIn {
-    from { transform: scale(.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-
-  /* ─── NOW section ───────────────────────────────────── */
-  .now-section {
-    margin-bottom: 2.5rem;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .now-intro {
-    margin: 0 0 1.2rem;
-    line-height: 1.7;
-    font-size: 1rem;
-  }
-
-  .reading-block {
-    background: var(--input-bg);
-    padding: 1rem 1.2rem 0.4rem;
-    border-radius: 8px;
-  }
-
-  .reading-label {
-    display: block;
-    font-size: 0.875rem;
-    color: var(--text-color-secondary);
-    margin-bottom: .5rem;
-    font-family: var(--body-font), monospace;
-  }
-
-  .reading-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .reading-list li {
-    padding: .45rem 0;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .reading-list li:last-child {
-    border-bottom: none;
-  }
-
-  .reading-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: opacity .15s;
-  }
-
-  .reading-link:hover {
-    opacity: .75;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-  }
-
-  /* ─── WORK section ──────────────────────────────────── */
-  .work-section {
-    margin-bottom: 2.5rem;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .portfolio-card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    background: var(--card-bg, rgba(255, 255, 255, 0.03));
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    height: 100%;
-    box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .portfolio-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(0,255,204,0.1) 0%, rgba(0,0,0,0) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-  }
-
-  .portfolio-card:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 255, 204, 0.1);
-    transform: translateY(-4px);
-  }
-
-  .portfolio-card:hover::before {
-    opacity: 1;
-  }
-
-  .portfolio-card__content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .portfolio-card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 0.75rem;
-  }
-
-  .portfolio-card__title {
-    font-size: 1.3rem;
-    margin: 0;
-    color: var(--text-color);
-    letter-spacing: .02em;
-  }
-
-  .portfolio-card__arrow {
-    color: var(--text-color-secondary);
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .portfolio-card:hover .portfolio-card__arrow {
-    transform: translate(3px, -3px);
-    color: var(--accent-color);
-  }
-
-  .portfolio-card__desc {
-    font-size: 0.95rem;
-    color: var(--text-color-secondary);
-    line-height: 1.6;
-    margin: 0 0 1.25rem 0;
-    flex-grow: 1;
-  }
-
-  .portfolio-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .portfolio-tag {
-    background: var(--input-bg, rgba(255,255,255,0.08));
-    color: var(--text-color-secondary);
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    font-family: var(--body-font), sans-serif;
-    transition: all 0.2s ease;
-  }
-  
-  .portfolio-card:hover .portfolio-tag {
-    border-color: rgba(0,255,204,0.3);
-    color: var(--text-color);
-  }
-
-  /* ─── Section separator ─────────────────────────────── */
-  section {
-    margin-bottom: 2.8rem;
-  }
-
-  .section-separator {
-    border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 2rem auto;
-    max-width: 720px;
-  }
-
-  /* ─── Featured & Latest Additions ───────────────────── */
-  .featured-section, .latest-section, .about-mini {
-    max-width: 900px;
-  }
-
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1.5rem;
-  }
-  .section-header .section-title {
-    margin-bottom: 0;
-  }
-  .view-all-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: opacity 0.15s;
-  }
-  .view-all-link:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-  }
-
-  .featured-card {
-    display: flex;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .featured-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    border-color: var(--accent-color);
-  }
-  .featured-card__image {
-    flex: 1 1 50%;
-    min-height: 250px;
-  }
-  .featured-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .featured-card__content {
-    flex: 1 1 50%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .featured-card__meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.875rem;
-  }
-  .featured-card__category {
-    background: var(--color-accent-muted, rgba(0, 255, 204, 0.15));
-    color: var(--accent-color);
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  .featured-card__date {
-    color: var(--text-color-secondary);
-  }
-  .featured-card__title {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    margin: 0 0 1rem;
-  }
-  .featured-card__title a {
-    color: var(--text-color);
-    text-decoration: none;
-  }
-  .featured-card__title a:hover {
-    color: var(--accent-color);
-  }
-  .featured-card__excerpt {
-    color: var(--text-color-secondary);
-    margin: 0 0 1.5rem;
-    line-height: 1.6;
-    font-size: 1rem;
-  }
-  .featured-card__readmore {
-    color: var(--color-bg-primary, #111);
-    background: var(--accent-color);
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    align-self: flex-start;
-    transition: transform 0.2s;
-  }
-  .featured-card__readmore:hover {
-    transform: translateY(-2px);
-  }
-
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-  .post-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border-color: var(--accent-color);
-  }
-  .post-card__image {
-    aspect-ratio: 16/9;
-    overflow: hidden;
-  }
-  .post-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-  }
-  .post-card:hover .post-card__image img {
-    transform: scale(1.05);
-  }
-  .post-card__content {
-    padding: 1rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .post-card--no-image .post-card__content {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-  }
-  .post-card__meta {
-    font-size: 0.875rem;
-    color: var(--text-color-secondary);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .post-card__title {
-    font-size: 1rem;
-    line-height: 1.3;
-    margin: 0 0 0.5rem;
-  }
-  .post-card__title a {
-    color: var(--text-color);
-    text-decoration: none;
-  }
-  .post-card__title a:hover {
-    color: var(--accent-color);
-  }
-  .post-card__excerpt {
-    color: var(--text-color-secondary);
-    font-size: 0.875rem;
-    margin: 0;
-    line-height: 1.4;
-  }
-
-  /* ─── Tablet adjustments (≤768px) ──────────────────── */
-  @media (max-width: 768px) {
-    .home {
-      padding: 1.5rem 1.25rem 2.5rem;
-    }
-
-    .portfolio-grid {
-      gap: 1.25rem;
-    }
-
-    .portfolio-card {
-      padding: 1.25rem;
-    }
-
-    .portfolio-card__title {
-      font-size: 1.15rem;
-    }
-
-    .post-grid {
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
-    }
-
-    .featured-card {
-      flex-direction: column;
-    }
-
-    .featured-card__image {
-      min-height: 200px;
-      max-height: 260px;
-    }
-
-    .featured-card__content {
-      padding: 1.5rem;
-    }
-  }
-
-  /* ─── Mobile adjustments (≤600px) ────────────────────── */
-  @media (max-width: 600px) {
-    .home {
-      padding: 1.25rem 1rem 2rem;
-    }
-
-    .site-title {
-      font-size: 1.3rem;
-    }
-
-    .section-title {
-      font-size: 1.35rem;
-    }
-
-    .top-section {
-      margin-bottom: 1.25rem;
-    }
-
-    .inline-nav {
-      margin-bottom: 1.5rem;
-      gap: 0;
-    }
-
-    /* ── Portfolio / Work cards → single column ── */
-    .portfolio-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .portfolio-card {
-      padding: 1.4rem 1.25rem;
-      border-radius: 10px;
-    }
-
-    .portfolio-card__header {
-      margin-bottom: 0.6rem;
-    }
-
-    .portfolio-card__title {
-      font-size: 1.15rem;
-    }
-
-    .portfolio-card__desc {
-      font-size: 0.95rem;
-      line-height: 1.55;
-      margin-bottom: 1rem;
-    }
-
-    .portfolio-tag {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.7rem;
-    }
-
-    /* ── Featured card ── */
-    .featured-card {
-      flex-direction: column;
-      border-radius: 10px;
-    }
-
-    .featured-card__image {
-      min-height: 180px;
-      max-height: 220px;
-    }
-
-    .featured-card__content {
-      padding: 1.25rem;
-    }
-
-    .featured-card__title {
-      font-size: 1.25rem;
-      line-height: 1.3;
-    }
-
-    .featured-card__excerpt {
-      font-size: 0.9375rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .featured-card__readmore {
-      padding: 0.6rem 1.5rem;
-      font-size: 0.9375rem;
-    }
-
-    /* ── Post cards → single column ── */
-    .post-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .post-card {
-      border-radius: 10px;
-    }
-
-    .post-card__content {
-      padding: 1.1rem 1.15rem;
-    }
-
-    .post-card__title {
-      font-size: 1.05rem;
-      line-height: 1.35;
-      margin-bottom: 0.4rem;
-    }
-
-    .post-card__excerpt {
-      font-size: 0.9375rem;
-      line-height: 1.5;
-    }
-
-    .post-card__meta {
-      font-size: 0.8125rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .post-card--no-image .post-card__content {
-      padding: 1.75rem 1.25rem;
-    }
-
-    /* ── Author card ── */
-    .author-bottom-card {
-      flex-direction: column;
-      text-align: center;
-      padding: 1.5rem 1.25rem;
-      gap: 1.25rem;
-    }
-
-    .author-bottom-card__avatar {
-      margin: 0 auto;
-      width: 90px;
-      height: 90px;
-    }
-
-    .author-bottom-card__name {
-      font-size: 1.2rem;
-    }
-
-    .author-bottom-card__bio {
-      font-size: 0.9375rem;
-      line-height: 1.6;
-    }
-
-    /* ── Section spacing ── */
-    section {
-      margin-bottom: 2rem;
-    }
-
-    .section-separator {
-      margin: 1.5rem auto;
-    }
-
-    .section-header {
-      margin-bottom: 1rem;
-    }
-
-    /* ── NOW section ── */
-    .reading-block {
-      padding: 0.9rem 1rem 0.35rem;
-    }
-
-    /* ── Avatar overlay ── */
-    .avatar-overlay-close {
-      right: 4px;
-      top: -36px;
-      font-size: 1.8rem;
-    }
-  }
-
-  /* ─── Small phone adjustments (≤420px) ──────────────── */
-  @media (max-width: 420px) {
-    .home {
-      padding: 1rem 0.85rem 1.75rem;
-    }
-
-    .site-title {
-      font-size: 1.15rem;
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-    }
-
-    .portfolio-card {
-      padding: 1.2rem 1rem;
-    }
-
-    .portfolio-card__title {
-      font-size: 1.05rem;
-    }
-
-    .portfolio-card__desc {
-      font-size: 0.9rem;
-    }
-
-    .featured-card__title {
-      font-size: 1.1rem;
-    }
-
-    .featured-card__content {
-      padding: 1rem;
-    }
-
-    .post-card__content {
-      padding: 1rem;
-    }
-
-    .author-bottom-card {
-      padding: 1.25rem 1rem;
-    }
-
-    .author-bottom-card__avatar {
-      width: 80px;
-      height: 80px;
-    }
-
-    .author-bottom-card__bio {
-      font-size: 0.875rem;
-    }
-
-    .inline-nav__link {
-      font-size: 0.9375rem;
-      padding: 0.2rem 0.35rem;
-    }
-
-    .inline-nav__sep {
-      margin: 0 0.25rem;
-    }
-  }
-</style>
-
-<!-- ================= SCRIPT ================= -->
-<script>
-  const avatar = document.getElementById("avatarBox");
-  const overlay = document.getElementById("avatarOverlay");
-  const overlayImg = document.getElementById("overlayImg");
-  const closeBtn = document.getElementById("closeOverlayBtn");
-
-  function openOverlay() {
-    if (!avatar || !overlayImg || !overlay) return;
-    const img = avatar.querySelector("img");
-    if (img) overlayImg.src = img.src;
-    overlay.showModal();
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeOverlay() {
-    if (!overlay) return;
-    overlay.close();
-    document.body.style.overflow = "";
-  }
-
-  if (avatar) {
-    avatar.addEventListener("click", openOverlay);
-    avatar.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openOverlay();
-      }
-    });
-    avatar.setAttribute("tabindex", "0");
-    avatar.setAttribute("role", "button");
-    avatar.setAttribute("aria-label", "View larger avatar");
-  }
-
-  if (overlay) {
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay || e.target === closeBtn) {
-        closeOverlay();
-      }
-    });
-  }
-</script>
+  {{- $posts := where site.RegularPages "Section" "posts" }}
+  <section class="section" aria-labelledby="writing-h">
+    <div class="section-head">
+      <h2 class="h2" id="writing-h">Writing</h2>
+      <a class="more" href="{{ "/posts/" | relURL }}">All writing</a>
+    </div>
+    <div class="writing-grid">
+      <div>
+        <p class="byline">By <strong>{{ site.Params.author }}</strong></p>
+        {{- range first 4 $posts.ByDate.Reverse }}
+        <article class="post-row">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ with .Params.categories }} · {{ index . 0 }}{{ end }}</p>
+        </article>
+        {{- end }}
+      </div>
+      {{- $reading := where (where site.RegularPages "Type" "books") "Params.status" "Reading" }}
+      {{ with $reading }}
+      <aside class="reading" aria-labelledby="reading-h">
+        <h3 id="reading-h">Currently reading</h3>
+        <ul>
+          {{- range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{- end }}
+        </ul>
+      </aside>
+      {{ end }}
+    </div>
+  </section>
+</div>
 {{ end }}

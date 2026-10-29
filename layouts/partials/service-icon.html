@@ -1,0 +1,16 @@
+{{- /* Cartoon service icons, drawn for Alltech. Argument: icon name. */ -}}
+<svg aria-hidden="true" viewBox="0 0 48 48">
+{{- if eq . "clone" }}
+  <rect class="fill" x="4" y="10" width="22" height="22"/><rect x="22" y="16" width="22" height="22" fill="var(--paper)"/>
+  <path d="M8 6v4M14 6v4M20 6v4M26 42v-4M32 42v-4M38 42v-4M28 27h10M33 22v10"/>
+{{- else if eq . "wipe" }}
+  <rect class="fill" x="8" y="8" width="32" height="32"/><path d="M4 16h4M4 24h4M4 32h4M40 16h4M40 24h4M40 32h4"/>
+  <path d="M16 30l14-14M18 18l12 12" />
+{{- else if eq . "gauge" }}
+  <path class="fill" d="M6 34a18 18 0 0 1 36 0z"/><path d="M6 34a18 18 0 0 1 36 0M24 34l9-12M2 38h44"/><circle cx="24" cy="34" r="3" fill="var(--ink)"/>
+{{- else if eq . "key" }}
+  <circle class="fill" cx="16" cy="24" r="10"/><circle cx="16" cy="24" r="3"/><path d="M26 24h18M36 24v7M42 24v5"/>
+{{- else }}
+  <rect class="fill" x="8" y="8" width="32" height="32"/>
+{{- end }}
+</svg>
