@@ -4,155 +4,53 @@ How to run the site from Obsidian: write blog posts and weekly roundups, add dat
 
 ---
 
-## 1. Setting Up Obsidian Templates
+## 1. Writing a new post in Obsidian
 
-Obsidian has a built-in feature called **Templates**. Templates allow you to insert pre-written "Frontmatter" (the configuration settings at the top of a file) into any new note with just a click.
+Obsidian's template folder is already set to `Templates` (Settings → Core plugins → **Templates** must be on).
 
-### How to Enable Templates in Obsidian
+1. In the file list, open the folder from the table below.
+2. Create a new note (`Ctrl+N`) and name it with dashes, e.g. `toyota-camry-2016-immobiliser`.
+3. `Ctrl+P` → **Templates: Insert template** → pick the template.
+4. Fill in the lines at the top (between the `---` lines) and write the body. Delete any section you don't need.
+5. Save. The page appears on the site the next time it is built (after you push to GitHub).
 
-1. Open this project folder in Obsidian.
-2. Click the **Gear icon (Settings)** in the bottom left corner.
-3. Go to **Core Plugins** and make sure **Templates** is toggled ON.
-4. Create a folder in your Obsidian vault called `Obsidian_Templates` (or just `Templates`).
-5. Go back to Settings > **Templates**, and set the **Template folder location** to that folder.
+| I want to publish… | Template | Save it in | Where it shows |
+| --- | --- | --- | --- |
+| A step-by-step Alltech guide | `Alltech - Guide` | `content/alltech/database/guides/` | Guides, and the blog's ECU programming list |
+| A database entry (pinout, EEPROM, procedure) | `Alltech - Database entry` | `content/alltech/database/Brand/Model/entry-name/` as a note called `index` | Database, under that brand and model; in search |
+| A part for sale | `Alltech - Part for sale` | `content/alltech/shop/` | Parts ("Price on request", WhatsApp button) |
+| A locked ECU note (approved readers only) | `Alltech - Locked note` | `content/blog/locked/` | ECU programming list, title only, behind an access code |
+| A blog post | `Blog - Post` | `content/posts/` | Blog posts; set `featured: true` for the blog home |
+| A weekly roundup | `Blog - Weekly roundup` | `content/posts/` | Roundups and "Latest roundup" on the blog home |
+| A book | `Blog - Book` | `content/books/` | Bookshelf; `status: "Reading"` also shows it under Now |
 
-### The Core Templates to Create
+To keep a post off the site while you write it, set `draft: true`.
 
-In your templates folder, create these markdown files and copy-paste the text below into them:
+---
 
-#### Template 1: `TPL - Standard Blog Post`
+## 2. Callouts
 
-Use this when you are writing a standard article for your blog.
+Callouts are the coloured boxes for instructions, warnings and tips. They work in every kind of post, Alltech and blog, and look the same in Obsidian and on the site.
 
 ```markdown
----
-title: "{{title}}"
-date: {{date}}
-lastmod: {{date}}
-draft: false
-cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
-categories: ["Tech"] # Use exactly one category (e.g., Tech, Life, Books)
-tags: ["tag1", "tag2"]
-featured: false # Set to true to pin it as an "Editor's Pick" on the homepage
----
+> [!info] What you need
+> - K+DCAN cable
+> - INPA
 
-**Write an engaging summary or intro paragraph here...**
+> [!warning] Back up first
+> Save the full EEPROM before writing anything.
 
-<!--more-->
+> [!tip] Workshop tip
+> The AK90 reads the 2L86D in-circuit.
 
-The rest of your post content goes here. The `<!--more-->` tag ensures the excerpt on the homepage looks clean.
+> [!danger] Don't do this
+> Never write a dump from a different VIN.
 ```
 
-#### Template 2: `TPL - Locked ECU Post`
-
-For ECU programming writing that only approved readers may see. Save it in `content/blog/locked/`. See section 3.
-
-```markdown
----
-title: "{{title}}"
-date: {{date}}
-draft: false
-description: "One line on what this note covers (shown nowhere while locked)."
-tags: ["ecu-programming"]
----
-
-Write the procedure here. Everything in content/blog/locked/ is locked automatically.
-```
-
-#### Template 3: `TPL - ECU Database`
-
-Use this when manually adding a new ECU pinout, OBD procedure, or immobilizer guide.
-
-```markdown
----
-title: "{{title}}"
-date: {{date}}
-draft: false
-tags: ["bench", "eeprom"]
-categories: ["Database", "Immobilizer"]
-brand: "Brand Name"
-model: "Car Model"
-ecu: "ECU Part Number"
----
-
-## Vehicle Details
-| Field | Value |
-|-------|-------|
-| **Brand** | Brand Name |
-| **Model** | Car Model |
-| **Year** | Year Range |
-
----
-
-## ECU Details
-| Field | Value |
-|-------|-------|
-| **Manufacturer** | ECU Maker |
-| **ECU Number** | ECU Part Number |
-
----
-
-## Programming Instructions
-**Method:** `BENCH`
-
-1. First step goes here...
-2. Second step goes here...
-
----
-
-## Pinout Diagram
-![Pinout diagram for ECU Part Number](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)
-```
-
-If you have no pinout image yet, delete the whole "Pinout Diagram" section rather than leaving a note that it is coming.
-
-#### Template 4: `TPL - Part for sale`
-
-Use this when you list a real ECU, module or engine you have in hand. Never list a part you don't have, and never use a stock photo.
-
-```markdown
----
-title: "{{title}}"
-date: {{date}}
-draft: false
-price: ""            # for your records; the page always shows "Price on request"
-sku: ""
-oem_number: ""
-in_stock: true
-stock_count: 1
-condition: "Tokunbo, bench tested"
-compatibility:
-  - "Make Model (years)"
-specs:
-  Connector: ""
-images:
-  - "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
----
-
-What the part is and what was tested, in plain words. No warranty promises.
-```
-
-#### Template 5: weekly roundup
-
-`Templates/weekly-roundup-template.md`. The `weekly-roundup` tag puts it on the blog's Roundups page and in "Latest roundup" on the blog home.
-
----
-
-## 2. Creating a Post Using Obsidian
-
-When you need to make a new post manually, follow these simple steps:
-
-1. In Obsidian, navigate to the correct folder where the post should live:
-   - **Blog posts and weekly roundups:** `content/posts/`
-   - **Locked ECU programming writing:** `content/blog/locked/`
-   - **ECU database:** `content/alltech/database/BrandName/ModelName/`
-   - **Parts for sale:** `content/alltech/shop/`
-   - **Books:** `content/books/`
-2. Create a new Note (`Ctrl+N` or `Cmd+N`) inside that folder.
-3. Give the note a clear title (e.g., `toyota-camry-2gr-fe.md`).
-4. Press `Ctrl+P` (or `Cmd+P`) to open the Command Palette, type **"Insert Template"**, and press Enter.
-5. Select the matching template (blog post, locked ECU post, database entry, part, roundup or book).
-6. Fill in the specific details and hit save!
+- Types: `note`, `info`, `tip`, `success`, `warning`, `danger`. Warning and danger are orange; the rest are green.
+- The words after `[!type]` are the title; leave them out and the type is the title.
+- `> [!tip]- Title` makes it folded (tap to open); `> [!tip]+ Title` foldable but open.
+- A line starting with `>` but no `[!type]` stays an ordinary quote.
 
 ---
 
@@ -182,7 +80,7 @@ Until `ACCESS_SECRET` is set, every locked page stays locked for everyone, inclu
 
 ### Write a locked post
 
-Save it in `content/blog/locked/` (Obsidian template: `Templates/locked-ecu-post-template.md`). Everything in that folder is locked, tagged `ecu-programming`, listed by title only in the blog, and kept out of feeds, search and the sitemap.
+Save it in `content/blog/locked/` (Obsidian template: `Alltech - Locked note`). Everything in that folder is locked, tagged `ecu-programming`, listed by title only in the blog, and kept out of feeds, search and the sitemap.
 
 The two older locked guides in the database (`me75-full-flash-bdm`, `bosch-me75-manual`) are locked by their addresses in `middleware.js`. To lock another database page, add `private: true` to it and its address to that list.
 

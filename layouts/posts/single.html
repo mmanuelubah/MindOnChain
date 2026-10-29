@@ -7,7 +7,8 @@
   <nav class="crumbs" aria-label="Breadcrumb">
     <ol>
       <li><a href="{{ "/blog/" | relURL }}">Blog</a></li>
-      <li>{{ if $isEcu }}<a href="{{ "/blog/ecu-programming/" | relURL }}">ECU programming</a>{{ else }}<a href="{{ "/posts/" | relURL }}">Posts</a>{{ end }}</li>
+      {{- $isRoundup := in (.Params.tags | default slice) "weekly-roundup" }}
+      <li>{{ if $isEcu }}<a href="{{ "/blog/ecu-programming/" | relURL }}">ECU programming</a>{{ else if $isRoundup }}<a href="{{ "/blog/roundups/" | relURL }}">Roundups</a>{{ else }}<a href="{{ "/posts/" | relURL }}">Posts</a>{{ end }}</li>
       <li aria-current="page">{{ .Title }}</li>
     </ol>
   </nav>

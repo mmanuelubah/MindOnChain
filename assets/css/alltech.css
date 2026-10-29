@@ -463,6 +463,11 @@ mark { background: var(--brand); color: var(--on-brand); padding: 0 2px; }
 .obs-callout-icon svg { width: 20px; height: 20px; display: block; }
 .obs-callout-content { padding: var(--s-3) var(--s-4); }
 .obs-callout-content > :last-child { margin-bottom: 0; }
+details.obs-callout > summary { cursor: pointer; list-style: none; min-height: 44px; }
+details.obs-callout > summary::-webkit-details-marker { display: none; }
+details.obs-callout > summary::after { content: "+"; margin-left: auto; font: 700 var(--t-lg)/1 var(--f-code); }
+details.obs-callout[open] > summary::after { content: "−"; }
+.prose .obs-callout { font-family: var(--f-ui); font-size: var(--t-md); font-style: normal; }
 .obs-callout-warning, .obs-callout-danger, .obs-callout-error, .obs-callout-important { background: var(--warn-bg); color: var(--warn-ink); border-color: currentColor; }
 .obs-callout-success, .obs-callout-tip, .obs-callout-check { border-color: var(--brand); }
 
