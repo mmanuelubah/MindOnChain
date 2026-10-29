@@ -7,7 +7,7 @@ Read this first at the start of every session and resume from **Next step**.
 - **Branch:** `audit/human-grade-2026-10-29` (local only, not pushed)
 - **Safety tag:** `pre-audit-2026-10-29` (points at `d03c278`, the last commit on `main` before the audit)
 - **Return to the starting point:** `git switch main` (main is untouched by the audit). To inspect the exact pre-audit state: `git checkout pre-audit-2026-10-29`.
-- **Current phase:** 10 complete, at **Gate 4** (final report). Never release from here: the owner merges.
+- **Current phase:** released. On 2026-10-29 the owner set ACCESS_SECRET and RESEND_API_KEY on Vercel and asked to go live; `main` was fast-forwarded to `3bad2a8` and Vercel's production deployment succeeded.
 - **Restore points:** `pre-audit-2026-10-29` (original site), `alltech-yellow-2026-10-29` (yellow version of the new home).
 
 ## Owner direction received (2026-10-29)
@@ -38,6 +38,10 @@ AllTech is the main site; blog byline Ubanatu Chinaza Emmanuel; Vox-style design
 | 8 Rollout | Blog (home, posts, roundups, ECU programming, bookshelf, about), locked writing (middleware + api, 15 checks), database, guides, parts, hub, generic, 404. |
 | 9 Cleanup | Old partials, aliases, mechanic photo, unused params removed; README; admin guide rewritten. |
 | 10 Review | Self-review (no independent reviewer requested). 124 routes swept, links, leaks, banned phrases, Lighthouse in baseline/lighthouse-final.md. Re-score in AUDIT_MASTER.md section 7. |
+
+## Live checks after release (2026-10-29)
+
+Locked guide, its index.html and /blog/locked/* redirect (302) to /locked/; /api/access/request returns the field error for a bad email (so both Vercel variables are set); verify without a request returns 409; a forged approval link returns 400; 18 public pages, feeds, sitemap and search return 200; unknown pages 404; no locked text in live feeds or search. Note: alltech.vercel.app belongs to someone else, so the project rename cannot use it.
 
 ## Next step
 
