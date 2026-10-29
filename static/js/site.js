@@ -80,3 +80,14 @@
     if (next === "light") { say("Up NEPA!"); shout(); } else { say("Ehhn…"); groan(); }
   });
 })();
+
+// "Copy link" buttons on blog posts. Does nothing where the clipboard API is unavailable.
+document.addEventListener("click", function (e) {
+  var b = e.target.closest && e.target.closest("[data-copy]");
+  if (!b || !navigator.clipboard) return;
+  navigator.clipboard.writeText(b.dataset.copy).then(function () {
+    var was = b.textContent;
+    b.textContent = "Link copied";
+    setTimeout(function () { b.textContent = was; }, 1600);
+  });
+});

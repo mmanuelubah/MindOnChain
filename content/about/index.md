@@ -14,4 +14,4 @@ I love difficult things, but people are the most difficult—working on cars and
 
 Outside of work, I take photos of people and places I want to remember, watch an ungodly amount of podcasts, and listen to Jazz and lofi chill songs—which you'll see scattered throughout my posts and articles constantly.
 
-[hi@mindonchain.com](mailto:ubahchinaza@gmail.com)
+[ubanatuchinaza@gmail.com](mailto:ubanatuchinaza@gmail.com)

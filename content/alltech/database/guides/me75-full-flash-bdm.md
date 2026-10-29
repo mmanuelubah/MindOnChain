@@ -7,9 +7,9 @@ private: true
 password_id: "default"
 tags: ["ecu-programming", "bmw", "me7.5", "bdm", "flash"]
 summary: "Complete BDM (Background Debug Mode) flash procedure for Bosch ME7.5.10 ECUs. Covers JTAG pinout, adapter wiring, and full read/write with BDM100."
-# Protected by middleware.js on Vercel. Kept out of lists, feeds, tag pages, search and the sitemap.
+# Locked by middleware.js (access code). Listed by title in its section only; never in feeds, search or the sitemap.
 build:
-  list: never
+  list: local
 sitemap:
   disable: true
 ---

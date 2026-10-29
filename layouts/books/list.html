@@ -1,97 +1,29 @@
 {{ define "main" }}
-<section class="books-page">
-  {{ partial "back_button.html" (dict "Destination" "/") }}
-  <h1 class="books-heading mono-header">BOOKS</h1>
-
-  <div class="books-list">
-    {{ range (where .Pages "Type" "books") }}
-    <div class="book-row">
-      <a class="book-title" href="{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .RelPermalink }}{{ end }}"
-        target="_blank" rel="noopener noreferrer">
-        {{ .Title }} →
-      </a>
-      <p class="book-status">
-        {{ if in (lower .Params.status) "reading" }}
-        Reading
-        {{ else if in (lower .Params.status) "read" }}
-        Read • {{ .Date.Format "2006" }}
-        {{ else if in (lower .Params.status) "unfinished" }}
-        Unfinished
-        {{ else }}
-        Unread
-        {{ end }}
-      </p>
-    </div>
-    {{ end }}
-  </div>
-</section>
-
-<style>
-  /* ─ Page container ───────────────────────────────────── */
-  .books-page {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-    color: var(--text-color);
-    font-family: var(--body-font);
-  }
-
-  /* ─ Page heading ─────────────────────────────────────── */
-  .books-heading {
-    font-family: 'VT323', monospace;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    color: var(--text-color);
-    margin: 0 0 1.6rem;
-    font-weight: normal;
-    opacity: 0.9;
-  }
-
-  /* ─ List ─────────────────────────────────────────────── */
-  .books-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .book-row {
-    padding: .85rem 0;
-    border-bottom: 1px solid var(--border-color, #333);
-  }
-
-  .book-row:first-child {
-    padding-top: 0;
-  }
-
-  /* ─ Title + arrow ────────────────────────────────────── */
-  .book-title {
-    display: block;
-    font-family: var(--body-font), sans-serif;
-    font-size: 1rem;
-    line-height: 1.4;
-    text-decoration: none;
-    color: var(--text-color);
-    margin-bottom: .25rem;
-    transition: color .15s;
-  }
-
-  .book-title:hover {
-    color: var(--accent-color);
-  }
-
-  /* ─ Status line ──────────────────────────────────────── */
-  .book-status {
-    font-family: var(--body-font), sans-serif;
-    font-size: .78rem;
-    color: var(--text-color-secondary, #888);
-    margin: 0;
-    line-height: 1.3;
-  }
-
-  /* ─ Mobile ───────────────────────────────────────────── */
-  @media (max-width: 600px) {
-    .books-page {
-      padding: 1.5rem 1rem 3rem;
-    }
-  }
-</style>
+{{- $books := where site.RegularPages "Type" "books" -}}
+{{ partial "blog-nav.html" . }}
+<div class="wrap blog">
+  <header class="page-head">
+    <h1 class="h1">Bookshelf</h1>
+    <p class="standfirst">What Ubanatu Chinaza Emmanuel is reading, has read, and wants to read.</p>
+  </header>
+  {{- range slice (dict "status" "Reading" "heading" "Reading now") (dict "status" "Read" "heading" "Read") (dict "status" "Unread" "heading" "Want to read") }}
+  {{- $heading := .heading }}{{ $status := .status }}
+  {{- $group := (where $books "Params.status" $status).ByDate.Reverse }}
+  {{- if $group }}
+  <section class="blog-block" aria-labelledby="shelf-{{ lower $status }}">
+    <h2 class="blog-label" id="shelf-{{ lower $status }}">{{ $heading }}</h2>
+    <ul class="post-list">
+      {{- range $group }}
+      <li class="post-item">
+        <a class="post-item-link" href="{{ .RelPermalink }}">
+          <span class="post-item-title">{{ .Title }}</span>
+          <span class="post-item-meta">{{ $heading }}{{ if eq $status "Read" }} · {{ .Date.Format "2006" }}{{ end }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+  {{- end }}
+</div>
 {{ end }}

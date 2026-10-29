@@ -11,5 +11,8 @@
   </main>
   {{ partial "footer.html" . }}
   <script src="{{ "js/site.js" | relURL }}" defer></script>
+  {{- if .Params.private }}
+  <script src="{{ "js/access-session.js" | relURL }}" defer></script>
+  {{- end }}
 </body>
 </html>

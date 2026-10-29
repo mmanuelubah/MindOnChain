@@ -1,0 +1,30 @@
+{{- /*
+  Every RSS feed on the site uses this template (layouts/posts/rss.xml points here too).
+  Locked pages (private: true) are dropped from every feed: a feed carries each page's
+  summary, and a feed is not protected by middleware.js.
+*/ -}}
+{{- $ctx := . -}}{{ if .IsHome }}{{ $ctx = site }}{{ end -}}
+{{- $pages := cond (or .IsHome .IsSection) $ctx.RegularPages $ctx.Pages -}}
+{{- $pages = where $pages "Params.private" "!=" true -}}
+{{- with site.Config.Services.RSS.Limit }}{{ if ge . 1 }}{{ $pages = $pages | first . }}{{ end }}{{ end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}</description>
+    <language>{{ site.LanguageCode }}</language>
+    {{- with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+    {{- range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Summary | plainify | transform.XMLEscape | safeHTML }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

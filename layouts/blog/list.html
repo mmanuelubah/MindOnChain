@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{- $p := partial "blog-pages.html" . -}}
+{{- $s := site.Params.social -}}
+{{ partial "blog-nav.html" . }}
+<div class="wrap blog">
+  <header class="blog-profile">
+    <img class="blog-avatar" src="{{ "images/avatar-320.webp" | relURL }}" width="160" height="160" alt="Ubanatu Chinaza Emmanuel">
+    <div>
+      <h1 class="blog-name">{{ site.Params.author }}</h1>
+      <p class="meta">{{ site.Params.location }}</p>
+      <ul class="blog-links">
+        <li><a href="{{ $s.x }}" rel="me noopener">X</a></li>
+        <li><a href="{{ $s.github }}" rel="me noopener">GitHub</a></li>
+        <li><a href="{{ $s.linkedin }}" rel="me noopener">LinkedIn</a></li>
+        <li><a href="mailto:{{ site.Params.contact.email }}">Email</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="blog-intro">
+    {{- range .Params.intro }}<p>{{ . }}</p>{{ end }}
+  </div>
+
+  <ul class="blog-tiles">
+    <li><a class="blog-tile" href="{{ "/posts/" | relURL }}">{{ partial "pixel-icon.html" "page" }}<span class="blog-tile-name">Posts</span><span class="meta">{{ len $p.writing }} {{ cond (eq (len $p.writing) 1) "article" "articles" }}</span></a></li>
+    <li><a class="blog-tile" href="{{ "/blog/roundups/" | relURL }}">{{ partial "pixel-icon.html" "radio" }}<span class="blog-tile-name">Roundups</span><span class="meta">{{ len $p.roundups }} weekly</span></a></li>
+    <li><a class="blog-tile" href="{{ "/blog/ecu-programming/" | relURL }}">{{ partial "pixel-icon.html" "chip" }}<span class="blog-tile-name">ECU programming</span><span class="meta">{{ len $p.ecu }} notes</span></a></li>
+    <li><a class="blog-tile" href="{{ "/books/" | relURL }}">{{ partial "pixel-icon.html" "book" }}<span class="blog-tile-name">Bookshelf</span><span class="meta">{{ len $p.books }} books</span></a></li>
+  </ul>
+
+  <section class="blog-block" aria-labelledby="now-h">
+    <h2 class="blog-label" id="now-h">Now</h2>
+    <p class="blog-now">{{ .Params.now }}</p>
+    {{- $reading := where $p.books "Params.status" "Reading" }}
+    {{- with $reading }}
+    <div class="blog-reading">
+      <p class="meta">Currently reading:</p>
+      <ul>{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+    </div>
+    {{- end }}
+  </section>
+
+  <section class="blog-block" aria-labelledby="work-h">
+    <h2 class="blog-label" id="work-h">Work</h2>
+    <ul class="blog-work">
+      {{- range .Params.work }}
+      <li><a class="blog-work-item" href="{{ .link }}"><span class="blog-work-title">{{ .title }}</span><span class="meta">{{ .text }}</span></a></li>
+      {{- end }}
+    </ul>
+  </section>
+
+  {{- $featured := where $p.writing "Params.featured" true }}
+  <section class="blog-block" aria-labelledby="featured-h">
+    <h2 class="blog-label" id="featured-h">{{ if $featured }}Featured writing{{ else }}Latest writing{{ end }}</h2>
+    <ul class="post-list">
+      {{- range first 5 (cond (gt (len $featured) 0) $featured $p.writing) }}{{ partial "post-row.html" . }}{{ end }}
+    </ul>
+  </section>
+
+  <section class="blog-block" aria-labelledby="roundup-h">
+    <h2 class="blog-label" id="roundup-h">Latest roundup</h2>
+    {{- with index $p.roundups 0 }}
+    <a class="blog-roundup" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- else }}
+    <p class="meta">The first weekly roundup is on its way.</p>
+    {{- end }}
+  </section>
+</div>
+{{ end }}

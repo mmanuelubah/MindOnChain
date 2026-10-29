@@ -1,0 +1,45 @@
+{{ define "main" }}
+{{- $p := partial "blog-pages.html" . -}}
+{{- $tags := slice -}}{{ range $p.writing }}{{ range .Params.tags }}{{ $tags = $tags | append (lower .) }}{{ end }}{{ end -}}
+{{ partial "blog-nav.html" . }}
+<div class="wrap blog">
+  <header class="page-head">
+    <h1 class="h1">Posts</h1>
+    <p class="standfirst">Everything Ubanatu Chinaza Emmanuel has written here, newest first.</p>
+  </header>
+
+  <div class="post-filter" data-post-filter hidden>
+    <label for="post-q" class="visually-hidden">Search posts by title</label>
+    <input id="post-q" type="search" placeholder="Search posts by title" autocomplete="off" aria-describedby="post-q-help" aria-controls="post-years">
+    <p id="post-q-help" class="meta">Arrow keys move through results; Enter opens one.</p>
+    <div class="tag-filter" role="group" aria-label="Filter by tag">
+      <button type="button" class="tag-btn" aria-pressed="true" data-tag="">All</button>
+      {{- range ($tags | uniq | sort) }}
+      <button type="button" class="tag-btn" aria-pressed="false" data-tag="{{ . }}">#{{ . }}</button>
+      {{- end }}
+    </div>
+    <p class="meta" role="status" aria-live="polite" data-count></p>
+  </div>
+
+  <div id="post-years">
+    {{- range $p.writing.GroupByDate "2006" }}
+    <section class="post-year" aria-labelledby="y-{{ .Key }}">
+      <h2 class="blog-label" id="y-{{ .Key }}">{{ .Key }}</h2>
+      <ul class="post-list">
+        {{- range .Pages }}
+        {{- $t := slice }}{{ range .Params.tags }}{{ $t = $t | append (lower .) }}{{ end }}
+        <li class="post-item" data-title="{{ lower .Title }}" data-tags="{{ delimit $t " " }}">
+          <a class="post-item-link" href="{{ .RelPermalink }}">
+            <span class="post-item-title">{{ .Title }}{{ if .Params.private }} <span class="lock-badge">Locked</span>{{ end }}</span>
+            <span class="post-item-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2 2006" }}</time>{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</span>
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+  </div>
+  <p class="empty" data-none hidden>No posts match. Clear the search or pick another tag.</p>
+</div>
+<script src="{{ "js/post-filter.js" | relURL }}" defer></script>
+{{ end }}

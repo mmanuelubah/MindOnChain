@@ -17,7 +17,7 @@ pagination.pagerSize = 10
 [params.contact]
   whatsapp = "2348039914565"          # international format for wa.me links
   whatsappDisplay = "0803 991 4565"
-  email = "ubahchinaza@gmail.com"
+  email = "ubanatuchinaza@gmail.com"
 
 [params.social]
   linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
@@ -55,8 +55,8 @@ pagination.pagerSize = 10
   pageRef = "/alltech/shop"
   weight = 30
 [[menus.main]]
-  name = "Writing"
-  pageRef = "/posts"
+  name = "Blog"
+  pageRef = "/blog"
   weight = 40
 [[menus.main]]
   name = "About"

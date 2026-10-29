@@ -9,7 +9,7 @@ hero_intro: >
   and finds tested modules at Ladipo Market. The procedures go into a free
   database, so other technicians don’t have to start from zero.
 
-# Services, from the Alltech flyers. icon: chip, clone, wipe, gauge or key.
+# Services, from the Alltech flyers. icon: chip, clone, wipe or gauge.
 services:
   - title: "ECU programming & cloning"
     icon: clone
@@ -20,7 +20,4 @@ services:
   - title: "Remapping & calibration"
     icon: gauge
     text: "Adjust the engine software after a repair, a part change or a fault."
-  - title: "Immobiliser alignment"
-    icon: key
-    text: "Pair the ECU, immobiliser module and keys so they recognise each other again. BMW EWS3 and EWS4 included."
 ---

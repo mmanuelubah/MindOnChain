@@ -1,37 +1,33 @@
-// Vercel Routing Middleware: real password protection for private guides.
+// Vercel Routing Middleware: locked writing needs an access code approved by the owner.
 //
-// The check runs on Vercel's servers before the page is sent, so the guide
-// never reaches a browser without the password. (The old in-page gate sent the
-// whole guide to everyone and only hid it.)
+// The check runs on Vercel's servers before the page is sent, so locked writing never
+// reaches a browser without a valid session. How a session is earned: api/access/*.
 //
-// Password: set GUIDES_PASSWORD in Vercel > Project > Settings > Environment
-// Variables. Any username works. If the variable is missing, access is refused.
+// Environment variables (Vercel > Project > Settings > Environment Variables):
+//   ACCESS_SECRET   at least 32 random characters; signs every token (required)
+//   RESEND_API_KEY  sends the approval email to the owner (required for requests)
+// Without ACCESS_SECRET every locked page stays locked.
 //
-// To protect another page: add `private: true` to its front matter AND add its
-// path below. Vercel needs the list written out here; it cannot read Hugo files.
+// To lock new writing: put it in content/blog/locked/ (its address starts /blog/locked/).
+// The two older guides below are listed by address because they live in the database.
+import { SESSION_COOKIE, unsign, readCookie, secretOrNull } from "./api/_lib/access.mjs";
+
 export const config = {
   matcher: [
+    "/blog/locked/:path*",
     "/alltech/database/guides/me75-full-flash-bdm/:path*",
     "/alltech/database/guides/bosch-me75-manual/:path*",
   ],
 };
 
-export default function middleware(request) {
-  const expected = process.env.GUIDES_PASSWORD;
-  if (!expected) {
-    return new Response("This guide is private and not available right now.", { status: 503 });
-  }
+export default async function middleware(request) {
+  const url = new URL(request.url);
+  if (url.pathname === "/blog/locked/" || url.pathname === "/blog/locked/index.html") return; // the list of locked titles is public
 
-  const header = request.headers.get("authorization") || "";
-  const [scheme, encoded] = header.split(" ");
-  if (scheme === "Basic" && encoded) {
-    const decoded = atob(encoded);
-    const password = decoded.slice(decoded.indexOf(":") + 1);
-    if (password === expected) return; // no response = Vercel serves the page
-  }
+  const secret = secretOrNull();
+  if (secret && (await unsign(secret, readCookie(request, SESSION_COOKIE)))) return; // no response = Vercel serves the page
 
-  return new Response("This guide is private. Ask Emmanuel for access on WhatsApp.", {
-    status: 401,
-    headers: { "WWW-Authenticate": 'Basic realm="Alltech private guides", charset="UTF-8"' },
-  });
+  const lock = new URL("/locked/", url);
+  lock.searchParams.set("next", url.pathname.replace(/index\.html$/, ""));
+  return Response.redirect(lock, 302);
 }

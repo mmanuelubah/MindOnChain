@@ -1,138 +1,16 @@
 {{ define "main" }}
-<main class="about-page" id="main-content">
-  <div class="about-container">
-    <!-- Header: Photo & Quick Info -->
-    <header class="about-header">
-      <div class="about-header__image-container">
-        <img src="{{ .Site.Params.avatar | absURL }}" alt="{{ .Site.Params.ownerNameDisplay | default "Emmanuel" }}" class="about-header__image">
-      </div>
-    </header>
-
-    <hr class="section-separator">
-
-    <!-- Main Content Grid -->
-    <div class="about-content">
-      <div class="about-bio post-content">
-        {{ .Content }}
-      </div>
+{{ partial "blog-nav.html" . }}
+<article class="wrap blog post">
+  <header class="blog-profile">
+    <img class="blog-avatar" src="{{ "images/avatar-320.webp" | relURL }}" width="160" height="160" alt="Ubanatu Chinaza Emmanuel">
+    <div>
+      <h1 class="blog-name">{{ site.Params.ownerNameDisplay }}</h1>
+      <p class="meta">{{ site.Params.location }}</p>
+      {{- with site.Params.ownerNameMeaning }}
+      <details class="name-meaning"><summary>What my name means</summary><p>{{ . }}</p></details>
+      {{- end }}
     </div>
-  </div>
-</main>
-
-<style>
-  /* ─ Layout ─────────────────────────────────────────────── */
-  .about-page {
-    padding: 2rem 1.5rem 4rem;
-  }
-
-  .about-container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  /* ─ Header ─────────────────────────────────────────────── */
-  .about-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: var(--space-10);
-  }
-
-  @media (max-width: 768px) {
-    .about-header {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
-  .about-header__image-container {
-    flex-shrink: 0;
-  }
-
-  .about-header__image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--color-bg-secondary);
-    box-shadow: 0 0 0 2px var(--color-accent-primary), var(--shadow-lg);
-  }
-
-  .about-header__intro {
-    flex: 1;
-  }
-
-  .about-title {
-    font-family: var(--font-display);
-    font-size: calc(var(--text-4xl) * var(--vt323-scale));
-    margin: 0 0 var(--space-3);
-    color: var(--color-text-primary);
-  }
-
-  .about-subtitle {
-    font-size: var(--text-xl);
-    color: var(--color-text-secondary);
-    margin: 0 0 var(--space-5);
-    line-height: var(--leading-relaxed);
-  }
-
-  .about-socials {
-    display: flex;
-    gap: var(--space-4);
-  }
-
-  @media (max-width: 768px) {
-    .about-socials {
-      justify-content: center;
-    }
-  }
-
-  .about-socials a {
-    color: var(--color-text-tertiary);
-    text-decoration: none;
-    font-weight: var(--weight-medium);
-    transition: color 0.2s;
-  }
-
-  .about-socials a:hover {
-    color: var(--color-accent-primary);
-  }
-
-  /* ─ Content ───────────────────────────────────────── */
-  .about-content {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .about-bio {
-    /* Uses .post-content styles from single.html */
-    max-width: 100%;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--color-text-primary);
-  }
-
-  .about-bio h1,
-  .about-bio h2,
-  .about-bio h3,
-  .about-bio h4,
-  .about-bio h5,
-  .about-bio h6,
-  .about-bio p,
-  .about-bio ul,
-  .about-bio ol,
-  .about-bio li {
-    color: var(--color-text-primary);
-  }
-
-  .about-bio a {
-    color: var(--color-accent-primary);
-  }
-
-  .section-separator {
-    border: none;
-    border-top: 1px solid var(--color-divider);
-    margin: var(--space-10) 0;
-  }
-</style>
+  </header>
+  <div class="prose">{{ .Content }}</div>
+</article>
 {{ end }}

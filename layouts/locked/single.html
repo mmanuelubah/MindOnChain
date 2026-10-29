@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{- $c := site.Params.contact -}}
+{{ partial "blog-nav.html" . }}
+<div class="wrap blog lockpage">
+  <header class="page-head">
+    <span class="lock-badge">Locked</span>
+    <h1 class="h1">This writing is locked</h1>
+    <p class="standfirst">Some ECU programming notes are only for people Emmanuel has approved. Ask for access below; if he agrees, he’ll send you a code.</p>
+  </header>
+
+  <div class="lock-steps">
+    <section class="panel" aria-labelledby="ask-h">
+      <h2 class="h3" id="ask-h"><span class="step-n">1</span> Ask for access</h2>
+      <form id="access-request" novalidate>
+        <div class="field">
+          <label for="ar-name">Your name</label>
+          <input id="ar-name" name="name" autocomplete="name" required maxlength="80" aria-describedby="ar-name-err">
+          <p class="field-err" id="ar-name-err"></p>
+        </div>
+        <div class="field">
+          <label for="ar-email">Email, where the code should go</label>
+          <input id="ar-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="ar-email-err">
+          <p class="field-err" id="ar-email-err"></p>
+        </div>
+        <div class="field">
+          <label for="ar-reason">Why you need it <span class="meta">(optional)</span></label>
+          <textarea id="ar-reason" name="reason" rows="3" maxlength="500" placeholder="e.g. I'm a technician in Abuja working on an E46 MS43"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Send request</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="code-h">
+      <h2 class="h3" id="code-h"><span class="step-n">2</span> Enter your code</h2>
+      <form id="access-code" novalidate>
+        <div class="field">
+          <label for="ac-code">Access code</label>
+          <input id="ac-code" name="code" class="code-input" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" placeholder="XXXX-XXXX" maxlength="9" required aria-describedby="ac-code-help ac-code-err">
+          <p class="meta" id="ac-code-help">8 characters. It works once, on the device you asked from, for 24 hours.</p>
+          <p class="field-err" id="ac-code-err"></p>
+        </div>
+        <button class="btn btn--primary" type="submit">Open the writing</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </div>
+
+  <p class="meta lock-note">Once you’re in, the page stays open while you read. Leave it for an hour and it locks again; you’ll need a new code. Prefer to ask directly? <a href="https://wa.me/{{ $c.whatsapp }}">WhatsApp {{ $c.whatsappDisplay }}</a>.</p>
+  <noscript><p class="empty">Requests need JavaScript. Ask on WhatsApp instead: {{ $c.whatsappDisplay }}.</p></noscript>
+</div>
+<script src="{{ "js/locked.js" | relURL }}" defer></script>
+{{ end }}

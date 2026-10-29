@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{- $p := partial "blog-pages.html" . -}}
+{{- $pages := slice -}}
+{{- if eq .Params.collection_tag "weekly-roundup" }}{{ $pages = $p.roundups }}
+{{- else if eq .Params.collection_tag "ecu-programming" }}{{ $pages = $p.ecu }}
+{{- else }}{{ $pages = .RegularPages.ByDate.Reverse }}{{ end -}}
+{{ partial "blog-nav.html" . }}
+<div class="wrap blog">
+  <header class="page-head">
+    <h1 class="h1">{{ .Title }}</h1>
+    {{ with .Params.intro | default .Description }}<p class="standfirst">{{ . }}</p>{{ end }}
+    {{ if .Params.include_locked }}<p class="meta"><span class="lock-badge">Locked</span> notes need an access code. Open one to ask for it.</p>{{ end }}
+  </header>
+  {{- with $pages }}
+  <ul class="post-list">{{ range . }}{{ partial "post-row.html" . }}{{ end }}</ul>
+  {{- else }}
+  <p class="empty">{{ $.Params.empty | default "Nothing here yet." }}</p>
+  {{- end }}
+</div>
+{{ end }}

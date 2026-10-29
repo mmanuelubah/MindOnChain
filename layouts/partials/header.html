@@ -12,6 +12,8 @@
         {{- $url := .URL }}
         {{- /* Guides live inside the database folder, so Database must not light up on guide pages. */}}
         {{- $inside := and (hasPrefix $here $url) (not (and (eq .Name "Database") (hasPrefix $here "/alltech/database/guides/"))) }}
+        {{- /* The blog side also covers posts, books and the lock page. */}}
+        {{- if and (eq .Name "Blog") (or (hasPrefix $here "/posts/") (hasPrefix $here "/books/") (hasPrefix $here "/locked/")) }}{{ $inside = true }}{{ end }}
         <li><a href="{{ $url }}"{{ if eq $here $url }} aria-current="page"{{ else if $inside }} aria-current="true"{{ end }}>{{ .Name }}</a></li>
         {{- end }}
       </ul>

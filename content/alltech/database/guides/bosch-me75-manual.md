@@ -10,9 +10,9 @@ drive_file_id: ""
 private: true
 description: "Comprehensive manual and pinout guide for the Bosch ME7.5 Engine Control Unit."
 tags: ["bosch", "me7.5", "ecu"]
-# Protected by middleware.js on Vercel. Kept out of lists, feeds, tag pages, search and the sitemap.
+# Locked by middleware.js (access code). Listed by title in its section only; never in feeds, search or the sitemap.
 build:
-  list: never
+  list: local
 sitemap:
   disable: true
 ---

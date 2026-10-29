@@ -1,0 +1,11 @@
+{{- /* The blog's own navigation, under the Alltech header on every blog page. */ -}}
+{{- $here := .RelPermalink -}}
+<nav class="blog-nav" aria-label="Blog">
+  <div class="wrap">
+    <ul>
+      {{- range slice (dict "n" "Blog home" "u" "/blog/") (dict "n" "Posts" "u" "/posts/") (dict "n" "Roundups" "u" "/blog/roundups/") (dict "n" "ECU programming" "u" "/blog/ecu-programming/") (dict "n" "Bookshelf" "u" "/books/") }}
+      <li><a href="{{ .u }}"{{ if eq $here .u }} aria-current="page"{{ else if and (ne .u "/blog/") (hasPrefix $here .u) }} aria-current="true"{{ end }}>{{ .n }}</a></li>
+      {{- end }}
+    </ul>
+  </div>
+</nav>

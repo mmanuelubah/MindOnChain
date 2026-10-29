@@ -1,0 +1,15 @@
+{{- /*
+  The blog's page sets, in one place so every blog page counts the same way.
+  Locked posts use build.list "local", so they are not in site.RegularPages; they are
+  fetched from their own section. ECU programming also includes the database guides.
+*/ -}}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $locked := slice -}}{{ with site.GetPage "/blog/locked" }}{{ $locked = .RegularPages }}{{ end -}}
+{{- $guides := slice -}}{{ with site.GetPage "/alltech/database/guides" }}{{ $guides = .RegularPages }}{{ end -}}
+{{- $ecuPosts := where $posts "Params.tags" "intersect" (slice "ecu-programming") -}}
+{{- return dict
+    "writing" (union $posts $locked).ByDate.Reverse
+    "roundups" (where $posts "Params.tags" "intersect" (slice "weekly-roundup")).ByDate.Reverse
+    "ecu" (union (union $locked $guides) $ecuPosts).ByDate.Reverse
+    "books" (where site.RegularPages "Type" "books")
+-}}
