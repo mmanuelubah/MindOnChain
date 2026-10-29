@@ -13,7 +13,7 @@ Source of truth for brand, scope and owner decisions during the audit. Items mar
 
 ## 2. The owner
 
-- Ubanatu Chinaza Emmanuel. Automobile locksmith and technician, runs his own business, co-founder of MyEasyAgents. VERIFIED (about page).
+- Ubanatu Chinaza Emmanuel. Automobile locksmith and technician, runs his own business, co-founder of MYEASYAGENT. VERIFIED (about page).
 - Writes in Obsidian and commits Markdown; does not write code often (colophon). Wants plain explanations. VERIFIED.
 - Prefers consolidated documents (ADMIN_GUIDE.md) and a "zero-emoji" policy. VERIFIED.
 
@@ -57,7 +57,7 @@ Source of truth for brand, scope and owner decisions during the audit. Items mar
 ## 8. External links and accounts
 
 - GitHub `https://github.com/mmanuelubah`, LinkedIn `https://www.linkedin.com/in/chinaza-ubanatu-05a983184/`, X `https://x.com/mmanuelubah` (in `hugo.toml` and again hard-coded in the footer).
-- MyEasyAgents `https://myeasyagents.com`.
+- MYEASYAGENT `https://myeasyagents.com`.
 - Contact: about page shows `hi@mindonchain.com` but the link opens a personal Gmail address. To confirm.
 - WhatsApp or phone for buyers: unknown. To confirm.
 
