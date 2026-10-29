@@ -1,4 +1,4 @@
-{{- $title := cond .IsHome (printf "%s: ECU and immobiliser workshop, Lagos" site.Title) (printf "%s | %s" .Title site.Title) -}}
+{{- $title := cond .IsHome (printf "%s: ECU and immobiliser workshop, Lagos" site.Title) (printf "%s | %s" (partial "display-title.html" .) site.Title) -}}
 {{- $desc := "" -}}
 {{- if .IsHome -}}{{ $desc = site.Params.description }}
 {{- else if .Description -}}{{ $desc = .Description }}
@@ -31,6 +31,10 @@
 <meta name="theme-color" content="#0B1510" media="(prefers-color-scheme: dark)">
 
 <link rel="preload" href="{{ "fonts/archivo-normal-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- /* Reading pages set long text in Source Serif; preloading it stops the text reflowing when it arrives. */}}
+{{- if and .IsPage (or (in (slice "posts" "books") .Type) (in (slice "/about/" "/colophon/") .RelPermalink)) }}
+<link rel="preload" href="{{ "fonts/source-serif-4-normal-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- end }}
 {{- $css := resources.Get "css/alltech.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
@@ -40,7 +44,7 @@
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 
 <meta property="og:site_name" content="{{ site.Title }}">
-<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ partial "display-title.html" . }}{{ end }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">

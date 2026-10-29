@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="page-head">
+    <span class="sticker">404 · no signal</span>
+    <h1 class="display">This page isn’t on the bus.</h1>
+    <p class="standfirst">The address may have changed, or it never existed. Search for what you need, or start from one of these.</p>
+  </header>
+  <form class="search-form" role="search" action="{{ "/search/" | relURL }}" method="get">
+    <label for="nf-q">Search the site</label>
+    <div class="search-row"><input id="nf-q" name="q" type="search" autocomplete="off"><button class="btn btn--primary" type="submit">Search</button></div>
+  </form>
+  <ul class="brand-grid" style="margin-top:var(--s-6)">
+    <li><a class="brand-chip" href="{{ "/" | relURL }}">Home</a></li>
+    <li><a class="brand-chip" href="{{ "/alltech/database/" | relURL }}">Database</a></li>
+    <li><a class="brand-chip" href="{{ "/alltech/shop/" | relURL }}">Parts</a></li>
+    <li><a class="brand-chip" href="{{ "/blog/" | relURL }}">Blog</a></li>
+  </ul>
+</div>
+{{ end }}

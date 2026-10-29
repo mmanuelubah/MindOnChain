@@ -51,9 +51,3 @@ ecu: "Unknown"
 ## Source
 
 - **Page:** 1
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

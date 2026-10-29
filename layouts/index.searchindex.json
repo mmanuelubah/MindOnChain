@@ -17,7 +17,7 @@
     {{- $summary := .Summary | plainify | htmlUnescape | strings.TrimSpace | truncate 160 -}}
     {{- if eq $group "Database" }}{{ $summary = delimit $keys " · " }}{{ end -}}
     {{- $items = $items | append (dict
-        "t" .Title
+        "t" (partial "display-title.html" .)
         "u" .RelPermalink
         "g" $group
         "k" (delimit $keys " ")

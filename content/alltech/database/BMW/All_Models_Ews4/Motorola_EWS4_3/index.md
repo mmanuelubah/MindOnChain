@@ -58,9 +58,3 @@ ecu: "EWS4.3"
 
 - **Document:** `advanced automotive immobilizer programming book 2017.pdf`
 - **Page:** 17
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

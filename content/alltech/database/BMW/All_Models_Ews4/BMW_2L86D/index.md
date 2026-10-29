@@ -62,9 +62,3 @@ ecu: "2L86D"
 
 - **Document:** `advanced automotive immobilizer programming book 2017.pdf`
 - **Page:** 18
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

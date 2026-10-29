@@ -1,25 +1,27 @@
 {{/*
-  The light/dark switch is a bulb on a rope, as the colophon describes.
-  Lights on = light mode ("Up NEPA!"). Lights off = dark mode (a groan).
-  NEPA was the National Electric Power Authority; "Up NEPA!" is what every
-  Nigerian child shouts when the power comes back. Behaviour is in site.js.
+  The light/dark switch is a bulb hanging on a long rope from the top of the header.
+  Lights on = light mode: the screen flashes "Up NEPA!". Lights off = dark mode: the
+  screen flickers out with "Damn, they've taken the light." No sound.
+  NEPA was the National Electric Power Authority; "Up NEPA!" is what every Nigerian
+  child shouts when the power comes back. Behaviour is in site.js.
 */}}
 <div class="nepa">
   <button class="bulb" type="button" aria-pressed="true">
     <span class="visually-hidden">Lights (light mode)</span>
-    <svg class="bulb-art" aria-hidden="true" viewBox="0 0 40 64">
-      <path class="rope" d="M20 0v14"/>
+    <svg class="bulb-art" aria-hidden="true" viewBox="0 0 40 112">
       <g class="bulb-swing">
-        <g class="rays">
-          <path d="M4 34H0M40 34h-4M7 21l-3-3M33 21l3-3M7 47l-3 3M33 47l3 3"/>
+        <path class="rope" d="M20 0v60"/>
+        <g transform="translate(0 46)">
+          <g class="rays"><path d="M4 34H0M40 34h-4M7 21l-3-3M33 21l3-3M7 47l-3 3M33 47l3 3"/></g>
+          <rect class="cap" x="14" y="14" width="12" height="9"/>
+          <path class="cap-lines" d="M14 17.5h12M14 20.5h12"/>
+          <path class="glass" d="M20 23c-7.5 0-12 5.2-12 11.5 0 4.2 2.2 7 4.6 9.2 1.6 1.5 2.4 3 2.4 5.3h10c0-2.3.8-3.8 2.4-5.3 2.4-2.2 4.6-5 4.6-9.2C32 28.2 27.5 23 20 23z"/>
+          <path class="filament" d="M16.5 35l2 3 1.5-3 1.5 3 2-3"/>
+          <path class="base" d="M15 49h10v3.5a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2z"/>
         </g>
-        <rect class="cap" x="14" y="14" width="12" height="9"/>
-        <path class="cap-lines" d="M14 17.5h12M14 20.5h12"/>
-        <path class="glass" d="M20 23c-7.5 0-12 5.2-12 11.5 0 4.2 2.2 7 4.6 9.2 1.6 1.5 2.4 3 2.4 5.3h10c0-2.3.8-3.8 2.4-5.3 2.4-2.2 4.6-5 4.6-9.2C32 28.2 27.5 23 20 23z"/>
-        <path class="filament" d="M16.5 35l2 3 1.5-3 1.5 3 2-3"/>
-        <path class="base" d="M15 49h10v3.5a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2z"/>
       </g>
     </svg>
   </button>
-  <p class="nepa-bubble" role="status" aria-live="polite"></p>
+  <p class="visually-hidden nepa-status" role="status" aria-live="polite"></p>
 </div>
+<div class="nepa-show" aria-hidden="true"><p class="nepa-show-text"></p></div>

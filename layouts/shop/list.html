@@ -1,33 +1,40 @@
 {{ define "main" }}
-<main class="shop-list" id="main-content">
-  <div class="shop-header">
-    <h1 class="post-title">MindOnChain Shop</h1>
-    <p>Automotive hardware, ECU modules, and diagnostic tools.</p>
-  </div>
-  
-  <div class="shop-grid">
-    {{ range .Pages }}
-    <a href="{{ .RelPermalink }}" class="shop-item-card">
-      <div class="shop-item-image">
-        {{ if .Params.images }}
-        <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}">
-        {{ else }}
-        <div class="placeholder-img">No Image</div>
-        {{ end }}
-      </div>
-      <div class="shop-item-info">
-        <h2 class="shop-item-title">{{ .Title }}</h2>
-        <p class="shop-item-price">${{ printf "%.2f" .Params.price }}</p>
-        {{ if .Params.in_stock }}
-        <span class="shop-item-badge in-stock">In Stock ({{ .Params.stock_count }} available)</span>
-        {{ else }}
-        <span class="shop-item-badge out-stock">Out of Stock</span>
-        {{ end }}
-      </div>
-    </a>
-    {{ end }}
-  </div>
-</main>
+{{- $c := site.Params.contact -}}
+<div class="wrap">
+  {{ partial "crumbs.html" . }}
+  <header class="page-head">
+    <span class="sticker">Ladipo Market, Lagos</span>
+    <h1 class="h1">Parts</h1>
+    <p class="standfirst">ECUs, immobiliser modules and engines, sourced at Ladipo and tested before handover. Prices are on request, because they move with the market.</p>
+  </header>
 
+  {{- with .RegularPages.ByDate.Reverse }}
+  <ul class="cards">
+    {{- range . }}
+    <li><a class="part-card" href="{{ .RelPermalink }}">
+      <span class="part-img">{{ with index (.Params.images | default slice) 0 }}<img src="{{ . }}" alt="" loading="lazy" width="400" height="300">{{ else }}<span class="meta">Photo on request</span>{{ end }}</span>
+      <span class="part-title">{{ .Title }}</span>
+      {{ with .Params.compatibility }}<span class="meta">Fits {{ delimit (first 2 .) ", " }}{{ if gt (len .) 2 }} and more{{ end }}</span>{{ end }}
+      <span class="part-foot"><span>Price on request</span><span class="stock{{ if .Params.in_stock }} ok{{ else }} bad{{ end }}">{{ if .Params.in_stock }}In stock{{ else }}Sold out{{ end }}</span></span>
+    </a></li>
+    {{- end }}
+  </ul>
+  {{- else }}
+  <div class="empty">
+    <p><strong>No parts are listed right now.</strong></p>
+    <p>Ladipo stock changes every day, so most parts are found to order. Send the part number from the label, or a photo of the old module, with your car’s make, model and year.</p>
+    <p><a class="btn btn--primary" href="https://wa.me/{{ $c.whatsapp }}?text={{ "Hello Alltech, I need a part:" | urlquery }}">Ask on WhatsApp</a></p>
+  </div>
+  {{- end }}
 
+  <section class="section" aria-labelledby="how-h">
+    <div class="section-head"><h2 class="h2" id="how-h">How buying a part works</h2></div>
+    <ol class="steps steps--light">
+      <li><span><strong>Send the details</strong>The part number from the label, or a clear photo of the old module, and your car’s make, model and year.</span></li>
+      <li><span><strong>Get photos and a price</strong>Emmanuel finds the part and sends photos before you pay anything.</span></li>
+      <li><span><strong>Tested before handover</strong>Modules are tested on the bench before you collect them.</span></li>
+      <li><span><strong>Collect in Lagos</strong>Ask about delivery if you are outside Lagos.</span></li>
+    </ol>
+  </section>
+</div>
 {{ end }}

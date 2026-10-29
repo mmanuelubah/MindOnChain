@@ -1,0 +1,9 @@
+{{- /* Breadcrumb from the home page down to the current page. */ -}}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    {{- range .Ancestors.Reverse }}
+    {{- if not .IsHome }}<li><a href="{{ .RelPermalink }}">{{ partial "display-title.html" . }}</a></li>{{ end }}
+    {{- end }}
+    <li aria-current="page">{{ partial "display-title.html" . }}</li>
+  </ol>
+</nav>

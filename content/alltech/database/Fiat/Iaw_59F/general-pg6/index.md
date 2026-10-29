@@ -58,9 +58,3 @@ ecu: "Unknown"
 
 - **Document:** `50 PCM PINES CAN.pdf`
 - **Page:** 6
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

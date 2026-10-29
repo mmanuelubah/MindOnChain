@@ -1,25 +1,11 @@
 {{ define "main" }}
 {{- $p := partial "blog-pages.html" . -}}
-{{- $s := site.Params.social -}}
 {{ partial "blog-nav.html" . }}
 <div class="wrap blog">
-  <header class="blog-profile">
-    <img class="blog-avatar" src="{{ "images/avatar-320.webp" | relURL }}" width="160" height="160" alt="Ubanatu Chinaza Emmanuel">
-    <div>
-      <h1 class="blog-name">{{ site.Params.author }}</h1>
-      <p class="meta">{{ site.Params.location }}</p>
-      <ul class="blog-links">
-        <li><a href="{{ $s.x }}" rel="me noopener">X</a></li>
-        <li><a href="{{ $s.github }}" rel="me noopener">GitHub</a></li>
-        <li><a href="{{ $s.linkedin }}" rel="me noopener">LinkedIn</a></li>
-        <li><a href="mailto:{{ site.Params.contact.email }}">Email</a></li>
-      </ul>
-    </div>
+  <header class="page-head blog-head">
+    <h1 class="h1">Blog</h1>
+    <p class="byline">By <strong>{{ site.Params.author }}</strong> · <a href="{{ "/about/" | relURL }}">About me</a></p>
   </header>
-
-  <div class="blog-intro">
-    {{- range .Params.intro }}<p>{{ . }}</p>{{ end }}
-  </div>
 
   <ul class="blog-tiles">
     <li><a class="blog-tile" href="{{ "/posts/" | relURL }}">{{ partial "pixel-icon.html" "page" }}<span class="blog-tile-name">Posts</span><span class="meta">{{ len $p.writing }} {{ cond (eq (len $p.writing) 1) "article" "articles" }}</span></a></li>

@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{- $c := site.Params.contact -}}
+{{- $title := partial "display-title.html" . -}}
+<article class="wrap entry">
+  {{ partial "crumbs.html" . }}
+  <header class="page-head">
+    {{ with .Params.brand }}<span class="sticker sticker--flat">{{ . }}</span>{{ end }}
+    {{ if .Params.private }}<span class="lock-badge">Locked · you have access for this session</span>{{ end }}
+    <h1 class="h1">{{ $title }}</h1>
+    <p class="meta entry-meta">
+      {{- with .Params.model }}<span>{{ . }}</span>{{ end }}
+      {{- with .Params.ecu }}{{ if ne . "Unknown" }}<code>{{ . }}</code>{{ end }}{{ end }}
+      {{- if strings.Contains .Title "ECU Info Pending" }}<span>ECU not yet identified</span>{{ end }}
+      {{- range .Params.tags }}{{ if ne . "unknown" }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
+    </p>
+    {{ with .Params.summary }}<p class="standfirst">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="doc">{{ .Content }}</div>
+
+  <aside class="entry-help screen" aria-labelledby="help-h">
+    <h2 class="h3" id="help-h">Stuck on this job?</h2>
+    <p>Send Emmanuel the part number or a photo of the module’s label. Programming, cloning and parts from Ladipo.</p>
+    <a class="btn btn--primary" href="https://wa.me/{{ $c.whatsapp }}?text={{ printf "Hello Alltech, about %s:" $title | urlquery }}">Ask on WhatsApp</a>
+  </aside>
+
+  {{- with .Parent }}
+  {{- $siblings := where .RegularPages "RelPermalink" "!=" $.RelPermalink }}
+  {{- with $siblings }}
+  <section class="section" aria-labelledby="more-h">
+    <div class="section-head"><h2 class="h2" id="more-h">More in {{ $.Parent.Title }}</h2></div>
+    <ul class="rows">{{ range first 6 . }}{{ partial "entry-row.html" . }}{{ end }}</ul>
+  </section>
+  {{- end }}
+  {{- end }}
+</article>
+{{ end }}

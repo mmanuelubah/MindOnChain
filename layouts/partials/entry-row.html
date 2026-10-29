@@ -1,0 +1,14 @@
+{{- /* A database entry or guide in a list: title, what it is, how it's done. Locked ones show the title only. */ -}}
+{{- $pending := strings.Contains .Title "ECU Info Pending" -}}
+<li>
+  <a class="row-link" href="{{ .RelPermalink }}">
+    <span class="row-title">{{ partial "display-title.html" . }}{{ if .Params.private }} <span class="lock-badge">Locked</span>{{ end }}</span>
+    <span class="row-meta">
+      {{- with .Params.ecu }}{{ if ne . "Unknown" }}<code>{{ . }}</code>{{ end }}{{ end }}
+      {{- if $pending }}<span>ECU not yet identified</span>{{ end }}
+      {{- with .Params.difficulty }}<span>{{ title . }}</span>{{ end }}
+      {{- range first 3 .Params.tags }}{{ if not (in (slice "unknown") .) }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
+    </span>
+    <svg class="row-go" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+  </a>
+</li>

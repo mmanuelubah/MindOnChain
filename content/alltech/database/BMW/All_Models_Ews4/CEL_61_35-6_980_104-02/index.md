@@ -59,9 +59,3 @@ ecu: "61.35-6 980 104-02"
 
 - **Document:** `advanced automotive immobilizer programming book 2017.pdf`
 - **Page:** 14
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

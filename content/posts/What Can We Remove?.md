@@ -36,7 +36,7 @@ So i am building with the same intention:
 
 This is the unseen art of pruning. It's not about having less. It's about making room for what matters.
 
-When you come to [MyEasyAgents](https://www.myeasyagents.com/), i want you to feel something rare online: _Calm_, _Clarity_, _Space_. No hidden traps. No fake listings. No stress. Just clean homes and clear steps.
+When you come to [MYEASYAGENT](https://www.myeasyagents.com/), i want you to feel something rare online: _Calm_, _Clarity_, _Space_. No hidden traps. No fake listings. No stress. Just clean homes and clear steps.
 
 I am building this for the version of me that was tired of the noise. For the person who just wants a home, not a headache. A good system is designed to be periodically cleared of cruft. It has a built-in counterbalance. Without this pressure, our bias drives us to add band-aid after band-aid, until the only choice is to destroy the whole system and start from scratch.
 

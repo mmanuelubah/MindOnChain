@@ -22,7 +22,6 @@
   // NEPA bulb. Lights on = light mode. The storage key matches the inline script in head.html.
   var KEY = "alltech-theme";
   var bulb = document.querySelector(".bulb");
-  var bubble = document.querySelector(".nepa-bubble");
   if (!bulb) return;
 
   var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -38,35 +37,21 @@
   render();
   systemDark.addEventListener("change", render);
 
-  var hideTimer;
-  function say(text) {
-    bubble.textContent = text;
-    bubble.classList.add("is-on");
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(function () { bubble.classList.remove("is-on"); }, 1800);
-  }
-
-  // Sound only ever follows a click on the bulb.
-  function shout() {
-    if (!("speechSynthesis" in window)) return;
-    var u = new SpeechSynthesisUtterance("Up NEPA!");
-    u.rate = 1.15; u.pitch = 1.4; u.volume = 0.9;
-    speechSynthesis.cancel();
-    speechSynthesis.speak(u);
-  }
-  function groan() {
-    var Ctx = window.AudioContext || window.webkitAudioContext;
-    if (!Ctx) return;
-    var ctx = new Ctx(), osc = ctx.createOscillator(), gain = ctx.createGain(), t = ctx.currentTime;
-    osc.type = "sawtooth";
-    osc.frequency.setValueAtTime(190, t);
-    osc.frequency.exponentialRampToValueAtTime(70, t + 0.9);
-    gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.exponentialRampToValueAtTime(0.12, t + 0.08);
-    gain.gain.exponentialRampToValueAtTime(0.0001, t + 1);
-    osc.connect(gain).connect(ctx.destination);
-    osc.start(t); osc.stop(t + 1.05);
-    osc.onended = function () { ctx.close(); };
+  // The motion graphic: a full-screen flash for "Up NEPA!", a flicker-out when the light goes.
+  var status = document.querySelector(".nepa-status");
+  var show = document.querySelector(".nepa-show");
+  var showText = show && show.querySelector(".nepa-show-text");
+  var showTimer;
+  function play(on) {
+    var text = on ? "Up NEPA!" : "Damn, they’ve taken the light.";
+    status.textContent = text; // screen readers hear the line; the graphic itself is hidden from them
+    if (!show) return;
+    show.classList.remove("is-on", "is-off");
+    void show.offsetWidth; // restart the animation
+    showText.textContent = text;
+    show.classList.add(on ? "is-on" : "is-off");
+    clearTimeout(showTimer);
+    showTimer = setTimeout(function () { show.classList.remove("is-on", "is-off"); }, 2400);
   }
 
   bulb.addEventListener("click", function () {
@@ -77,7 +62,7 @@
     bulb.classList.remove("is-swinging");
     void bulb.offsetWidth; // restart the swing animation
     bulb.classList.add("is-swinging");
-    if (next === "light") { say("Up NEPA!"); shout(); } else { say("Ehhn…"); groan(); }
+    play(next === "light");
   });
 })();
 

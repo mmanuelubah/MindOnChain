@@ -8,10 +8,8 @@ pagination.pagerSize = 10
   description = "Alltech Solutions is an ECU and immobiliser workshop in Lagos: ECU programming, cloning and virginising, remapping, parts sourced from Ladipo Market, and a free database of the procedures."
   author = "Ubanatu Chinaza Emmanuel"
   location = "Lagos, Nigeria"
-  avatar = "images/Avatar.png"
   ownerNameDisplay = "Ubanatu Chinaza Emmanuel"
   ownerNameMeaning = "Ubanatu means 'honour/nobility'; Chinaza means 'God answers'; Emmanuel means 'God is with us'."
-  ownerNameTooltip = true
 
 # Every contact route and external profile lives here; templates read them from this block.
 [params.contact]

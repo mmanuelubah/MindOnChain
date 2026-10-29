@@ -58,9 +58,3 @@ ecu: "EWS4 (2L86D 80 QFP)"
 
 - **Document:** `advanced automotive immobilizer programming book 2017.pdf`
 - **Page:** 13
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

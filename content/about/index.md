@@ -6,7 +6,7 @@ draft: false
 
 I am Emmanuel, but my friends call me Abobo.
 
-I am an automobile locksmith and technician, currently running my own business, and I co-founded [MyEasyAgents](https://www.myeasyagents.com).
+I am an automobile locksmith and technician, currently running my own business, and I co-founded [MYEASYAGENT](https://www.myeasyagents.com/).
 
 I grew up knowing that *wahala no dey finish*: problems never end. Most days, I just try to make one of them smaller. Right now, I am on my way to getting my PMP, currently taking a course with Humanitarian.org, participating as a Forward Learner with McKinsey, and saving a few bucks for my Master's degree.
 

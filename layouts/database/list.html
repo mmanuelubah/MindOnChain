@@ -1,237 +1,41 @@
 {{ define "main" }}
-<main class="database-page" id="main-content">
+{{- $isRoot := eq .RelPermalink "/alltech/database/" -}}
+<div class="wrap">
+  {{ partial "crumbs.html" . }}
+  <header class="page-head">
+    {{ if $isRoot }}<span class="sticker">Free to read</span>{{ end }}
+    <h1 class="h1">{{ .Title }}</h1>
+    {{ with .Description }}<p class="standfirst">{{ . }}</p>{{ else }}{{ if $isRoot }}<p class="standfirst">Pinouts, EEPROM locations and step-by-step programming notes, written down after real jobs. Pick a brand, or search by part number.</p>{{ end }}{{ end }}
+  </header>
 
-    <h1 class="page-title">{{ .Title }}</h1>
-
-    <!-- ══ CONTENT BODY (from _index.md) ══════════════════════ -->
-    {{ if .Content }}
-    <div class="database-content">
-        {{ .Content }}
+  {{- if $isRoot }}
+  <form class="search-form" role="search" action="{{ "/search/" | relURL }}" method="get">
+    <label for="db-q">Search by part number, car or module</label>
+    <div class="search-row">
+      <input id="db-q" name="q" type="search" placeholder="e.g. 2L86D, MS43, Camry 2016" autocomplete="off" enterkeyhint="search">
+      <input type="hidden" name="in" value="Database">
+      <button class="btn btn--primary" type="submit">Search</button>
     </div>
-    {{ end }}
+  </form>
+  {{- end }}
 
-    <!-- ══ CHILD PAGES ════════════════════════════════════════ -->
-    {{ if .Pages }}
-    <div class="database-children">
-        <h2 class="children-heading">Browse</h2>
-        <ul class="children-list">
-            {{ range .Pages }}
-            <li class="child-item">
-                <a href="{{ .RelPermalink }}" class="child-link">
-                    <span class="child-icon">{{ if .Pages }}📁{{ else }}📄{{ end }}</span>
-                    <span class="child-title">{{ .Title }}</span>
-                </a>
-                {{ if .Params.year }}
-                <span class="child-meta">{{ .Params.year }}</span>
-                {{ end }}
-            </li>
-            {{ end }}
-        </ul>
-    </div>
-    {{ end }}
+  {{- with .Sections }}
+  <section class="section" aria-labelledby="sub-h">
+    <div class="section-head"><h2 class="h2" id="sub-h">{{ if $isRoot }}By brand{{ else }}Models and modules{{ end }}</h2></div>
+    <ul class="brand-grid">
+      {{- range . }}
+      <li><a class="brand-chip" href="{{ .RelPermalink }}">{{ .Title }} <span>{{ len .RegularPagesRecursive }}</span></a></li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
 
-</main>
-
-<!-- ══ STYLES ══════════════════════════════════════════════ -->
-<style>
-    .database-page {
-        font-family: var(--body-font);
-        max-width: 800px;
-        margin: auto;
-        padding: 2rem 1.5rem 4rem;
-        color: var(--text-color);
-    }
-
-    .page-title {
-        font-family: 'VT323', monospace;
-        font-size: 1.8rem;
-        letter-spacing: 0.04em;
-        margin-bottom: 1.5rem;
-        color: var(--accent-color);
-        border-bottom: 2px solid var(--border-color);
-        padding-bottom: 0.8rem;
-    }
-
-    /* ─ Content body ──────────────────────────────────────── */
-    .database-content {
-        line-height: 1.7;
-        font-size: 0.95rem;
-    }
-
-    .database-content h2 {
-        font-family: 'VT323', monospace;
-        font-size: 1.4rem;
-        color: var(--accent-color);
-        margin-top: 2rem;
-        margin-bottom: 0.8rem;
-        letter-spacing: 0.03em;
-    }
-
-    .database-content h3 {
-        font-size: 1.1rem;
-        color: var(--text-color);
-        margin-top: 1.5rem;
-        margin-bottom: 0.6rem;
-    }
-
-    .database-content table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1rem 0;
-        background: var(--card-bg, rgba(255,255,255,0.03));
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    .database-content th,
-    .database-content td {
-        padding: 0.6rem 1rem;
-        text-align: left;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .database-content th {
-        background: var(--pill-bg, rgba(0,255,204,0.08));
-        color: var(--accent-color);
-        font-family: 'VT323', monospace;
-        font-size: 1rem;
-    }
-
-    .database-content td {
-        font-size: 0.92rem;
-    }
-
-    .database-content ol {
-        padding-left: 1.5rem;
-        margin: 0.8rem 0;
-    }
-
-    .database-content ol li {
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
-    }
-
-    .database-content blockquote {
-        border-left: 3px solid var(--accent-color);
-        margin: 1rem 0;
-        padding: 0.8rem 1.2rem;
-        background: rgba(255, 200, 50, 0.06);
-        border-radius: 0 6px 6px 0;
-        font-size: 0.9rem;
-    }
-
-    .database-content code {
-        background: var(--pill-bg, rgba(0,255,204,0.08));
-        padding: 0.15rem 0.4rem;
-        border-radius: 4px;
-        font-family: 'VT323', monospace;
-        font-size: 1.05em;
-        color: var(--accent-color);
-    }
-
-    .database-content img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        border: 1px solid var(--border-color);
-        margin: 1rem 0;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-
-    .database-content hr {
-        border: none;
-        border-top: 1px solid var(--border-color);
-        margin: 2rem 0;
-    }
-
-    .database-content ul {
-        padding-left: 1.5rem;
-    }
-
-    .database-content ul li {
-        margin-bottom: 0.4rem;
-    }
-
-    /* ─ Child pages list ──────────────────────────────────── */
-    .database-children {
-        margin-top: 2.5rem;
-        border-top: 2px solid var(--border-color);
-        padding-top: 1.5rem;
-    }
-
-    .children-heading {
-        font-family: 'VT323', monospace;
-        font-size: 1.3rem;
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-    }
-
-    .children-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 0.6rem;
-    }
-
-    .child-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .child-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.7rem 1rem;
-        background: var(--card-bg, rgba(255,255,255,0.03));
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        text-decoration: none;
-        color: var(--text-color);
-        transition: all 0.2s ease;
-        flex: 1;
-    }
-
-    .child-link:hover {
-        border-color: var(--accent-color);
-        background: rgba(0,255,204,0.05);
-        transform: translateX(4px);
-    }
-
-    .child-icon {
-        font-size: 1.2rem;
-    }
-
-    .child-title {
-        font-size: 0.92rem;
-        font-weight: 500;
-    }
-
-    .child-meta {
-        font-family: 'VT323', monospace;
-        font-size: 0.85rem;
-        color: var(--text-color-secondary);
-        margin-left: auto;
-    }
-
-    /* ─ Mobile ────────────────────────────────────────────── */
-    @media (max-width: 600px) {
-        .children-list {
-            grid-template-columns: 1fr;
-        }
-
-        .database-content table {
-            font-size: 0.85rem;
-        }
-
-        .database-content th,
-        .database-content td {
-            padding: 0.4rem 0.6rem;
-        }
-    }
-</style>
-
+  {{- with .RegularPages.ByTitle }}
+  <section class="section" aria-labelledby="entries-h">
+    <div class="section-head"><h2 class="h2" id="entries-h">{{ if hasPrefix $.RelPermalink "/alltech/database/guides/" }}Guides{{ else }}Entries{{ end }}</h2></div>
+    <ul class="rows">{{ range . }}{{ partial "entry-row.html" . }}{{ end }}</ul>
+    {{ if where . "Params.private" true }}<p class="meta"><span class="lock-badge">Locked</span> guides need an access code Emmanuel approves. Open one to ask.</p>{{ end }}
+  </section>
+  {{- end }}
+</div>
 {{ end }}

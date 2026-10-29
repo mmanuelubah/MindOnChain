@@ -1,0 +1,4 @@
+{{- /* A page title as readers see it. Database entries imported without an identified ECU end in
+       "— ECU Info Pending"; that placeholder is dropped here and shown as a label instead.
+       The stored title is unchanged. */ -}}
+{{- return replaceRE `\s*[—-]\s*ECU Info Pending$` "" .Title -}}

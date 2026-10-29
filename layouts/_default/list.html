@@ -1,70 +1,14 @@
 {{ define "main" }}
-<main class="page-container" id="main-content">
-  
-  <!-- Search Bar -->
-  <div class="search-container">
-    <input id="post-search" type="text" class="search-input" placeholder="Search by title" aria-label="Search posts">
-  </div>
-  
-  <!-- Tags Row -->
-  <div class="tags-row">
-    <!-- Replace with Hugo tag iteration if needed or static tags as requested -->
-    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}/" class="tag-pill">#{{ $name }}</a>
-    {{ end }}
-  </div>
-
-  <!-- Grouped Posts -->
-  <div id="post-list">
-    {{ range .Pages.GroupByDate "2006" }}
-    <section class="post-year-group list-year-group">
-      <h2 class="year-header list-year-heading">{{ .Key }}</h2>
-      <ul class="post-list">
-        {{ range .Pages }}
-        <li class="post-item compact-post-item" data-title="{{ .Title | lower }}">
-          <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
-          <div class="post-meta">
-            {{ .Date.Format "Jan 02 2006" }} • 
-            {{ range .Params.tags }}<span class="post-meta-tag">#{{ . }}</span>{{ end }}
-          </div>
-        </li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-  </div>
-
-  <p id="no-results" class="no-results" hidden style="text-align: center; padding: 2rem;">No articles match your search.</p>
-
-  <!-- Search Script -->
-  <script>
-      (function () {
-          const input = document.getElementById('post-search');
-          const items = document.querySelectorAll('.post-item');
-          const groups = document.querySelectorAll('.post-year-group');
-          const noRes = document.getElementById('no-results');
-
-          if (!input) return;
-
-          input.addEventListener('input', function () {
-              const q = this.value.trim().toLowerCase();
-              let visible = 0;
-
-              items.forEach(function (item) {
-                  const title = item.dataset.title || '';
-                  const show = !q || title.includes(q);
-                  item.style.display = show ? '' : 'none';
-                  if (show) visible++;
-              });
-
-              groups.forEach(function (group) {
-                  const hasVisible = Array.from(group.querySelectorAll('.post-item')).some(el => el.style.display !== 'none');
-                  group.style.display = hasVisible ? '' : 'none';
-              });
-
-              noRes.hidden = visible > 0;
-          });
-      })();
-  </script>
-</main>
+<div class="wrap blog">
+  {{ partial "crumbs.html" . }}
+  <header class="page-head">
+    <h1 class="h1">{{ if eq .Kind "term" }}#{{ .Title }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Description }}<p class="standfirst">{{ . }}</p>{{ end }}
+  </header>
+  {{- with .Pages.ByDate.Reverse }}
+  <ul class="post-list">{{ range . }}{{ partial "post-row.html" . }}{{ end }}</ul>
+  {{- else }}
+  <p class="empty">Nothing here yet.</p>
+  {{- end }}
+</div>
 {{ end }}

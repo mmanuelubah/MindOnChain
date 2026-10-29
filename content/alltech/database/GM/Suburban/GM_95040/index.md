@@ -61,9 +61,3 @@ ecu: "95040"
 
 - **Document:** `advanced automotive immobilizer programming book 2017.pdf`
 - **Page:** 52
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*

@@ -73,9 +73,3 @@ ecu: "1KD-FTV / 1GD-FTV"
 
 - **Document:** `TOYOTA-ECU-PINOUT-ECU-PINOUT.pdf`
 - **Page:** 4
-
----
-
-## Pinout Diagram
-
-*Pinout images will be linked from Google Drive.*
