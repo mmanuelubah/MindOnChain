@@ -4,7 +4,7 @@ One entry per third-party or owner-supplied asset. Checked 2026-10-29.
 
 | Asset | Path | Source | Licence | Modified | Where used | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| Alltech logo | `static/brand/*`, `static/favicon.ico` | Owner (`favicon.jpeg` in the project root) | Owner's own | Cropped square, background extended, recoloured orange→#22C55E and black→#0B1510 at the owner's request | Header, favicons, share image | OK. A vector master (SVG/AI/PDF) is still needed for one-colour logotypes. |
+| Alltech logo | `static/brand/*`, `static/favicon.ico` | Owner (`favicon.jpeg` in the project root) | Owner's own | Cropped square, background extended, recoloured orange→#22C55E and black→#0B1510 at the owner's request | Header, favicons, share image, logo set | OK. No vector original exists (owner); the logo set in marketing/ is built from this artwork. |
 | Car silhouette | `static/images/bg/car-halftone.webp` | Cropped from the owner's flyer `1.jpeg` | Flyer is the owner's; the underlying car photo's source is unknown | Cropped, halftoned in two greens | Home, parts panel | Owner confirmed: from the owner's flyer |
 | Archivo | `static/fonts/archivo-*` | Omnibus-Type via Google Fonts | SIL OFL 1.1 | Latin and Latin-ext subsets | Body text | OK |
 | Source Serif 4 | `static/fonts/source-serif-4-*` | Adobe via Google Fonts | SIL OFL 1.1 | Subsets | Blog reading text | OK |
