@@ -43,9 +43,15 @@ AllTech is the main site; blog byline Ubanatu Chinaza Emmanuel; Vox-style design
 
 Locked guide, its index.html and /blog/locked/* redirect (302) to /locked/; /api/access/request returns the field error for a bad email (so both Vercel variables are set); verify without a request returns 409; a forged approval link returns 400; 18 public pages, feeds, sitemap and search return 200; unknown pages 404; no locked text in live feeds or search. Note: alltech.vercel.app belongs to someone else, so the project rename cannot use it.
 
+## Round 2 (2026-11-07): images, silent killers, SEO/AEO/GEO
+
+- **Branch:** `audit/seo-images-2026-11-07`; **tag:** `pre-audit-2026-11-07` (= main `5e122c8`, the live site).
+- Owner asked for: images from Google Drive or the laptop; bugs and silent site-killers; SEO, AEO and GEO on the level of myeasyagents.com; a guide to running the site, writing and sharing to Medium and LinkedIn. Taken as approval for the fixes; release (merge to main) still needs the owner's yes.
+- Done: baseline of both sites' robots, sitemap, llms.txt, headers and JSON-LD; findings R2-01 to R2-16 in FINDINGS.csv.
+
 ## Next step
 
-Owner: set ACCESS_SECRET and RESEND_API_KEY on Vercel, test on a preview, merge. Proposals P-07 to P-10 in AUDIT_MASTER.md section 11 wait for approval.
+Implement R2 fixes in small commits: settings (timezone, stats, headers, trailing slash), descriptions, JSON-LD, robots/llms/sitemap, share image and covers, image pipeline and Obsidian settings, FAQ, syndication, IndexNow; then verify and push the branch for a preview.
 
 ## Open questions for the owner
 
