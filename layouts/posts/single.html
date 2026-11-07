@@ -19,6 +19,7 @@
     <p class="byline">By <strong>{{ .Params.author | default site.Params.author }}</strong> · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> · {{ .ReadingTime }} min read</p>
   </header>
 
+  {{ partial "cover.html" . }}
   <div class="prose">
     {{ .Content }}
   </div>
@@ -27,6 +28,7 @@
     {{- with .Params.tags }}
     <p class="post-tags">{{ range . }}<a class="tag" href="{{ printf "/tags/%s/" (urlize .) | relURL }}">{{ . }}</a> {{ end }}</p>
     {{- end }}
+    {{ partial "syndication.html" . }}
     {{- if not .Params.private }}
     <p class="share"><span class="meta">Share:</span>
       <a href="https://wa.me/?text={{ printf "%s %s" .Title .Permalink | urlquery }}">WhatsApp</a>

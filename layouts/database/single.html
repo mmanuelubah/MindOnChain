@@ -16,7 +16,9 @@
     {{ with .Params.summary }}<p class="standfirst">{{ . }}</p>{{ end }}
   </header>
 
+  {{ partial "cover.html" . }}
   <div class="doc">{{ .Content }}</div>
+  {{ partial "syndication.html" . }}
 
   <aside class="entry-help screen" aria-labelledby="help-h">
     <h2 class="h3" id="help-h">Stuck on this job?</h2>

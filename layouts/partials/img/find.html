@@ -1,0 +1,7 @@
+{{- /* Finds a local image as Obsidian links it: next to the note (page bundle), or in assets/
+       (e.g. assets/uploads/photo.jpg). Argument: dict "src" "page". Returns the resource or false. */ -}}
+{{- $path := (urls.Parse .src).Path | strings.TrimPrefix "./" | strings.TrimPrefix "/" -}}
+{{- $res := false -}}
+{{- with .page }}{{ with .Resources.Get $path }}{{ $res = . }}{{ end }}{{ end -}}
+{{- if not $res }}{{ with resources.Get (strings.TrimPrefix "assets/" $path) }}{{ $res = . }}{{ end }}{{ end -}}
+{{- return $res -}}

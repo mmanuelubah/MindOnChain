@@ -1,0 +1,55 @@
+{{- /*
+  Turns any image reference the owner can write into something a browser can load.
+  Argument: dict "src" (the link as written) "page" (the page it is on).
+  Returns: dict url, srcset ("" if none), width, height (0 if unknown), found (bool).
+
+  Accepted forms:
+  - Google Drive, any share link: https://drive.google.com/file/d/ID/view?usp=sharing,
+    .../open?id=ID, .../uc?export=view&id=ID. Drive's uc/open links are download links and
+    fail when embedded, so they are rewritten to Drive's image thumbnail at 1600 px.
+    The file must be shared as "Anyone with the link".
+  - A photo from the laptop, as Obsidian inserts it: assets/uploads/photo.jpg (the vault's
+    attachment folder), or a file next to the note in a page bundle. Resized to 480, 960 and
+    1600 px so phones never download the original.
+  - Any other https:// image: used as it is.
+*/ -}}
+{{- $src := .src | default "" -}}
+{{- $page := .page -}}
+{{- $out := dict "url" $src "srcset" "" "width" 0 "height" 0 "found" true -}}
+{{- $drive := findRESubmatch `(?:drive|docs)\.google\.com/(?:file/d/|open\?id=|uc\?(?:[^#]*&)?id=|thumbnail\?(?:[^#]*&)?id=)([A-Za-z0-9_-]{10,})` $src 1 -}}
+{{- if $drive -}}
+  {{- $id := index (index $drive 0) 1 -}}
+  {{- $base := printf "https://drive.google.com/thumbnail?id=%s&sz=" $id -}}
+  {{- $out = dict "url" (printf "%sw1600" $base) "srcset" (printf "%sw480 480w, %sw960 960w, %sw1600 1600w" $base $base $base) "width" 0 "height" 0 "found" true -}}
+{{- else if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "data:") -}}
+  {{- /* an external image: leave it alone */ -}}
+{{- else if $src -}}
+  {{- /* Local file. Obsidian writes spaces as %20; the parsed path is decoded. */ -}}
+  {{- $path := (urls.Parse $src).Path | strings.TrimPrefix "./" | strings.TrimPrefix "/" -}}
+  {{- $res := partial "img/find.html" (dict "src" $src "page" $page) -}}
+  {{- if $res -}}
+    {{- if and (eq $res.ResourceType "image") (not (strings.Contains $res.MediaType.SubType "svg")) (ne $res.MediaType.SubType "gif") -}}
+      {{- /* WebP needs Hugo extended; otherwise keep the original format. */ -}}
+      {{- $fmt := cond hugo.IsExtended "webp" (cond (eq $res.MediaType.SubType "png") "png" "jpg") -}}
+      {{- $set := slice -}}{{- $largest := false -}}
+      {{- range slice 480 960 1600 -}}
+        {{- if le . $res.Width -}}
+          {{- $img := $res.Resize (printf "%dx %s q80" . $fmt) -}}
+          {{- $set = $set | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+          {{- $largest = $img -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $largest }}{{ $largest = $res.Resize (printf "%dx %s q80" $res.Width $fmt) }}{{ end -}}
+      {{- $out = dict "url" $largest.RelPermalink "srcset" (delimit $set ", ") "width" $largest.Width "height" $largest.Height "found" true -}}
+    {{- else -}}
+      {{- $out = dict "url" $res.RelPermalink "srcset" "" "width" 0 "height" 0 "found" true -}}
+    {{- end -}}
+  {{- else if hasPrefix $path "static/" -}}
+    {{- $out = dict "url" (printf "/%s" (strings.TrimPrefix "static/" $path)) "srcset" "" "width" 0 "height" 0 "found" true -}}
+  {{- else -}}
+    {{- /* Not silent: the build log names the page and the missing file. */ -}}
+    {{- warnf "image not found: %q on %s (put it in assets/uploads/ or use a Drive share link)" $src (cond (not $page) "?" $page.File.Path) -}}
+    {{- $out = dict "url" $src "srcset" "" "width" 0 "height" 0 "found" false -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

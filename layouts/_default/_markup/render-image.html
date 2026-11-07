@@ -1,0 +1,8 @@
+{{- /* Every Markdown image: ![What it shows](link "optional caption"). See partials/img/resolve.html. */ -}}
+{{- $img := partial "img/resolve.html" (dict "src" .Destination "page" .Page) -}}
+{{- if not .Text }}{{ warnf "image without alt text on %s: %s (write what it shows between the [ ])" .Page.File.Path .Destination }}{{ end -}}
+{{- if .Title }}<figure class="figure">{{ end -}}
+<img src="{{ $img.url }}"
+  {{- with $img.srcset }} srcset="{{ . }}" sizes="(min-width: 820px) 760px, 100vw"{{ end }}
+  {{- if gt $img.width 0 }} width="{{ $img.width }}" height="{{ $img.height }}"{{ end }} alt="{{ .PlainText }}" loading="lazy" decoding="async">
+{{- with .Title }}<figcaption>{{ . }}</figcaption></figure>{{ end -}}

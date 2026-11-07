@@ -32,3 +32,6 @@ docs/audit/screenshots/
 
 # Python bytecode
 __pycache__/
+
+# Personal notes kept in the Obsidian vault but never published (daily notes land here).
+Private/

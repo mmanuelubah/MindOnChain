@@ -1,0 +1,10 @@
+{{- /* "Also published on": the copies of this post on Medium, LinkedIn and elsewhere (front matter
+       `syndication`). rel="syndication" tells search and AI engines this page is the original. */ -}}
+{{- with .Params.syndication -}}
+<p class="syndication"><span class="meta">Also published on:</span>
+  {{- range . }}
+  {{- $host := (urls.Parse .).Host | strings.TrimPrefix "www." }}
+  <a href="{{ . }}" rel="syndication noopener">{{ cond (strings.Contains $host "medium.com") "Medium" (cond (strings.Contains $host "linkedin.com") "LinkedIn" (cond (strings.Contains $host "substack.com") "Substack" $host)) }}</a>
+  {{- end }}
+</p>
+{{- end -}}

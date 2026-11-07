@@ -1,0 +1,11 @@
+{{- /* A page's cover photo, shown above the text. Same sources as any image (partials/img/resolve.html).
+       It is the first thing on screen, so it loads eagerly, at high priority. */ -}}
+{{- with .Params.cover -}}
+{{- $img := partial "img/resolve.html" (dict "src" . "page" $) -}}
+{{- if $img.found -}}
+<figure class="cover">
+  <img src="{{ $img.url }}"{{ with $img.srcset }} srcset="{{ . }}" sizes="(min-width: 820px) 760px, 100vw"{{ end }}{{ if gt $img.width 0 }} width="{{ $img.width }}" height="{{ $img.height }}"{{ end }} alt="{{ $.Params.cover_alt | default "" }}" fetchpriority="high" decoding="async">
+  {{- with $.Params.cover_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- end -}}
+{{- end -}}
