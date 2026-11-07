@@ -6,6 +6,9 @@ featured: false               # true puts it under "Featured writing" on the blo
 description: ""               # one line for search engines and link previews
 categories: ["Fireside"]      # one category
 tags: ["advice"]
+cover: ""                     # optional photo at the top: assets/uploads/photo.jpg or a Drive share link
+cover_alt: ""                 # what the cover photo shows, for blind readers and search
+syndication: []               # after cross-posting, add the copies: ["https://medium.com/@you/...", "https://www.linkedin.com/pulse/..."]
 ---
 
 <!-- Save in: content/posts/ -->

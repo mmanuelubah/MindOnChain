@@ -14,7 +14,7 @@ compatibility:
 specs:
   Connector: ""
 images:
-  - "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"   # a real photo of this part, never a stock photo
+  - "assets/uploads/your-part-photo.jpg"   # a real photo of this part (or a Drive share link), never a stock photo
 ---
 
 What the part is and what was tested, in plain words.

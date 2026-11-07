@@ -8,7 +8,7 @@
       <h1 class="h1">{{ .Title }}</h1>
       <div class="prose prose--ui">{{ .Content }}</div>
       {{- with .Params.images }}
-      <ul class="part-photos">{{ range . }}<li><img src="{{ . }}" alt="Photo of {{ $.Title }}" loading="lazy" width="800" height="600"></li>{{ end }}</ul>
+      <ul class="part-photos">{{ range $i, $src := . }}{{ $img := partial "img/resolve.html" (dict "src" $src "page" $) }}<li><img src="{{ $img.url }}"{{ with $img.srcset }} srcset="{{ . }}" sizes="(min-width: 900px) 560px, 100vw"{{ end }}{{ if gt $img.width 0 }} width="{{ $img.width }}" height="{{ $img.height }}"{{ end }} alt="Photo {{ add $i 1 }} of {{ $.Title }}"{{ if gt $i 0 }} loading="lazy"{{ end }} decoding="async"></li>{{ end }}</ul>
       {{- else }}
       <p class="meta">Ask for photos of this exact part on WhatsApp.</p>
       {{- end }}

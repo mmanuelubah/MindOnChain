@@ -10,9 +10,9 @@
 
   {{- with .RegularPages.ByDate.Reverse }}
   <ul class="cards">
-    {{- range . }}
+    {{- range . }}{{ $part := . }}
     <li><a class="part-card" href="{{ .RelPermalink }}">
-      <span class="part-img">{{ with index (.Params.images | default slice) 0 }}<img src="{{ . }}" alt="" loading="lazy" width="400" height="300">{{ else }}<span class="meta">Photo on request</span>{{ end }}</span>
+      <span class="part-img">{{ with index (.Params.images | default slice) 0 }}{{ $img := partial "img/resolve.html" (dict "src" . "page" $part) }}<img src="{{ $img.url }}"{{ with $img.srcset }} srcset="{{ . }}" sizes="(min-width: 640px) 360px, 100vw"{{ end }}{{ if gt $img.width 0 }} width="{{ $img.width }}" height="{{ $img.height }}"{{ end }} alt="" loading="lazy" decoding="async">{{ else }}<span class="meta">Photo on request</span>{{ end }}</span>
       <span class="part-title">{{ .Title }}</span>
       {{ with .Params.compatibility }}<span class="meta">Fits {{ delimit (first 2 .) ", " }}{{ if gt (len .) 2 }} and more{{ end }}</span>{{ end }}
       <span class="part-foot"><span>Price on request</span><span class="stock{{ if .Params.in_stock }} ok{{ else }} bad{{ end }}">{{ if .Params.in_stock }}In stock{{ else }}Sold out{{ end }}</span></span>

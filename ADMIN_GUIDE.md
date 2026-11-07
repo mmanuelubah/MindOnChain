@@ -4,6 +4,15 @@ How to run the site from Obsidian: write blog posts and weekly roundups, add dat
 
 ---
 
+## Start here: the weekly routine
+
+1. **Write** in Obsidian with a template (section 1). Add photos by dragging them in (section 4).
+2. **Preview** on your laptop: `hugo server`, then open http://localhost:1313 (section 7).
+3. **Publish**: commit and push to GitHub (section 8). Vercel puts it live in about a minute, and Bing is told automatically.
+4. **Share** on LinkedIn and Medium (section 10).
+
+---
+
 ## 1. Writing a new post in Obsidian
 
 Obsidian's template folder is already set to `Templates` (Settings → Core plugins → **Templates** must be on).
@@ -90,53 +99,39 @@ After setup, on the live site: open a locked post in a private browser window, r
 
 ---
 
-## 4. Linking images and PDFs
+## 4. Images: from your laptop or Google Drive
 
-Large images and PDFs are hosted on Google Drive rather than in the repository, so the site stays small and pages load fast on mobile data.
+Either way, write what the photo shows between the square brackets. Blind readers hear it, and Google and AI engines read it.
 
-### Option A: Your own photos only
+### From your laptop (best)
 
-Use photos you took (workshop jobs, labels, pinouts) or images you have permission to use. Images copied from Pinterest or other sites belong to someone else; linking them from your pages can lead to takedowns or broken images when the original is removed. Host your photos on Google Drive (Option B).
+1. Drag the photo from your Files window into the note, or copy it and paste with `Ctrl+V`.
+2. Obsidian saves it in `assets/uploads/` and writes a line like `![](assets/uploads/IMG_2041.jpg)`.
+3. Fill in the brackets: `![EWS4 module behind the driver's kick panel](assets/uploads/IMG_2041.jpg)`.
+4. Optional caption under the photo: add it in quotes after the file, `![…](assets/uploads/IMG_2041.jpg "BMW X3, 2006")`.
 
-### Option B: Hosting Files on Your Google Drive
+The site makes small, medium and large copies of every photo automatically, so a 5 MB phone photo reaches a phone as about 40 KB. Rename files plainly before dragging them in if you can: `ews4-module-x3.jpg`, not `IMG_2041.jpg`; the name ends up in Google Images.
 
-#### Step 1: Organize Your Google Drive
+### From Google Drive
 
-Organize your files clearly (e.g., by car brand):
+1. In Drive, right-click the photo → **Share** → General access: **Anyone with the link** → **Copy link**.
+2. Paste the link as it is: `![Pinout of the MS43 DME](https://drive.google.com/file/d/1AbC…/view?usp=sharing)`.
 
-- `Locksmith_Database/`
-  - `Toyota/`
-    - `Camry_2016_Pinout.jpg`
-    - `Corolla_EEPROM_Guide.pdf`
+The site rewrites any Drive link (share, open or the old `uc?export=view` form) into Drive's image address, which works when embedded. If the photo shows as broken, the file is not shared with "Anyone with the link". Drive photos are not resized by the site, so prefer laptop photos for large images.
 
-#### Step 2: Get the Google Drive Link
+### A cover photo for a post
 
-1. Right-click the file in Google Drive and select **Share**. Change "General Access" to **"Anyone with the link"**.
-2. Click **"Copy Link"**. (e.g., `https://drive.google.com/file/d/1a2b3c4d5e6f7g8h9i/view?usp=sharing`)
+In the front matter: `cover: "assets/uploads/ews4-module-x3.jpg"` (or a Drive link) and `cover_alt: "what it shows"`. It appears above the text and becomes the picture in WhatsApp, LinkedIn and X previews. Without a cover, previews use the green Alltech card.
 
-#### Step 3: Convert the Link for Your Website
+### If an image is wrong
 
-Hugo needs a direct download link. Take the **FILE ID** from the link above (e.g., `1a2b3c4d5e6f7g8h9i`) and format it like this:
+The build log on Vercel (Deployments → the deployment → Building) prints `image not found: … on posts/….md` or `image without alt text`. The page still publishes; fix the line and push again.
 
-**`https://drive.google.com/uc?export=view&id=YOUR_FILE_ID`**
+### PDFs
 
-### How to Add the Image/File Link to Your Obsidian Post
+Put them on Drive (shared with "Anyone with the link") and link them: `[Download the ME7.5 wiring PDF](https://drive.google.com/file/d/…/view)`.
 
-Once you have your direct Google Drive link:
-
-- **For a Cover Image (in the Frontmatter):** Paste the link inside the quotes for `cover:` or `images:` at the very top of your file.
-
-  ```yaml
-  cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
-  ```
-
-- **For an Image inside the text:** Use standard Markdown syntax wherever you want the image to appear.
-
-  ```markdown
-  ![What the photo shows, e.g. EWS4 module behind the kick panel](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)
-  ```
-
-- **For a PDF Download Link:** `[Click Here to Download PDF](https://drive.google.com/uc?export=download&id=YOUR_FILE_ID)`
+Only use photos you took or have permission to use.
 
 ---
 
@@ -162,9 +157,119 @@ The site's address comes from one Vercel setting, `SITE_URL`. Until it is set, t
 4. Project → Settings → Environment Variables: add `SITE_URL` = `https://yourdomain/` (with the final slash), then redeploy.
 5. Regenerate the flyers with the new address: `SITE_URL=https://yourdomain/ python3 tools/marketing.py`, then `node tools/render_marketing.cjs`.
 
+## 7. Running the site on your laptop
+
+Open a terminal (`Ctrl+Alt+T`) and type:
+
+```sh
+cd ~/Desktop/MindOnChain
+hugo server
+```
+
+- This only runs the site on your computer; nothing is published and nothing outside is contacted.
+- Good result: a line ending `Web Server is available at http://localhost:1313/`. Open that address in your browser. Every time you save a note, the page reloads by itself.
+- Drafts (`draft: true`) are hidden; to see them too, use `hugo server -D`.
+- Stop it with `Ctrl+C`.
+- Bad result: a red `ERROR` line names the file and the line number (often a quote mark inside a quoted value in the front matter). Fix it and save; the server recovers by itself.
+- Locked writing opens without a code here, because the lock only exists on Vercel.
+
+## 8. Publishing (putting it live)
+
+Publishing = saving a "commit" (a snapshot) and pushing it to GitHub. Vercel sees the push and rebuilds the site in about a minute.
+
+**From VS Code** (easiest): open the `MindOnChain` folder, click the Source Control icon on the left (it shows a number when something changed), type a short message such as `Post: Toyota Camry 2016 immobiliser`, press **Commit**, then **Sync Changes**.
+
+**From the terminal:**
+
+```sh
+cd ~/Desktop/MindOnChain
+git add -A
+git commit -m "Post: Toyota Camry 2016 immobiliser"
+git push
+```
+
+**From Obsidian** (optional, one-time install): Settings → Community plugins → Browse → search **Git** (by Vinzent) → Install → Enable. Then `Ctrl+P` → **Git: Commit-and-sync**.
+
+Check it worked: GitHub shows a green tick next to the commit after a minute, and the page is live. A red cross means the build failed; Vercel's deployment page shows the error line.
+
+What is never published: anything in `Private/` (your daily notes go there automatically). Everything else in the folder ends up on public GitHub, so keep personal notes in `Private/`.
+
+Dates: a post dated today is live today (the site uses Lagos time). A post dated in the future stays hidden until the next push after that date, so "scheduling" means pushing again on the day.
+
+## 9. Google, Bing and AI engines
+
+What the site already does for you, every time it builds:
+- `sitemap.xml` lists every public page; `robots.txt` welcomes Google, Bing and the AI crawlers (ChatGPT, Claude, Perplexity, Copilot, Gemini) and points them to the sitemap.
+- Every page carries structured data saying what it is: the business (Alltech Solutions, Lagos, phone, services), you as the author, breadcrumbs, and for posts and database entries an article with its car brand, model and ECU.
+- `/llms.txt` gives AI assistants a plain summary of the business and a list of every entry, guide and post.
+- After each push, Bing is told which pages changed (IndexNow, a GitHub Action). Bing's index also feeds ChatGPT search and Copilot.
+
+**One-time: Google Search Console** (free, about 10 minutes)
+1. Go to search.google.com/search-console → **Add property** → **URL prefix** → `https://mind-on-chain.vercel.app/`.
+2. Choose **HTML tag**. Copy only the code inside `content="…"`.
+3. Paste it into `hugo.toml` under `[params.verification]` as `google = "the-code"`, then publish (section 8).
+4. Back in Search Console, press **Verify**. Then **Sitemaps** → enter `sitemap.xml` → **Submit**.
+5. For a new post: paste its address into the search box at the top (URL Inspection) → **Request indexing**.
+
+**One-time: Bing Webmaster Tools**
+1. Go to bing.com/webmasters → sign in → **Import from Google Search Console** (easiest; no code needed).
+2. Or add the site and use the HTML meta tag: put its code in `hugo.toml` as `bing = "the-code"` and publish.
+3. Submit `https://mind-on-chain.vercel.app/sitemap.xml` under **Sitemaps**.
+
+What to expect: new pages usually appear in Google within days to a few weeks and in Bing within days. Nobody can promise rankings or AI citations; they follow from pages that answer real questions clearly and from other sites linking to you.
+
+## 10. Writing posts people find, and that AI quotes
+
+- **Title = the search.** Put the car, module and part number in the title: "Toyota Camry 2016: reading the immobiliser EEPROM", not "A tricky job".
+- **Answer in the first two sentences.** What the problem was and what fixed it. Search snippets and AI answers quote the opening.
+- **Fill `description:`** with one plain sentence (under 160 characters). It is what Google shows under your title.
+- **Use headings that are questions** people ask ("Why won't the car start after an ECU swap?") and answer right under them.
+- **Steps as numbered lists, warnings as callouts** (section 2).
+- **Real photos with real descriptions** in the brackets.
+- **Link to your own pages**: the database entry, the guide, the Parts page.
+- **Part numbers in backticks**, exactly as on the label: `` `0 261 209 012` ``.
+- **Update old posts** instead of writing near-duplicates; add `lastmod: 2026-12-01` to the front matter when you do.
+
+Questions your customers ask that a post or database entry can answer (use them as titles or headings):
+1. Why won't my car start after replacing the ECU?
+2. What is ECU cloning and how much does it cost in Lagos?
+3. Can a used ECU from Ladipo work in my car?
+4. What does virginising an ECU mean?
+5. How do I find the part number on my ECU?
+6. My BMW key stopped working after a battery change: is it the EWS?
+7. What is the difference between EWS3 and EWS4?
+8. Can an ECU be programmed through the OBD port, or does it need the bench?
+9. Where can I get my car's immobiliser fixed in Lagos?
+10. How do I know a Ladipo ECU is tested before I pay?
+
+To see what AI assistants search for: Claude shows its searches in the answer. In ChatGPT (Chrome), open DevTools (`F12`) → Network, ask a question that makes it search the web, press `Ctrl+Shift+F` and search for `search_model_queries`. Use those searches as a checklist of what a post should cover, not as keywords to repeat.
+
+## 11. Sharing on LinkedIn and Medium
+
+Your site is the original; LinkedIn and Medium are where people discover it. Keep it that way so Google credits your site.
+
+**LinkedIn (a normal post):**
+1. Write 3 to 6 short lines in your own words: the problem, what you found, one useful detail.
+2. Paste the post's link at the end. LinkedIn shows the cover (or the green Alltech card) automatically.
+3. If the preview looks old or empty, paste the link into linkedin.com/post-inspector to refresh it.
+
+**LinkedIn article or newsletter (full text):** start it with "Originally published at" plus the link to your post, then the text. After it is live, copy its address and add it to the post's `syndication:` list, then publish your site again.
+
+**Medium:** use **Import a story** (medium.com/p/import), paste your post's link and press Import. Medium copies the post and tells Google your site is the original (a canonical link), so your site keeps the search credit. Check the formatting, publish, then add the Medium address to `syndication:`.
+
+```yaml
+syndication:
+  - "https://medium.com/@your-name/toyota-camry-2016-immobiliser-1a2b3c"
+  - "https://www.linkedin.com/pulse/toyota-camry-2016-immobiliser-ubanatu-chinaza-emmanuel"
+```
+
+The post then shows "Also published on: Medium · LinkedIn", and search and AI engines treat all three as one piece of work by you.
+
+**WhatsApp:** use the post's WhatsApp share button; the preview card comes with it.
+
 ## Summary
 
-1. Insert the right Obsidian template and save the note in its folder (section 2).
-2. Link images from Google Drive or your own photos (section 4).
-3. Lock sensitive ECU writing by saving it in `content/blog/locked/` (section 3).
-4. Keep claims true and part numbers in backticks (section 5).
+1. Write with a template; drag photos in; fill the brackets (sections 1, 4).
+2. Preview with `hugo server` (section 7).
+3. Commit and push; check the green tick (section 8).
+4. Share on LinkedIn, import to Medium, add the links to `syndication:` (section 11).

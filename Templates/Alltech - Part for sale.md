@@ -13,7 +13,7 @@ compatibility:
 specs:
   Connector: "88-pin + 40-pin"
 images:
-  - "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"   # your own photo of this exact part
+  - "assets/uploads/your-part-photo.jpg"   # your own photo of this exact part, or a Drive share link
 ---
 
 <!-- Save in: content/alltech/shop/   Only list parts you have in hand. No warranty promises. -->

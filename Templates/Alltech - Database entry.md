@@ -7,6 +7,9 @@ model: "Camry"
 ecu: "ECU part number"
 tags: ["bench", "eeprom"]     # method first: bench, obd or bdm
 categories: ["Database", "Immobilizer"]
+cover: ""                     # optional photo at the top: assets/uploads/photo.jpg or a Drive share link
+cover_alt: ""                 # what the cover photo shows, for blind readers and search
+syndication: []               # after cross-posting, add the copies: ["https://medium.com/@you/...", "https://www.linkedin.com/pulse/..."]
 ---
 
 <!-- Save as: content/alltech/database/Brand/Model/<entry-name>/index.md
@@ -38,6 +41,6 @@ categories: ["Database", "Immobilizer"]
 > What to check before you power the module.
 
 ## Pinout Diagram
-![Pinout for ECU part number](https://drive.google.com/uc?export=view&id=YOUR_FILE_ID)
+![Pinout for ECU part number](assets/uploads/pinout-ecu-part-number.jpg)
 
 <!-- No pinout photo yet? Delete the whole "Pinout Diagram" section. -->

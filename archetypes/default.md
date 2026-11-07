@@ -2,7 +2,7 @@
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: {{ .Date }}
 draft: false
-cover: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
+cover: ""                     # optional: assets/uploads/photo.jpg or a Drive share link
 categories: ["Tech"]
 tags: []
 featured: false
