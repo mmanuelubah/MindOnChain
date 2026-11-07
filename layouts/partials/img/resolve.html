@@ -16,9 +16,8 @@
 {{- $src := .src | default "" -}}
 {{- $page := .page -}}
 {{- $out := dict "url" $src "srcset" "" "width" 0 "height" 0 "found" true -}}
-{{- $drive := findRESubmatch `(?:drive|docs)\.google\.com/(?:file/d/|open\?id=|uc\?(?:[^#]*&)?id=|thumbnail\?(?:[^#]*&)?id=)([A-Za-z0-9_-]{10,})` $src 1 -}}
-{{- if $drive -}}
-  {{- $id := index (index $drive 0) 1 -}}
+{{- $id := partial "drive-id.html" $src -}}
+{{- if $id -}}
   {{- $base := printf "https://drive.google.com/thumbnail?id=%s&sz=" $id -}}
   {{- $out = dict "url" (printf "%sw1600" $base) "srcset" (printf "%sw480 480w, %sw960 960w, %sw1600 1600w" $base $base $base) "width" 0 "height" 0 "found" true -}}
 {{- else if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "data:") -}}

@@ -1,0 +1,3 @@
+{{- /* The file ID in any Google Drive link (file/d/ID, open?id=ID, uc?...id=ID, thumbnail?id=ID), or "". */ -}}
+{{- $m := findRESubmatch `(?:drive|docs)\.google\.com/(?:file/d/|open\?id=|uc\?(?:[^#]*&)?id=|thumbnail\?(?:[^#]*&)?id=)([A-Za-z0-9_-]{10,})` (. | default "") 1 -}}
+{{- return (cond (gt (len $m) 0) (index (index $m 0) 1) "") -}}

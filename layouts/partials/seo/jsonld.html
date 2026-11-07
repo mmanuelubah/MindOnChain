@@ -110,6 +110,13 @@
   -}}
   {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end -}}
   {{- with .Params.syndication }}{{ $article = merge $article (dict "sameAs" .) }}{{ end -}}
+  {{- /* PDFs kept on Drive (front matter `pdfs`), declared as documents attached to the article. */ -}}
+  {{- $media := slice -}}
+  {{- range .Params.pdfs -}}{{ if and .link (not (strings.Contains .link "YOUR_FILE_ID")) -}}
+    {{- $id := partial "drive-id.html" .link -}}
+    {{- $media = $media | append (dict "@type" "MediaObject" "name" .title "encodingFormat" "application/pdf" "contentUrl" (cond (ne $id "") (printf "https://drive.google.com/file/d/%s/view" $id) .link)) -}}
+  {{- end }}{{ end -}}
+  {{- with $media }}{{ $article = merge $article (dict "associatedMedia" .) }}{{ end -}}
   {{- if .Params.brand -}}
     {{- $vehicle := dict "@type" "Vehicle" "brand" (dict "@type" "Brand" "name" .Params.brand) -}}
     {{- with .Params.model }}{{ $vehicle = merge $vehicle (dict "model" .) }}{{ end -}}

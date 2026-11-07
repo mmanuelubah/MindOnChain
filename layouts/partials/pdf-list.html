@@ -1,0 +1,9 @@
+{{- /* The page's front matter `pdfs:` list as a "Pinouts and documents" section. Each item: title, link, note (optional). */ -}}
+{{- with .Params.pdfs -}}
+<section class="pdfs" aria-labelledby="pdfs-h">
+  <h2 id="pdfs-h">Pinouts and documents</h2>
+  {{- range . }}
+  {{ partial "pdf-card.html" (dict "link" .link "title" .title "note" .note) }}
+  {{- end }}
+</section>
+{{- end -}}

@@ -1,0 +1,38 @@
+{{- /*
+  One PDF kept on Google Drive (or any https link), shown without putting the file on the site.
+  Argument: dict "link" (Drive share link) "title" "note" (optional one line).
+  Drive draws the first page as a small image (hidden if Drive refuses, e.g. the file is not shared); "Open PDF" and "Download" go to Drive;
+  "Preview here" loads Drive's viewer in the page only when the reader taps it, because the
+  viewer is a few megabytes. The Drive file must be shared as "Anyone with the link".
+*/ -}}
+{{- $id := partial "drive-id.html" .link -}}
+{{- $title := .title | default "PDF" -}}
+{{- if or (strings.Contains .link "YOUR_FILE_ID") (not .link) -}}
+  {{- warnf "PDF %q still has the template's placeholder link; paste the Drive share link or delete it" $title -}}
+{{- else -}}
+<figure class="pdf-card">
+  {{- if $id }}
+  <a class="pdf-thumb" href="https://drive.google.com/file/d/{{ $id }}/view" rel="noopener" aria-hidden="true" tabindex="-1">
+    <img src="https://drive.google.com/thumbnail?id={{ $id }}&sz=w480" alt="" width="240" height="320" loading="lazy" decoding="async" onerror="this.parentNode.hidden = true">
+  </a>
+  {{- end }}
+  <figcaption class="pdf-body">
+    <span class="tag">PDF</span>
+    <strong class="pdf-title">{{ $title }}</strong>
+    {{- with .note }}<span class="meta">{{ . }}</span>{{ end }}
+    <span class="btns">
+      <a class="btn btn--primary" href="{{ if $id }}https://drive.google.com/file/d/{{ $id }}/view{{ else }}{{ .link }}{{ end }}" rel="noopener">Open PDF</a>
+      {{- if $id }}
+      <a class="btn" href="https://drive.google.com/uc?export=download&id={{ $id }}" rel="noopener">Download</a>
+      {{- end }}
+    </span>
+    {{- if $id }}
+    <details class="pdf-preview">
+      <summary>Preview here (uses more data)</summary>
+      <iframe src="https://drive.google.com/file/d/{{ $id }}/preview" title="{{ $title }} (PDF preview)" loading="lazy" allow="autoplay"></iframe>
+    </details>
+    {{- end }}
+  </figcaption>
+</figure>
+{{- if not $id }}{{ if not (hasPrefix .link "https://") }}{{ warnf "PDF link is not a Drive share link or https address: %q (%s)" .link $title }}{{ end }}{{ end -}}
+{{- end -}}

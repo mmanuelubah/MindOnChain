@@ -1,0 +1,2 @@
+{{- /* A PDF inside the text:  {{< pdf "https://drive.google.com/file/d/ID/view" "MS43 DME pinout" "Optional note" >}} */ -}}
+{{- partial "pdf-card.html" (dict "link" (.Get 0) "title" (.Get 1) "note" (.Get 2)) -}}

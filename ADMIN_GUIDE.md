@@ -127,9 +127,28 @@ In the front matter: `cover: "assets/uploads/ews4-module-x3.jpg"` (or a Drive li
 
 The build log on Vercel (Deployments → the deployment → Building) prints `image not found: … on posts/….md` or `image without alt text`. The page still publishes; fix the line and push again.
 
-### PDFs
+### PDFs (pinouts, manuals): keep them on Google Drive
 
-Put them on Drive (shared with "Anyone with the link") and link them: `[Download the ME7.5 wiring PDF](https://drive.google.com/file/d/…/view)`.
+PDFs stay on your Drive; the site only shows a card for each one, so nothing large is stored on Vercel and readers on mobile data download almost nothing until they choose to.
+
+1. Upload the PDF to Drive → right-click → **Share** → General access: **Anyone with the link** → **Copy link**.
+2. In the entry's front matter, list it under `pdfs:` (the database entry template already has the lines):
+
+   ```yaml
+   pdfs:
+     - title: "MS43 DME pinout"
+       link: "https://drive.google.com/file/d/1AbC…/view?usp=sharing"
+       note: "88-pin and 40-pin connectors"
+     - title: "EWS4 wiring"
+       link: "https://drive.google.com/file/d/9XyZ…/view?usp=sharing"
+   ```
+
+   They appear in a **Pinouts and documents** section after the steps.
+3. Or place one exactly where it belongs between the steps, on its own line:
+
+   `{{< pdf "https://drive.google.com/file/d/1AbC…/view" "Bench wiring diagram" "optional note" >}}`
+
+Each card shows Drive's picture of the first page, an **Open PDF** button (Drive's viewer), **Download**, and **Preview here**, which loads the viewer inside the page only when tapped. Titles are searchable on the site, so "MS43 pinout" finds the entry. If the card shows no picture, the file is not shared with "Anyone with the link".
 
 Only use photos you took or have permission to use.
 

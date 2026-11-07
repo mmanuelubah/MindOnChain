@@ -33,7 +33,7 @@
 
 ## ECU database entries
 {{ range .RegularPagesRecursive.ByTitle }}{{ if and (not .Params.private) (not (hasPrefix .RelPermalink "/alltech/database/guides/")) }}
-- [{{ partial "display-title.html" . }}]({{ .Permalink }}){{ with .Params.ecu }}{{ if ne . "Unknown" }}: ECU {{ . }}{{ end }}{{ end }}{{ with .Params.tags }} ({{ delimit . ", " }}){{ end }}
+- [{{ partial "display-title.html" . }}]({{ .Permalink }}){{ with .Params.ecu }}{{ if ne . "Unknown" }}: ECU {{ . }}{{ end }}{{ end }}{{ with .Params.tags }} ({{ delimit . ", " }}){{ end }}{{ with .Params.pdfs }} · PDF{{ if gt (len .) 1 }}s{{ end }}: {{ range $i, $f := . }}{{ if $i }}, {{ end }}{{ $f.title }}{{ end }}{{ end }}
 {{- end }}{{ end }}
 {{- end }}
 {{- with $guides }}

@@ -17,7 +17,7 @@
   </header>
 
   {{ partial "cover.html" . }}
-  <div class="doc">{{ .Content }}</div>
+  <div class="doc">{{ .Content }}{{ partial "pdf-list.html" . }}</div>
   {{ partial "syndication.html" . }}
 
   <aside class="entry-help screen" aria-labelledby="help-h">

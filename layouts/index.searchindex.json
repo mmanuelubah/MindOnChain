@@ -13,6 +13,7 @@
       {{- with . }}{{ $keys = $keys | append (string .) }}{{ end -}}
     {{- end -}}
     {{- range .Params.tags }}{{ $keys = $keys | append (string .) }}{{ end -}}
+    {{- range .Params.pdfs }}{{ $keys = $keys | append (printf "%s pdf" .title) }}{{ end -}}
     {{- /* Database entries start with a table, so their automatic summary is table noise. Use their fields instead. */ -}}
     {{- $summary := .Summary | plainify | htmlUnescape | strings.TrimSpace | truncate 160 -}}
     {{- if eq $group "Database" }}{{ $summary = delimit $keys " · " }}{{ end -}}
