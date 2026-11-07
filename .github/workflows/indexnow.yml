@@ -1,0 +1,22 @@
+# After every push to main, wait for Vercel to publish, then tell Bing which pages changed.
+# Uses no secrets. To stop it: delete this file. To change the site address: set a repository
+# variable SITE_URL (Settings → Secrets and variables → Actions → Variables).
+name: Notify Bing (IndexNow)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wait for the Vercel deployment
+        run: sleep 240
+      - name: Submit changed pages
+        run: node tools/indexnow.mjs
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
