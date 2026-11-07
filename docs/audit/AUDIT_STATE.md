@@ -53,9 +53,12 @@ Locked guide, its index.html and /blog/locked/* redirect (302) to /locked/; /api
 - Verified locally: 124 routes at 375/640 px under the production headers (no CSP blocks, no JS errors), JSON-LD valid on all 124 pages, 2,913 internal links with 0 broken, no locked text in any public output, access tests 15/15, Lighthouse SEO/accessibility/best practices 100 on six page types (baseline/lighthouse-round2.md).
 - Not verifiable locally: Hugo 0.151.1 and whether Vercel's Hugo is the extended edition (images fall back to JPEG/PNG if not); Drive thumbnails with a real public file; IndexNow acceptance (first run after merge).
 
+- 2026-11-07, owner request: pinout PDFs stay on Google Drive (front matter `pdfs:` or `{{< pdf >}}`); card with Drive's first-page image, Open, Download, and a viewer loaded only on tap; CSP frame-src drive.google.com. Commit e4b668e.
+- Release: owner said "merge main". `main` fast-forwarded to e4b668e and pushed (GitHub confirmed).
+
 ## Next step
 
-Owner: approve the release (merge `audit/seo-images-2026-11-07` into `main`). Then set up Google Search Console and Bing Webmaster Tools (ADMIN_GUIDE section 9) and paste the two verification codes into hugo.toml.
+Confirm the production deployment and the live checks (robots.txt, llms.txt, JSON-LD, headers, locked redirects, IndexNow key and the first IndexNow run). Then the owner sets up Google Search Console and Bing Webmaster Tools (ADMIN_GUIDE section 9).
 
 ## Open questions for the owner
 
