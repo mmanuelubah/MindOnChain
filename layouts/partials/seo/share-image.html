@@ -1,0 +1,19 @@
+{{- /*
+  The image link previews (WhatsApp, LinkedIn, X, Medium) and search results show.
+  A page's `cover:` wins (a laptop photo, Drive link or URL); otherwise the 1200x630 card.
+  Returns dict url (absolute), width, height (0 when unknown, e.g. Drive), alt.
+*/ -}}
+{{- $out := dict "url" ("brand/og-default.png" | absURL) "width" 1200 "height" 630 "alt" (printf "%s, ECU and immobiliser workshop in Lagos" site.Title) -}}
+{{- with .Params.cover -}}
+  {{- $alt := $.Params.cover_alt | default (partial "display-title.html" $) -}}
+  {{- $res := partial "img/find.html" (dict "src" . "page" $) -}}
+  {{- if and $res (eq $res.ResourceType "image") (not (strings.Contains $res.MediaType.SubType "svg")) -}}
+    {{- /* Link previews want a 1200x630 JPEG: LinkedIn and some WhatsApp versions skip WebP. */ -}}
+    {{- $card := $res.Fill "1200x630 jpg q82 Smart" -}}
+    {{- $out = dict "url" $card.Permalink "width" 1200 "height" 630 "alt" $alt -}}
+  {{- else -}}
+    {{- $img := partial "img/resolve.html" (dict "src" . "page" $) -}}
+    {{- if $img.found }}{{ $out = dict "url" ($img.url | absURL) "width" $img.width "height" $img.height "alt" $alt }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

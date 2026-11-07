@@ -1,0 +1,58 @@
+{{- /* /llms.txt: facts about the business and a map of the site for AI assistants. Built from the same
+       data as the pages, so it is never out of date. Locked writing is named but never quoted. */ -}}
+{{- $c := site.Params.contact -}}
+{{- $db := site.GetPage "/alltech/database" -}}
+{{- $guides := site.GetPage "/alltech/database/guides" -}}
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+{{ site.Title }} is an automotive locksmith and ECU workshop in {{ site.Params.location }}, run by {{ site.Params.author }}, an automobile locksmith and technician. It programs, clones and virginises engine control units (ECUs), works on immobiliser systems, sources tested modules from Ladipo Market in Lagos, and publishes the procedures in a free online database.
+
+- Location: {{ site.Params.location }}. Parts are collected in Lagos; delivery elsewhere is arranged on request.
+- Contact: WhatsApp +{{ $c.whatsapp }} ({{ $c.whatsappDisplay }}) · {{ $c.email }}
+- Prices: on request, because Ladipo Market prices change; a price and photos of the exact part are sent before the customer pays anything.
+- Modules are tested on the bench before handover.
+
+## Services
+{{ range site.Home.Params.services }}
+- {{ .title }}: {{ .text }}
+{{- end }}
+- ECU and module sourcing from Ladipo Market: send the part number from the label, or a photo of the old module, with the car's make, model and year.
+
+## Key pages
+
+- [Home]({{ site.Home.Permalink }}): what the workshop does and how buying a part works.
+- [ECU database]({{ with $db }}{{ .Permalink }}{{ end }}): free pinouts, EEPROM locations and programming steps by car brand.
+- [Guides]({{ with $guides }}{{ .Permalink }}{{ end }}): step-by-step ECU programming procedures.
+- [Parts]({{ "alltech/shop/" | absURL }}): modules and engines from Ladipo Market, price on request.
+- [Search]({{ "search/" | absURL }}): search by part number, car or module, e.g. {{ "search/?q=2L86D" | absURL }}.
+- [Blog]({{ "blog/" | absURL }}): writing by {{ site.Params.author }}, including weekly roundups and ECU programming notes.
+- [About]({{ "about/" | absURL }}): who runs {{ site.Title }}.
+{{- with $db }}
+
+## ECU database entries
+{{ range .RegularPagesRecursive.ByTitle }}{{ if and (not .Params.private) (not (hasPrefix .RelPermalink "/alltech/database/guides/")) }}
+- [{{ partial "display-title.html" . }}]({{ .Permalink }}){{ with .Params.ecu }}{{ if ne . "Unknown" }}: ECU {{ . }}{{ end }}{{ end }}{{ with .Params.tags }} ({{ delimit . ", " }}){{ end }}
+{{- end }}{{ end }}
+{{- end }}
+{{- with $guides }}
+
+## Guides
+{{ range .RegularPages.ByDate.Reverse }}
+- [{{ .Title }}]({{ .Permalink }}){{ if .Params.private }}: locked, readable only with an access code the owner approves{{ else }}{{ with .Params.summary }}: {{ . }}{{ end }}{{ end }}
+{{- end }}
+{{- end }}
+{{- $posts := where site.RegularPages "Section" "posts" }}
+{{- with $posts }}
+
+## Blog posts
+{{ range .ByDate.Reverse }}
+- [{{ .Title }}]({{ .Permalink }}) ({{ .Date.Format "2 January 2006" }}){{ with partial "seo/description.html" . }}: {{ . }}{{ end }}
+{{- end }}
+{{- end }}
+
+## About the owner
+
+{{ site.Params.author }} is an automobile locksmith and technician in Lagos who runs {{ site.Title }} and co-founded MYEASYAGENT (https://www.myeasyagents.com/).
+Profiles: {{ site.Params.social.linkedin }} · {{ site.Params.social.github }} · {{ site.Params.social.x }}

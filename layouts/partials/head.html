@@ -1,19 +1,24 @@
 {{- $title := cond .IsHome (printf "%s: ECU and immobiliser workshop, Lagos" site.Title) (printf "%s | %s" (partial "display-title.html" .) site.Title) -}}
-{{- $desc := "" -}}
-{{- if .IsHome -}}{{ $desc = site.Params.description }}
-{{- else if .Description -}}{{ $desc = .Description }}
-{{- else if .IsPage -}}{{ $desc = .Summary | plainify | strings.TrimSpace | truncate 160 }}
-{{- else -}}{{ $desc = site.Params.description }}{{- end -}}
+{{- $desc := partial "seo/description.html" . -}}
 {{- $author := .Params.author | default site.Params.author -}}
-{{- $image := "brand/icon-512.png" -}}
-{{- with .Params.cover }}{{ if . }}{{ $image = . }}{{ end }}{{ end -}}
+{{- $share := partial "seo/share-image.html" . -}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $desc }}">
 <meta name="author" content="{{ $author }}">
-{{- if or .Params.noindex .Params.private }}
+{{- if .Params.private }}
 <meta name="robots" content="noindex, nofollow">
+{{- else if .Params.noindex }}
+<meta name="robots" content="noindex, follow">
+{{- else }}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+{{- end }}
+{{- with site.Params.verification.google }}
+<meta name="google-site-verification" content="{{ . }}">
+{{- end }}
+{{- with site.Params.verification.bing }}
+<meta name="msvalidate.01" content="{{ . }}">
 {{- end }}
 <link rel="canonical" href="{{ .Permalink }}">
 
@@ -47,17 +52,31 @@
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ partial "display-title.html" . }}{{ end }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-<meta property="og:image" content="{{ $image | absURL }}">
+<meta property="og:type" content="{{ if eq .RelPermalink "/about/" }}profile{{ else if and .IsPage (in (slice "posts" "database") .Type) }}article{{ else }}website{{ end }}">
+<meta property="og:image" content="{{ $share.url }}">
+{{- if gt $share.width 0 }}
+<meta property="og:image:width" content="{{ $share.width }}">
+<meta property="og:image:height" content="{{ $share.height }}">
+{{- end }}
+<meta property="og:image:alt" content="{{ $share.alt }}">
 <meta property="og:locale" content="en_NG">
-<meta name="twitter:card" content="{{ if .Params.cover }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ partial "display-title.html" . }}{{ end }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $share.url }}">
 {{- with site.Params.social.x }}
 <meta name="twitter:site" content="@{{ path.Base . }}">
 {{- end }}
-{{- if and .IsPage (isset .Params "date") }}
+{{- if and .IsPage (in (slice "posts" "database") .Type) }}
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:author" content="{{ "about/" | absURL }}">
 {{- end }}
+{{ partial "seo/jsonld.html" . }}
 
 {{ with .OutputFormats.Get "rss" -}}
 <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{- end }}
+{{ with site.Home.OutputFormats.Get "llms" -}}
+<link rel="alternate" type="text/plain" href="{{ .Permalink }}" title="{{ site.Title }} for AI assistants (llms.txt)">
 {{- end }}

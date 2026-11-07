@@ -1,0 +1,130 @@
+{{- /*
+  Structured data (schema.org JSON-LD) for search and AI engines. One graph per page:
+  the business, its founder, the website, this page, its breadcrumb trail and, by page
+  type, the article or FAQ. Every value comes from hugo.toml, front matter or visible
+  content; nothing here may state a fact the page does not.
+*/ -}}
+{{- $home := site.Home.Permalink -}}
+{{- $c := site.Params.contact -}}
+{{- $s := site.Params.social -}}
+{{- $bizID := printf "%s#business" $home -}}
+{{- $personID := printf "%sabout/#person" $home -}}
+{{- $siteID := printf "%s#website" $home -}}
+{{- $pageID := printf "%s#webpage" .Permalink -}}
+{{- $title := partial "display-title.html" . -}}
+{{- $desc := partial "seo/description.html" . -}}
+{{- $share := partial "seo/share-image.html" . -}}
+
+{{- $services := slice -}}
+{{- range site.Home.Params.services -}}
+  {{- $services = $services | append (dict "@type" "Offer" "itemOffered" (dict "@type" "Service" "name" .title "description" .text "areaServed" "Lagos")) -}}
+{{- end -}}
+{{- $services = $services | append (dict "@type" "Offer" "itemOffered" (dict "@type" "Service" "name" "ECU and module sourcing from Ladipo Market" "description" "Modules and engines found at Ladipo Market, Lagos, and tested before handover. Price on request.")) -}}
+
+{{- $business := dict
+  "@type" "AutoRepair"
+  "@id" $bizID
+  "name" site.Title
+  "url" $home
+  "logo" ("brand/icon-512.png" | absURL)
+  "image" ("brand/og-default.png" | absURL)
+  "description" site.Params.description
+  "telephone" (printf "+%s" $c.whatsapp)
+  "email" $c.email
+  "address" (dict "@type" "PostalAddress" "addressLocality" "Lagos" "addressRegion" "Lagos" "addressCountry" "NG")
+  "areaServed" (slice (dict "@type" "City" "name" "Lagos") (dict "@type" "Country" "name" "Nigeria"))
+  "founder" (dict "@id" $personID)
+  "contactPoint" (dict "@type" "ContactPoint" "telephone" (printf "+%s" $c.whatsapp) "email" $c.email "contactType" "customer service" "availableLanguage" "en")
+  "knowsAbout" (slice "ECU programming" "ECU cloning" "ECU virginising" "Immobiliser systems" "EEPROM reading and writing" "BMW EWS" "CAN bus diagnostics")
+  "makesOffer" $services
+-}}
+{{- $person := dict
+  "@type" "Person"
+  "@id" $personID
+  "name" site.Params.author
+  "alternateName" "Abobo"
+  "url" (printf "%sabout/" $home)
+  "image" ("images/avatar-320.webp" | absURL)
+  "jobTitle" "Automobile locksmith and technician"
+  "worksFor" (dict "@id" $bizID)
+  "homeLocation" (dict "@type" "City" "name" "Lagos")
+  "sameAs" (slice $s.linkedin $s.github $s.x)
+-}}
+{{- $website := dict
+  "@type" "WebSite"
+  "@id" $siteID
+  "url" $home
+  "name" site.Title
+  "inLanguage" site.LanguageCode
+  "publisher" (dict "@id" $bizID)
+  "potentialAction" (dict "@type" "SearchAction" "target" (dict "@type" "EntryPoint" "urlTemplate" (printf "%ssearch/?q={search_term_string}" $home)) "query-input" "required name=search_term_string")
+-}}
+
+{{- /* Breadcrumbs: home, then each ancestor, then this page. */ -}}
+{{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" site.Title "item" $home) -}}
+{{- $pos := 1 -}}
+{{- range .Ancestors.Reverse -}}
+  {{- if not .IsHome -}}
+    {{- $pos = add $pos 1 -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" (partial "display-title.html" .) "item" .Permalink) -}}
+  {{- end -}}
+{{- end -}}
+{{- if not .IsHome }}{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (add $pos 1) "name" $title "item" .Permalink) }}{{ end -}}
+{{- $breadcrumb := dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" .Permalink) "itemListElement" $crumbs -}}
+
+{{- $pageType := "WebPage" -}}
+{{- if eq .RelPermalink "/about/" }}{{ $pageType = "ProfilePage" }}
+{{- else if eq .Type "search" }}{{ $pageType = "SearchResultsPage" }}
+{{- else if or .IsSection (eq .Kind "term") (eq .Kind "taxonomy") }}{{ $pageType = "CollectionPage" }}{{ end -}}
+{{- $webpage := dict
+  "@type" $pageType
+  "@id" $pageID
+  "url" .Permalink
+  "name" (cond .IsHome site.Title $title)
+  "description" $desc
+  "inLanguage" site.LanguageCode
+  "isPartOf" (dict "@id" $siteID)
+  "breadcrumb" (dict "@id" (printf "%s#breadcrumb" .Permalink))
+  "primaryImageOfPage" (dict "@type" "ImageObject" "url" $share.url)
+-}}
+{{- if eq $pageType "ProfilePage" }}{{ $webpage = merge $webpage (dict "mainEntity" (dict "@id" $personID)) }}{{ end -}}
+{{- if .IsHome }}{{ $webpage = merge $webpage (dict "about" (dict "@id" $bizID)) }}{{ end -}}
+
+{{- $graph := slice $business $person $website $webpage $breadcrumb -}}
+
+{{- /* Articles: blog posts, database entries and guides. Locked pages never reach crawlers. */ -}}
+{{- if and .IsPage (not .Params.private) (in (slice "posts" "database") .Type) -}}
+  {{- $article := dict
+    "@type" (cond (eq .Type "posts") "BlogPosting" "TechArticle")
+    "@id" (printf "%s#article" .Permalink)
+    "headline" $title
+    "description" $desc
+    "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "author" (dict "@id" $personID)
+    "publisher" (dict "@id" $bizID)
+    "mainEntityOfPage" (dict "@id" $pageID)
+    "image" $share.url
+    "inLanguage" site.LanguageCode
+    "isAccessibleForFree" true
+  -}}
+  {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  {{- with .Params.syndication }}{{ $article = merge $article (dict "sameAs" .) }}{{ end -}}
+  {{- if .Params.brand -}}
+    {{- $vehicle := dict "@type" "Vehicle" "brand" (dict "@type" "Brand" "name" .Params.brand) -}}
+    {{- with .Params.model }}{{ $vehicle = merge $vehicle (dict "model" .) }}{{ end -}}
+    {{- $about := slice $vehicle -}}
+    {{- with .Params.ecu }}{{ if ne . "Unknown" }}{{ $about = $about | append (dict "@type" "Thing" "name" .) }}{{ end }}{{ end -}}
+    {{- $article = merge $article (dict "about" $about) -}}
+  {{- end -}}
+  {{- $graph = $graph | append $article -}}
+{{- end -}}
+
+{{- /* FAQ: only where the questions are shown on the page (home page, front matter `faq`). */ -}}
+{{- with .Params.faq -}}
+  {{- $qs := slice -}}
+  {{- range . }}{{ $qs = $qs | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end -}}
+  {{- $graph = $graph | append (dict "@type" "FAQPage" "@id" (printf "%s#faq" $.Permalink) "mainEntity" $qs "isPartOf" (dict "@id" $pageID)) -}}
+{{- end -}}
+
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>

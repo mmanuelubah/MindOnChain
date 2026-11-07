@@ -1,0 +1,27 @@
+# Search engines and AI assistants may read every public page of {{ site.Title }}.
+# Not for crawling: the access-code endpoints and the "this writing is locked" page.
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /locked/
+
+# Named so it is clear they are welcome (crawler names as of 2026).
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /locked/
+
+Sitemap: {{ "sitemap.xml" | absURL }}

@@ -225,6 +225,11 @@ ladipo = {
 <p class="lead">Price on request. Collect in Lagos; ask about delivery.</p>
 {contact_block}</section>''',
 }
+# Link-preview card (WhatsApp, LinkedIn, X): copied to static/brand/og-default.png.
+boards["og-default"] = f'''<section class="board" style="width:1200px;height:630px;padding:64px 72px">{logo}
+<h1 style="font-size:88px;margin:44px 0 22px;max-width:16ch">Car won’t start? It might be <em>the computer.</em></h1>
+<p class="lead" style="font-size:34px;max-width:40ch;margin:0">ECU programming, cloning and virginising · modules from Ladipo · free ECU database. Lagos.</p>
+</section>'''
 boards.update(ladipo)
 boards.update(logos)
 

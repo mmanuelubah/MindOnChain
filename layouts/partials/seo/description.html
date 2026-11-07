@@ -1,0 +1,33 @@
+{{- /*
+  The one-line description search engines, AI answers and link previews show for a page.
+  Front matter `description` (or `summary`) always wins. Otherwise it is built from the
+  page's own facts, because the automatic summary of a database entry is its first table
+  ("Vehicle Details Field Value Brand ...") and every section would repeat the site line.
+*/ -}}
+{{- $d := "" -}}
+{{- $title := partial "display-title.html" . -}}
+{{- if .IsHome -}}
+  {{- $d = site.Params.description -}}
+{{- else if .Description -}}
+  {{- $d = .Description -}}
+{{- else if .Params.summary -}}
+  {{- $d = .Params.summary -}}
+{{- else if and .IsPage (eq .Type "database") .Params.brand -}}
+  {{- $method := "" -}}
+  {{- $names := dict "bench" "bench" "obd" "OBD" "bdm" "BDM" "non-obd" "non-OBD" "eeprom" "EEPROM" -}}
+  {{- range .Params.tags }}{{ with index $names (lower .) }}{{ if not $method }}{{ $method = . }}{{ end }}{{ end }}{{ end -}}
+  {{- $ecu := cond (and .Params.ecu (ne .Params.ecu "Unknown")) (printf " for the %s" .Params.ecu) "" -}}
+  {{- $d = printf "%s: %sprogramming notes%s from the Alltech Solutions workshop in Lagos, with vehicle and ECU details and step-by-step instructions." $title (cond (ne $method "") (printf "%s " $method) "") $ecu -}}
+{{- else if and .IsSection (hasPrefix .RelPermalink "/alltech/database/") (ne .RelPermalink "/alltech/database/") -}}
+  {{- $n := len (where .RegularPagesRecursive "Params.private" "!=" true) -}}
+  {{- $d = printf "%s ECU and immobiliser notes in the free Alltech Solutions database: %d %s with pinouts, EEPROM locations and programming steps." $title $n (cond (eq $n 1) "entry" "entries") -}}
+{{- else if eq .Type "books" -}}
+  {{- $d = printf "%s, on the bookshelf of %s (%s)." $title site.Params.author (lower (.Params.status | default "noted")) -}}
+{{- else if eq .Kind "term" -}}
+  {{- $d = printf "Alltech Solutions pages tagged %s: %d %s." $title (len .Pages) (cond (eq (len .Pages) 1) "page" "pages") -}}
+{{- else if .IsPage -}}
+  {{- $d = .Summary -}}
+{{- end -}}
+{{- if not $d }}{{ $d = site.Params.description }}{{ end -}}
+{{- $d = $d | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 160 -}}
+{{- return $d -}}

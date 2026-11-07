@@ -5,7 +5,7 @@
     node tools/render_marketing.cjs marketing/alltech-photo-flyers.html   # stills -> marketing/png/
     node tools/render_status_video.cjs                                    # video -> marketing/alltech-status.mp4
 
-Claims are limited to what the owner has confirmed: the three ECU services from his flyer,
+Claims are limited to what the owner has confirmed: the three ECU services from the Alltech flyer,
 parts from Ladipo tested before handover, price on request. Contact details come from hugo.toml;
 SITE_URL (the Vercel setting) overrides the web address.
 """

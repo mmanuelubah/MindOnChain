@@ -100,6 +100,17 @@
     </div>
   </section>
 
+  {{- with .Params.faq }}
+  <section class="section" aria-labelledby="faq-h">
+    <div class="section-head"><h2 class="h2" id="faq-h">Questions people ask</h2></div>
+    <dl class="faq">
+      {{- range . }}
+      <div class="faq-item"><dt>{{ .q }}</dt><dd>{{ .a }}</dd></div>
+      {{- end }}
+    </dl>
+  </section>
+  {{- end }}
+
   {{- $posts := where site.RegularPages "Section" "posts" }}
   <section class="section" aria-labelledby="writing-h">
     <div class="section-head">

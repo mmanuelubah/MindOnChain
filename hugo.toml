@@ -4,6 +4,10 @@ languageCode = "en-NG"
 # Dates without a time ("2026-11-07") mean midnight in Lagos, not UTC. Without this, a post dated
 # today and pushed between 00:00 and 01:00 Lagos time counts as a future post and is left out.
 timeZone = "Africa/Lagos"
+# robots.txt is built from layouts/robots.txt
+enableRobotsTXT = true
+# Keep tag names as written ("bmw", "me7.5"), not "Bmw".
+capitalizeListTitles = false
 pagination.pagerSize = 10
 
 [params]
@@ -18,6 +22,12 @@ pagination.pagerSize = 10
   whatsapp = "2348039914565"          # international format for wa.me links
   whatsappDisplay = "0803 991 4565"
   email = "ubanatuchinaza@gmail.com"
+
+# Search engine ownership checks. Paste the code each console gives you (only the code, not the
+# whole tag), push, then press Verify in the console. Empty = no tag on the site.
+[params.verification]
+  google = ""   # Google Search Console → Add property → URL prefix → HTML tag
+  bing = ""     # Bing Webmaster Tools → Add site → HTML meta tag (or import from Google instead)
 
 [params.social]
   linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
@@ -36,8 +46,15 @@ pagination.pagerSize = 10
   isPlainText = true
   notAlternative = true
 
+# /llms.txt: a plain-text summary of the site for AI assistants (layouts/index.llms.txt).
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
-  home = ["HTML", "RSS", "SearchIndex"]
+  home = ["HTML", "RSS", "SearchIndex", "llms"]
 
 [[menus.main]]
   name = "Database"

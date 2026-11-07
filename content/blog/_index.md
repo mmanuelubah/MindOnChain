@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-description: "Ubanatu Chinaza Emmanuel writes about cars and ECUs, work, books, and a weekly roundup of what he found."
+description: "Ubanatu Chinaza Emmanuel writes about cars and ECUs, work, books, and a weekly roundup of the best things read, watched and heard."
 
 # Blog home: Now, Work, featured writing and the latest roundup. Layout: layouts/blog/list.html.
 # Your introduction, photo and social links live on the About page.
