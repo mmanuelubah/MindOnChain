@@ -117,3 +117,21 @@ Locked text appears only in its own two pages, which middleware.js guards; it is
 1. Push the branch and open it as a Vercel preview (`git push -u origin audit/human-grade-2026-10-29`; Vercel builds previews for branches automatically if Git integration is on).
 2. Set the two environment variables, redeploy the preview, and run the locked-writing check.
 3. Click through the preview on your phone, then merge to `main`.
+
+## 18. Round 2 (2026-11-07): images, silent failures, search and AI engines
+
+Branch `audit/seo-images-2026-11-07`, tag `pre-audit-2026-11-07`. Findings R2-01 to R2-16 in FINDINGS.csv.
+
+| Area | Before | After |
+| --- | --- | --- |
+| Photo dragged into Obsidian | Saved in the vault root as `![[photo.jpg]]`; the page showed the text | Saved to `assets/uploads/`, resized to 480/960/1600 px (3.7 MB → 13/42/107 KB) |
+| Google Drive images | `uc?export=view` (a download link) | Any Drive link rewritten to Drive's thumbnail address |
+| Structured data | none | Business, owner, website + search, breadcrumbs, articles, FAQ on all 124 pages |
+| robots.txt / llms.txt | 404 / 404 | Generated each build |
+| Database entry description | "Vehicle Details Field Value Brand BMW…" | "BMW X3 (2003-2008) — BMW EWS4: bench programming notes for the EWS4…" |
+| Share image | 512 px square icon | 1200×630 card, or the post's cover as a 1200×630 JPEG |
+| Post dated today, pushed 00:00–01:00 Lagos | Silently left out | Published (timeZone Africa/Lagos) |
+| Security headers | HSTS only | CSP, nosniff, referrer, permissions, frame denial |
+| Bing | waits to crawl | IndexNow after every push |
+| Lighthouse SEO | 82–100 | 100 on six page types |
+

@@ -49,9 +49,13 @@ Locked guide, its index.html and /blog/locked/* redirect (302) to /locked/; /api
 - Owner asked for: images from Google Drive or the laptop; bugs and silent site-killers; SEO, AEO and GEO on the level of myeasyagents.com; a guide to running the site, writing and sharing to Medium and LinkedIn. Taken as approval for the fixes; release (merge to main) still needs the owner's yes.
 - Done: baseline of both sites' robots, sitemap, llms.txt, headers and JSON-LD; findings R2-01 to R2-16 in FINDINGS.csv.
 
+- Done: R2-01 to R2-16 (R2-09 won't fix, reason in FINDINGS.csv). Commits b4e61ef, 5f49cc0, 6688b8e, cfe9d7a, e031195 on the branch.
+- Verified locally: 124 routes at 375/640 px under the production headers (no CSP blocks, no JS errors), JSON-LD valid on all 124 pages, 2,913 internal links with 0 broken, no locked text in any public output, access tests 15/15, Lighthouse SEO/accessibility/best practices 100 on six page types (baseline/lighthouse-round2.md).
+- Not verifiable locally: Hugo 0.151.1 and whether Vercel's Hugo is the extended edition (images fall back to JPEG/PNG if not); Drive thumbnails with a real public file; IndexNow acceptance (first run after merge).
+
 ## Next step
 
-Implement R2 fixes in small commits: settings (timezone, stats, headers, trailing slash), descriptions, JSON-LD, robots/llms/sitemap, share image and covers, image pipeline and Obsidian settings, FAQ, syndication, IndexNow; then verify and push the branch for a preview.
+Owner: approve the release (merge `audit/seo-images-2026-11-07` into `main`). Then set up Google Search Console and Bing Webmaster Tools (ADMIN_GUIDE section 9) and paste the two verification codes into hugo.toml.
 
 ## Open questions for the owner
 
