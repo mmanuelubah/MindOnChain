@@ -56,9 +56,11 @@ Locked guide, its index.html and /blog/locked/* redirect (302) to /locked/; /api
 - 2026-11-07, owner request: pinout PDFs stay on Google Drive (front matter `pdfs:` or `{{< pdf >}}`); card with Drive's first-page image, Open, Download, and a viewer loaded only on tap; CSP frame-src drive.google.com. Commit e4b668e.
 - Release: owner said "merge main". `main` fast-forwarded to e4b668e and pushed (GitHub confirmed).
 
+- Live checks after release (2026-11-07): production deployment success; robots.txt, llms.txt (41 links), sitemap, IndexNow key and share card return 200; CSP, nosniff, referrer, permissions and frame headers live; home JSON-LD AutoRepair, Person, WebSite, WebPage, BreadcrumbList, FAQPage; entry descriptions correct; locked guide 302; access request validation live; fonts cached a year. First IndexNow run: 202 Accepted, 5 URLs.
+
 ## Next step
 
-Confirm the production deployment and the live checks (robots.txt, llms.txt, JSON-LD, headers, locked redirects, IndexNow key and the first IndexNow run). Then the owner sets up Google Search Console and Bing Webmaster Tools (ADMIN_GUIDE section 9).
+Owner: Google Search Console and Bing Webmaster Tools (ADMIN_GUIDE section 9), then paste both verification codes into hugo.toml and push. First real post with a laptop photo and a Drive PDF confirms the image pipeline and Drive thumbnails on Vercel.
 
 ## Open questions for the owner
 
