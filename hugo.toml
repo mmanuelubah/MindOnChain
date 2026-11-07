@@ -1,6 +1,9 @@
 baseURL = "https://mind-on-chain.vercel.app/"
 title = "Alltech Solutions"
 languageCode = "en-NG"
+# Dates without a time ("2026-11-07") mean midnight in Lagos, not UTC. Without this, a post dated
+# today and pushed between 00:00 and 01:00 Lagos time counts as a future post and is left out.
+timeZone = "Africa/Lagos"
 pagination.pagerSize = 10
 
 [params]
@@ -20,9 +23,6 @@ pagination.pagerSize = 10
   linkedin = "https://www.linkedin.com/in/chinaza-ubanatu-05a983184/"
   github = "https://github.com/mmanuelubah"
   x = "https://x.com/mmanuelubah"
-
-[build]
-  writeStats = true
 
 [taxonomies]
   category = "categories"
